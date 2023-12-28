@@ -208,9 +208,9 @@ Public Class MainForm
             Case 2
                 FormItemsDataEntry.Show()
                 Me.Hide()
-            Case 4
-                FormListView.Show()
-                Me.Hide()
+            'Case 4
+            '    FormListView.Show()
+            '    Me.Hide()
             Case 9
                 c_fini()
         End Select
@@ -921,6 +921,11 @@ Public Class MainForm
         'RadTextBoxITEMS_CURRENCY.Text = ""
         'RadTextBoxITEMS_LAST_EDIT_DATE.Text = ""
         'RadTextBox_MTTVA.Text = ""
+        Dim iindex As Integer = Val(RadTextBox_INDEX.Text)
+        If iindex < 1 Then
+            RadLabelElementMessage.Text = "Erreur, le code INDEX est erroné"
+            Exit Sub
+        End If
 
         Dim DateFacture As String
 
@@ -935,7 +940,7 @@ Public Class MainForm
         End If
 
         Dim mysql = "Update items SET ITEMS_INDEX = " + RadTextBox_ITEMS_INDEX.Text
-        mysql += ", items_projet_INDEX = " + RadTextBox_ITEMS_INDEX.Text
+        '      mysql += ", items_projet_INDEX = " + RadTextBox_ITEMS_INDEX.Text
         mysql += ", ITEMS_CODE = '" + RadTextBoxITEMS_CODE.Text + "'"
         mysql += ", ITEMS_NAME = '" + RadTextBoxITEMS_NAME.Text + "'"
         mysql += ", ITEMS_PARENT = '" + RadTextBoxITEMS_PARENT.Text + "'"
@@ -945,7 +950,7 @@ Public Class MainForm
         mysql += ", ITEMS_TAXE_VALUE = " + RadTextBoxITEMS_TAXE_VALUE.Text
         mysql += ", ITEMS_CURRENCY = '" + RadTextBoxITEMS_CURRENCY.Text + "'"
         mysql += ", ITEMS_LAST_EDIT_DATE = " + DateFacture
-        mysql += " Where ITEMS_INDEX = " + RadTextBox_ITEMS_INDEX.Text
+        mysql += " Where `INDEX` = " + iindex.ToString
 
         RadLabelElementMessage.Text = mysql
         If IDMorAccess = "IDM" Then
@@ -957,8 +962,8 @@ Public Class MainForm
             'Me.RadGridViewProjectName.DataSource = reader
             'cpt = RadGridViewProjectName.Rows.Count
             connection.Close()
+            FindItemsSql(ProjectIndexGlobal)
         End If
-
         Exit Sub
         UpdateGridInfo(Me.RadGridViewItems.CurrentRow, irow)
 
@@ -1154,7 +1159,7 @@ Public Class MainForm
         End If
         Dim mysql As String
         Dim basename As String = "items"
-        mysql = "DELETE FROM " + basename + " where items_INDEX = " + RadTextBox_INDEX.Text
+        mysql = "DELETE FROM " + basename + " where `INDEX` = " + RadTextBox_INDEX.Text
         RadLabelElementMessage.Text = mysql
         If IDMorAccess = "IDM" Then
             Dim connection As New MySqlConnection(GlobalProviderForIDM)
@@ -1165,6 +1170,7 @@ Public Class MainForm
             'Me.RadGridViewProjectName.DataSource = reader
             'cpt = RadGridViewProjectName.Rows.Count
             connection.Close()
+            FindItemsSql(ProjectIndexGlobal)
         End If
         Exit Sub
 
@@ -1201,6 +1207,7 @@ Public Class MainForm
         '        RadDataLayout1 = New RadDataLayout
         'insert_Items()
         InsertItemToDataBase(0)
+        FindItemsSql(ProjectIndexGlobal)
         Exit Sub
         Dim iindex As Integer = 0
         RadGridViewItems.Rows.AddNew()
@@ -1242,7 +1249,7 @@ Public Class MainForm
         Date1 = ConvertDateMysql4(RadTextBoxITEMS_LAST_EDIT_DATE.Text)
         Date2 = ConvertDateMysql4(RadTextBoxITEMS_DatePaiement.Text)
         Dim ValueString As String
-        ValueString = RadTextBox_ITEMS_INDEX.Text + ",1,'"
+        ValueString = RadTextBox_ITEMS_INDEX.Text + "," + ProjectIndexGlobal.ToString + ",'"
         ValueString += RadTextBoxITEMS_CODE.Text + "','"
         ValueString += RadTextBoxITEMS_NAME.Text + "','"
         ValueString += RadTextBoxITEMS_PARENT.Text + "',"

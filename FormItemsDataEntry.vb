@@ -9,38 +9,32 @@ Public Class FormItemsDataEntry
         'TODO: cette ligne de code charge les données dans la table 'TAKEOFFDataSet3.ITEMS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         'Me.ITEMSTableAdapter.Fill(Me.TAKEOFFDataSet3.ITEMS)
         '
-        FindProjectListe()
         CenterForm(Me)
+        FindProjectListe()
         'AddHandler RadGridViewProjectName.CellClick, AddressOf RadGridViewProjectNameClick
     End Sub
-    Private Sub ButtonGridviewDelete_Click(sender As Object, e As EventArgs) Handles ButtonGridviewDeleteProjectMainForm.Click
-        Dim iindex As Integer = -1
-        UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, iindex)
 
-        Try
-            Me.PROJECTTableAdapter.DeleteQuery(iindex)
-            Me.RadGridViewProjectName.CurrentRow.Delete()
-            'UpdateGridInfo(Me.RadGridViewItems.CurrentRow, irow)
-        Catch ex As Exception
-        End Try
-    End Sub
+    Private Sub SetColumnHeader()
+        RadGridViewProjectName.Columns(0).HeaderText = "Index"
+        RadGridViewProjectName.Columns(1).HeaderText = "Project Index"
+        RadGridViewProjectName.Columns(2).HeaderText = "Project Code"
+        RadGridViewProjectName.Columns(3).HeaderText = "Project Name"
+        RadGridViewProjectName.Columns(4).HeaderText = "Project Create Date"
+        RadGridViewProjectName.Columns(5).HeaderText = "Project Status"
 
+        RadGridViewProjectName.Columns(0).Width = 50
+        RadGridViewProjectName.Columns(1).Width = 90
+        RadGridViewProjectName.Columns(2).Width = 120
+        RadGridViewProjectName.Columns(3).Width = 160
+        RadGridViewProjectName.Columns(4).Width = 150
+        RadGridViewProjectName.Columns(5).Width = 120
 
-
-
-    Private Sub ButtonGridviewNew_Click(sender As Object, e As EventArgs) Handles ButtonGridviewNewProjectMainForm.Click
-        Dim iindex As Integer = 0
-        RadGridViewProjectName.Rows.AddNew()
-        RadDateTimePickerDateModify.Value = Today.ToShortDateString
-        RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        RadTextBoxProjectMainFormStatus.Text = "IN PROGRESS"
-        RadTextBoxProjectMainFormPathName.Text = "C:\TAKEOFF\DATA"
-        'RadTextBoxItemsCode.Text = "Code Name" 'ArrayCurrentItems(const_Category)
-        'RadTextBoxParent_Items.Text = ArrayCurrentItems(const_Category)
-        'RadSpinEditorVATPorucent.Value = ArrayCurrentItems(const_VAT_Porucent)
-        iindex = FindLastProjectCount() + 1
-        RadSpinEditorProjectIndex.Value = iindex
+        RadGridViewProjectName.Columns(0).TextAlignment = ContentAlignment.MiddleCenter
+        RadGridViewProjectName.Columns(1).TextAlignment = ContentAlignment.MiddleCenter
+        RadGridViewProjectName.Columns(2).TextAlignment = ContentAlignment.MiddleLeft
+        RadGridViewProjectName.Columns(3).TextAlignment = ContentAlignment.MiddleLeft
+        RadGridViewProjectName.Columns(4).TextAlignment = ContentAlignment.MiddleRight
+        RadGridViewProjectName.Columns(5).TextAlignment = ContentAlignment.MiddleCenter
     End Sub
 
     Private Function FindLastProjectCount()
@@ -83,33 +77,65 @@ Public Class FormItemsDataEntry
         Else
             iindex = currentRow.Cells(1).Value
         End If
-        Me.RadGridViewProjectName.CloseEditor()
+        RadGridViewProjectName.CloseEditor()
         currentRow.Cells(1).Value = RadSpinEditorProjectIndex.Value
-
+        currentRow.Cells(2).Value = RadTextBoxProjectCode.Text
+        currentRow.Cells(3).Value = RadTextBoxProjectName.Text
+        currentRow.Cells(4).Value = RadDateTimePickerCreateDate.Text
+        currentRow.Cells(5).Value = RadTextBoxProjectStatus.Text
         RadLabelElementMessage.Text = ""
-        Dim newRowInfo As GridViewNewRowInfo = TryCast(currentRow, GridViewNewRowInfo)
-        If newRowInfo IsNot Nothing Then
-            currentRow.InvalidateRow()
-        Else
-            CType(Me.RadGridViewProjectName.CurrentRow.DataBoundItem, IEditableObject).EndEdit()
-        End If
     End Sub
 
     Private Sub ButtonGridviewUpdate_Click(sender As Object, e As EventArgs) Handles ButtonGridviewUpdateProjectMainForm.Click
-        Dim irow As Integer = -1
-        UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
-
+        Dim idx As Integer
+        'UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
+        If RadGridViewProjectName.CurrentRow Is Nothing Then
+            Return
+        End If
+        'currentRow.Index
+        If IsDBNull(RadGridViewProjectName.CurrentRow.Cells(1).Value) Then
+            Return
+        End If
+        idx = RadGridViewProjectName.CurrentRow.Cells(0).Value
+        UpdateProjectDB(idx, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, RadTextBoxProjectStatus.Text)
+        FindProjectListe()
         Try
             Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProject)
         Catch ex As Exception
         End Try
     End Sub
 
-    Private Sub RadGridViewProjectName_Click(sender As Object, e As EventArgs) Handles RadGridViewProjectName.Click
-        'RadGridViewProjectName.GroupDescriptors.Expression = "PROJECT_CODE"
-        'groupe
+    Private Sub ButtonGridviewDelete_Click(sender As Object, e As EventArgs) Handles ButtonGridviewDeleteProjectMainForm.Click
+        Dim idx As Integer
+        'UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
+        If RadGridViewProjectName.CurrentRow Is Nothing Then
+            Return
+        End If
+        'currentRow.Index
+        If IsDBNull(RadGridViewProjectName.CurrentRow.Cells(1).Value) Then
+            Return
+        End If
+        idx = RadGridViewProjectName.CurrentRow.Cells(0).Value
+        DeleteProjectDB(idx)
+        FindProjectListe()
+        Try
+            Me.PROJECTTableAdapter.DeleteQuery(idx)
+            'Me.RadGridViewProjectName.CurrentRow.Delete()
+        Catch ex As Exception
+        End Try
     End Sub
 
+
+    Private Sub ButtonGridviewNew_Click(sender As Object, e As EventArgs) Handles ButtonGridviewNewProjectMainForm.Click
+        Dim iindex As Integer = FindLastProjectCount() + 1
+        AddProjectDB(iindex, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, RadTextBoxProjectStatus.Text)
+        FindProjectListe()
+        Try
+            Me.PROJECTTableAdapter.Insert(iindex, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, Date.Now(), Date.Now(), RadTextBoxProjectStatus.Text, "")
+            Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProject)
+        Catch ex As Exception
+        End Try
+    End Sub
 
     Private Function FindProjectListe() As Integer
         Dim mysql As String
@@ -124,6 +150,7 @@ Public Class FormItemsDataEntry
             reader = cmd.ExecuteReader()
             Me.RadGridViewProjectName.DataSource = reader
             cpt = RadGridViewProjectName.Rows.Count
+            SetColumnHeader()
             connection.Close()
         End If
         Return cpt
@@ -131,5 +158,60 @@ Public Class FormItemsDataEntry
 
     Private Sub FormItemsDataEntry_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         MainForm.Show()
+    End Sub
+
+    Private Sub RadGridViewProjectName_SelectionChanged(sender As Object, e As EventArgs) Handles RadGridViewProjectName.SelectionChanged
+        RadSpinEditorIndex.Value = Val(RadGridViewProjectName.CurrentRow.Cells(0).Value.ToString)
+        RadSpinEditorProjectIndex.Value = Val(RadGridViewProjectName.CurrentRow.Cells(1).Value.ToString)
+        RadTextBoxProjectCode.Text = RadGridViewProjectName.CurrentRow.Cells(2).Value.ToString
+        RadTextBoxProjectName.Text = RadGridViewProjectName.CurrentRow.Cells(3).Value.ToString
+        RadDateTimePickerCreateDate.Text = RadGridViewProjectName.CurrentRow.Cells(4).Value.ToString
+        RadTextBoxProjectStatus.Text = RadGridViewProjectName.CurrentRow.Cells(5).Value.ToString
+        RadDateTimePickerModifyDate.Value = DateTime.Now
+    End Sub
+
+    Private Sub AddProjectDB(ByVal pIndex As Integer, ByVal pCode As String, ByVal pName As String, ByVal pStatus As String)
+        Dim mysql As String
+        mysql = "INSERT INTO project(`PrOJECT_INDEX`, `PrOJECT_CODE`, `PrOJECT_NAME`, `PrOJECT_CREAT_DATE`, `PrOJECT_STATUS`) VALUES (" + pIndex.ToString + ", '" + pCode + "', '" + pName + "', CURDATE(), '" + pStatus + "')"
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+            Dim cmd As New MySqlCommand(mysql, connection)
+            connection.Open()
+            Dim reader As MySqlDataReader
+            reader = cmd.ExecuteReader()
+            connection.Close()
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
+    End Sub
+
+    Private Sub UpdateProjectDB(ByVal idx As Integer, ByVal pCode As String, ByVal pName As String, ByVal pStatus As String)
+        Dim mysql As String
+        mysql = "UPDATE project SET `PrOJECT_CODE` = '" + pCode + "', `PrOJECT_NAME` = '" + pName + "', `PrOJECT_STATUS` = '" + pStatus + "' WHERE `INDEX` = " + idx.ToString
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+            Dim cmd As New MySqlCommand(mysql, connection)
+            connection.Open()
+            Dim reader As MySqlDataReader
+            reader = cmd.ExecuteReader()
+            connection.Close()
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
+    End Sub
+
+    Private Sub DeleteProjectDB(ByVal idx As Integer)
+        Dim mysql As String
+        mysql = "DELETE FROM project WHERE `INDEX` = " + idx.ToString
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+            Dim cmd As New MySqlCommand(mysql, connection)
+            connection.Open()
+            Dim reader As MySqlDataReader
+            reader = cmd.ExecuteReader()
+            connection.Close()
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
     End Sub
 End Class

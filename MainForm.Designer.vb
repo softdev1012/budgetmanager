@@ -23,51 +23,51 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
-		Dim ListViewDetailColumn5 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
-		Dim ListViewDetailColumn6 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
-		Dim ListViewDetailColumn7 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
-		Dim ListViewDetailColumn8 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
-		Dim TableViewDefinition16 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim GridViewDecimalColumn61 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn62 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn63 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewTextBoxColumn37 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn38 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn39 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewDecimalColumn64 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn65 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn66 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn67 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn68 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn69 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewTextBoxColumn40 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewDateTimeColumn13 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-		Dim TableViewDefinition17 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim GridViewDecimalColumn70 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn71 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewTextBoxColumn41 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn42 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewDateTimeColumn14 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-		Dim GridViewDateTimeColumn15 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-		Dim GridViewTextBoxColumn43 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn44 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim TableViewDefinition18 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim GridViewDecimalColumn72 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn73 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn74 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewTextBoxColumn45 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn46 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn47 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewDecimalColumn75 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn76 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn77 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn78 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn79 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn80 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewTextBoxColumn48 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewDateTimeColumn16 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-		Dim TableViewDefinition19 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim TableViewDefinition20 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim ListViewDetailColumn1 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
+		Dim ListViewDetailColumn2 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
+		Dim ListViewDetailColumn3 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
+		Dim ListViewDetailColumn4 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
+		Dim TableViewDefinition11 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim GridViewDecimalColumn41 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn42 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn43 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewDecimalColumn44 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn45 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn46 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn47 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn48 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn49 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewTextBoxColumn28 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewDateTimeColumn9 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+		Dim TableViewDefinition12 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim GridViewDecimalColumn50 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn51 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn52 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewTextBoxColumn29 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewTextBoxColumn30 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewTextBoxColumn31 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewDecimalColumn53 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn54 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn55 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn56 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn57 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn58 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewTextBoxColumn32 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewDateTimeColumn10 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+		Dim TableViewDefinition13 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim GridViewDecimalColumn59 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewDecimalColumn60 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+		Dim GridViewTextBoxColumn33 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewTextBoxColumn34 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewDateTimeColumn11 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+		Dim GridViewDateTimeColumn12 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
+		Dim GridViewTextBoxColumn35 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim GridViewTextBoxColumn36 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+		Dim TableViewDefinition14 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim TableViewDefinition15 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
 		Me.ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
 		Me.TAKEOFDataSet = New PrevisionFlex.TAKEOFDataSet()
 		Me.ITEMSTableAdapter = New PrevisionFlex.TAKEOFDataSetTableAdapters.ITEMSTableAdapter()
@@ -131,14 +131,12 @@ Partial Class MainForm
 		Me.RadGridViewClassItemsListe = New Telerik.WinControls.UI.RadGridView()
 		Me.Button1 = New MindFusion.UI.WinForms.Button()
 		Me.RadButtonItemsLevelOne = New Telerik.WinControls.UI.RadButton()
-		Me.RadGridView2 = New Telerik.WinControls.UI.RadGridView()
-		Me.ITEMSBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-		Me.TAKEOFFDataSet3 = New PrevisionFlex.TAKEOFFDataSet3()
 		Me.RadButtonGroupageRefhesh = New Telerik.WinControls.UI.RadButton()
 		Me.RadButtonGroupCancel = New Telerik.WinControls.UI.RadButton()
 		Me.RadButtonGroupage = New Telerik.WinControls.UI.RadButton()
-		Me.RadGridViewProjectName = New Telerik.WinControls.UI.RadGridView()
 		Me.RadGridViewItems = New Telerik.WinControls.UI.RadGridView()
+		Me.ITEMSBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+		Me.TAKEOFFDataSet3 = New PrevisionFlex.TAKEOFFDataSet3()
 		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
 		Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
 		Me.RadTextBoxITEMS_PAYE_QUI = New Telerik.WinControls.UI.RadTextBox()
@@ -172,6 +170,8 @@ Partial Class MainForm
 		Me.RadTextBoxITEMS_CODE = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBox_ITEMS_INDEX = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBox_INDEX = New Telerik.WinControls.UI.RadTextBox()
+		Me.RadGridView2 = New Telerik.WinControls.UI.RadGridView()
+		Me.RadGridViewProjectName = New Telerik.WinControls.UI.RadGridView()
 		Me.RadSpinEditor1 = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadSpinEditorProjectIndex2 = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
@@ -236,17 +236,13 @@ Partial Class MainForm
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewClassItemsListe.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadButtonItemsLevelOne, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadGridView2.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.ITEMSBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TAKEOFFDataSet3, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadButtonGroupageRefhesh, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadButtonGroupCancel, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadButtonGroupage, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewItems, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewItems.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.ITEMSBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.TAKEOFFDataSet3, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBox1.SuspendLayout()
 		CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxITEMS_PAYE_QUI, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -280,6 +276,10 @@ Partial Class MainForm
 		CType(Me.RadTextBoxITEMS_CODE, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadGridView2.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadSpinEditor1, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadSpinEditorProjectIndex2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -409,11 +409,11 @@ Partial Class MainForm
 		Me.RadListeiewProjectName.AllowRemove = False
 		Me.RadListeiewProjectName.AutoScroll = True
 		Me.RadListeiewProjectName.BackColor = System.Drawing.SystemColors.ControlLightLight
-		ListViewDetailColumn5.HeaderText = "Name"
-		ListViewDetailColumn6.HeaderText = "Age"
-		ListViewDetailColumn7.HeaderText = "Gender"
-		ListViewDetailColumn8.HeaderText = "EncounterTime"
-		Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn5, ListViewDetailColumn6, ListViewDetailColumn7, ListViewDetailColumn8})
+		ListViewDetailColumn1.HeaderText = "Name"
+		ListViewDetailColumn2.HeaderText = "Age"
+		ListViewDetailColumn3.HeaderText = "Gender"
+		ListViewDetailColumn4.HeaderText = "EncounterTime"
+		Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn1, ListViewDetailColumn2, ListViewDetailColumn3, ListViewDetailColumn4})
 		Me.RadListeiewProjectName.ItemSize = New System.Drawing.Size(200, 95)
 		Me.RadListeiewProjectName.Location = New System.Drawing.Point(5, 530)
 		Me.RadListeiewProjectName.Name = "RadListeiewProjectName"
@@ -453,7 +453,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadStatusStrip2.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 985, 300, 24)
+		Me.RadStatusStrip2.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 851, 300, 24)
 		Me.RadStatusStrip2.RootElement.StretchVertically = True
 		Me.RadStatusStrip2.Size = New System.Drawing.Size(1614, 30)
 		Me.RadStatusStrip2.TabIndex = 14
@@ -1015,7 +1015,7 @@ Partial Class MainForm
 		Me.ButtonGridviewNew.Name = "ButtonGridviewNew"
 		Me.ButtonGridviewNew.Size = New System.Drawing.Size(60, 29)
 		Me.ButtonGridviewNew.TabIndex = 50
-		Me.ButtonGridviewNew.Text = "New"
+		Me.ButtonGridviewNew.Text = "Add"
 		Me.ButtonGridviewNew.UseVisualStyleBackColor = True
 		'
 		'PROJECTBindingSource
@@ -1115,7 +1115,7 @@ Partial Class MainForm
 		Me.RadGridViewClassItemsListe.MasterTemplate.AllowRowResize = False
 		Me.RadGridViewClassItemsListe.MasterTemplate.EnableGrouping = False
 		Me.RadGridViewClassItemsListe.MasterTemplate.ShowRowHeaderColumn = False
-		Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition16
+		Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition11
 		Me.RadGridViewClassItemsListe.Name = "RadGridViewClassItemsListe"
 		Me.RadGridViewClassItemsListe.ShowItemToolTips = False
 		Me.RadGridViewClassItemsListe.ShowNoDataText = False
@@ -1158,100 +1158,6 @@ Partial Class MainForm
 		Me.RadButtonItemsLevelOne.TabIndex = 61
 		Me.RadButtonItemsLevelOne.Text = "1 Level  "
 		Me.RadButtonItemsLevelOne.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		'
-		'RadGridView2
-		'
-		Me.RadGridView2.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadGridView2.Location = New System.Drawing.Point(905, 922)
-		'
-		'
-		'
-		GridViewDecimalColumn61.DataType = GetType(Integer)
-		GridViewDecimalColumn61.FieldName = "INDEX"
-		GridViewDecimalColumn61.HeaderText = "INDEX"
-		GridViewDecimalColumn61.IsAutoGenerated = True
-		GridViewDecimalColumn61.Name = "INDEX"
-		GridViewDecimalColumn62.DataType = GetType(Integer)
-		GridViewDecimalColumn62.FieldName = "ITEMS_INDEX"
-		GridViewDecimalColumn62.HeaderText = "ITEMS_INDEX"
-		GridViewDecimalColumn62.IsAutoGenerated = True
-		GridViewDecimalColumn62.Name = "ITEMS_INDEX"
-		GridViewDecimalColumn63.DataType = GetType(Integer)
-		GridViewDecimalColumn63.FieldName = "ITEMS_PROJECT_INDEX"
-		GridViewDecimalColumn63.HeaderText = "ITEMS_PROJECT_INDEX"
-		GridViewDecimalColumn63.IsAutoGenerated = True
-		GridViewDecimalColumn63.Name = "ITEMS_PROJECT_INDEX"
-		GridViewTextBoxColumn37.FieldName = "ITEMS_CODE"
-		GridViewTextBoxColumn37.HeaderText = "ITEMS_CODE"
-		GridViewTextBoxColumn37.IsAutoGenerated = True
-		GridViewTextBoxColumn37.Name = "ITEMS_CODE"
-		GridViewTextBoxColumn38.FieldName = "ITEMS_NAME"
-		GridViewTextBoxColumn38.HeaderText = "ITEMS_NAME"
-		GridViewTextBoxColumn38.IsAutoGenerated = True
-		GridViewTextBoxColumn38.Name = "ITEMS_NAME"
-		GridViewTextBoxColumn39.FieldName = "ITEMS_PARENT"
-		GridViewTextBoxColumn39.HeaderText = "ITEMS_PARENT"
-		GridViewTextBoxColumn39.IsAutoGenerated = True
-		GridViewTextBoxColumn39.Name = "ITEMS_PARENT"
-		GridViewDecimalColumn64.DataType = GetType(Single)
-		GridViewDecimalColumn64.FieldName = "ITEMS_QUANTITY"
-		GridViewDecimalColumn64.HeaderText = "ITEMS_QUANTITY"
-		GridViewDecimalColumn64.IsAutoGenerated = True
-		GridViewDecimalColumn64.Name = "ITEMS_QUANTITY"
-		GridViewDecimalColumn65.DataType = GetType(Single)
-		GridViewDecimalColumn65.FieldName = "ITEMS_UNIT"
-		GridViewDecimalColumn65.HeaderText = "ITEMS_UNIT"
-		GridViewDecimalColumn65.IsAutoGenerated = True
-		GridViewDecimalColumn65.Name = "ITEMS_UNIT"
-		GridViewDecimalColumn66.DataType = GetType(Single)
-		GridViewDecimalColumn66.FieldName = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn66.HeaderText = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn66.IsAutoGenerated = True
-		GridViewDecimalColumn66.Name = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn67.DataType = GetType(Single)
-		GridViewDecimalColumn67.FieldName = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn67.HeaderText = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn67.IsAutoGenerated = True
-		GridViewDecimalColumn67.Name = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn68.DataType = GetType(Single)
-		GridViewDecimalColumn68.FieldName = "ITEMS_TAXE"
-		GridViewDecimalColumn68.HeaderText = "ITEMS_TAXE"
-		GridViewDecimalColumn68.IsAutoGenerated = True
-		GridViewDecimalColumn68.Name = "ITEMS_TAXE"
-		GridViewDecimalColumn69.DataType = GetType(Single)
-		GridViewDecimalColumn69.FieldName = "ITEMS_TAXE_VALUE"
-		GridViewDecimalColumn69.HeaderText = "ITEMS_TAXE_VALUE"
-		GridViewDecimalColumn69.IsAutoGenerated = True
-		GridViewDecimalColumn69.Name = "ITEMS_TAXE_VALUE"
-		GridViewTextBoxColumn40.FieldName = "ITEMS_CURRENCY"
-		GridViewTextBoxColumn40.HeaderText = "ITEMS_CURRENCY"
-		GridViewTextBoxColumn40.IsAutoGenerated = True
-		GridViewTextBoxColumn40.Name = "ITEMS_CURRENCY"
-		GridViewDateTimeColumn13.FieldName = "ITEMS_LAST_EDIT_DATE"
-		GridViewDateTimeColumn13.HeaderText = "ITEMS_LAST_EDIT_DATE"
-		GridViewDateTimeColumn13.IsAutoGenerated = True
-		GridViewDateTimeColumn13.Name = "ITEMS_LAST_EDIT_DATE"
-		Me.RadGridView2.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn61, GridViewDecimalColumn62, GridViewDecimalColumn63, GridViewTextBoxColumn37, GridViewTextBoxColumn38, GridViewTextBoxColumn39, GridViewDecimalColumn64, GridViewDecimalColumn65, GridViewDecimalColumn66, GridViewDecimalColumn67, GridViewDecimalColumn68, GridViewDecimalColumn69, GridViewTextBoxColumn40, GridViewDateTimeColumn13})
-		Me.RadGridView2.MasterTemplate.DataSource = Me.ITEMSBindingSource1
-		Me.RadGridView2.MasterTemplate.ViewDefinition = TableViewDefinition17
-		Me.RadGridView2.Name = "RadGridView2"
-		'
-		'
-		'
-		Me.RadGridView2.RootElement.ControlBounds = New System.Drawing.Rectangle(1594, 605, 240, 150)
-		Me.RadGridView2.Size = New System.Drawing.Size(82, 34)
-		Me.RadGridView2.TabIndex = 61
-		Me.RadGridView2.Visible = False
-		'
-		'ITEMSBindingSource1
-		'
-		Me.ITEMSBindingSource1.DataMember = "ITEMS"
-		Me.ITEMSBindingSource1.DataSource = Me.TAKEOFFDataSet3
-		'
-		'TAKEOFFDataSet3
-		'
-		Me.TAKEOFFDataSet3.DataSetName = "TAKEOFFDataSet3"
-		Me.TAKEOFFDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 		'
 		'RadButtonGroupageRefhesh
 		'
@@ -1301,59 +1207,6 @@ Partial Class MainForm
 		Me.RadButtonGroupage.Text = "Groupage "
 		Me.RadButtonGroupage.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
 		'
-		'RadGridViewProjectName
-		'
-		Me.RadGridViewProjectName.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadGridViewProjectName.Location = New System.Drawing.Point(1005, 922)
-		'
-		'
-		'
-		GridViewDecimalColumn70.DataType = GetType(Integer)
-		GridViewDecimalColumn70.FieldName = "INDEX"
-		GridViewDecimalColumn70.HeaderText = "INDEX"
-		GridViewDecimalColumn70.IsAutoGenerated = True
-		GridViewDecimalColumn70.Name = "INDEX"
-		GridViewDecimalColumn71.DataType = GetType(Integer)
-		GridViewDecimalColumn71.FieldName = "PROJECT_INDEX"
-		GridViewDecimalColumn71.HeaderText = "PROJECT_INDEX"
-		GridViewDecimalColumn71.IsAutoGenerated = True
-		GridViewDecimalColumn71.Name = "PROJECT_INDEX"
-		GridViewTextBoxColumn41.FieldName = "PROJECT_CODE"
-		GridViewTextBoxColumn41.HeaderText = "PROJECT_CODE"
-		GridViewTextBoxColumn41.IsAutoGenerated = True
-		GridViewTextBoxColumn41.Name = "PROJECT_CODE"
-		GridViewTextBoxColumn42.FieldName = "PROJECT_NAME"
-		GridViewTextBoxColumn42.HeaderText = "PROJECT_NAME"
-		GridViewTextBoxColumn42.IsAutoGenerated = True
-		GridViewTextBoxColumn42.Name = "PROJECT_NAME"
-		GridViewDateTimeColumn14.FieldName = "PROJECT_CREAT_DATE"
-		GridViewDateTimeColumn14.HeaderText = "PROJECT_CREAT_DATE"
-		GridViewDateTimeColumn14.IsAutoGenerated = True
-		GridViewDateTimeColumn14.Name = "PROJECT_CREAT_DATE"
-		GridViewDateTimeColumn15.FieldName = "PROJECT_MODIFY_DATE"
-		GridViewDateTimeColumn15.HeaderText = "PROJECT_MODIFY_DATE"
-		GridViewDateTimeColumn15.IsAutoGenerated = True
-		GridViewDateTimeColumn15.Name = "PROJECT_MODIFY_DATE"
-		GridViewTextBoxColumn43.FieldName = "PROJECT_STATUS"
-		GridViewTextBoxColumn43.HeaderText = "PROJECT_STATUS"
-		GridViewTextBoxColumn43.IsAutoGenerated = True
-		GridViewTextBoxColumn43.Name = "PROJECT_STATUS"
-		GridViewTextBoxColumn44.FieldName = "PROJECT_DATA_PATHNAME"
-		GridViewTextBoxColumn44.HeaderText = "PROJECT_DATA_PATHNAME"
-		GridViewTextBoxColumn44.IsAutoGenerated = True
-		GridViewTextBoxColumn44.Name = "PROJECT_DATA_PATHNAME"
-		Me.RadGridViewProjectName.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn70, GridViewDecimalColumn71, GridViewTextBoxColumn41, GridViewTextBoxColumn42, GridViewDateTimeColumn14, GridViewDateTimeColumn15, GridViewTextBoxColumn43, GridViewTextBoxColumn44})
-		Me.RadGridViewProjectName.MasterTemplate.DataSource = Me.PROJECTBindingSource
-		Me.RadGridViewProjectName.MasterTemplate.ViewDefinition = TableViewDefinition18
-		Me.RadGridViewProjectName.Name = "RadGridViewProjectName"
-		'
-		'
-		'
-		Me.RadGridViewProjectName.RootElement.ControlBounds = New System.Drawing.Rectangle(1390, 651, 240, 150)
-		Me.RadGridViewProjectName.Size = New System.Drawing.Size(229, 62)
-		Me.RadGridViewProjectName.TabIndex = 51
-		Me.RadGridViewProjectName.Visible = False
-		'
 		'RadGridViewItems
 		'
 		Me.RadGridViewItems.AutoScroll = True
@@ -1367,75 +1220,75 @@ Partial Class MainForm
 		Me.RadGridViewItems.MasterTemplate.AllowEditRow = False
 		Me.RadGridViewItems.MasterTemplate.AllowSearchRow = True
 		Me.RadGridViewItems.MasterTemplate.AutoExpandGroups = True
-		GridViewDecimalColumn72.DataType = GetType(Integer)
-		GridViewDecimalColumn72.FieldName = "INDEX"
-		GridViewDecimalColumn72.HeaderText = "INDEX"
-		GridViewDecimalColumn72.IsAutoGenerated = True
-		GridViewDecimalColumn72.Name = "INDEX"
-		GridViewDecimalColumn73.DataType = GetType(Integer)
-		GridViewDecimalColumn73.FieldName = "ITEMS_INDEX"
-		GridViewDecimalColumn73.HeaderText = "ITEMS_INDEX"
-		GridViewDecimalColumn73.IsAutoGenerated = True
-		GridViewDecimalColumn73.Name = "ITEMS_INDEX"
-		GridViewDecimalColumn74.DataType = GetType(Integer)
-		GridViewDecimalColumn74.FieldName = "ITEMS_PROJECT_INDEX"
-		GridViewDecimalColumn74.HeaderText = "ITEMS_PROJECT_INDEX"
-		GridViewDecimalColumn74.IsAutoGenerated = True
-		GridViewDecimalColumn74.Name = "ITEMS_PROJECT_INDEX"
-		GridViewTextBoxColumn45.FieldName = "ITEMS_CODE"
-		GridViewTextBoxColumn45.HeaderText = "ITEMS_CODE"
-		GridViewTextBoxColumn45.IsAutoGenerated = True
-		GridViewTextBoxColumn45.Name = "ITEMS_CODE"
-		GridViewTextBoxColumn46.FieldName = "ITEMS_NAME"
-		GridViewTextBoxColumn46.HeaderText = "ITEMS_NAME"
-		GridViewTextBoxColumn46.IsAutoGenerated = True
-		GridViewTextBoxColumn46.Name = "ITEMS_NAME"
-		GridViewTextBoxColumn47.FieldName = "ITEMS_PARENT"
-		GridViewTextBoxColumn47.HeaderText = "ITEMS_PARENT"
-		GridViewTextBoxColumn47.IsAutoGenerated = True
-		GridViewTextBoxColumn47.Name = "ITEMS_PARENT"
-		GridViewDecimalColumn75.DataType = GetType(Single)
-		GridViewDecimalColumn75.FieldName = "ITEMS_QUANTITY"
-		GridViewDecimalColumn75.HeaderText = "ITEMS_QUANTITY"
-		GridViewDecimalColumn75.IsAutoGenerated = True
-		GridViewDecimalColumn75.Name = "ITEMS_QUANTITY"
-		GridViewDecimalColumn76.DataType = GetType(Single)
-		GridViewDecimalColumn76.FieldName = "ITEMS_UNIT"
-		GridViewDecimalColumn76.HeaderText = "ITEMS_UNIT"
-		GridViewDecimalColumn76.IsAutoGenerated = True
-		GridViewDecimalColumn76.Name = "ITEMS_UNIT"
-		GridViewDecimalColumn77.DataType = GetType(Single)
-		GridViewDecimalColumn77.FieldName = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn77.HeaderText = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn77.IsAutoGenerated = True
-		GridViewDecimalColumn77.Name = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn78.DataType = GetType(Single)
-		GridViewDecimalColumn78.FieldName = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn78.HeaderText = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn78.IsAutoGenerated = True
-		GridViewDecimalColumn78.Name = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn79.DataType = GetType(Single)
-		GridViewDecimalColumn79.FieldName = "ITEMS_TAXE"
-		GridViewDecimalColumn79.HeaderText = "ITEMS_TAXE"
-		GridViewDecimalColumn79.IsAutoGenerated = True
-		GridViewDecimalColumn79.Name = "ITEMS_TAXE"
-		GridViewDecimalColumn80.DataType = GetType(Single)
-		GridViewDecimalColumn80.FieldName = "ITEMS_TAXE_VALUE"
-		GridViewDecimalColumn80.HeaderText = "ITEMS_TAXE_VALUE"
-		GridViewDecimalColumn80.IsAutoGenerated = True
-		GridViewDecimalColumn80.Name = "ITEMS_TAXE_VALUE"
-		GridViewTextBoxColumn48.FieldName = "ITEMS_CURRENCY"
-		GridViewTextBoxColumn48.HeaderText = "ITEMS_CURRENCY"
-		GridViewTextBoxColumn48.IsAutoGenerated = True
-		GridViewTextBoxColumn48.Name = "ITEMS_CURRENCY"
-		GridViewDateTimeColumn16.FieldName = "ITEMS_LAST_EDIT_DATE"
-		GridViewDateTimeColumn16.HeaderText = "ITEMS_LAST_EDIT_DATE"
-		GridViewDateTimeColumn16.IsAutoGenerated = True
-		GridViewDateTimeColumn16.Name = "ITEMS_LAST_EDIT_DATE"
-		Me.RadGridViewItems.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn72, GridViewDecimalColumn73, GridViewDecimalColumn74, GridViewTextBoxColumn45, GridViewTextBoxColumn46, GridViewTextBoxColumn47, GridViewDecimalColumn75, GridViewDecimalColumn76, GridViewDecimalColumn77, GridViewDecimalColumn78, GridViewDecimalColumn79, GridViewDecimalColumn80, GridViewTextBoxColumn48, GridViewDateTimeColumn16})
+		GridViewDecimalColumn41.DataType = GetType(Integer)
+		GridViewDecimalColumn41.FieldName = "INDEX"
+		GridViewDecimalColumn41.HeaderText = "INDEX"
+		GridViewDecimalColumn41.IsAutoGenerated = True
+		GridViewDecimalColumn41.Name = "INDEX"
+		GridViewDecimalColumn42.DataType = GetType(Integer)
+		GridViewDecimalColumn42.FieldName = "ITEMS_INDEX"
+		GridViewDecimalColumn42.HeaderText = "ITEMS_INDEX"
+		GridViewDecimalColumn42.IsAutoGenerated = True
+		GridViewDecimalColumn42.Name = "ITEMS_INDEX"
+		GridViewDecimalColumn43.DataType = GetType(Integer)
+		GridViewDecimalColumn43.FieldName = "ITEMS_PROJECT_INDEX"
+		GridViewDecimalColumn43.HeaderText = "ITEMS_PROJECT_INDEX"
+		GridViewDecimalColumn43.IsAutoGenerated = True
+		GridViewDecimalColumn43.Name = "ITEMS_PROJECT_INDEX"
+		GridViewTextBoxColumn25.FieldName = "ITEMS_CODE"
+		GridViewTextBoxColumn25.HeaderText = "ITEMS_CODE"
+		GridViewTextBoxColumn25.IsAutoGenerated = True
+		GridViewTextBoxColumn25.Name = "ITEMS_CODE"
+		GridViewTextBoxColumn26.FieldName = "ITEMS_NAME"
+		GridViewTextBoxColumn26.HeaderText = "ITEMS_NAME"
+		GridViewTextBoxColumn26.IsAutoGenerated = True
+		GridViewTextBoxColumn26.Name = "ITEMS_NAME"
+		GridViewTextBoxColumn27.FieldName = "ITEMS_PARENT"
+		GridViewTextBoxColumn27.HeaderText = "ITEMS_PARENT"
+		GridViewTextBoxColumn27.IsAutoGenerated = True
+		GridViewTextBoxColumn27.Name = "ITEMS_PARENT"
+		GridViewDecimalColumn44.DataType = GetType(Single)
+		GridViewDecimalColumn44.FieldName = "ITEMS_QUANTITY"
+		GridViewDecimalColumn44.HeaderText = "ITEMS_QUANTITY"
+		GridViewDecimalColumn44.IsAutoGenerated = True
+		GridViewDecimalColumn44.Name = "ITEMS_QUANTITY"
+		GridViewDecimalColumn45.DataType = GetType(Single)
+		GridViewDecimalColumn45.FieldName = "ITEMS_UNIT"
+		GridViewDecimalColumn45.HeaderText = "ITEMS_UNIT"
+		GridViewDecimalColumn45.IsAutoGenerated = True
+		GridViewDecimalColumn45.Name = "ITEMS_UNIT"
+		GridViewDecimalColumn46.DataType = GetType(Single)
+		GridViewDecimalColumn46.FieldName = "ITEMS_UNIT_PRICE"
+		GridViewDecimalColumn46.HeaderText = "ITEMS_UNIT_PRICE"
+		GridViewDecimalColumn46.IsAutoGenerated = True
+		GridViewDecimalColumn46.Name = "ITEMS_UNIT_PRICE"
+		GridViewDecimalColumn47.DataType = GetType(Single)
+		GridViewDecimalColumn47.FieldName = "ITEMS_TOTAL_PRICE"
+		GridViewDecimalColumn47.HeaderText = "ITEMS_TOTAL_PRICE"
+		GridViewDecimalColumn47.IsAutoGenerated = True
+		GridViewDecimalColumn47.Name = "ITEMS_TOTAL_PRICE"
+		GridViewDecimalColumn48.DataType = GetType(Single)
+		GridViewDecimalColumn48.FieldName = "ITEMS_TAXE"
+		GridViewDecimalColumn48.HeaderText = "ITEMS_TAXE"
+		GridViewDecimalColumn48.IsAutoGenerated = True
+		GridViewDecimalColumn48.Name = "ITEMS_TAXE"
+		GridViewDecimalColumn49.DataType = GetType(Single)
+		GridViewDecimalColumn49.FieldName = "ITEMS_TAXE_VALUE"
+		GridViewDecimalColumn49.HeaderText = "ITEMS_TAXE_VALUE"
+		GridViewDecimalColumn49.IsAutoGenerated = True
+		GridViewDecimalColumn49.Name = "ITEMS_TAXE_VALUE"
+		GridViewTextBoxColumn28.FieldName = "ITEMS_CURRENCY"
+		GridViewTextBoxColumn28.HeaderText = "ITEMS_CURRENCY"
+		GridViewTextBoxColumn28.IsAutoGenerated = True
+		GridViewTextBoxColumn28.Name = "ITEMS_CURRENCY"
+		GridViewDateTimeColumn9.FieldName = "ITEMS_LAST_EDIT_DATE"
+		GridViewDateTimeColumn9.HeaderText = "ITEMS_LAST_EDIT_DATE"
+		GridViewDateTimeColumn9.IsAutoGenerated = True
+		GridViewDateTimeColumn9.Name = "ITEMS_LAST_EDIT_DATE"
+		Me.RadGridViewItems.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn41, GridViewDecimalColumn42, GridViewDecimalColumn43, GridViewTextBoxColumn25, GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewDecimalColumn44, GridViewDecimalColumn45, GridViewDecimalColumn46, GridViewDecimalColumn47, GridViewDecimalColumn48, GridViewDecimalColumn49, GridViewTextBoxColumn28, GridViewDateTimeColumn9})
 		Me.RadGridViewItems.MasterTemplate.DataSource = Me.ITEMSBindingSource1
 		Me.RadGridViewItems.MasterTemplate.EnableAlternatingRowColor = True
-		Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition19
+		Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition12
 		Me.RadGridViewItems.Name = "RadGridViewItems"
 		'
 		'
@@ -1443,6 +1296,16 @@ Partial Class MainForm
 		Me.RadGridViewItems.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 5, 240, 150)
 		Me.RadGridViewItems.Size = New System.Drawing.Size(1250, 510)
 		Me.RadGridViewItems.TabIndex = 6
+		'
+		'ITEMSBindingSource1
+		'
+		Me.ITEMSBindingSource1.DataMember = "ITEMS"
+		Me.ITEMSBindingSource1.DataSource = Me.TAKEOFFDataSet3
+		'
+		'TAKEOFFDataSet3
+		'
+		Me.TAKEOFFDataSet3.DataSetName = "TAKEOFFDataSet3"
+		Me.TAKEOFFDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 		'
 		'GroupBox1
 		'
@@ -1834,6 +1697,143 @@ Partial Class MainForm
 		Me.RadTextBox_INDEX.TabIndex = 0
 		Me.RadTextBox_INDEX.Text = "0"
 		'
+		'RadGridView2
+		'
+		Me.RadGridView2.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.RadGridView2.Location = New System.Drawing.Point(905, 922)
+		'
+		'
+		'
+		GridViewDecimalColumn50.DataType = GetType(Integer)
+		GridViewDecimalColumn50.FieldName = "INDEX"
+		GridViewDecimalColumn50.HeaderText = "INDEX"
+		GridViewDecimalColumn50.IsAutoGenerated = True
+		GridViewDecimalColumn50.Name = "INDEX"
+		GridViewDecimalColumn51.DataType = GetType(Integer)
+		GridViewDecimalColumn51.FieldName = "ITEMS_INDEX"
+		GridViewDecimalColumn51.HeaderText = "ITEMS_INDEX"
+		GridViewDecimalColumn51.IsAutoGenerated = True
+		GridViewDecimalColumn51.Name = "ITEMS_INDEX"
+		GridViewDecimalColumn52.DataType = GetType(Integer)
+		GridViewDecimalColumn52.FieldName = "ITEMS_PROJECT_INDEX"
+		GridViewDecimalColumn52.HeaderText = "ITEMS_PROJECT_INDEX"
+		GridViewDecimalColumn52.IsAutoGenerated = True
+		GridViewDecimalColumn52.Name = "ITEMS_PROJECT_INDEX"
+		GridViewTextBoxColumn29.FieldName = "ITEMS_CODE"
+		GridViewTextBoxColumn29.HeaderText = "ITEMS_CODE"
+		GridViewTextBoxColumn29.IsAutoGenerated = True
+		GridViewTextBoxColumn29.Name = "ITEMS_CODE"
+		GridViewTextBoxColumn30.FieldName = "ITEMS_NAME"
+		GridViewTextBoxColumn30.HeaderText = "ITEMS_NAME"
+		GridViewTextBoxColumn30.IsAutoGenerated = True
+		GridViewTextBoxColumn30.Name = "ITEMS_NAME"
+		GridViewTextBoxColumn31.FieldName = "ITEMS_PARENT"
+		GridViewTextBoxColumn31.HeaderText = "ITEMS_PARENT"
+		GridViewTextBoxColumn31.IsAutoGenerated = True
+		GridViewTextBoxColumn31.Name = "ITEMS_PARENT"
+		GridViewDecimalColumn53.DataType = GetType(Single)
+		GridViewDecimalColumn53.FieldName = "ITEMS_QUANTITY"
+		GridViewDecimalColumn53.HeaderText = "ITEMS_QUANTITY"
+		GridViewDecimalColumn53.IsAutoGenerated = True
+		GridViewDecimalColumn53.Name = "ITEMS_QUANTITY"
+		GridViewDecimalColumn54.DataType = GetType(Single)
+		GridViewDecimalColumn54.FieldName = "ITEMS_UNIT"
+		GridViewDecimalColumn54.HeaderText = "ITEMS_UNIT"
+		GridViewDecimalColumn54.IsAutoGenerated = True
+		GridViewDecimalColumn54.Name = "ITEMS_UNIT"
+		GridViewDecimalColumn55.DataType = GetType(Single)
+		GridViewDecimalColumn55.FieldName = "ITEMS_UNIT_PRICE"
+		GridViewDecimalColumn55.HeaderText = "ITEMS_UNIT_PRICE"
+		GridViewDecimalColumn55.IsAutoGenerated = True
+		GridViewDecimalColumn55.Name = "ITEMS_UNIT_PRICE"
+		GridViewDecimalColumn56.DataType = GetType(Single)
+		GridViewDecimalColumn56.FieldName = "ITEMS_TOTAL_PRICE"
+		GridViewDecimalColumn56.HeaderText = "ITEMS_TOTAL_PRICE"
+		GridViewDecimalColumn56.IsAutoGenerated = True
+		GridViewDecimalColumn56.Name = "ITEMS_TOTAL_PRICE"
+		GridViewDecimalColumn57.DataType = GetType(Single)
+		GridViewDecimalColumn57.FieldName = "ITEMS_TAXE"
+		GridViewDecimalColumn57.HeaderText = "ITEMS_TAXE"
+		GridViewDecimalColumn57.IsAutoGenerated = True
+		GridViewDecimalColumn57.Name = "ITEMS_TAXE"
+		GridViewDecimalColumn58.DataType = GetType(Single)
+		GridViewDecimalColumn58.FieldName = "ITEMS_TAXE_VALUE"
+		GridViewDecimalColumn58.HeaderText = "ITEMS_TAXE_VALUE"
+		GridViewDecimalColumn58.IsAutoGenerated = True
+		GridViewDecimalColumn58.Name = "ITEMS_TAXE_VALUE"
+		GridViewTextBoxColumn32.FieldName = "ITEMS_CURRENCY"
+		GridViewTextBoxColumn32.HeaderText = "ITEMS_CURRENCY"
+		GridViewTextBoxColumn32.IsAutoGenerated = True
+		GridViewTextBoxColumn32.Name = "ITEMS_CURRENCY"
+		GridViewDateTimeColumn10.FieldName = "ITEMS_LAST_EDIT_DATE"
+		GridViewDateTimeColumn10.HeaderText = "ITEMS_LAST_EDIT_DATE"
+		GridViewDateTimeColumn10.IsAutoGenerated = True
+		GridViewDateTimeColumn10.Name = "ITEMS_LAST_EDIT_DATE"
+		Me.RadGridView2.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn50, GridViewDecimalColumn51, GridViewDecimalColumn52, GridViewTextBoxColumn29, GridViewTextBoxColumn30, GridViewTextBoxColumn31, GridViewDecimalColumn53, GridViewDecimalColumn54, GridViewDecimalColumn55, GridViewDecimalColumn56, GridViewDecimalColumn57, GridViewDecimalColumn58, GridViewTextBoxColumn32, GridViewDateTimeColumn10})
+		Me.RadGridView2.MasterTemplate.DataSource = Me.ITEMSBindingSource1
+		Me.RadGridView2.MasterTemplate.ViewDefinition = TableViewDefinition13
+		Me.RadGridView2.Name = "RadGridView2"
+		'
+		'
+		'
+		Me.RadGridView2.RootElement.ControlBounds = New System.Drawing.Rectangle(905, 922, 240, 150)
+		Me.RadGridView2.Size = New System.Drawing.Size(82, 34)
+		Me.RadGridView2.TabIndex = 61
+		Me.RadGridView2.Visible = False
+		'
+		'RadGridViewProjectName
+		'
+		Me.RadGridViewProjectName.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.RadGridViewProjectName.Location = New System.Drawing.Point(1005, 922)
+		'
+		'
+		'
+		GridViewDecimalColumn59.DataType = GetType(Integer)
+		GridViewDecimalColumn59.FieldName = "INDEX"
+		GridViewDecimalColumn59.HeaderText = "INDEX"
+		GridViewDecimalColumn59.IsAutoGenerated = True
+		GridViewDecimalColumn59.Name = "INDEX"
+		GridViewDecimalColumn60.DataType = GetType(Integer)
+		GridViewDecimalColumn60.FieldName = "PROJECT_INDEX"
+		GridViewDecimalColumn60.HeaderText = "PROJECT_INDEX"
+		GridViewDecimalColumn60.IsAutoGenerated = True
+		GridViewDecimalColumn60.Name = "PROJECT_INDEX"
+		GridViewTextBoxColumn33.FieldName = "PROJECT_CODE"
+		GridViewTextBoxColumn33.HeaderText = "PROJECT_CODE"
+		GridViewTextBoxColumn33.IsAutoGenerated = True
+		GridViewTextBoxColumn33.Name = "PROJECT_CODE"
+		GridViewTextBoxColumn34.FieldName = "PROJECT_NAME"
+		GridViewTextBoxColumn34.HeaderText = "PROJECT_NAME"
+		GridViewTextBoxColumn34.IsAutoGenerated = True
+		GridViewTextBoxColumn34.Name = "PROJECT_NAME"
+		GridViewDateTimeColumn11.FieldName = "PROJECT_CREAT_DATE"
+		GridViewDateTimeColumn11.HeaderText = "PROJECT_CREAT_DATE"
+		GridViewDateTimeColumn11.IsAutoGenerated = True
+		GridViewDateTimeColumn11.Name = "PROJECT_CREAT_DATE"
+		GridViewDateTimeColumn12.FieldName = "PROJECT_MODIFY_DATE"
+		GridViewDateTimeColumn12.HeaderText = "PROJECT_MODIFY_DATE"
+		GridViewDateTimeColumn12.IsAutoGenerated = True
+		GridViewDateTimeColumn12.Name = "PROJECT_MODIFY_DATE"
+		GridViewTextBoxColumn35.FieldName = "PROJECT_STATUS"
+		GridViewTextBoxColumn35.HeaderText = "PROJECT_STATUS"
+		GridViewTextBoxColumn35.IsAutoGenerated = True
+		GridViewTextBoxColumn35.Name = "PROJECT_STATUS"
+		GridViewTextBoxColumn36.FieldName = "PROJECT_DATA_PATHNAME"
+		GridViewTextBoxColumn36.HeaderText = "PROJECT_DATA_PATHNAME"
+		GridViewTextBoxColumn36.IsAutoGenerated = True
+		GridViewTextBoxColumn36.Name = "PROJECT_DATA_PATHNAME"
+		Me.RadGridViewProjectName.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn59, GridViewDecimalColumn60, GridViewTextBoxColumn33, GridViewTextBoxColumn34, GridViewDateTimeColumn11, GridViewDateTimeColumn12, GridViewTextBoxColumn35, GridViewTextBoxColumn36})
+		Me.RadGridViewProjectName.MasterTemplate.DataSource = Me.PROJECTBindingSource
+		Me.RadGridViewProjectName.MasterTemplate.ViewDefinition = TableViewDefinition14
+		Me.RadGridViewProjectName.Name = "RadGridViewProjectName"
+		'
+		'
+		'
+		Me.RadGridViewProjectName.RootElement.ControlBounds = New System.Drawing.Rectangle(1005, 922, 240, 150)
+		Me.RadGridViewProjectName.Size = New System.Drawing.Size(229, 62)
+		Me.RadGridViewProjectName.TabIndex = 51
+		Me.RadGridViewProjectName.Visible = False
+		'
 		'RadSpinEditor1
 		'
 		Me.RadSpinEditor1.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -2093,7 +2093,7 @@ Partial Class MainForm
 		Me.RadGridViewPaiement.MasterTemplate.AllowRowResize = False
 		Me.RadGridViewPaiement.MasterTemplate.EnableGrouping = False
 		Me.RadGridViewPaiement.MasterTemplate.ShowRowHeaderColumn = False
-		Me.RadGridViewPaiement.MasterTemplate.ViewDefinition = TableViewDefinition20
+		Me.RadGridViewPaiement.MasterTemplate.ViewDefinition = TableViewDefinition15
 		Me.RadGridViewPaiement.Name = "RadGridViewPaiement"
 		Me.RadGridViewPaiement.ShowItemToolTips = False
 		Me.RadGridViewPaiement.ShowNoDataText = False
@@ -2171,17 +2171,13 @@ Partial Class MainForm
 		CType(Me.RadGridViewClassItemsListe.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadButtonItemsLevelOne, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadGridView2.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.ITEMSBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TAKEOFFDataSet3, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadButtonGroupageRefhesh, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadButtonGroupCancel, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadButtonGroupage, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewItems.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewItems, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.ITEMSBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.TAKEOFFDataSet3, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBox1.ResumeLayout(False)
 		Me.GroupBox1.PerformLayout()
 		CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2216,6 +2212,10 @@ Partial Class MainForm
 		CType(Me.RadTextBoxITEMS_CODE, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadGridView2.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadSpinEditor1, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadSpinEditorProjectIndex2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()

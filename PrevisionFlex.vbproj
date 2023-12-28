@@ -133,12 +133,6 @@
   <ItemGroup>
     <Compile Include="ClassItemsListe.vb" />
     <Compile Include="ClassProjectName.vb" />
-    <Compile Include="FormCalendard.Designer.vb">
-      <DependentUpon>FormCalendard.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormCalendard.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormItemsDataEntry.Designer.vb">
       <DependentUpon>FormItemsDataEntry.vb</DependentUpon>
     </Compile>
@@ -236,9 +230,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormCalendard.resx">
-      <DependentUpon>FormCalendard.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormItemsDataEntry.resx">
       <DependentUpon>FormItemsDataEntry.vb</DependentUpon>
     </EmbeddedResource>

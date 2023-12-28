@@ -40,14 +40,14 @@ Partial Class FormItemsDataEntry
 		Me.TAKEOFFDataSetProject = New PrevisionFlex.TAKEOFFDataSetProject()
 		Me.PROJECTTableAdapter = New PrevisionFlex.TAKEOFFDataSetProjectTableAdapters.PROJECTTableAdapter()
 		Me.RadDataLayoutProjectNameMAinForm = New Telerik.WinControls.UI.RadDataLayout()
-		Me.RadSpinEditorProjectMainForm1 = New Telerik.WinControls.UI.RadSpinEditor()
+		Me.RadSpinEditorIndex = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadSpinEditorProjectIndex = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadTextBoxProjectMainForm1 = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadTextBoxProjectMainForm2 = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadDateTimePickerDateCreat = New Telerik.WinControls.UI.RadDateTimePicker()
-		Me.RadDateTimePickerDateModify = New Telerik.WinControls.UI.RadDateTimePicker()
-		Me.RadTextBoxProjectMainFormStatus = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadTextBoxProjectMainFormPathName = New Telerik.WinControls.UI.RadTextBox()
+		Me.RadTextBoxProjectCode = New Telerik.WinControls.UI.RadTextBox()
+		Me.RadTextBoxProjectName = New Telerik.WinControls.UI.RadTextBox()
+		Me.RadDateTimePickerCreateDate = New Telerik.WinControls.UI.RadDateTimePicker()
+		Me.RadDateTimePickerModifyDate = New Telerik.WinControls.UI.RadDateTimePicker()
+		Me.RadTextBoxProjectStatus = New Telerik.WinControls.UI.RadTextBox()
+		Me.RadTextBoxProjectDataPath = New Telerik.WinControls.UI.RadTextBox()
 		Me.DataLayoutControlItem1 = New Telerik.WinControls.UI.DataLayoutControlItem()
 		Me.DataLayoutControlItem2 = New Telerik.WinControls.UI.DataLayoutControlItem()
 		Me.DataLayoutControlItem3 = New Telerik.WinControls.UI.DataLayoutControlItem()
@@ -71,14 +71,14 @@ Partial Class FormItemsDataEntry
 		CType(Me.RadDataLayoutProjectNameMAinForm.LayoutControl, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.SuspendLayout()
 		Me.RadDataLayoutProjectNameMAinForm.SuspendLayout()
-		CType(Me.RadSpinEditorProjectMainForm1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadSpinEditorIndex, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadSpinEditorProjectIndex, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxProjectMainForm1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxProjectMainForm2, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadDateTimePickerDateCreat, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadDateTimePickerDateModify, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxProjectMainFormStatus, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxProjectMainFormPathName, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadTextBoxProjectCode, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadTextBoxProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadDateTimePickerCreateDate, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadDateTimePickerModifyDate, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadTextBoxProjectStatus, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadTextBoxProjectDataPath, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadStatusStrip2, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -98,10 +98,13 @@ Partial Class FormItemsDataEntry
 		'
 		'RadGridViewProjectName
 		'
+		Me.RadGridViewProjectName.BeginEditMode = Telerik.WinControls.RadGridViewBeginEditMode.BeginEditProgrammatically
 		Me.RadGridViewProjectName.Location = New System.Drawing.Point(10, 10)
 		'
 		'
 		'
+		Me.RadGridViewProjectName.MasterTemplate.AllowAddNewRow = False
+		Me.RadGridViewProjectName.MasterTemplate.AllowSearchRow = True
 		GridViewDecimalColumn1.DataType = GetType(Integer)
 		GridViewDecimalColumn1.FieldName = "INDEX"
 		GridViewDecimalColumn1.HeaderText = "INDEX"
@@ -146,10 +149,13 @@ Partial Class FormItemsDataEntry
 		GridViewTextBoxColumn4.Width = 112
 		Me.RadGridViewProjectName.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn1, GridViewDecimalColumn2, GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewDateTimeColumn1, GridViewDateTimeColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4})
 		Me.RadGridViewProjectName.MasterTemplate.DataSource = Me.PROJECTBindingSource
+		Me.RadGridViewProjectName.MasterTemplate.ShowRowHeaderColumn = False
 		Me.RadGridViewProjectName.MasterTemplate.ViewDefinition = TableViewDefinition1
 		Me.RadGridViewProjectName.Name = "RadGridViewProjectName"
+		Me.RadGridViewProjectName.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.None
 		Me.RadGridViewProjectName.Size = New System.Drawing.Size(700, 520)
 		Me.RadGridViewProjectName.TabIndex = 0
+		Me.RadGridViewProjectName.ThemeName = "ControlDefault"
 		'
 		'PROJECTBindingSource
 		'
@@ -172,14 +178,14 @@ Partial Class FormItemsDataEntry
 		'
 		'RadDataLayoutProjectNameMAinForm.LayoutControl
 		'
-		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadSpinEditorProjectMainForm1)
+		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadSpinEditorIndex)
 		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadSpinEditorProjectIndex)
-		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadTextBoxProjectMainForm1)
-		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadTextBoxProjectMainForm2)
-		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadDateTimePickerDateCreat)
-		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadDateTimePickerDateModify)
-		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadTextBoxProjectMainFormStatus)
-		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadTextBoxProjectMainFormPathName)
+		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadTextBoxProjectCode)
+		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadTextBoxProjectName)
+		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadDateTimePickerCreateDate)
+		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadDateTimePickerModifyDate)
+		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadTextBoxProjectStatus)
+		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Controls.Add(Me.RadTextBoxProjectDataPath)
 		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.DrawBorder = False
 		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Items.AddRange(New Telerik.WinControls.RadItem() {Me.DataLayoutControlItem1, Me.DataLayoutControlItem2, Me.DataLayoutControlItem3, Me.DataLayoutControlItem4, Me.DataLayoutControlItem5, Me.DataLayoutControlItem6, Me.DataLayoutControlItem7, Me.DataLayoutControlItem8})
@@ -192,17 +198,17 @@ Partial Class FormItemsDataEntry
 		Me.RadDataLayoutProjectNameMAinForm.Size = New System.Drawing.Size(350, 350)
 		Me.RadDataLayoutProjectNameMAinForm.TabIndex = 1
 		'
-		'RadSpinEditorProjectMainForm1
+		'RadSpinEditorIndex
 		'
-		Me.RadSpinEditorProjectMainForm1.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PROJECTBindingSource, "INDEX", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.RadSpinEditorProjectMainForm1.Location = New System.Drawing.Point(157, 10)
-		Me.RadSpinEditorProjectMainForm1.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorProjectMainForm1.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorProjectMainForm1.Name = "RadSpinEditorProjectMainForm1"
-		Me.RadSpinEditorProjectMainForm1.ReadOnly = True
-		Me.RadSpinEditorProjectMainForm1.Size = New System.Drawing.Size(189, 24)
-		Me.RadSpinEditorProjectMainForm1.TabIndex = 2
-		Me.RadSpinEditorProjectMainForm1.TabStop = False
+		Me.RadSpinEditorIndex.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PROJECTBindingSource, "INDEX", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.RadSpinEditorIndex.Location = New System.Drawing.Point(157, 10)
+		Me.RadSpinEditorIndex.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
+		Me.RadSpinEditorIndex.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
+		Me.RadSpinEditorIndex.Name = "RadSpinEditorIndex"
+		Me.RadSpinEditorIndex.ReadOnly = True
+		Me.RadSpinEditorIndex.Size = New System.Drawing.Size(189, 24)
+		Me.RadSpinEditorIndex.TabIndex = 2
+		Me.RadSpinEditorIndex.TabStop = False
 		'
 		'RadSpinEditorProjectIndex
 		'
@@ -216,67 +222,67 @@ Partial Class FormItemsDataEntry
 		Me.RadSpinEditorProjectIndex.TabIndex = 3
 		Me.RadSpinEditorProjectIndex.TabStop = False
 		'
-		'RadTextBoxProjectMainForm1
+		'RadTextBoxProjectCode
 		'
-		Me.RadTextBoxProjectMainForm1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_CODE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.RadTextBoxProjectMainForm1.Location = New System.Drawing.Point(157, 96)
-		Me.RadTextBoxProjectMainForm1.Name = "RadTextBoxProjectMainForm1"
-		Me.RadTextBoxProjectMainForm1.Size = New System.Drawing.Size(189, 24)
-		Me.RadTextBoxProjectMainForm1.TabIndex = 4
+		Me.RadTextBoxProjectCode.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_CODE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.RadTextBoxProjectCode.Location = New System.Drawing.Point(157, 96)
+		Me.RadTextBoxProjectCode.Name = "RadTextBoxProjectCode"
+		Me.RadTextBoxProjectCode.Size = New System.Drawing.Size(189, 24)
+		Me.RadTextBoxProjectCode.TabIndex = 4
 		'
-		'RadTextBoxProjectMainForm2
+		'RadTextBoxProjectName
 		'
-		Me.RadTextBoxProjectMainForm2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_NAME", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.RadTextBoxProjectMainForm2.Location = New System.Drawing.Point(157, 139)
-		Me.RadTextBoxProjectMainForm2.Name = "RadTextBoxProjectMainForm2"
-		Me.RadTextBoxProjectMainForm2.Size = New System.Drawing.Size(189, 24)
-		Me.RadTextBoxProjectMainForm2.TabIndex = 5
+		Me.RadTextBoxProjectName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_NAME", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.RadTextBoxProjectName.Location = New System.Drawing.Point(157, 139)
+		Me.RadTextBoxProjectName.Name = "RadTextBoxProjectName"
+		Me.RadTextBoxProjectName.Size = New System.Drawing.Size(189, 24)
+		Me.RadTextBoxProjectName.TabIndex = 5
 		'
-		'RadDateTimePickerDateCreat
+		'RadDateTimePickerCreateDate
 		'
-		Me.RadDateTimePickerDateCreat.CalendarSize = New System.Drawing.Size(290, 320)
-		Me.RadDateTimePickerDateCreat.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PROJECTBindingSource, "PROJECT_CREAT_DATE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.RadDateTimePickerDateCreat.Location = New System.Drawing.Point(157, 182)
-		Me.RadDateTimePickerDateCreat.Name = "RadDateTimePickerDateCreat"
-		Me.RadDateTimePickerDateCreat.ReadOnly = True
-		Me.RadDateTimePickerDateCreat.Size = New System.Drawing.Size(189, 24)
-		Me.RadDateTimePickerDateCreat.TabIndex = 6
-		Me.RadDateTimePickerDateCreat.TabStop = False
-		Me.RadDateTimePickerDateCreat.Text = "Thursday, June 13, 2019"
-		Me.RadDateTimePickerDateCreat.Value = New Date(2019, 6, 13, 10, 21, 40, 502)
+		Me.RadDateTimePickerCreateDate.CalendarSize = New System.Drawing.Size(290, 320)
+		Me.RadDateTimePickerCreateDate.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PROJECTBindingSource, "PROJECT_CREAT_DATE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.RadDateTimePickerCreateDate.Location = New System.Drawing.Point(157, 182)
+		Me.RadDateTimePickerCreateDate.Name = "RadDateTimePickerCreateDate"
+		Me.RadDateTimePickerCreateDate.ReadOnly = True
+		Me.RadDateTimePickerCreateDate.Size = New System.Drawing.Size(189, 24)
+		Me.RadDateTimePickerCreateDate.TabIndex = 6
+		Me.RadDateTimePickerCreateDate.TabStop = False
+		Me.RadDateTimePickerCreateDate.Text = "Thursday, June 13, 2019"
+		Me.RadDateTimePickerCreateDate.Value = New Date(2019, 6, 13, 10, 21, 40, 502)
 		'
-		'RadDateTimePickerDateModify
+		'RadDateTimePickerModifyDate
 		'
-		Me.RadDateTimePickerDateModify.CalendarSize = New System.Drawing.Size(290, 320)
-		Me.RadDateTimePickerDateModify.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PROJECTBindingSource, "PROJECT_MODIFY_DATE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.RadDateTimePickerDateModify.Location = New System.Drawing.Point(157, 225)
-		Me.RadDateTimePickerDateModify.Name = "RadDateTimePickerDateModify"
-		Me.RadDateTimePickerDateModify.ReadOnly = True
-		Me.RadDateTimePickerDateModify.Size = New System.Drawing.Size(189, 24)
-		Me.RadDateTimePickerDateModify.TabIndex = 7
-		Me.RadDateTimePickerDateModify.TabStop = False
-		Me.RadDateTimePickerDateModify.Text = "Thursday, June 13, 2019"
-		Me.RadDateTimePickerDateModify.Value = New Date(2019, 6, 13, 10, 21, 40, 550)
+		Me.RadDateTimePickerModifyDate.CalendarSize = New System.Drawing.Size(290, 320)
+		Me.RadDateTimePickerModifyDate.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PROJECTBindingSource, "PROJECT_MODIFY_DATE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.RadDateTimePickerModifyDate.Location = New System.Drawing.Point(157, 225)
+		Me.RadDateTimePickerModifyDate.Name = "RadDateTimePickerModifyDate"
+		Me.RadDateTimePickerModifyDate.ReadOnly = True
+		Me.RadDateTimePickerModifyDate.Size = New System.Drawing.Size(189, 24)
+		Me.RadDateTimePickerModifyDate.TabIndex = 7
+		Me.RadDateTimePickerModifyDate.TabStop = False
+		Me.RadDateTimePickerModifyDate.Text = "Thursday, June 13, 2019"
+		Me.RadDateTimePickerModifyDate.Value = New Date(2019, 6, 13, 10, 21, 40, 550)
 		'
-		'RadTextBoxProjectMainFormStatus
+		'RadTextBoxProjectStatus
 		'
-		Me.RadTextBoxProjectMainFormStatus.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_STATUS", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.RadTextBoxProjectMainFormStatus.Location = New System.Drawing.Point(157, 268)
-		Me.RadTextBoxProjectMainFormStatus.Name = "RadTextBoxProjectMainFormStatus"
-		Me.RadTextBoxProjectMainFormStatus.Size = New System.Drawing.Size(189, 24)
-		Me.RadTextBoxProjectMainFormStatus.TabIndex = 8
+		Me.RadTextBoxProjectStatus.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_STATUS", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.RadTextBoxProjectStatus.Location = New System.Drawing.Point(157, 268)
+		Me.RadTextBoxProjectStatus.Name = "RadTextBoxProjectStatus"
+		Me.RadTextBoxProjectStatus.Size = New System.Drawing.Size(189, 24)
+		Me.RadTextBoxProjectStatus.TabIndex = 8
 		'
-		'RadTextBoxProjectMainFormPathName
+		'RadTextBoxProjectDataPath
 		'
-		Me.RadTextBoxProjectMainFormPathName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_DATA_PATHNAME", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-		Me.RadTextBoxProjectMainFormPathName.Location = New System.Drawing.Point(157, 313)
-		Me.RadTextBoxProjectMainFormPathName.Name = "RadTextBoxProjectMainFormPathName"
-		Me.RadTextBoxProjectMainFormPathName.Size = New System.Drawing.Size(189, 24)
-		Me.RadTextBoxProjectMainFormPathName.TabIndex = 9
+		Me.RadTextBoxProjectDataPath.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_DATA_PATHNAME", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+		Me.RadTextBoxProjectDataPath.Location = New System.Drawing.Point(157, 313)
+		Me.RadTextBoxProjectDataPath.Name = "RadTextBoxProjectDataPath"
+		Me.RadTextBoxProjectDataPath.Size = New System.Drawing.Size(189, 24)
+		Me.RadTextBoxProjectDataPath.TabIndex = 9
 		'
 		'DataLayoutControlItem1
 		'
-		Me.DataLayoutControlItem1.AssociatedControl = Me.RadSpinEditorProjectMainForm1
+		Me.DataLayoutControlItem1.AssociatedControl = Me.RadSpinEditorIndex
 		Me.DataLayoutControlItem1.Bounds = New System.Drawing.Rectangle(0, 0, 348, 43)
 		Me.DataLayoutControlItem1.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
 		Me.DataLayoutControlItem1.Name = "DataLayoutControlItem1"
@@ -298,7 +304,7 @@ Partial Class FormItemsDataEntry
 		'
 		'DataLayoutControlItem3
 		'
-		Me.DataLayoutControlItem3.AssociatedControl = Me.RadTextBoxProjectMainForm1
+		Me.DataLayoutControlItem3.AssociatedControl = Me.RadTextBoxProjectCode
 		Me.DataLayoutControlItem3.Bounds = New System.Drawing.Rectangle(0, 86, 348, 43)
 		Me.DataLayoutControlItem3.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
 		Me.DataLayoutControlItem3.Name = "DataLayoutControlItem3"
@@ -309,7 +315,7 @@ Partial Class FormItemsDataEntry
 		'
 		'DataLayoutControlItem4
 		'
-		Me.DataLayoutControlItem4.AssociatedControl = Me.RadTextBoxProjectMainForm2
+		Me.DataLayoutControlItem4.AssociatedControl = Me.RadTextBoxProjectName
 		Me.DataLayoutControlItem4.Bounds = New System.Drawing.Rectangle(0, 129, 348, 43)
 		Me.DataLayoutControlItem4.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
 		Me.DataLayoutControlItem4.Name = "DataLayoutControlItem4"
@@ -320,7 +326,7 @@ Partial Class FormItemsDataEntry
 		'
 		'DataLayoutControlItem5
 		'
-		Me.DataLayoutControlItem5.AssociatedControl = Me.RadDateTimePickerDateCreat
+		Me.DataLayoutControlItem5.AssociatedControl = Me.RadDateTimePickerCreateDate
 		Me.DataLayoutControlItem5.Bounds = New System.Drawing.Rectangle(0, 172, 348, 43)
 		Me.DataLayoutControlItem5.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
 		Me.DataLayoutControlItem5.Name = "DataLayoutControlItem5"
@@ -331,7 +337,7 @@ Partial Class FormItemsDataEntry
 		'
 		'DataLayoutControlItem6
 		'
-		Me.DataLayoutControlItem6.AssociatedControl = Me.RadDateTimePickerDateModify
+		Me.DataLayoutControlItem6.AssociatedControl = Me.RadDateTimePickerModifyDate
 		Me.DataLayoutControlItem6.Bounds = New System.Drawing.Rectangle(0, 215, 348, 43)
 		Me.DataLayoutControlItem6.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
 		Me.DataLayoutControlItem6.Name = "DataLayoutControlItem6"
@@ -342,7 +348,7 @@ Partial Class FormItemsDataEntry
 		'
 		'DataLayoutControlItem7
 		'
-		Me.DataLayoutControlItem7.AssociatedControl = Me.RadTextBoxProjectMainFormStatus
+		Me.DataLayoutControlItem7.AssociatedControl = Me.RadTextBoxProjectStatus
 		Me.DataLayoutControlItem7.Bounds = New System.Drawing.Rectangle(0, 258, 348, 43)
 		Me.DataLayoutControlItem7.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
 		Me.DataLayoutControlItem7.Name = "DataLayoutControlItem7"
@@ -353,7 +359,7 @@ Partial Class FormItemsDataEntry
 		'
 		'DataLayoutControlItem8
 		'
-		Me.DataLayoutControlItem8.AssociatedControl = Me.RadTextBoxProjectMainFormPathName
+		Me.DataLayoutControlItem8.AssociatedControl = Me.RadTextBoxProjectDataPath
 		Me.DataLayoutControlItem8.Bounds = New System.Drawing.Rectangle(0, 301, 348, 47)
 		Me.DataLayoutControlItem8.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
 		Me.DataLayoutControlItem8.Name = "DataLayoutControlItem8"
@@ -369,7 +375,7 @@ Partial Class FormItemsDataEntry
 		Me.ButtonGridviewNewProjectMainForm.Name = "ButtonGridviewNewProjectMainForm"
 		Me.ButtonGridviewNewProjectMainForm.Size = New System.Drawing.Size(60, 29)
 		Me.ButtonGridviewNewProjectMainForm.TabIndex = 53
-		Me.ButtonGridviewNewProjectMainForm.Text = "New"
+		Me.ButtonGridviewNewProjectMainForm.Text = "Add"
 		Me.ButtonGridviewNewProjectMainForm.UseVisualStyleBackColor = True
 		'
 		'ButtonGridviewDeleteProjectMainForm
@@ -420,7 +426,7 @@ Partial Class FormItemsDataEntry
 		Me.Controls.Add(Me.ButtonGridviewUpdateProjectMainForm)
 		Me.Controls.Add(Me.RadGridViewProjectName)
 		Me.Name = "FormItemsDataEntry"
-		Me.Text = "FormItemsDataEntry"
+		Me.Text = "PrevisionFlex software 1.0"
 		CType(Me.ITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.TAKEOFFDataSet3, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
@@ -432,14 +438,14 @@ Partial Class FormItemsDataEntry
 		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.PerformLayout()
 		CType(Me.RadDataLayoutProjectNameMAinForm, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.RadDataLayoutProjectNameMAinForm.ResumeLayout(False)
-		CType(Me.RadSpinEditorProjectMainForm1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadSpinEditorIndex, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadSpinEditorProjectIndex, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxProjectMainForm1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxProjectMainForm2, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadDateTimePickerDateCreat, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadDateTimePickerDateModify, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxProjectMainFormStatus, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxProjectMainFormPathName, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadTextBoxProjectCode, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadTextBoxProjectName, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadDateTimePickerCreateDate, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadDateTimePickerModifyDate, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadTextBoxProjectStatus, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadTextBoxProjectDataPath, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadStatusStrip2, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
@@ -453,14 +459,14 @@ Partial Class FormItemsDataEntry
 	Friend WithEvents PROJECTBindingSource As BindingSource
 	Friend WithEvents PROJECTTableAdapter As TAKEOFFDataSetProjectTableAdapters.PROJECTTableAdapter
 	Friend WithEvents RadDataLayoutProjectNameMAinForm As RadDataLayout
-	Friend WithEvents RadSpinEditorProjectMainForm1 As RadSpinEditor
+	Friend WithEvents RadSpinEditorIndex As RadSpinEditor
 	Friend WithEvents RadSpinEditorProjectIndex As RadSpinEditor
-	Friend WithEvents RadTextBoxProjectMainForm1 As RadTextBox
-	Friend WithEvents RadTextBoxProjectMainForm2 As RadTextBox
-	Friend WithEvents RadDateTimePickerDateCreat As RadDateTimePicker
-	Friend WithEvents RadDateTimePickerDateModify As RadDateTimePicker
-	Friend WithEvents RadTextBoxProjectMainFormStatus As RadTextBox
-	Friend WithEvents RadTextBoxProjectMainFormPathName As RadTextBox
+	Friend WithEvents RadTextBoxProjectCode As RadTextBox
+	Friend WithEvents RadTextBoxProjectName As RadTextBox
+	Friend WithEvents RadDateTimePickerCreateDate As RadDateTimePicker
+	Friend WithEvents RadDateTimePickerModifyDate As RadDateTimePicker
+	Friend WithEvents RadTextBoxProjectStatus As RadTextBox
+	Friend WithEvents RadTextBoxProjectDataPath As RadTextBox
 	Friend WithEvents DataLayoutControlItem1 As DataLayoutControlItem
 	Friend WithEvents DataLayoutControlItem2 As DataLayoutControlItem
 	Friend WithEvents DataLayoutControlItem3 As DataLayoutControlItem
