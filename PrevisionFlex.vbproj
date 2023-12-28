@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C57933F-D195-4A1F-B6FC-1C2C2B392ADB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PrevisionFlex.My.MyApplication</StartupObject>
+    <RootNamespace>PrevisionFlex</RootNamespace>
+    <AssemblyName>PrevisionFlex</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PrevisionFlex.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PrevisionFlex.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9F2FAA4488220AF02D32CA7E196403EFB842CF42</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PrevisionFlex_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Devart.Data.MySql, Version=9.0.0.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.MySql.Linq, Version=5.0.0.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="MindFusion.Charting, Version=4.1.1.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455" />
+    <Reference Include="MindFusion.Charting.WinForms, Version=4.1.1.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL" />
+    <Reference Include="MindFusion.Common, Version=1.3.2.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455" />
+    <Reference Include="MindFusion.Licensing, Version=1.0.4.38034, Culture=neutral, PublicKeyToken=9d02e21d957ddaef" />
+    <Reference Include="MindFusion.Pdf, Version=1.3.2.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455" />
+    <Reference Include="MindFusion.Svg, Version=1.2.2.451, Culture=neutral, PublicKeyToken=dd7449df9ffcc455" />
+    <Reference Include="MindFusion.UI.WinForms, Version=1.2.1.450, Culture=neutral, PublicKeyToken=dd7449df9ffcc455, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.32.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=8.0.32.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Telerik.WinControls, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Telerik.WinControls\v4.0_2019.1.115.40__5bb2a467cbec794e\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Telerik.WinControls.GridView\v4.0_2019.1.115.40__5bb2a467cbec794e\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Telerik.WinControls.UI\v4.0_2019.1.115.40__5bb2a467cbec794e\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\TelerikCommon\v4.0_2019.1.115.40__5bb2a467cbec794e\TelerikCommon.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="Telerik.WinControls" />
+    <Import Include="Telerik.WinControls.UI" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassItemsListe.vb" />
+    <Compile Include="ClassProjectName.vb" />
+    <Compile Include="FormCalendard.Designer.vb">
+      <DependentUpon>FormCalendard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCalendard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormItemsDataEntry.Designer.vb">
+      <DependentUpon>FormItemsDataEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormItemsDataEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListView.Designer.vb">
+      <DependentUpon>FormListView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormListView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleGlobal.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TAKEOFDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TAKEOFDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFDataSet.vb">
+      <DependentUpon>TAKEOFDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TAKEOFFDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TAKEOFFDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TAKEOFFDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TAKEOFFDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSet3.vb">
+      <DependentUpon>TAKEOFFDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSet41.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TAKEOFFDataSet41.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSet5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TAKEOFFDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSetInvoice.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TAKEOFFDataSetInvoice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSetProject.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TAKEOFFDataSetProject.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSetProjectName.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TAKEOFFDataSetProjectName.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TAKEOFFDataSetProjectName.vb">
+      <DependentUpon>TAKEOFFDataSetProjectName.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormCalendard.resx">
+      <DependentUpon>FormCalendard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormItemsDataEntry.resx">
+      <DependentUpon>FormItemsDataEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListView.resx">
+      <DependentUpon>FormListView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="PrevisionFlex_TemporaryKey.pfx" />
+    <None Include="TAKEOFDataSet.xsc">
+      <DependentUpon>TAKEOFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TAKEOFDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TAKEOFDataSet.xss">
+      <DependentUpon>TAKEOFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet.xsc">
+      <DependentUpon>TAKEOFFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TAKEOFFDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TAKEOFFDataSet.xss">
+      <DependentUpon>TAKEOFFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet1.xsc">
+      <DependentUpon>TAKEOFFDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TAKEOFFDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TAKEOFFDataSet1.xss">
+      <DependentUpon>TAKEOFFDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet2.xsc">
+      <DependentUpon>TAKEOFFDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TAKEOFFDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TAKEOFFDataSet2.xss">
+      <DependentUpon>TAKEOFFDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet3.xsc">
+      <DependentUpon>TAKEOFFDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TAKEOFFDataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TAKEOFFDataSet3.xss">
+      <DependentUpon>TAKEOFFDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet41.xsc">
+      <DependentUpon>TAKEOFFDataSet41.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet41.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TAKEOFFDataSet41.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TAKEOFFDataSet41.xss">
+      <DependentUpon>TAKEOFFDataSet41.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet5.xsc">
+      <DependentUpon>TAKEOFFDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TAKEOFFDataSet5.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TAKEOFFDataSet5.xss">
+      <DependentUpon>TAKEOFFDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSetInvoice.xsc">
+      <DependentUpon>TAKEOFFDataSetInvoice.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSetInvoice.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TAKEOFFDataSetInvoice.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TAKEOFFDataSetInvoice.xss">
+      <DependentUpon>TAKEOFFDataSetInvoice.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSetProject.xsc">
+      <DependentUpon>TAKEOFFDataSetProject.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSetProject.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TAKEOFFDataSetProject.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TAKEOFFDataSetProject.xss">
+      <DependentUpon>TAKEOFFDataSetProject.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSetProjectName.xsc">
+      <DependentUpon>TAKEOFFDataSetProjectName.xsd</DependentUpon>
+    </None>
+    <None Include="TAKEOFFDataSetProjectName.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TAKEOFFDataSetProjectName.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TAKEOFFDataSetProjectName.xss">
+      <DependentUpon>TAKEOFFDataSetProjectName.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\tennis-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\veranda-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\ESTIMATOR-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reflech_25x25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_White_100x100.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_Gray_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_White_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_Gray_Clair_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_Center_White_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_Center_Gray_Clair_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bell_White_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bell_Gray_Claire_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendrier_Gray_clair_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendrier_White_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_icon_128_Gray_Clair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_icon_128_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_Gray_Clair_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_White_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_Gray_Claire_100x100_inverse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_White_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_White_100x100_inverse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Event_Gray_Claire_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Event_White_100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\architech-gray-100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\architech-white-100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice-gray-clair-100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice-white-100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_Gray_Clair_100x1001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-white-100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-gray-100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-gray-50x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-gray-30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poubelle-petite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update-ronde-gray-100x100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update-ronde-gray-30x30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update-ronde-gray-30x301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update-ronde-gray-30x302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Construction-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treeview-detail-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treeview-detail-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treeview-sans-detail-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treeview-sans-detail-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treeview-sans-detail-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treeview-sans-detail-251.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treeview-detail-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bussy-100.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
