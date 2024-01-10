@@ -453,9 +453,9 @@ Public Class MainForm
         RadLabelTotalEstimation.Text = Format(AlltotalItems, "0.00 €")
         RadLabelMTPaye.Text = Format(totalPaye, "0.00 €") + " payé."
         If iindex = 0 Then
-            radLabelCurrentItems.Text = "Toutes charges"
+            RadLabelCurrentItems.Text = "Toutes charges"
         Else
-            radLabelCurrentItems.Text = tofindCategory
+            RadLabelCurrentItems.Text = tofindCategory
         End If
         RadLabelAllTotalOfItems.Text = Format(Alltotal, "All total : 0.00 €")
 
@@ -980,73 +980,6 @@ Public Class MainForm
         mysql += ", items_taxe= =" + RadTextBoxITEMS_TAXE_VALUE.Text
         mysql += ", items_name= '" + RadTextBoxITEMS_NAME.Text + "' where items_INDEX = " + RadTextBox_ITEMS_INDEX.Text
         RadLabelElementMessage.Text = mysql
-        Exit Sub
-        '----------------------------------------------
-        If IsDBNull(currentRow.Cells(0).Value) Then
-            currentRow.Cells(0).Value = next_index
-        End If
-
-        Dim vatPC As Double
-        If IsDBNull(RadSpinEditorVATPorucent.Value) Then
-            RadSpinEditorVATPorucent.Value = 20
-        End If
-        If RadSpinEditorVATPorucent.Value = 0 Then
-            RadSpinEditorVATPorucent.Value = 20
-        End If
-        If currentRow Is Nothing Then
-            Return
-        End If
-        'currentRow.Index
-        If IsDBNull(currentRow.Cells(1).Value) Then
-            iindex = FindLastItemCount() + 1
-            currentRow.Cells(1).Value = iindex
-        Else
-            iindex = currentRow.Cells(1).Value
-        End If
-        Me.RadGridViewItems.CloseEditor()
-        For i = 4 To 9
-            ListBoxItemsParent.Items.Add(currentRow.Cells(i).Value.ToString)
-        Next
-        If IsNothing(RadTextBoxCurrency.Text) Or RadTextBoxCurrency.Text = "" Then
-            RadTextBoxCurrency.Text = "EUR"
-        End If
-        'currentRow.Cells(3).Value = RadSpinEditorProjectIndex.Value
-        currentRow.Cells(3).Value = RadSpinEditorProjectIndex.Value
-        currentRow.Cells(4).Value = RadTextBoxItemsCode.Text 'currentRow.Cells(3).Value
-        'currentRow.Cells(5).Value = RadTextBoxItemName.Text
-        currentRow.Cells(2).Value = RadTextBoxParent_Items.Text
-        currentRow.Cells(6).Value = RadSpinEditorQuantity.Value
-        currentRow.Cells(7).Value = 99 ' RadSpinEditorUnitQuantity.Value
-        currentRow.Cells(8).Value = RadSpinEditorUnitPrice.Value
-        currentRow.Cells(9).Value = RadSpinEditorQuantity.Value * RadSpinEditorUnitQuantity.Value * RadSpinEditorUnitPrice.Value
-        vatPC = RadSpinEditorVATPorucent.Value / 100
-        RadSpinEditorVATValue.Value = currentRow.Cells(9).Value
-        currentRow.Cells(10).Value = RadSpinEditorVATPorucent.Value
-        currentRow.Cells(11).Value = RadSpinEditorVATValue.Value * vatPC
-        currentRow.Cells(12).Value = RadTextBoxCurrency.Text
-        '@@@@@@@ currentRow.Cells(13).Value = RadDateTimePickerDate_Update.Value
-        RadLabelElementMessage.Text = RadTextBoxItemsCode.Text + RadTextBoxItemName.Text
-        Dim newRowInfo As GridViewNewRowInfo = TryCast(currentRow, GridViewNewRowInfo)
-        If newRowInfo IsNot Nothing Then
-            currentRow.InvalidateRow()
-        Else
-            CType(Me.RadGridViewItems.CurrentRow.DataBoundItem, IEditableObject).EndEdit()
-        End If
-
-        Dim parent_exist As String = ArrayCurrentItems(const_Category)
-
-        '@@@@@TOTOTO   If IsNothing(Me.ITEMSTableAdapter.ParentExistQuerry(ArrayCurrentItems(const_Category))) Then
-        parent_exist = ""
-            '9999 Items_Creat_Root(currentRow, iindex)
-            Try
-                '@@@@@TOTOTO  Me.ITEMSTableAdapter.Update(Me.TAKEOFDataSet.ITEMS)
-                calcul_Datagridview_Items()
-            Catch ex As Exception
-                RadLabelElementMessage.Text = "Erreur de mise à jour"
-            End Try
-        '@@@@@TOTOTO  End If
-        'parent_exist = ds.Tables("ITEMS").Rows.Count
-        parent_exist = parent_exist
     End Sub
     Private Sub Items_Creat_Root(ByVal currentRow As GridViewRowInfo, ByVal irow As Integer)
         Exit Sub
@@ -1189,11 +1122,8 @@ Public Class MainForm
         RadGridViewItems.Rows.AddNew()
         RadTextBoxItemsCode.Text = "Code Name" 'ArrayCurrentItems(const_Category)
         RadTextBoxParent_Items.Text = ArrayCurrentItems(const_Category)
-        RadSpinEditorVATPorucent.Value = ArrayCurrentItems(const_VAT_Porucent)
         iindex = FindLastItemCount() + 1
-        RadSpinEditorItemIndex.Value = iindex
         next_index += next_index
-        RadSpinEditorIndexKey.Value = next_index
     End Sub
 
     Private Sub InsertItemToDataBase(ByVal Items_Index As Integer)
@@ -1269,8 +1199,6 @@ Public Class MainForm
         'RadTextBoxParent_Items.Text = ArrayCurrentItems(const_Category)
         'RadSpinEditorVATPorucent.Value = ArrayCurrentItems(const_VAT_Porucent)
         iindex = FindLastProjectCount() + 1
-        RadSpinEditorProjectIndex2.Value = iindex
-        RadSpinEditorProjectIndex.Value = iindex
     End Sub
 
     Private Sub RadTextBox2999_TextChanged(sender As Object, e As EventArgs)
@@ -1298,7 +1226,6 @@ Public Class MainForm
         Else
             iindex = currentRow.Cells(1).Value
         End If
-        currentRow.Cells(1).Value = RadSpinEditorProjectIndex.Value
 
         RadLabelElementMessage.Text = ""
         Dim newRowInfo As GridViewNewRowInfo = TryCast(currentRow, GridViewNewRowInfo)

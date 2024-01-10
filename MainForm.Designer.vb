@@ -22,18 +22,18 @@ Partial Class MainForm
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-		Dim ListViewDetailColumn5 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
-		Dim ListViewDetailColumn6 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
-		Dim ListViewDetailColumn7 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
-		Dim ListViewDetailColumn8 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
-		Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Me.radPanelTodaysAppointments = New Telerik.WinControls.UI.RadPanel()
+		Dim ListViewDetailColumn1 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
+		Dim ListViewDetailColumn2 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
+		Dim ListViewDetailColumn3 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
+		Dim ListViewDetailColumn4 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
+		Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Me.RadPanelTodaysAppointments = New Telerik.WinControls.UI.RadPanel()
 		Me.RadLabelMTPaye = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelAllTotalOfItems = New Telerik.WinControls.UI.RadLabel()
-		Me.radLabelLastAppointmentToday = New Telerik.WinControls.UI.RadLabel()
+		Me.RadLabelLastAppointmentToday = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelTotalEstimation = New Telerik.WinControls.UI.RadLabel()
-		Me.radLabelCurrentItems = New Telerik.WinControls.UI.RadLabel()
+		Me.RadLabelCurrentItems = New Telerik.WinControls.UI.RadLabel()
 		Me.RadListeiewProjectName = New Telerik.WinControls.UI.RadListView()
 		Me.ListBoxItemsParent = New System.Windows.Forms.ListBox()
 		Me.RadStatusStrip2 = New Telerik.WinControls.UI.RadStatusStrip()
@@ -44,18 +44,9 @@ Partial Class MainForm
 		Me.RadLabelGlobalCathegory = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelProjectNameGlobal = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelCentreNameGlobal = New Telerik.WinControls.UI.RadLabel()
-		Me.RadSpinEditorIndexKey = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorItemIndex = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorProjectIndex = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadTextBoxItemsCode = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBoxItemName = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBoxParent_Items = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadSpinEditorQuantity = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorUnitQuantity = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorUnitPrice = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorTotalPrice = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorVATPorucent = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorVATValue = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadTextBoxCurrency = New Telerik.WinControls.UI.RadTextBox()
 		Me.ButtonGridviewUpdate = New System.Windows.Forms.Button()
 		Me.ButtonGridviewDelete = New System.Windows.Forms.Button()
@@ -102,20 +93,16 @@ Partial Class MainForm
 		Me.RadTextBoxITEMS_CODE = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBox_ITEMS_INDEX = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBox_INDEX = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadSpinEditor1 = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorProjectIndex2 = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadTextBox2 = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBoxProjectMainFormStatus = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBoxProjectMainFormPathName = New Telerik.WinControls.UI.RadTextBox()
 		Me.GroupBoxMenuVertical = New System.Windows.Forms.Panel()
-		CType(Me.radPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
-		Me.radPanelTodaysAppointments.SuspendLayout()
+		CType(Me.RadPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.RadPanelTodaysAppointments.SuspendLayout()
 		CType(Me.RadLabelMTPaye, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelAllTotalOfItems, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.radLabelLastAppointmentToday, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadLabelLastAppointmentToday, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelTotalEstimation, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.radLabelCurrentItems, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadLabelCurrentItems, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadListeiewProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadStatusStrip2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadPanelHaut, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,18 +112,9 @@ Partial Class MainForm
 		CType(Me.RadLabelGlobalCathegory, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelProjectNameGlobal, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelCentreNameGlobal, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorIndexKey, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorItemIndex, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorProjectIndex, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxItemsCode, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxItemName, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxParent_Items, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorUnitQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorUnitPrice, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorTotalPrice, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorVATPorucent, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorVATValue, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBoxItemMainForm.SuspendLayout()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -181,31 +159,27 @@ Partial Class MainForm
 		CType(Me.RadTextBoxITEMS_CODE, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditor1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorProjectIndex2, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxProjectMainFormStatus, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxProjectMainFormPathName, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
-		'radPanelTodaysAppointments
+		'RadPanelTodaysAppointments
 		'
-		Me.radPanelTodaysAppointments.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.radPanelTodaysAppointments.Controls.Add(Me.RadLabelMTPaye)
-		Me.radPanelTodaysAppointments.Controls.Add(Me.RadLabelAllTotalOfItems)
-		Me.radPanelTodaysAppointments.Controls.Add(Me.radLabelLastAppointmentToday)
-		Me.radPanelTodaysAppointments.Controls.Add(Me.RadLabelTotalEstimation)
-		Me.radPanelTodaysAppointments.Controls.Add(Me.radLabelCurrentItems)
-		Me.radPanelTodaysAppointments.Location = New System.Drawing.Point(260, 530)
-		Me.radPanelTodaysAppointments.Name = "radPanelTodaysAppointments"
+		Me.RadPanelTodaysAppointments.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelMTPaye)
+		Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelAllTotalOfItems)
+		Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelLastAppointmentToday)
+		Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelTotalEstimation)
+		Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelCurrentItems)
+		Me.RadPanelTodaysAppointments.Location = New System.Drawing.Point(260, 530)
+		Me.RadPanelTodaysAppointments.Name = "RadPanelTodaysAppointments"
 		'
 		'
 		'
-		Me.radPanelTodaysAppointments.RootElement.ControlBounds = New System.Drawing.Rectangle(260, 530, 200, 100)
-		Me.radPanelTodaysAppointments.Size = New System.Drawing.Size(300, 276)
-		Me.radPanelTodaysAppointments.TabIndex = 9
-		Me.radPanelTodaysAppointments.ThemeName = "MedicalAppTheme"
+		Me.RadPanelTodaysAppointments.RootElement.ControlBounds = New System.Drawing.Rectangle(260, 530, 200, 100)
+		Me.RadPanelTodaysAppointments.Size = New System.Drawing.Size(300, 276)
+		Me.RadPanelTodaysAppointments.TabIndex = 9
+		Me.RadPanelTodaysAppointments.ThemeName = "MedicalAppTheme"
 		'
 		'RadLabelMTPaye
 		'
@@ -238,19 +212,19 @@ Partial Class MainForm
 		Me.RadLabelAllTotalOfItems.TabIndex = 1
 		Me.RadLabelAllTotalOfItems.Text = "0.00€"
 		'
-		'radLabelLastAppointmentToday
+		'RadLabelLastAppointmentToday
 		'
-		Me.radLabelLastAppointmentToday.BackColor = System.Drawing.Color.Transparent
-		Me.radLabelLastAppointmentToday.Font = New System.Drawing.Font("Segoe UI", 12.25!)
-		Me.radLabelLastAppointmentToday.Location = New System.Drawing.Point(14, 242)
-		Me.radLabelLastAppointmentToday.Name = "radLabelLastAppointmentToday"
+		Me.RadLabelLastAppointmentToday.BackColor = System.Drawing.Color.Transparent
+		Me.RadLabelLastAppointmentToday.Font = New System.Drawing.Font("Segoe UI", 12.25!)
+		Me.RadLabelLastAppointmentToday.Location = New System.Drawing.Point(14, 242)
+		Me.RadLabelLastAppointmentToday.Name = "RadLabelLastAppointmentToday"
 		'
 		'
 		'
-		Me.radLabelLastAppointmentToday.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 242, 100, 18)
-		Me.radLabelLastAppointmentToday.Size = New System.Drawing.Size(150, 26)
-		Me.radLabelLastAppointmentToday.TabIndex = 1
-		Me.radLabelLastAppointmentToday.Text = "last one at 5:00 PM"
+		Me.RadLabelLastAppointmentToday.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 242, 100, 18)
+		Me.RadLabelLastAppointmentToday.Size = New System.Drawing.Size(150, 26)
+		Me.RadLabelLastAppointmentToday.TabIndex = 1
+		Me.RadLabelLastAppointmentToday.Text = "last one at 5:00 PM"
 		'
 		'RadLabelTotalEstimation
 		'
@@ -268,20 +242,20 @@ Partial Class MainForm
 		Me.RadLabelTotalEstimation.Text = "25"
 		Me.RadLabelTotalEstimation.UseCompatibleTextRendering = False
 		'
-		'radLabelCurrentItems
+		'RadLabelCurrentItems
 		'
-		Me.radLabelCurrentItems.BackColor = System.Drawing.Color.Transparent
-		Me.radLabelCurrentItems.Font = New System.Drawing.Font("Segoe UI Light", 14.5!)
-		Me.radLabelCurrentItems.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(11, Byte), Integer), CType(CType(79, Byte), Integer))
-		Me.radLabelCurrentItems.Location = New System.Drawing.Point(14, 12)
-		Me.radLabelCurrentItems.Name = "radLabelCurrentItems"
+		Me.RadLabelCurrentItems.BackColor = System.Drawing.Color.Transparent
+		Me.RadLabelCurrentItems.Font = New System.Drawing.Font("Segoe UI Light", 14.5!)
+		Me.RadLabelCurrentItems.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(11, Byte), Integer), CType(CType(79, Byte), Integer))
+		Me.RadLabelCurrentItems.Location = New System.Drawing.Point(14, 12)
+		Me.RadLabelCurrentItems.Name = "RadLabelCurrentItems"
 		'
 		'
 		'
-		Me.radLabelCurrentItems.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 12, 100, 18)
-		Me.radLabelCurrentItems.Size = New System.Drawing.Size(71, 30)
-		Me.radLabelCurrentItems.TabIndex = 0
-		Me.radLabelCurrentItems.Text = "TODAY"
+		Me.RadLabelCurrentItems.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 12, 100, 18)
+		Me.RadLabelCurrentItems.Size = New System.Drawing.Size(71, 30)
+		Me.RadLabelCurrentItems.TabIndex = 0
+		Me.RadLabelCurrentItems.Text = "TODAY"
 		'
 		'RadListeiewProjectName
 		'
@@ -290,11 +264,11 @@ Partial Class MainForm
 		Me.RadListeiewProjectName.AllowRemove = False
 		Me.RadListeiewProjectName.AutoScroll = True
 		Me.RadListeiewProjectName.BackColor = System.Drawing.SystemColors.ControlLightLight
-		ListViewDetailColumn5.HeaderText = "Name"
-		ListViewDetailColumn6.HeaderText = "Age"
-		ListViewDetailColumn7.HeaderText = "Gender"
-		ListViewDetailColumn8.HeaderText = "EncounterTime"
-		Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn5, ListViewDetailColumn6, ListViewDetailColumn7, ListViewDetailColumn8})
+		ListViewDetailColumn1.HeaderText = "Name"
+		ListViewDetailColumn2.HeaderText = "Age"
+		ListViewDetailColumn3.HeaderText = "Gender"
+		ListViewDetailColumn4.HeaderText = "EncounterTime"
+		Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn1, ListViewDetailColumn2, ListViewDetailColumn3, ListViewDetailColumn4})
 		Me.RadListeiewProjectName.ItemSize = New System.Drawing.Size(200, 95)
 		Me.RadListeiewProjectName.Location = New System.Drawing.Point(5, 530)
 		Me.RadListeiewProjectName.Name = "RadListeiewProjectName"
@@ -433,56 +407,6 @@ Partial Class MainForm
 		Me.RadLabelCentreNameGlobal.TabIndex = 43
 		Me.RadLabelCentreNameGlobal.Text = "RadLabelNomDuCentre"
 		'
-		'RadSpinEditorIndexKey
-		'
-		Me.RadSpinEditorIndexKey.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorIndexKey.Location = New System.Drawing.Point(64, 3)
-		Me.RadSpinEditorIndexKey.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorIndexKey.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorIndexKey.Name = "RadSpinEditorIndexKey"
-		Me.RadSpinEditorIndexKey.ReadOnly = True
-		'
-		'
-		'
-		Me.RadSpinEditorIndexKey.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadSpinEditorIndexKey.RootElement.StretchVertically = True
-		Me.RadSpinEditorIndexKey.Size = New System.Drawing.Size(184, 20)
-		Me.RadSpinEditorIndexKey.TabIndex = 48
-		Me.RadSpinEditorIndexKey.TabStop = False
-		'
-		'RadSpinEditorItemIndex
-		'
-		Me.RadSpinEditorItemIndex.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorItemIndex.Location = New System.Drawing.Point(64, 3)
-		Me.RadSpinEditorItemIndex.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorItemIndex.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorItemIndex.Name = "RadSpinEditorItemIndex"
-		Me.RadSpinEditorItemIndex.ReadOnly = True
-		'
-		'
-		'
-		Me.RadSpinEditorItemIndex.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadSpinEditorItemIndex.RootElement.StretchVertically = True
-		Me.RadSpinEditorItemIndex.Size = New System.Drawing.Size(184, 20)
-		Me.RadSpinEditorItemIndex.TabIndex = 49
-		Me.RadSpinEditorItemIndex.TabStop = False
-		'
-		'RadSpinEditorProjectIndex
-		'
-		Me.RadSpinEditorProjectIndex.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorProjectIndex.Location = New System.Drawing.Point(64, 3)
-		Me.RadSpinEditorProjectIndex.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorProjectIndex.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorProjectIndex.Name = "RadSpinEditorProjectIndex"
-		'
-		'
-		'
-		Me.RadSpinEditorProjectIndex.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadSpinEditorProjectIndex.RootElement.StretchVertically = True
-		Me.RadSpinEditorProjectIndex.Size = New System.Drawing.Size(184, 20)
-		Me.RadSpinEditorProjectIndex.TabIndex = 50
-		Me.RadSpinEditorProjectIndex.TabStop = False
-		'
 		'RadTextBoxItemsCode
 		'
 		Me.RadTextBoxItemsCode.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -521,110 +445,6 @@ Partial Class MainForm
 		Me.RadTextBoxParent_Items.RootElement.StretchVertically = True
 		Me.RadTextBoxParent_Items.Size = New System.Drawing.Size(184, 20)
 		Me.RadTextBoxParent_Items.TabIndex = 53
-		'
-		'RadSpinEditorQuantity
-		'
-		Me.RadSpinEditorQuantity.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorQuantity.DecimalPlaces = 2
-		Me.RadSpinEditorQuantity.Location = New System.Drawing.Point(64, 3)
-		Me.RadSpinEditorQuantity.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorQuantity.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorQuantity.Name = "RadSpinEditorQuantity"
-		'
-		'
-		'
-		Me.RadSpinEditorQuantity.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadSpinEditorQuantity.RootElement.StretchVertically = True
-		Me.RadSpinEditorQuantity.Size = New System.Drawing.Size(184, 20)
-		Me.RadSpinEditorQuantity.TabIndex = 54
-		Me.RadSpinEditorQuantity.TabStop = False
-		'
-		'RadSpinEditorUnitQuantity
-		'
-		Me.RadSpinEditorUnitQuantity.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorUnitQuantity.DecimalPlaces = 2
-		Me.RadSpinEditorUnitQuantity.Location = New System.Drawing.Point(64, 3)
-		Me.RadSpinEditorUnitQuantity.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorUnitQuantity.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorUnitQuantity.Name = "RadSpinEditorUnitQuantity"
-		'
-		'
-		'
-		Me.RadSpinEditorUnitQuantity.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadSpinEditorUnitQuantity.RootElement.StretchVertically = True
-		Me.RadSpinEditorUnitQuantity.Size = New System.Drawing.Size(184, 20)
-		Me.RadSpinEditorUnitQuantity.TabIndex = 55
-		Me.RadSpinEditorUnitQuantity.TabStop = False
-		'
-		'RadSpinEditorUnitPrice
-		'
-		Me.RadSpinEditorUnitPrice.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorUnitPrice.DecimalPlaces = 2
-		Me.RadSpinEditorUnitPrice.Location = New System.Drawing.Point(64, 3)
-		Me.RadSpinEditorUnitPrice.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorUnitPrice.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorUnitPrice.Name = "RadSpinEditorUnitPrice"
-		'
-		'
-		'
-		Me.RadSpinEditorUnitPrice.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadSpinEditorUnitPrice.RootElement.StretchVertically = True
-		Me.RadSpinEditorUnitPrice.Size = New System.Drawing.Size(184, 20)
-		Me.RadSpinEditorUnitPrice.TabIndex = 56
-		Me.RadSpinEditorUnitPrice.TabStop = False
-		'
-		'RadSpinEditorTotalPrice
-		'
-		Me.RadSpinEditorTotalPrice.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorTotalPrice.DecimalPlaces = 2
-		Me.RadSpinEditorTotalPrice.Location = New System.Drawing.Point(64, 3)
-		Me.RadSpinEditorTotalPrice.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorTotalPrice.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorTotalPrice.Name = "RadSpinEditorTotalPrice"
-		Me.RadSpinEditorTotalPrice.ReadOnly = True
-		'
-		'
-		'
-		Me.RadSpinEditorTotalPrice.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadSpinEditorTotalPrice.RootElement.StretchVertically = True
-		Me.RadSpinEditorTotalPrice.Size = New System.Drawing.Size(184, 20)
-		Me.RadSpinEditorTotalPrice.TabIndex = 57
-		Me.RadSpinEditorTotalPrice.TabStop = False
-		'
-		'RadSpinEditorVATPorucent
-		'
-		Me.RadSpinEditorVATPorucent.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorVATPorucent.DecimalPlaces = 2
-		Me.RadSpinEditorVATPorucent.Location = New System.Drawing.Point(64, 3)
-		Me.RadSpinEditorVATPorucent.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorVATPorucent.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorVATPorucent.Name = "RadSpinEditorVATPorucent"
-		'
-		'
-		'
-		Me.RadSpinEditorVATPorucent.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadSpinEditorVATPorucent.RootElement.StretchVertically = True
-		Me.RadSpinEditorVATPorucent.Size = New System.Drawing.Size(184, 20)
-		Me.RadSpinEditorVATPorucent.TabIndex = 58
-		Me.RadSpinEditorVATPorucent.TabStop = False
-		'
-		'RadSpinEditorVATValue
-		'
-		Me.RadSpinEditorVATValue.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorVATValue.DecimalPlaces = 2
-		Me.RadSpinEditorVATValue.Location = New System.Drawing.Point(64, 3)
-		Me.RadSpinEditorVATValue.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorVATValue.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorVATValue.Name = "RadSpinEditorVATValue"
-		Me.RadSpinEditorVATValue.ReadOnly = True
-		'
-		'
-		'
-		Me.RadSpinEditorVATValue.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadSpinEditorVATValue.RootElement.StretchVertically = True
-		Me.RadSpinEditorVATValue.Size = New System.Drawing.Size(184, 20)
-		Me.RadSpinEditorVATValue.TabIndex = 59
-		Me.RadSpinEditorVATValue.TabStop = False
 		'
 		'RadTextBoxCurrency
 		'
@@ -680,7 +500,7 @@ Partial Class MainForm
 		Me.GroupBoxItemMainForm.Controls.Add(Me.RadButtonGroupage)
 		Me.GroupBoxItemMainForm.Controls.Add(Me.ListBoxItemsParent)
 		Me.GroupBoxItemMainForm.Controls.Add(Me.RadListeiewProjectName)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.radPanelTodaysAppointments)
+		Me.GroupBoxItemMainForm.Controls.Add(Me.RadPanelTodaysAppointments)
 		Me.GroupBoxItemMainForm.Controls.Add(Me.RadGridViewItems)
 		Me.GroupBoxItemMainForm.Controls.Add(Me.GroupBox1)
 		Me.GroupBoxItemMainForm.ForeColor = System.Drawing.SystemColors.ButtonShadow
@@ -729,7 +549,7 @@ Partial Class MainForm
 		Me.RadGridViewClassItemsListe.MasterTemplate.AllowRowResize = False
 		Me.RadGridViewClassItemsListe.MasterTemplate.EnableGrouping = False
 		Me.RadGridViewClassItemsListe.MasterTemplate.ShowRowHeaderColumn = False
-		Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition3
+		Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition1
 		Me.RadGridViewClassItemsListe.Name = "RadGridViewClassItemsListe"
 		Me.RadGridViewClassItemsListe.ShowItemToolTips = False
 		Me.RadGridViewClassItemsListe.ShowNoDataText = False
@@ -814,7 +634,7 @@ Partial Class MainForm
 		Me.RadGridViewItems.MasterTemplate.AllowSearchRow = True
 		Me.RadGridViewItems.MasterTemplate.AutoExpandGroups = True
 		Me.RadGridViewItems.MasterTemplate.EnableAlternatingRowColor = True
-		Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition4
+		Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition2
 		Me.RadGridViewItems.Name = "RadGridViewItems"
 		'
 		'
@@ -1213,64 +1033,6 @@ Partial Class MainForm
 		Me.RadTextBox_INDEX.TabIndex = 0
 		Me.RadTextBox_INDEX.Text = "0"
 		'
-		'RadSpinEditor1
-		'
-		Me.RadSpinEditor1.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditor1.Location = New System.Drawing.Point(120, 3)
-		Me.RadSpinEditor1.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditor1.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditor1.Name = "RadSpinEditor1"
-		'
-		'
-		'
-		Me.RadSpinEditor1.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 3, 100, 20)
-		Me.RadSpinEditor1.RootElement.StretchVertically = True
-		Me.RadSpinEditor1.Size = New System.Drawing.Size(352, 20)
-		Me.RadSpinEditor1.TabIndex = 58
-		Me.RadSpinEditor1.TabStop = False
-		'
-		'RadSpinEditorProjectIndex2
-		'
-		Me.RadSpinEditorProjectIndex2.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorProjectIndex2.Location = New System.Drawing.Point(120, 3)
-		Me.RadSpinEditorProjectIndex2.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
-		Me.RadSpinEditorProjectIndex2.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
-		Me.RadSpinEditorProjectIndex2.Name = "RadSpinEditorProjectIndex2"
-		'
-		'
-		'
-		Me.RadSpinEditorProjectIndex2.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 3, 100, 20)
-		Me.RadSpinEditorProjectIndex2.RootElement.StretchVertically = True
-		Me.RadSpinEditorProjectIndex2.Size = New System.Drawing.Size(352, 20)
-		Me.RadSpinEditorProjectIndex2.TabIndex = 59
-		Me.RadSpinEditorProjectIndex2.TabStop = False
-		'
-		'RadTextBox1
-		'
-		Me.RadTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBox1.Location = New System.Drawing.Point(120, 3)
-		Me.RadTextBox1.Name = "RadTextBox1"
-		'
-		'
-		'
-		Me.RadTextBox1.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 3, 100, 20)
-		Me.RadTextBox1.RootElement.StretchVertically = True
-		Me.RadTextBox1.Size = New System.Drawing.Size(352, 20)
-		Me.RadTextBox1.TabIndex = 60
-		'
-		'RadTextBox2
-		'
-		Me.RadTextBox2.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBox2.Location = New System.Drawing.Point(120, 3)
-		Me.RadTextBox2.Name = "RadTextBox2"
-		'
-		'
-		'
-		Me.RadTextBox2.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 3, 100, 20)
-		Me.RadTextBox2.RootElement.StretchVertically = True
-		Me.RadTextBox2.Size = New System.Drawing.Size(352, 20)
-		Me.RadTextBox2.TabIndex = 61
-		'
 		'RadTextBoxProjectMainFormStatus
 		'
 		Me.RadTextBoxProjectMainFormStatus.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -1319,14 +1081,14 @@ Partial Class MainForm
 		Me.MinimizeBox = False
 		Me.Name = "MainForm"
 		Me.Text = "PrevisionFlex software 1.0"
-		CType(Me.radPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).EndInit()
-		Me.radPanelTodaysAppointments.ResumeLayout(False)
-		Me.radPanelTodaysAppointments.PerformLayout()
+		CType(Me.RadPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.RadPanelTodaysAppointments.ResumeLayout(False)
+		Me.RadPanelTodaysAppointments.PerformLayout()
 		CType(Me.RadLabelMTPaye, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelAllTotalOfItems, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.radLabelLastAppointmentToday, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadLabelLastAppointmentToday, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelTotalEstimation, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.radLabelCurrentItems, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadLabelCurrentItems, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadListeiewProjectName, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadStatusStrip2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadPanelHaut, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1336,18 +1098,9 @@ Partial Class MainForm
 		CType(Me.RadLabelGlobalCathegory, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelProjectNameGlobal, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelCentreNameGlobal, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorIndexKey, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorItemIndex, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorProjectIndex, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxItemsCode, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxItemName, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxParent_Items, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorQuantity, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorUnitQuantity, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorUnitPrice, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorTotalPrice, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorVATPorucent, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorVATValue, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxCurrency, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBoxItemMainForm.ResumeLayout(False)
 		Me.GroupBoxItemMainForm.PerformLayout()
@@ -1394,21 +1147,17 @@ Partial Class MainForm
 		CType(Me.RadTextBoxITEMS_CODE, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditor1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorProjectIndex2, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxProjectMainFormStatus, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxProjectMainFormPathName, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
 	End Sub
-	Private WithEvents radPanelTodaysAppointments As Telerik.WinControls.UI.RadPanel
+	Private WithEvents RadPanelTodaysAppointments As Telerik.WinControls.UI.RadPanel
 	Private WithEvents RadLabelAllTotalOfItems As Telerik.WinControls.UI.RadLabel
-	Private WithEvents radLabelLastAppointmentToday As Telerik.WinControls.UI.RadLabel
+	Private WithEvents RadLabelLastAppointmentToday As Telerik.WinControls.UI.RadLabel
 	Private WithEvents RadLabelTotalEstimation As Telerik.WinControls.UI.RadLabel
-	Private WithEvents radLabelCurrentItems As Telerik.WinControls.UI.RadLabel
+	Private WithEvents RadLabelCurrentItems As Telerik.WinControls.UI.RadLabel
 	Private WithEvents RadListeiewProjectName As Telerik.WinControls.UI.RadListView
 	Friend WithEvents ListBoxItemsParent As ListBox
 	Friend WithEvents RadStatusStrip2 As RadStatusStrip
@@ -1420,28 +1169,15 @@ Partial Class MainForm
 	Friend WithEvents RadLabelProjectNameGlobal As RadLabel
 	Friend WithEvents RadLabelCentreNameGlobal As RadLabel
 	'Friend WithEvents RadDataLayoutItemMainForm As RadDataLayout
-	Friend WithEvents RadSpinEditorIndexKey As RadSpinEditor
-	Friend WithEvents RadSpinEditorItemIndex As RadSpinEditor
-	Friend WithEvents RadSpinEditorProjectIndex As RadSpinEditor
 	Friend WithEvents RadTextBoxItemsCode As RadTextBox
 	Friend WithEvents RadTextBoxItemName As RadTextBox
 	Friend WithEvents RadTextBoxParent_Items As RadTextBox
-	Friend WithEvents RadSpinEditorQuantity As RadSpinEditor
-	Friend WithEvents RadSpinEditorUnitQuantity As RadSpinEditor
-	Friend WithEvents RadSpinEditorUnitPrice As RadSpinEditor
-	Friend WithEvents RadSpinEditorTotalPrice As RadSpinEditor
-	Friend WithEvents RadSpinEditorVATPorucent As RadSpinEditor
-	Friend WithEvents RadSpinEditorVATValue As RadSpinEditor
 	Friend WithEvents RadTextBoxCurrency As RadTextBox
 	Friend WithEvents ButtonGridviewUpdate As Button
 	Friend WithEvents ButtonGridviewDelete As Button
 	Friend WithEvents ButtonGridviewNew As Button
 	Friend WithEvents GroupBoxItemMainForm As GroupBox
 	Friend WithEvents RadGridViewItems As RadGridView
-	Friend WithEvents RadSpinEditor1 As RadSpinEditor
-	Friend WithEvents RadSpinEditorProjectIndex2 As RadSpinEditor
-	Friend WithEvents RadTextBox1 As RadTextBox
-	Friend WithEvents RadTextBox2 As RadTextBox
 	Friend WithEvents RadTextBoxProjectMainFormStatus As RadTextBox
 	Friend WithEvents RadTextBoxProjectMainFormPathName As RadTextBox
 	Friend WithEvents RadButtonGroupCancel As RadButton
