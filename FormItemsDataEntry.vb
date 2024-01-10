@@ -37,30 +37,21 @@ Public Class FormItemsDataEntry
 
     Private Function FindLastProjectCount()
 
-        Dim i As Integer = 0
-        Dim local_tableName As String
-        local_tableName = "PROJECT"
-        Dim resultat As String = ""
-        Dim iindex As Integer
-        Dim ds As New DataSet
-        Dim sql_tout_afficher As String
-        sql_tout_afficher = "SELECT * FROM " + local_tableName + " ORDER BY PROJECT_INDEX "
-        Dim con As New OleDb.OleDbConnection
-        Dim nombre As Long
-        con.ConnectionString = GlobalProvider
-        Dim cmd As OleDb.OleDbCommand
-        cmd = New OleDb.OleDbCommand(sql_tout_afficher, con)
-        cmd.Connection.Open()
-        Dim da As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter With {
-            .SelectCommand = cmd
-        }
-        da.Fill(ds, local_tableName)
-        nombre = ds.Tables(local_tableName).Rows.Count - 1
-        If nombre > 0 Then
-            iindex = ds.Tables(local_tableName).Rows(nombre).Item("PROJECT_INDEX")
-        End If
-        'nombre = ds.Tables(local_tableName).Rows.Count
-        Return iindex
+        Dim mysql As String
+        mysql = "select MAX(PrOJECT_INDEX) AS PrOJECT_INDEX FROM project"
+        Dim idx As Integer = 0
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
+            Dim cmd As New MySqlCommand(mysql, connection)
+            connection.Open()
+            Dim reader As MySqlDataReader
+            reader = cmd.ExecuteReader()
+            idx = Val(reader("PrOJECT_INDEX"))
+            connection.Close()
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
+        Return idx
     End Function
 
     Private Sub UpdateGridInfoProject(ByVal currentRow As GridViewRowInfo, ByRef iindex As Integer)
@@ -140,8 +131,8 @@ Public Class FormItemsDataEntry
         Dim cpt As Integer
         Dim basename As String = "project"
         mysql = "SELECT *  FROM " + basename + " order by project_INDEX desc"
-        If IDMorAccess = "IDM" Then
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
@@ -150,7 +141,9 @@ Public Class FormItemsDataEntry
             cpt = RadGridViewProjectName.Rows.Count
             SetColumnHeader()
             connection.Close()
-        End If
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
         Return cpt
     End Function
 
@@ -172,7 +165,7 @@ Public Class FormItemsDataEntry
         Dim mysql As String
         mysql = "INSERT INTO project(`PrOJECT_INDEX`, `PrOJECT_CODE`, `PrOJECT_NAME`, `PrOJECT_CREAT_DATE`, `PrOJECT_STATUS`) VALUES (" + pIndex.ToString + ", '" + pCode + "', '" + pName + "', CURDATE(), '" + pStatus + "')"
         Try
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
@@ -187,7 +180,7 @@ Public Class FormItemsDataEntry
         Dim mysql As String
         mysql = "UPDATE project SET `PrOJECT_CODE` = '" + pCode + "', `PrOJECT_NAME` = '" + pName + "', `PrOJECT_STATUS` = '" + pStatus + "' WHERE `INDEX` = " + idx.ToString
         Try
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
@@ -202,7 +195,7 @@ Public Class FormItemsDataEntry
         Dim mysql As String
         mysql = "DELETE FROM project WHERE `INDEX` = " + idx.ToString
         Try
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader

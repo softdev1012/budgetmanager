@@ -3,6 +3,7 @@ Imports MySql.Data.MySqlClient
 Public Class MainForm
     Public ProjectIndexGlobal As Integer = 0
     Public Global_Type_Charge As String = "ALL"
+    Public IndexMenuPrincipalClicked As Integer = 0
     Dim ArrayPictureLogo(10) As PictureBox
     Dim ArrayItemsCODE(10) As Label
     Dim ArrayItemsName(10) As Label
@@ -37,15 +38,19 @@ Public Class MainForm
 
     Dim dtProject As DataTable
     Private Sub fill_Project_Array()
-        GlobalProviderForIDM = GlobalProviderForLocalHost
         FindProjectListe()
     End Sub
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf RadGridViewItems_GroupSummaryEvaluate
-        'AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf radGridView1_GroupSummaryEvaluate
+
+        'DateTimePicker Formatation...
         RadDateTimePickerMonth.DateTimePickerElement.Calendar.HeaderNavigationMode = HeaderNavigationMode.Zoom
         RadDateTimePickerMonth.DateTimePickerElement.Calendar.ZoomLevel = ZoomLevel.Months
         AddHandler Me.RadDateTimePickerMonth.DateTimePickerElement.Calendar.ZoomChanging, AddressOf Calendar_ZoomChanging
+        '
+
+
+        AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf RadGridViewItems_GroupSummaryEvaluate
+
 
         CenterForm(Me)
         init_main_menu()
@@ -318,16 +323,14 @@ Public Class MainForm
         Dim ds As New DataSet
         Dim sql_tout_afficher As String
         sql_tout_afficher = "SELECT * FROM " + local_tableName + " WHERE  PROJECT_INDEX=" + Str(project_index)
-        Dim con As New OleDb.OleDbConnection
-        con.ConnectionString = GlobalProvider
 
         Dim mysql As String
         Dim cpt As Integer
         Dim basename As String = "project"
         mysql = "SELECT *  FROM " + basename + " WHERE  PROJECT_INDEX=" + Str(project_index) + " order by project_INDEX desc"
         dtProject = New DataTable()
-        If IDMorAccess = "IDM" Then
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
@@ -338,7 +341,9 @@ Public Class MainForm
                 resultat = dtProject.Rows(0).Item("PROJECT_CODE").ToString
             End If
             connection.Close()
-        End If
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
         Return cpt
     End Function
     Private Sub init_Groupe()
@@ -424,8 +429,8 @@ Public Class MainForm
             mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, items_last_edit_date, items_projet_INDEX, items_price_total, items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " and items_ff = 'N' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
         End If
         'mysql = "SELECT items_INDEX,items_projet_INDEX,items_code,items_Name,items_Parent,items_projet_quantity,items_projet_unit,items_projet_price_total,items_projet_taxe,items_projet_taxe_valu,items_currency,items_last_edit_date  FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " order by items_projet_INDEX desc"
-        If IDMorAccess = "IDM" Then
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
@@ -433,7 +438,9 @@ Public Class MainForm
             Me.RadGridViewItems.DataSource = reader
             cpt = RadGridViewItems.Rows.Count
             connection.Close()
-        End If
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
         If cpt > 0 Then
             Dim col As Integer = RadGridViewItems.Columns.Count - 1
             For i = 0 To col 'nombre collones
@@ -552,21 +559,20 @@ Public Class MainForm
         Dim ds As New DataSet
         Dim mysql As String
         mysql = "SELECT * FROM " + local_tableName + " ORDER BY PROJECT_CODE"
-        Dim con As New OleDb.OleDbConnection
         Dim nombre As Long
-        Dim connection As New MySqlConnection(GlobalProviderForIDM)
+        Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
         Dim cmd As New MySqlCommand(mysql, connection)
         Dim iindex As Integer
-        con.ConnectionString = GlobalProvider
-        If IDMorAccess = "IDM" Then
-
+        Try
             connection.Open()
             Dim reader As MySqlDataReader
             reader = cmd.ExecuteReader()
             dtProject.Load(reader)
             cpt = dtProject.Rows.Count
             connection.Close()
-        End If
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
         'cmd = New OleDb.OleDbCommand(mysql, con)
         cmd.Connection.Open()
         nombre = dtProject.Rows.Count
@@ -651,8 +657,9 @@ Public Class MainForm
         mysql += " Where `INDEX` = " + iindex.ToString
 
         RadLabelElementMessage.Text = mysql
-        If IDMorAccess = "IDM" Then
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
@@ -661,7 +668,9 @@ Public Class MainForm
             'cpt = RadGridViewProjectName.Rows.Count
             connection.Close()
             FindItemsSql(ProjectIndexGlobal)
-        End If
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
     End Sub
 
     Private Function ConvertDateMysql4(ByVal DateOrigine As Date) As String
@@ -673,37 +682,21 @@ Public Class MainForm
         Return ConvertedDate
     End Function
     Private Function FindLastItemCount()
-
-        Dim i As Integer = 0
-        Dim local_tableName As String
-        local_tableName = "ITEMS"
-        Dim resultat As String = ""
-        Dim iindex As Integer
-        Dim ds As New DataSet
         Dim mysql As String
-        Dim FF As Boolean
-        FF = RadCheckBoxFF.Checked
-        If FF Then
-            mysql = "SELECT * FROM " + local_tableName + " ORDER BY ITEMS_INDEX "
-        Else
-            mysql = "SELECT * FROM " + local_tableName + " where items_ff = 'N' ORDER BY ITEMS_INDEX "
-        End If
-        Dim con As New OleDb.OleDbConnection
-        Dim nombre As Long
-        con.ConnectionString = GlobalProvider
-        Dim cmd As OleDb.OleDbCommand
-        cmd = New OleDb.OleDbCommand(mysql, con)
-        cmd.Connection.Open()
-        Dim da As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter With {
-            .SelectCommand = cmd
-        }
-        da.Fill(ds, local_tableName)
-        nombre = ds.Tables(local_tableName).Rows.Count - 1
-        If nombre > 0 Then
-            iindex = ds.Tables(local_tableName).Rows(nombre).Item("ITEMS_INDEX")
-        End If
-        'nombre = ds.Tables(local_tableName).Rows.Count
-        Return iindex
+        mysql = "select MAX(ITEMS_INDEX) AS ITEMS_INDEX FROM items"
+        Dim idx As Integer = 0
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
+            Dim cmd As New MySqlCommand(mysql, connection)
+            connection.Open()
+            Dim reader As MySqlDataReader
+            reader = cmd.ExecuteReader()
+            idx = Val(reader("ITEMS_INDEX"))
+            connection.Close()
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
+        Return idx
     End Function
     Private Sub ButtonGridviewDelete_Click(sender As Object, e As EventArgs) Handles ButtonGridviewDelete.Click
         Dim iindex As Integer = Val(RadTextBox_INDEX.Text)
@@ -715,8 +708,9 @@ Public Class MainForm
         Dim basename As String = "items"
         mysql = "DELETE FROM " + basename + " where `INDEX` = " + RadTextBox_INDEX.Text
         RadLabelElementMessage.Text = mysql
-        If IDMorAccess = "IDM" Then
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
@@ -725,7 +719,9 @@ Public Class MainForm
             'cpt = RadGridViewProjectName.Rows.Count
             connection.Close()
             FindItemsSql(ProjectIndexGlobal)
-        End If
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
     End Sub
     Private Sub ButtonGridviewNew_Click(sender As Object, e As EventArgs) Handles ButtonGridviewNew.Click
         '        RadDataLayout1 = New RadDataLayout
@@ -786,15 +782,17 @@ Public Class MainForm
         mysql += "values( " + ValueString + ")"
         'mysql += "values( 28,1,'VELO','VELOELECT','_ROOT',90,91,92,93,'EURO','1900-01-01','1900-02-02','N','JP',95)"
 
-        If IDMorAccess = "IDM" Then
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
 
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
             reader = cmd.ExecuteReader()
             connection.Close()
-        End If
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
 
     End Sub
     Private Sub RadButtonGroupage_Click(sender As Object, e As EventArgs) Handles RadButtonGroupage.Click
@@ -854,8 +852,9 @@ Public Class MainForm
         Dim basename As String = "project"
         mysql = "SELECT *  FROM " + basename + " order by project_INDEX desc"
         dtProject = New DataTable()
-        If IDMorAccess = "IDM" Then
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
+
+        Try
+            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
@@ -863,7 +862,9 @@ Public Class MainForm
             dtProject.Load(reader)
             cpt = dtProject.Rows.Count
             connection.Close()
-        End If
+        Catch ex As Exception
+            RadLabelElementMessage.Text = ex.Message
+        End Try
         RadLabelElementMessage.Text = "Nombre de projets" + Str(cpt)
         Return cpt
     End Function
