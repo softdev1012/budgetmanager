@@ -30,8 +30,6 @@ Public Class MainForm
     Dim IndexClicked As Integer = 0
 
     Private dtProject As DataTable = New DataTable()
-    Private dtItems As DataTable = New DataTable()
-
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -107,22 +105,6 @@ Public Class MainForm
     Private Sub c_fini()
         Me.Close()
     End Sub
-    Private Sub FillItems_root()
-
-        Dim Items_Root_Name As String = ""
-        Dim iindex As Integer = 0
-        Dim i As Integer
-        iindex = RadGridViewItems.Rows.Count
-        If iindex > 0 Then
-            For i = 0 To iindex - 1
-                Items_Root_Name = RadGridViewItems.Rows(i).Cells(1).Value
-                If Items_Root_Name = "__ROOT" Then
-                    ListBoxItemsParent.Items.Add(Items_Root_Name + " " + RadGridViewItems.Rows(i).Cells(4).Value + Str(i))
-                End If
-            Next
-        End If
-
-    End Sub
     Private Sub display_ProjectCathegory_Flash(Name As String, titre As String)
         Try
             RadLabelGlobalCathegory.Text = "<html><p>" + titre + " : <b><span style=""font-size: medium"">" + Name + "</b><html>"
@@ -155,7 +137,8 @@ Public Class MainForm
         End Try
         Category = RadGridViewItems.CurrentRow.Cells(2).Value
         Dim ProjectName As String = ""
-        ProjectName = FindProjectName(iindex)
+        Dim ProjectIDX = Val(RadGridViewItems.CurrentRow.Cells(11).Value)
+        ProjectName = FindProjectName(ProjectIDX)
         DisplayProjectDetail()
         display_ProjectCathegory_Flash(Category, "Cathegory")
         display_ProjectName_Flash(ProjectName, "Project")
@@ -191,10 +174,9 @@ Public Class MainForm
     End Sub
     Private Sub calculTotalLine(ByVal iindex As Integer)
         Dim ClassItemsListe = New List(Of ClassItemsListe)
-        Dim RowsCount As Integer = 0
-        Dim lastRow As GridViewRowInfo = RadGridViewItems.Rows(RadGridViewItems.Rows.Count - 1)
-        Dim CurrentCategory As String = ""
-        Dim tofindCategory = RadGridViewItems.Rows(iindex).Cells(2).Value
+        Dim cnt As Integer = RadGridViewItems.Rows.Count - 1
+        Dim CurrentCategory As String
+        Dim tofindCategory = ""
         Dim totalline As Double = 0
         Dim totalPaye As Double = 0
         Dim Alltotal As Double = 0
@@ -205,12 +187,13 @@ Public Class MainForm
         Dim colPayeQui As Integer = 16
         Dim ColFF As Integer = 17
         Dim colFlagPaye As Integer = 14
-        RowsCount = RadGridViewItems.Rows.Count - 1
         ListBoxItemsParent.Items.Clear()
+        If RadGridViewItems.Rows.Count > iindex Then
+            tofindCategory = RadGridViewItems.Rows(iindex).Cells(2).Value
+        End If
 
-        For i = 0 To RowsCount
+        For i = 0 To cnt
             Dim MTPaye As String = ""
-            'If i <> iindex Then
             If IsDBNull(RadGridViewItems.Rows(i).Cells(2).Value) Then
             Else
                 CurrentCategory = RadGridViewItems.Rows(i).Cells(2).Value
@@ -269,9 +252,7 @@ Public Class MainForm
                 End If
             End If
         Next
-        If ClassItemsListe.Count > 0 Then
-            RadGridViewClassItemsListe.DataSource = ClassItemsListe
-        End If
+        RadGridViewClassItemsListe.DataSource = ClassItemsListe
         RadLabelTotalEstimation.Text = Format(AlltotalItems, "0.00 €")
         RadLabelMTPaye.Text = Format(totalPaye, "0.00 €") + " payé."
         If iindex = 0 Then
@@ -290,9 +271,6 @@ Public Class MainForm
         RadGridViewClassItemsListe.Columns(6).Width = 120
         RadGridViewClassItemsListe.Columns(7).Width = 75
         RadGridViewClassItemsListe.Columns(0).TextAlignment = ContentAlignment.MiddleCenter
-        'RadGridViewClassItemsListe.Columns(1).TextAlignment = ContentAlignment.MiddleCenter
-        'RadGridViewClassItemsListe.Columns(4).TextAlignment = ContentAlignment.MiddleCenter
-        'RadGridViewClassItemsListe.Columns(5).TextAlignment = ContentAlignment.MiddleCenter
         RadGridViewClassItemsListe.Columns(2).TextAlignment = ContentAlignment.MiddleRight
         RadGridViewClassItemsListe.Columns(3).TextAlignment = ContentAlignment.MiddleRight
         RadGridViewClassItemsListe.Columns(4).TextAlignment = ContentAlignment.MiddleCenter
@@ -303,34 +281,16 @@ Public Class MainForm
 
     End Sub
     Private Function FindProjectName(ByVal project_index As Integer)
-        Dim i As Integer = 0
-        Dim local_tableName As String
-        local_tableName = "PROJECT"
-        Dim resultat As String = ""
-        Dim ds As New DataSet
-        Dim sql_tout_afficher As String
-        sql_tout_afficher = "SELECT * FROM " + local_tableName + " WHERE  PROJECT_INDEX=" + Str(project_index)
 
-        Dim mysql As String
-        Dim cpt As Integer
-        Dim basename As String = "project"
-        mysql = "SELECT *  FROM " + basename + " WHERE  PROJECT_INDEX=" + Str(project_index) + " order by project_INDEX desc"
-        Try
-            Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
-            Dim cmd As New MySqlCommand(mysql, connection)
-            connection.Open()
-            Dim reader As MySqlDataReader
-            reader = cmd.ExecuteReader()
-            dtProject.Load(reader)
-            cpt = dtProject.Rows.Count
-            If cpt > 0 Then
-                resultat = dtProject.Rows(0).Item("PROJECT_CODE").ToString
+        Dim i As Integer
+        Dim cnt As Integer = dtProject.Rows.Count
+
+        For i = 0 To cnt - 1
+            If Val(dtProject.Rows(i).Item("PrOJECT_INDEX")) = project_index Then
+                Return dtProject.Rows(i).Item("PrOJECT_NAME")
             End If
-            connection.Close()
-        Catch ex As Exception
-            RadLabelElementMessage.Text = ex.Message
-        End Try
-        Return cpt
+        Next
+        Return ""
     End Function
     Private Sub InitProjectMenu()
         Dim i As Integer = 0
@@ -466,16 +426,15 @@ Public Class MainForm
             RadGridViewItems.Columns(16).TextAlignment = ContentAlignment.MiddleCenter
             RadGridViewItems.Columns(17).TextAlignment = ContentAlignment.MiddleCenter
 
-            FillItems_root()
-            calculTotalLine(0) 'affiche le total
         End If
+        calculTotalLine(0) 'affiche le total
     End Sub
     Private Sub MenuPrincipalClickHandler_name(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim CodeName As Label = CType(sender, Label)
         Dim idx = Val(CodeName.Name)
         ProjectIndexGlobal = Val(ArrayItemsCODE(idx).Text)
         RadLabelElementMessage.Text = "Label " + ArrayItemsCODE(idx).Text + " " + Str(idx)
-        display_ProjectName_Flash(ArrayItemsCODE(idx).Text, "Project")
+        display_ProjectName_Flash(CodeName.Text, "Project")
         GetItemsFromDB(ProjectIndexGlobal)
     End Sub
     Private Sub MenuPrincipalClickHandler_code(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -483,7 +442,7 @@ Public Class MainForm
         Dim idx As Integer = Val(CodeName.Name)
         ProjectIndexGlobal = Val(CodeName.Text)
         RadLabelElementMessage.Text = "Label " + CType(sender, Label).Text + " " + Str(idx)
-        display_ProjectName_Flash(CodeName.Text, "Project")
+        display_ProjectName_Flash(ArrayItemsName(idx).Text, "Project")
         GetItemsFromDB(ProjectIndexGlobal)
     End Sub
     Private Sub MenuPrincipalClickHandler_picture(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -491,7 +450,7 @@ Public Class MainForm
         Dim idx = Val(picb.Name)
         ProjectIndexGlobal = Val(ArrayItemsCODE(idx).Text)
         RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(idx + 1) + ArrayItemsCODE(idx).Text
-        display_ProjectName_Flash(ArrayItemsCODE(idx).Text, "Project")
+        display_ProjectName_Flash(ArrayItemsName(idx).Text, "Project")
         GetItemsFromDB(ProjectIndexGlobal)
     End Sub
 
@@ -506,19 +465,6 @@ Public Class MainForm
 
     Private Sub ButtonGridviewUpdate_Click(sender As Object, e As EventArgs) Handles ButtonGridviewUpdate.Click
         Dim irow As Integer = -1
-
-        'RadTextBox_INDEX.Text = ""
-        'RadTextBox_ITEMS_INDEX.Text = ""
-        'RadTextBoxITEMS_CODE.Text = ""
-        'RadTextBoxITEMS_NAME.Text = ""
-        'RadTextBoxITEMS_PARENT.Text = ""
-        'RadTextBoxITEMS_QUANTITY.Text = ""
-        'RadTextBoxITEMS_UNIT.Text = ""
-        'RadTextBoxITEMS_TAXT.Text = ""
-        'RadTextBoxITEMS_TAXE_VALUE.Text = ""
-        'RadTextBoxITEMS_CURRENCY.Text = ""
-        'RadTextBoxITEMS_LAST_EDIT_DATE.Text = ""
-        'RadTextBox_MTTVA.Text = ""
         Dim iindex As Integer = Val(RadTextBox_INDEX.Text)
         If iindex < 1 Then
             RadLabelElementMessage.Text = "Erreur, le code INDEX est erroné"
@@ -631,27 +577,7 @@ Public Class MainForm
 
         Dim mysql As String
         Dim basename As String = "cic"
-        'Dim ddate As String = OOClassBanque.Banque_Date.ToString("yyyy/MM/dd")
         RadTextBox_ITEMS_INDEX.Text = Str(FindLastItemCount())
-        'RadTextBoxITEMS_CODE.Text = "" 'Str(FindLastItemCount())
-        'RadTextBoxITEMS_NAME.Text = ""
-
-
-        'RadTextBox_ITEMS_INDEX.Text = Str(FindLastItemCount())
-        'RadTextBoxITEMS_CODE.Text = "" 'Str(FindLastItemCount())
-        'RadTextBoxITEMS_NAME.Text = ""
-        'RadTextBoxITEMS_PARENT.Text = "_ROOT"
-        'RadTextBoxITEMS_QUANTITY.Text = "1"
-        'RadTextBoxITEMS_UNIT.Text = "0"
-        'RadTextBoxITEMS_TAXE.Text = "20%"
-        'RadTextBoxITEMS_TAXE_VALUE.Text = "0"
-        'RadTextBoxITEMS_CURRENCY.Text = "EURO"
-        'RadTextBoxITEMS_LAST_EDIT_DATE.Text = Today.ToString
-        'RadTextBox_MTTVA.Text = ""
-        'RadTextBoxITEMS_DatePaiement.Text = Today.ToString
-        'RadTextBoxITEMS_PayeQui.Text = "N"
-        'RadTextBoxITEMS_MT_PAIEMENT.Text = ""
-        'RadTextBoxITEMS_PAYE_QUI.Text = "CIC"
         Dim Date1, Date2 As String
         Date1 = ConvertDateMysql4(RadTextBoxITEMS_LAST_EDIT_DATE.Text)
         Date2 = ConvertDateMysql4(RadTextBoxITEMS_DatePaiement.Text)
