@@ -39,12 +39,9 @@ Partial Class MainForm
 		Me.radLabelCurrentItems = New Telerik.WinControls.UI.RadLabel()
 		Me.RadListeiewProjectName = New Telerik.WinControls.UI.RadListView()
 		Me.ListBoxItemsParent = New System.Windows.Forms.ListBox()
-		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.RadStatusStrip2 = New Telerik.WinControls.UI.RadStatusStrip()
 		Me.RadLabelElementMessage = New Telerik.WinControls.UI.RadLabelElement()
 		Me.RadPanelHaut = New Telerik.WinControls.UI.RadPanel()
-		Me.RadDateTimePickerDateEnd = New Telerik.WinControls.UI.RadDateTimePicker()
-		Me.RadDateTimePickerDayStard = New Telerik.WinControls.UI.RadDateTimePicker()
 		Me.RadLabelDayEnd = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelDaySart = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelGlobalCathegory = New Telerik.WinControls.UI.RadLabel()
@@ -63,7 +60,6 @@ Partial Class MainForm
 		Me.RadSpinEditorVATPorucent = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadSpinEditorVATValue = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadTextBoxCurrency = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadDateTimePickerDate_Update = New Telerik.WinControls.UI.RadDateTimePicker()
 		Me.ButtonGridviewUpdate = New System.Windows.Forms.Button()
 		Me.ButtonGridviewDelete = New System.Windows.Forms.Button()
 		Me.ButtonGridviewNew = New System.Windows.Forms.Button()
@@ -115,10 +111,7 @@ Partial Class MainForm
 		Me.RadSpinEditorProjectIndex2 = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBox2 = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadDateTimePickerDateCreat = New Telerik.WinControls.UI.RadDateTimePicker()
-		Me.RadDateTimePickerDateModify = New Telerik.WinControls.UI.RadDateTimePicker()
 		Me.RadTextBoxProjectMainFormStatus = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadTextBoxProjectMainFormPathName = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBoxProjectMainFormPathName = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadGridViewPaiement = New Telerik.WinControls.UI.RadGridView()
 		Me.GroupBoxMenuVertical = New System.Windows.Forms.Panel()
@@ -130,12 +123,9 @@ Partial Class MainForm
 		CType(Me.RadLabelTotalEstimation, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.radLabelCurrentItems, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadListeiewProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadStatusStrip2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadPanelHaut, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.RadPanelHaut.SuspendLayout()
-		CType(Me.RadDateTimePickerDateEnd, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadDateTimePickerDayStard, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelDayEnd, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelDaySart, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelGlobalCathegory, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -154,7 +144,6 @@ Partial Class MainForm
 		CType(Me.RadSpinEditorVATPorucent, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadSpinEditorVATValue, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadDateTimePickerDate_Update, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBoxItemMainForm.SuspendLayout()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -206,8 +195,6 @@ Partial Class MainForm
 		CType(Me.RadSpinEditorProjectIndex2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadDateTimePickerDateCreat, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadDateTimePickerDateModify, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxProjectMainFormStatus, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxProjectMainFormPathName, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewPaiement, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -341,15 +328,6 @@ Partial Class MainForm
 		Me.ListBoxItemsParent.Size = New System.Drawing.Size(270, 238)
 		Me.ListBoxItemsParent.TabIndex = 12
 		'
-		'PictureBox1
-		'
-		Me.PictureBox1.Image = Global.PrevisionFlex.My.Resources.Resources.Construction_100
-		Me.PictureBox1.Location = New System.Drawing.Point(1251, 922)
-		Me.PictureBox1.Name = "PictureBox1"
-		Me.PictureBox1.Size = New System.Drawing.Size(59, 43)
-		Me.PictureBox1.TabIndex = 13
-		Me.PictureBox1.TabStop = False
-		'
 		'RadStatusStrip2
 		'
 		Me.RadStatusStrip2.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -375,8 +353,6 @@ Partial Class MainForm
 		'RadPanelHaut
 		'
 		Me.RadPanelHaut.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(200, Byte), Integer))
-		Me.RadPanelHaut.Controls.Add(Me.RadDateTimePickerDateEnd)
-		Me.RadPanelHaut.Controls.Add(Me.RadDateTimePickerDayStard)
 		Me.RadPanelHaut.Controls.Add(Me.RadLabelDayEnd)
 		Me.RadPanelHaut.Controls.Add(Me.RadLabelDaySart)
 		Me.RadPanelHaut.Controls.Add(Me.RadLabelGlobalCathegory)
@@ -390,40 +366,6 @@ Partial Class MainForm
 		Me.RadPanelHaut.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 200, 100)
 		Me.RadPanelHaut.Size = New System.Drawing.Size(1620, 35)
 		Me.RadPanelHaut.TabIndex = 46
-		'
-		'RadDateTimePickerDateEnd
-		'
-		Me.RadDateTimePickerDateEnd.BackColor = System.Drawing.Color.Transparent
-		Me.RadDateTimePickerDateEnd.CalendarSize = New System.Drawing.Size(290, 320)
-		Me.RadDateTimePickerDateEnd.Location = New System.Drawing.Point(770, 2)
-		Me.RadDateTimePickerDateEnd.Name = "RadDateTimePickerDateEnd"
-		'
-		'
-		'
-		Me.RadDateTimePickerDateEnd.RootElement.ControlBounds = New System.Drawing.Rectangle(770, 2, 164, 20)
-		Me.RadDateTimePickerDateEnd.RootElement.StretchVertically = True
-		Me.RadDateTimePickerDateEnd.Size = New System.Drawing.Size(152, 30)
-		Me.RadDateTimePickerDateEnd.TabIndex = 49
-		Me.RadDateTimePickerDateEnd.TabStop = False
-		Me.RadDateTimePickerDateEnd.Text = "Sunday, April 14, 2019"
-		Me.RadDateTimePickerDateEnd.Value = New Date(2019, 4, 14, 10, 25, 51, 620)
-		'
-		'RadDateTimePickerDayStard
-		'
-		Me.RadDateTimePickerDayStard.BackColor = System.Drawing.Color.Transparent
-		Me.RadDateTimePickerDayStard.CalendarSize = New System.Drawing.Size(290, 320)
-		Me.RadDateTimePickerDayStard.Location = New System.Drawing.Point(930, 2)
-		Me.RadDateTimePickerDayStard.Name = "RadDateTimePickerDayStard"
-		'
-		'
-		'
-		Me.RadDateTimePickerDayStard.RootElement.ControlBounds = New System.Drawing.Rectangle(930, 2, 164, 20)
-		Me.RadDateTimePickerDayStard.RootElement.StretchVertically = True
-		Me.RadDateTimePickerDayStard.Size = New System.Drawing.Size(152, 30)
-		Me.RadDateTimePickerDayStard.TabIndex = 48
-		Me.RadDateTimePickerDayStard.TabStop = False
-		Me.RadDateTimePickerDayStard.Text = "Sunday, April 14, 2019"
-		Me.RadDateTimePickerDayStard.Value = New Date(2019, 4, 14, 10, 25, 51, 620)
 		'
 		'RadLabelDayEnd
 		'
@@ -708,23 +650,6 @@ Partial Class MainForm
 		Me.RadTextBoxCurrency.RootElement.StretchVertically = True
 		Me.RadTextBoxCurrency.Size = New System.Drawing.Size(184, 20)
 		Me.RadTextBoxCurrency.TabIndex = 60
-		'
-		'RadDateTimePickerDate_Update
-		'
-		Me.RadDateTimePickerDate_Update.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadDateTimePickerDate_Update.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-		Me.RadDateTimePickerDate_Update.Location = New System.Drawing.Point(64, 15)
-		Me.RadDateTimePickerDate_Update.Name = "RadDateTimePickerDate_Update"
-		'
-		'
-		'
-		Me.RadDateTimePickerDate_Update.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 15, 164, 20)
-		Me.RadDateTimePickerDate_Update.RootElement.StretchVertically = True
-		Me.RadDateTimePickerDate_Update.Size = New System.Drawing.Size(184, 20)
-		Me.RadDateTimePickerDate_Update.TabIndex = 61
-		Me.RadDateTimePickerDate_Update.TabStop = False
-		Me.RadDateTimePickerDate_Update.Text = "6/10/2019"
-		Me.RadDateTimePickerDate_Update.Value = New Date(2019, 6, 10, 18, 47, 50, 77)
 		'
 		'ButtonGridviewUpdate
 		'
@@ -1392,38 +1317,6 @@ Partial Class MainForm
 		Me.RadTextBox2.Size = New System.Drawing.Size(352, 20)
 		Me.RadTextBox2.TabIndex = 61
 		'
-		'RadDateTimePickerDateCreat
-		'
-		Me.RadDateTimePickerDateCreat.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadDateTimePickerDateCreat.Location = New System.Drawing.Point(120, 3)
-		Me.RadDateTimePickerDateCreat.Name = "RadDateTimePickerDateCreat"
-		'
-		'
-		'
-		Me.RadDateTimePickerDateCreat.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 3, 164, 20)
-		Me.RadDateTimePickerDateCreat.RootElement.StretchVertically = True
-		Me.RadDateTimePickerDateCreat.Size = New System.Drawing.Size(352, 20)
-		Me.RadDateTimePickerDateCreat.TabIndex = 62
-		Me.RadDateTimePickerDateCreat.TabStop = False
-		Me.RadDateTimePickerDateCreat.Text = "Sunday, June 16, 2019"
-		Me.RadDateTimePickerDateCreat.Value = New Date(2019, 6, 16, 19, 3, 33, 688)
-		'
-		'RadDateTimePickerDateModify
-		'
-		Me.RadDateTimePickerDateModify.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadDateTimePickerDateModify.Location = New System.Drawing.Point(120, 3)
-		Me.RadDateTimePickerDateModify.Name = "RadDateTimePickerDateModify"
-		'
-		'
-		'
-		Me.RadDateTimePickerDateModify.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 3, 164, 20)
-		Me.RadDateTimePickerDateModify.RootElement.StretchVertically = True
-		Me.RadDateTimePickerDateModify.Size = New System.Drawing.Size(352, 20)
-		Me.RadDateTimePickerDateModify.TabIndex = 63
-		Me.RadDateTimePickerDateModify.TabStop = False
-		Me.RadDateTimePickerDateModify.Text = "Sunday, June 16, 2019"
-		Me.RadDateTimePickerDateModify.Value = New Date(2019, 6, 16, 19, 3, 33, 733)
-		'
 		'RadTextBoxProjectMainFormStatus
 		'
 		Me.RadTextBoxProjectMainFormStatus.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -1496,7 +1389,6 @@ Partial Class MainForm
 		Me.Controls.Add(Me.RadStatusStrip2)
 		Me.Controls.Add(Me.RadGridView2)
 		Me.Controls.Add(Me.RadGridViewProjectName)
-		Me.Controls.Add(Me.PictureBox1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = False
 		Me.MinimizeBox = False
@@ -1511,13 +1403,9 @@ Partial Class MainForm
 		CType(Me.RadLabelTotalEstimation, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.radLabelCurrentItems, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadListeiewProjectName, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadStatusStrip2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadPanelHaut, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.RadPanelHaut.ResumeLayout(False)
-		Me.RadPanelHaut.PerformLayout()
-		CType(Me.RadDateTimePickerDateEnd, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadDateTimePickerDayStard, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelDayEnd, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelDaySart, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelGlobalCathegory, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1536,7 +1424,6 @@ Partial Class MainForm
 		CType(Me.RadSpinEditorVATPorucent, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadSpinEditorVATValue, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxCurrency, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadDateTimePickerDate_Update, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBoxItemMainForm.ResumeLayout(False)
 		Me.GroupBoxItemMainForm.PerformLayout()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1590,8 +1477,6 @@ Partial Class MainForm
 		CType(Me.RadSpinEditorProjectIndex2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadDateTimePickerDateCreat, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadDateTimePickerDateModify, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxProjectMainFormStatus, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxProjectMainFormPathName, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewPaiement.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1607,12 +1492,9 @@ Partial Class MainForm
 	Private WithEvents radLabelCurrentItems As Telerik.WinControls.UI.RadLabel
 	Private WithEvents RadListeiewProjectName As Telerik.WinControls.UI.RadListView
 	Friend WithEvents ListBoxItemsParent As ListBox
-	Friend WithEvents PictureBox1 As PictureBox
 	Friend WithEvents RadStatusStrip2 As RadStatusStrip
 	Friend WithEvents RadLabelElementMessage As RadLabelElement
 	Friend WithEvents RadPanelHaut As RadPanel
-	Friend WithEvents RadDateTimePickerDateEnd As RadDateTimePicker
-	Friend WithEvents RadDateTimePickerDayStard As RadDateTimePicker
 	Friend WithEvents RadLabelDayEnd As RadLabel
 	Friend WithEvents RadLabelDaySart As RadLabel
 	Friend WithEvents RadLabelGlobalCathegory As RadLabel
@@ -1632,7 +1514,6 @@ Partial Class MainForm
 	Friend WithEvents RadSpinEditorVATPorucent As RadSpinEditor
 	Friend WithEvents RadSpinEditorVATValue As RadSpinEditor
 	Friend WithEvents RadTextBoxCurrency As RadTextBox
-	Friend WithEvents RadDateTimePickerDate_Update As RadDateTimePicker
 	Friend WithEvents ButtonGridviewUpdate As Button
 	Friend WithEvents ButtonGridviewDelete As Button
 	Friend WithEvents ButtonGridviewNew As Button
@@ -1643,8 +1524,6 @@ Partial Class MainForm
 	Friend WithEvents RadSpinEditorProjectIndex2 As RadSpinEditor
 	Friend WithEvents RadTextBox1 As RadTextBox
 	Friend WithEvents RadTextBox2 As RadTextBox
-	Friend WithEvents RadDateTimePickerDateCreat As RadDateTimePicker
-	Friend WithEvents RadDateTimePickerDateModify As RadDateTimePicker
 	Friend WithEvents RadTextBoxProjectMainFormStatus As RadTextBox
 	Friend WithEvents RadTextBoxProjectMainFormPathName As RadTextBox
 	Friend WithEvents RadButtonGroupCancel As RadButton

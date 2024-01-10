@@ -1026,7 +1026,7 @@ Public Class MainForm
         currentRow.Cells(10).Value = RadSpinEditorVATPorucent.Value
         currentRow.Cells(11).Value = RadSpinEditorVATValue.Value * vatPC
         currentRow.Cells(12).Value = RadTextBoxCurrency.Text
-        currentRow.Cells(13).Value = RadDateTimePickerDate_Update.Value
+        '@@@@@@@ currentRow.Cells(13).Value = RadDateTimePickerDate_Update.Value
         RadLabelElementMessage.Text = RadTextBoxItemsCode.Text + RadTextBoxItemName.Text
         Dim newRowInfo As GridViewNewRowInfo = TryCast(currentRow, GridViewNewRowInfo)
         If newRowInfo IsNot Nothing Then
@@ -1263,9 +1263,9 @@ Public Class MainForm
     Private Sub ButtonGridviewNewProjectMainForm_Click(sender As Object, e As EventArgs)
         Dim iindex As Integer = 0
         RadGridViewProjectName.Rows.AddNew()
-        RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        RadDateTimePickerDateCreat.Value = Today.ToShortDateString
+        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
+        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
+        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
         RadTextBoxProjectMainFormStatus.Text = "IN PROGRESS"
         RadTextBoxProjectMainFormPathName.Text = "C:\TAKEOFF\DATA"
         'RadTextBoxItemsCode.Text = "Code Name" 'ArrayCurrentItems(const_Category)
@@ -1366,9 +1366,9 @@ Public Class MainForm
     Private Sub RadButton1_Click_1(sender As Object, e As EventArgs)
         Dim iindex As Integer = 0
         RadGridViewProjectName.Rows.AddNew()
-        RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        RadDateTimePickerDateCreat.Value = Today.ToShortDateString
+        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
+        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
+        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
         RadTextBoxProjectMainFormStatus.Text = "IN PROGRESS"
         RadTextBoxProjectMainFormPathName.Text = "C:\TAKEOFF\DATA"
         iindex = FindLastProjectCount() + 1
