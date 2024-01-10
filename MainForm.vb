@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 Public Class MainForm
     Public ProjectIndexGlobal As Integer = 0
     Public Global_Type_Charge As String = "ALL"
-    Public IndexMenuPrincipalClicked As Integer = 0
+    'Public IndexMenuPrincipalClicked As Integer = 0
     Dim ArrayPictureLogo(10) As PictureBox
     Dim ArrayItemsCODE(10) As Label
     Dim ArrayItemsName(10) As Label
@@ -47,9 +47,11 @@ Public Class MainForm
         CenterForm(Me)
         init_main_menu()
         GetProjectFromDB()
-        init_Groupe()
-        FillItems_root()
-        'ALL par défaut
+        InitProjectMenu()
+
+        If dtProject.Rows.Count > 0 Then
+            GetItemsFromDB(Val(dtProject.Rows(0).Item("PrOJECT_INDEX")))
+        End If
         CheckedListBoxTypeCharge.SetItemChecked(0, True)
         Global_Type_Charge = CheckedListBoxTypeCharge.Items(0)
     End Sub
@@ -93,13 +95,13 @@ Public Class MainForm
         Dim picb As PictureBox = CType(sender, PictureBox)
         Dim indexPictureBox = Val(picb.Name)
         sender.image = ImgPoubelleEnter(indexPictureBox)
-        RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(IndexMenuPrincipalClicked)
+        RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(indexPictureBox)
     End Sub
     Private Sub PictureBoxMouseLeaveHandler(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim picb As PictureBox = CType(sender, PictureBox)
         Dim indexPictureBox = Val(picb.Name)
         sender.image = ImgPoubelleLeave(indexPictureBox)
-        RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(IndexClicked)
+        RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(indexPictureBox)
     End Sub
 
     Private Sub c_fini()
@@ -112,14 +114,11 @@ Public Class MainForm
         Dim i As Integer
         iindex = RadGridViewItems.Rows.Count
         If iindex > 0 Then
-            'ListBoxItemsParent.Items.Clear()
-
             For i = 0 To iindex - 1
                 Items_Root_Name = RadGridViewItems.Rows(i).Cells(1).Value
                 If Items_Root_Name = "__ROOT" Then
                     ListBoxItemsParent.Items.Add(Items_Root_Name + " " + RadGridViewItems.Rows(i).Cells(4).Value + Str(i))
                 End If
-
             Next
         End If
 
@@ -333,7 +332,7 @@ Public Class MainForm
         End Try
         Return cpt
     End Function
-    Private Sub init_Groupe()
+    Private Sub InitProjectMenu()
         Dim i As Integer = 0
         Dim nombre_project As Integer = dtProject.Rows.Count - 1
         For i = 0 To nombre_project
@@ -378,7 +377,7 @@ Public Class MainForm
             AddHandler ArrayItemsName(i).Click, AddressOf MenuPrincipalClickHandler_name
         Next i
     End Sub
-    Private Sub FindItemsSql(ByVal idx As Integer)
+    Private Sub GetItemsFromDB(ByVal idx As Integer)
         Dim mysql As String
         Dim cpt As Integer
         Dim basename As String = "ITEMS"
@@ -399,7 +398,6 @@ Public Class MainForm
                 Critaire = " and items_code = 'LOYERS' "
             Case "TAXES ET IMPOTS"
             Case "FRAIS BANCAIRES"
-
         End Select
         Dim FF As Boolean
         FF = RadCheckBoxFF.Checked
@@ -408,7 +406,6 @@ Public Class MainForm
         Else
             mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, items_last_edit_date, items_projet_INDEX, items_price_total, items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " and items_ff = 'N' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
         End If
-        'mysql = "SELECT items_INDEX,items_projet_INDEX,items_code,items_Name,items_Parent,items_projet_quantity,items_projet_unit,items_projet_price_total,items_projet_taxe,items_projet_taxe_valu,items_currency,items_last_edit_date  FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " order by items_projet_INDEX desc"
         Try
             Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
@@ -474,38 +471,28 @@ Public Class MainForm
         End If
     End Sub
     Private Sub MenuPrincipalClickHandler_name(ByVal sender As Object, ByVal e As System.EventArgs)
-        Exit Sub
         Dim CodeName As Label = CType(sender, Label)
-        Dim picb As PictureBox = CType(sender, PictureBox)
-        Dim indexPictureBox = Val(picb.Name)
-        IndexMenuPrincipalClicked = Val(CodeName.Name)
-        ProjectIndexGlobal = Val(ArrayItemsCODE(indexPictureBox).Text)
-        RadLabelElementMessage.Text = "Label " + ArrayItemsCODE(IndexMenuPrincipalClicked).Text + " " + Str(IndexMenuPrincipalClicked)
-        display_ProjectName_Flash(ArrayItemsCODE(IndexMenuPrincipalClicked).Text, "Project")
-        'FindItemsSql(IndexMenuPrincipalClicked)
-        FindItemsSql(ProjectIndexGlobal)
+        Dim idx = Val(CodeName.Name)
+        ProjectIndexGlobal = Val(ArrayItemsCODE(idx).Text)
+        RadLabelElementMessage.Text = "Label " + ArrayItemsCODE(idx).Text + " " + Str(idx)
+        display_ProjectName_Flash(ArrayItemsCODE(idx).Text, "Project")
+        GetItemsFromDB(ProjectIndexGlobal)
     End Sub
     Private Sub MenuPrincipalClickHandler_code(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim CodeName As Label = CType(sender, Label)
-        'Dim picb As PictureBox = CType(sender, PictureBox)
-        'Dim indexPictureBox = Val(picb.Name)
-        IndexMenuPrincipalClicked = Val(CodeName.Name)
-        ProjectIndexGlobal = Val(CodeName.Name)
-        RadLabelElementMessage.Text = "Label " + CType(sender, Label).Text + " " + Str(IndexMenuPrincipalClicked)
+        Dim idx As Integer = Val(CodeName.Name)
+        ProjectIndexGlobal = Val(CodeName.Text)
+        RadLabelElementMessage.Text = "Label " + CType(sender, Label).Text + " " + Str(idx)
         display_ProjectName_Flash(CodeName.Text, "Project")
-        'FindItemsSql(IndexMenuPrincipalClicked)
-        FindItemsSql(ProjectIndexGlobal)
+        GetItemsFromDB(ProjectIndexGlobal)
     End Sub
     Private Sub MenuPrincipalClickHandler_picture(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim picb As PictureBox = CType(sender, PictureBox)
-        Dim indexPictureBox = Val(picb.Name)
-        'sender.image = ImgPoubelleEnter(indexPictureBox)
-        IndexMenuPrincipalClicked = indexPictureBox + 1
-        ProjectIndexGlobal = Val(ArrayItemsCODE(indexPictureBox).Text)
-        RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(IndexMenuPrincipalClicked) + ArrayItemsCODE(indexPictureBox).Text
-        display_ProjectName_Flash(ArrayItemsCODE(indexPictureBox).Text, "Project")
-        'FindItemsSql(IndexMenuPrincipalClicked)
-        FindItemsSql(ProjectIndexGlobal)
+        Dim idx = Val(picb.Name)
+        ProjectIndexGlobal = Val(ArrayItemsCODE(idx).Text)
+        RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(idx + 1) + ArrayItemsCODE(idx).Text
+        display_ProjectName_Flash(ArrayItemsCODE(idx).Text, "Project")
+        GetItemsFromDB(ProjectIndexGlobal)
     End Sub
 
     Private Sub display_ProjectName_Flash(Name As String, titre As String)
@@ -574,7 +561,7 @@ Public Class MainForm
             'Me.RadGridViewProjectName.DataSource = reader
             'cpt = RadGridViewProjectName.Rows.Count
             connection.Close()
-            FindItemsSql(ProjectIndexGlobal)
+            GetItemsFromDB(ProjectIndexGlobal)
         Catch ex As Exception
             RadLabelElementMessage.Text = ex.Message
         End Try
@@ -625,7 +612,7 @@ Public Class MainForm
             'Me.RadGridViewProjectName.DataSource = reader
             'cpt = RadGridViewProjectName.Rows.Count
             connection.Close()
-            FindItemsSql(ProjectIndexGlobal)
+            GetItemsFromDB(ProjectIndexGlobal)
         Catch ex As Exception
             RadLabelElementMessage.Text = ex.Message
         End Try
@@ -633,7 +620,7 @@ Public Class MainForm
     Private Sub ButtonGridviewNew_Click(sender As Object, e As EventArgs) Handles ButtonGridviewNew.Click
         '        RadDataLayout1 = New RadDataLayout
         InsertItemToDataBase(0)
-        FindItemsSql(ProjectIndexGlobal)
+        GetItemsFromDB(ProjectIndexGlobal)
         Exit Sub
         Dim iindex As Integer = 0
         RadGridViewItems.Rows.AddNew()
