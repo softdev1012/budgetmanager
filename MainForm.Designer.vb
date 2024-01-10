@@ -125,11 +125,9 @@ Partial Class MainForm
 		Me.TAKEOFFDataSetProjectName = New PrevisionFlex.TAKEOFFDataSetProjectName()
 		Me.PROJECTTableAdapter = New PrevisionFlex.TAKEOFFDataSetProjectNameTableAdapters.PROJECTTableAdapter()
 		Me.GroupBoxItemMainForm = New System.Windows.Forms.GroupBox()
-		Me.Button2 = New MindFusion.UI.WinForms.Button()
 		Me.CheckedListBoxTypeCharge = New System.Windows.Forms.CheckedListBox()
 		Me.RadCheckBoxFF = New Telerik.WinControls.UI.RadCheckBox()
 		Me.RadGridViewClassItemsListe = New Telerik.WinControls.UI.RadGridView()
-		Me.Button1 = New MindFusion.UI.WinForms.Button()
 		Me.RadButtonItemsLevelOne = New Telerik.WinControls.UI.RadButton()
 		Me.RadButtonGroupageRefhesh = New Telerik.WinControls.UI.RadButton()
 		Me.RadButtonGroupCancel = New Telerik.WinControls.UI.RadButton()
@@ -1034,11 +1032,9 @@ Partial Class MainForm
 		'
 		'GroupBoxItemMainForm
 		'
-		Me.GroupBoxItemMainForm.Controls.Add(Me.Button2)
 		Me.GroupBoxItemMainForm.Controls.Add(Me.CheckedListBoxTypeCharge)
 		Me.GroupBoxItemMainForm.Controls.Add(Me.RadCheckBoxFF)
 		Me.GroupBoxItemMainForm.Controls.Add(Me.RadGridViewClassItemsListe)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.Button1)
 		Me.GroupBoxItemMainForm.Controls.Add(Me.RadButtonItemsLevelOne)
 		Me.GroupBoxItemMainForm.Controls.Add(Me.RadButtonGroupageRefhesh)
 		Me.GroupBoxItemMainForm.Controls.Add(Me.RadButtonGroupCancel)
@@ -1054,28 +1050,6 @@ Partial Class MainForm
 		Me.GroupBoxItemMainForm.Size = New System.Drawing.Size(1560, 820)
 		Me.GroupBoxItemMainForm.TabIndex = 53
 		Me.GroupBoxItemMainForm.TabStop = False
-		'
-		'Button2
-		'
-		Me.Button2.BackgroundBrush = New MindFusion.Drawing.SolidBrush("#FFF0F0F0")
-		Me.Button2.BackgroundBrushDisabled = New MindFusion.Drawing.SolidBrush("#FFDEDEDE")
-		Me.Button2.BackgroundBrushDown = New MindFusion.Drawing.SolidBrush("#FFAEAEAE")
-		Me.Button2.BackgroundBrushOver = New MindFusion.Drawing.SolidBrush("#FFC5C5C5")
-		Me.Button2.BorderBrush = New MindFusion.Drawing.SolidBrush("#FFA6A6A6")
-		Me.Button2.BorderBrushDisabled = New MindFusion.Drawing.SolidBrush("#FFA6A6A6")
-		Me.Button2.BorderBrushDown = New MindFusion.Drawing.SolidBrush("#FF777777")
-		Me.Button2.BorderBrushOver = New MindFusion.Drawing.SolidBrush("#FFA6A6A6")
-		Me.Button2.BorderThickness = 0
-		Me.Button2.ForegroundBrush = New MindFusion.Drawing.SolidBrush("#FF000000")
-		Me.Button2.ForegroundBrushDisabled = New MindFusion.Drawing.SolidBrush("#FF777777")
-		Me.Button2.ForegroundBrushDown = New MindFusion.Drawing.SolidBrush("#FF000000")
-		Me.Button2.ForegroundBrushOver = New MindFusion.Drawing.SolidBrush("#FF000000")
-		Me.Button2.Location = New System.Drawing.Point(590, 764)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(80, 26)
-		Me.Button2.TabIndex = 55
-		Me.Button2.Text = "Button2"
-		'
 		'CheckedListBoxTypeCharge
 		'
 		Me.CheckedListBoxTypeCharge.CheckOnClick = True
@@ -1121,28 +1095,6 @@ Partial Class MainForm
 		Me.RadGridViewClassItemsListe.ShowNoDataText = False
 		Me.RadGridViewClassItemsListe.Size = New System.Drawing.Size(555, 232)
 		Me.RadGridViewClassItemsListe.TabIndex = 63
-		'
-		'Button1
-		'
-		Me.Button1.BackgroundBrush = New MindFusion.Drawing.SolidBrush("#FFF0F0F0")
-		Me.Button1.BackgroundBrushDisabled = New MindFusion.Drawing.SolidBrush("#FFDEDEDE")
-		Me.Button1.BackgroundBrushDown = New MindFusion.Drawing.SolidBrush("#FFAEAEAE")
-		Me.Button1.BackgroundBrushOver = New MindFusion.Drawing.SolidBrush("#FFC5C5C5")
-		Me.Button1.BorderBrush = New MindFusion.Drawing.SolidBrush("#FFA6A6A6")
-		Me.Button1.BorderBrushDisabled = New MindFusion.Drawing.SolidBrush("#FFA6A6A6")
-		Me.Button1.BorderBrushDown = New MindFusion.Drawing.SolidBrush("#FF777777")
-		Me.Button1.BorderBrushOver = New MindFusion.Drawing.SolidBrush("#FFA6A6A6")
-		Me.Button1.BorderThickness = 0
-		Me.Button1.ForegroundBrush = New MindFusion.Drawing.SolidBrush("#FF000000")
-		Me.Button1.ForegroundBrushDisabled = New MindFusion.Drawing.SolidBrush("#FF777777")
-		Me.Button1.ForegroundBrushDown = New MindFusion.Drawing.SolidBrush("#FF000000")
-		Me.Button1.ForegroundBrushOver = New MindFusion.Drawing.SolidBrush("#FF000000")
-		Me.Button1.Location = New System.Drawing.Point(590, 728)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(80, 26)
-		Me.Button1.TabIndex = 54
-		Me.Button1.Text = "Button1"
-		'
 		'RadButtonItemsLevelOne
 		'
 		Me.RadButtonItemsLevelOne.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -2318,7 +2270,6 @@ Partial Class MainForm
 	Friend WithEvents ITEMSBindingSource1 As BindingSource
 	Friend WithEvents ITEMSTableAdapter1 As TAKEOFFDataSet3TableAdapters.ITEMSTableAdapter
 	Friend WithEvents RadButtonItemsLevelOne As RadButton
-	Friend WithEvents Button1 As MindFusion.UI.WinForms.Button
 	Friend WithEvents GroupBox1 As GroupBox
 	Friend WithEvents RadTextBox_INDEX As RadTextBox
 	Friend WithEvents RadTextBoxITEMS_UNIT As RadTextBox
@@ -2356,7 +2307,6 @@ Partial Class MainForm
 	Friend WithEvents RadGridViewClassItemsListe As RadGridView
 	Friend WithEvents RadCheckBoxFF As RadCheckBox
 	Friend WithEvents CheckedListBoxTypeCharge As CheckedListBox
-	Friend WithEvents Button2 As MindFusion.UI.WinForms.Button
 	Friend WithEvents RadGridViewPaiement As RadGridView
 	Friend WithEvents GroupBoxMenuVertical As Panel
 End Class

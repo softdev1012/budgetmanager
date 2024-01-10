@@ -1583,41 +1583,6 @@ Public Class MainForm
         Return cpt
     End Function
 
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim mysql As String
-        Dim cpt As Integer
-        Dim basename As String = "items"
-        mysql = "SELECT *  FROM " + basename + " where items_projet_INDEX = " + RadLabelProjectNameGlobal.Text + " order by items_INDEX desc"
-
-        mysql = "Select items.items_INDEX,"
-        mysql += " items.items_projet_INDEX,"
-        mysql += " items.items_name,"
-        mysql += " items.items_mt_payé,"
-        mysql += " items.items_paye_qui,"
-        mysql += " items.items_ff,"
-        mysql += " items.items_paiement_ok,"
-        mysql += " items.items_date_paiement"
-        mysql += " From items " ' INNER Join paiement On items.items_projet_INDEX = paiement.Project_Index And items.items_INDEX = paiement.Paiement_INDEX"
-        If IDMorAccess = "IDM" Then
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
-            Dim cmd As New MySqlCommand(mysql, connection)
-            connection.Open()
-            Dim reader As MySqlDataReader
-            reader = cmd.ExecuteReader()
-            Me.RadGridViewItems.DataSource = reader
-            cpt = RadGridViewItems.Rows.Count
-            connection.Close()
-            If cpt > 0 Then
-                cpt = cpt
-                For i = 0 To cpt - 1
-                    'idx = RadGridViewItems.Rows(i).Cells("items_INDEX").Value
-                    autoInsert_Paiement(i)
-                Next i
-            End If
-        End If
-
-    End Sub
     Private Sub autoInsert_Paiement(ByVal idx As Integer)
         Dim mysql As String
         Dim cpt As Integer
@@ -1693,35 +1658,5 @@ Public Class MainForm
                 CheckedListBoxTypeCharge.SetItemChecked(i, False)
             End If
         Next
-    End Sub
-
-    Private Sub RadLabelProjectNameGlobal_Click(sender As Object, e As EventArgs) Handles RadLabelProjectNameGlobal.Click
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-        Exit Sub
-
-
-        Dim mysql As String
-        Dim cpt As Integer
-        Dim basename As String = "items"
-        Dim idx As Integer
-        mysql = "UPDATE items SET items_price_total = items_unit / 12, "
-        mysql += " items_taxe_value = items_unit / 12 *.2 WHERE items.items_projet_INDEX = 4 "
-        mysql += " AND items.items_INDEX = 153"
-
-        If IDMorAccess = "IDM" Then
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
-            Dim cmd As New MySqlCommand(mysql, connection)
-            connection.Open()
-            Dim reader As MySqlDataReader
-            reader = cmd.ExecuteReader()
-            Me.RadGridViewPaiement.DataSource = reader
-            cpt = RadGridViewPaiement.Rows.Count
-            connection.Close()
-
-        End If
     End Sub
 End Class
