@@ -66,23 +66,20 @@ Public Class MainForm
     Private BackColorGray = Color.FromArgb(46, 64, 62)
     Dim MenuLevel As Single  'quel menu active ?
     Dim IndexClicked As Integer = 0
+
+    Dim dtProject As DataTable
     Private Sub fill_Project_Array()
         GlobalProviderForIDM = GlobalProviderForLocalHost
         FindProjectListe()
-        Dim i As Integer = RadGridViewProjectName.Rows.Count
+        Dim i As Integer = dtProject.Rows.Count
         If i > 0 Then
             project_name = New ArrayList
-
-
-            If (Not System.IO.Directory.Exists("C:\TAKEOFF\DATA")) Then
-                System.IO.Directory.CreateDirectory("C:\TAKEOFF\DATA")
-            End If
         Else
         End If
-        Dim nombre As Integer = RadGridViewProjectName.Rows.Count - 1
+        Dim nombre As Integer = dtProject.Rows.Count - 1
         If nombre > 0 Then
             For i = 0 To nombre
-                project_name.Add(RadGridViewProjectName.Rows(i).Cells(2).Value)
+                project_name.Add(dtProject.Rows(i).Item(2).ToString)
             Next
         Else
 
@@ -460,7 +457,7 @@ Public Class MainForm
         Else
             radLabelCurrentItems.Text = tofindCategory
         End If
-        radLabelAllTotalOfItems.Text = Format(Alltotal, "All total : 0.00 €")
+        RadLabelAllTotalOfItems.Text = Format(Alltotal, "All total : 0.00 €")
 
         RadGridViewClassItemsListe.Columns(0).Width = 75
         RadGridViewClassItemsListe.Columns(1).Width = 130
@@ -498,16 +495,17 @@ Public Class MainForm
         Dim cpt As Integer
         Dim basename As String = "project"
         mysql = "SELECT *  FROM " + basename + " WHERE  PROJECT_INDEX=" + Str(project_index) + " order by project_INDEX desc"
+        dtProject = New DataTable()
         If IDMorAccess = "IDM" Then
             Dim connection As New MySqlConnection(GlobalProviderForIDM)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
             reader = cmd.ExecuteReader()
-            Me.RadGridViewProjectName.DataSource = reader
-            cpt = RadGridViewProjectName.Rows.Count
+            dtProject.Load(reader)
+            cpt = dtProject.Rows.Count
             If cpt > 0 Then
-                resultat = RadGridViewProjectName.Rows(0).Cells("PROJECT_CODE").ToString
+                resultat = dtProject.Rows(0).Item("PROJECT_CODE").ToString
             End If
             connection.Close()
         End If
@@ -610,7 +608,7 @@ Public Class MainForm
     Private Sub init_Groupe()
         Dim i As Integer = 0
         ArrayGroupe = New ArrayList
-        Dim nombre_project As Integer = RadGridViewProjectName.Rows.Count - 1
+        Dim nombre_project As Integer = dtProject.Rows.Count - 1
         For i = 0 To nombre_project
             imageArrayLocation(i) = 5 + i * 67
             ArrayPictureLogo(i) = New PictureBox
@@ -843,19 +841,19 @@ Public Class MainForm
             connection.Open()
             Dim reader As MySqlDataReader
             reader = cmd.ExecuteReader()
-            Me.RadGridViewProjectName.DataSource = reader
-            cpt = RadGridViewProjectName.Rows.Count
+            dtProject.Load(reader)
+            cpt = dtProject.Rows.Count
             connection.Close()
         End If
         'cmd = New OleDb.OleDbCommand(mysql, con)
         cmd.Connection.Open()
-        nombre = RadGridViewProjectName.Rows.Count
+        nombre = dtProject.Rows.Count
         Dim ProjectName As String
         If nombre > 0 Then
             For i = 0 To nombre - 1
                 'iindex = ds.Tables(local_tableName).Rows(i).Item("PROJECT_INDEX")
-                iindex = RadGridViewProjectName.Rows(i).Cells("PROJECT_INDEX").Value
-                ProjectName = RadGridViewProjectName.Rows(i).Cells("PROJECT_NAME").Value
+                iindex = dtProject.Rows(i).Item("PROJECT_INDEX")
+                ProjectName = dtProject.Rows(i).Item("PROJECT_NAME").ToString
                 'resultat = ds.Tables(local_tableName).Rows(i).Item("PROJECT_CODE")
                 ArrayItemsCODE(i).Text = Str(iindex)
                 ArrayItemsName(i).Text = ProjectName
@@ -1262,7 +1260,6 @@ Public Class MainForm
 
     Private Sub ButtonGridviewNewProjectMainForm_Click(sender As Object, e As EventArgs)
         Dim iindex As Integer = 0
-        RadGridViewProjectName.Rows.AddNew()
         '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
         '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
         '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
@@ -1282,22 +1279,10 @@ Public Class MainForm
 
     Private Sub ButtonGridviewDeleteProjectMainForm_Click(sender As Object, e As EventArgs)
         Dim iindex As Integer = -1
-        UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, iindex)
 
         Try
             '@@@@@TOTOTO  Me.PROJECTTableAdapter.DeleteQuery(iindex)
-            Me.RadGridViewProjectName.CurrentRow.Delete()
             'UpdateGridInfo(Me.RadGridViewItems.CurrentRow, irow)
-        Catch ex As Exception
-        End Try
-    End Sub
-
-    Private Sub ButtonGridviewUpdateProjectMainForm_Click(sender As Object, e As EventArgs)
-        Dim irow As Integer = -1
-        UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
-
-        Try
-            '@@@@@TOTOTO  Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProjectName.PROJECT)
         Catch ex As Exception
         End Try
     End Sub
@@ -1313,7 +1298,6 @@ Public Class MainForm
         Else
             iindex = currentRow.Cells(1).Value
         End If
-        Me.RadGridViewProjectName.CloseEditor()
         currentRow.Cells(1).Value = RadSpinEditorProjectIndex.Value
 
         RadLabelElementMessage.Text = ""
@@ -1321,7 +1305,6 @@ Public Class MainForm
         If newRowInfo IsNot Nothing Then
             currentRow.InvalidateRow()
         Else
-            CType(Me.RadGridViewProjectName.CurrentRow.DataBoundItem, IEditableObject).EndEdit()
         End If
     End Sub
     Private Function FindLastProjectCount()
@@ -1351,41 +1334,6 @@ Public Class MainForm
         'nombre = ds.Tables(local_tableName).Rows.Count
         Return iindex
     End Function
-
-    Private Sub RadButton1_Click(sender As Object, e As EventArgs)
-        Dim irow As Integer = -1
-        UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
-
-        Try
-            '@@@@@TOTOTO  Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProjectName.PROJECT)
-        Catch ex As Exception
-        End Try
-        '        Me.PROJECTTableAdapter.Fill(Me.TAKEOFFDataSetProjectName.PROJECT)
-    End Sub
-
-    Private Sub RadButton1_Click_1(sender As Object, e As EventArgs)
-        Dim iindex As Integer = 0
-        RadGridViewProjectName.Rows.AddNew()
-        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        RadTextBoxProjectMainFormStatus.Text = "IN PROGRESS"
-        RadTextBoxProjectMainFormPathName.Text = "C:\TAKEOFF\DATA"
-        iindex = FindLastProjectCount() + 1
-        RadSpinEditorProjectIndex2.Value = iindex
-        RadSpinEditorProjectIndex.Value = iindex
-    End Sub
-
-    Private Sub ButtonGridviewDeleteProjectMainForm_Click_1(sender As Object, e As EventArgs)
-        Dim iindex As Integer = -1
-        UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, iindex)
-
-        Try
-            '@@@@@TOTOTO  Me.PROJECTTableAdapter.DeleteQuery(iindex)
-            Me.RadGridViewProjectName.CurrentRow.Delete()
-        Catch ex As Exception
-        End Try
-    End Sub
 
     Private Sub RadButtonGroupage_Click(sender As Object, e As EventArgs) Handles RadButtonGroupage.Click
         RadGridViewItems.GroupDescriptors.Expression = "ITEMS_PARENT;ITEMS_CODE"
@@ -1547,82 +1495,20 @@ Public Class MainForm
         Dim cpt As Integer
         Dim basename As String = "project"
         mysql = "SELECT *  FROM " + basename + " order by project_INDEX desc"
+        dtProject = New DataTable()
         If IDMorAccess = "IDM" Then
             Dim connection As New MySqlConnection(GlobalProviderForIDM)
             Dim cmd As New MySqlCommand(mysql, connection)
             connection.Open()
             Dim reader As MySqlDataReader
             reader = cmd.ExecuteReader()
-            Me.RadGridViewProjectName.DataSource = reader
-            cpt = RadGridViewProjectName.Rows.Count
+            dtProject.Load(reader)
+            cpt = dtProject.Rows.Count
             connection.Close()
         End If
         RadLabelElementMessage.Text = "Nombre de projets" + Str(cpt)
         Return cpt
     End Function
-
-    Private Sub autoInsert_Paiement(ByVal idx As Integer)
-        Dim mysql As String
-        Dim cpt As Integer
-        Dim basename As String = "items"
-        Dim ValueString As String
-        Dim date1 As String = RadGridViewItems.Rows(idx).Cells("items_date_paiement").Value.ToString
-        date1 = ConvertDateMysql4(date1)
-        Dim iidex = Val(RadGridViewItems.Rows(idx).Cells("items_INDEX").Value.ToString)
-        ValueString = RadGridViewItems.Rows(idx).Cells("items_INDEX").Value.ToString + ",'"
-        ValueString += RadGridViewItems.Rows(idx).Cells("items_name").Value + "','"
-        ValueString += date1 + "','" 'RadGridViewItems.Rows(idx).Cells("items_date_paiement").Value + "','"
-        ValueString += RadGridViewItems.Rows(idx).Cells("items_paiement_ok").Value.ToString + "','"
-        ValueString += RadGridViewItems.Rows(idx).Cells("items_paye_qui").Value.ToString + "',"
-        ValueString += RadGridViewItems.Rows(idx).Cells("items_mt_payé").Value.ToString
-
-        '        idx = RadGridViewItems.Rows(idx).Cells("items_INDEX").Value.ToString
-        Delete_Paiement(iidex)
-        mysql = "SELECT *  FROM " + basename + " where items_projet_INDEX = '1' order by items_INDEX desc"
-        mysql = "insert into paiement (items_index,items_projet_INDEX,"
-        mysql = "insert into paiement (items_index,items_Name,"
-        mysql += "items_date_paiement,items_paiement_ok,items_paye_qui,items_mt_payé) "
-        mysql += "values( " + ValueString + ")"
-
-        If IDMorAccess = "IDM" Then
-            Dim connection As New MySqlConnection(GlobalProviderForIDM)
-            Dim cmd As New MySqlCommand(mysql, connection)
-            connection.Open()
-            Dim reader As MySqlDataReader
-            reader = cmd.ExecuteReader()
-            Me.RadGridViewPaiement.DataSource = reader
-            cpt = RadGridViewPaiement.Rows.Count
-            connection.Close()
-            If cpt > 0 Then
-                cpt = cpt
-                For i = 0 To cpt - 1
-                    idx = RadGridViewPaiement.Rows(i).Cells("items_INDEX").Value
-                    autoInsert_Paiement(idx)
-                    Delete_Paiement(idx)
-                Next i
-            End If
-        End If
-    End Sub
-    Private Sub Delete_Paiement(ByVal idx As Integer)
-
-        Try
-            Dim mysql As String
-            Dim basename As String = "paiement" 'paiement
-            mysql = "DELETE FROM " + basename + " where items_INDEX = " + Str(idx)
-            RadLabelElementMessage.Text = mysql
-            If IDMorAccess = "IDM" Then
-                Dim connection As New MySqlConnection(GlobalProviderForIDM)
-                Dim cmd As New MySqlCommand(mysql, connection)
-                connection.Open()
-                Dim reader As MySqlDataReader
-                reader = cmd.ExecuteReader()
-                connection.Close()
-            End If
-
-        Catch ex As Exception
-            RadLabelElementMessage.Text = "erreur" + ex.Message
-        End Try
-    End Sub
     Private Sub CheckedListBoxTypeCharge_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBoxTypeCharge.SelectedIndexChanged
         Dim ok As Integer
         ok = CheckedListBoxTypeCharge.SelectedIndex
