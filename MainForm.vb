@@ -3,21 +3,6 @@ Imports MySql.Data.MySqlClient
 Public Class MainForm
     Public ProjectIndexGlobal As Integer = 0
     Public Global_Type_Charge As String = "ALL"
-    Public Items_root As ArrayList
-    Public Items_root_value As ArrayList
-    Public Items_root_index As ArrayList
-    Public project_name As ArrayList
-    Public Const const_Project_index = 0
-    Public Const const_Main_Root = 1
-    Public Const const_Category = 2
-    Public Const const_Main_Root_total_Cost = 3
-    Public Const const_Main_Root_total_VAT_Cost = 4
-    Public Const const_Category_total_VAT_Cost = 5
-    Public Const const_VAT_Porucent = 6
-    Public ClassItemsListe As ClassItemsListe
-
-    Dim ArrayGroupe As ArrayList
-    Dim ArrayCurrentItems As ArrayList
     Dim ArrayPictureLogo(10) As PictureBox
     Dim ArrayItemsCODE(10) As Label
     Dim ArrayItemsName(10) As Label
@@ -48,26 +33,12 @@ Public Class MainForm
                         My.Resources.close_Gray_Clair_100x100
                         }
     Private BackColorGray = Color.FromArgb(46, 64, 62)
-    Dim MenuLevel As Single  'quel menu active ?
     Dim IndexClicked As Integer = 0
 
     Dim dtProject As DataTable
     Private Sub fill_Project_Array()
         GlobalProviderForIDM = GlobalProviderForLocalHost
         FindProjectListe()
-        Dim i As Integer = dtProject.Rows.Count
-        If i > 0 Then
-            project_name = New ArrayList
-        Else
-        End If
-        Dim nombre As Integer = dtProject.Rows.Count - 1
-        If nombre > 0 Then
-            For i = 0 To nombre
-                project_name.Add(dtProject.Rows(i).Item(2).ToString)
-            Next
-        Else
-
-        End If
     End Sub
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf RadGridViewItems_GroupSummaryEvaluate
@@ -81,16 +52,6 @@ Public Class MainForm
         fill_Project_Array()
         init_Groupe()
         FillItems_root()
-
-        ArrayCurrentItems = New ArrayList
-        ArrayCurrentItems.Add(0)  'const_Project_index
-        ArrayCurrentItems.Add("__ROOT")
-        ArrayCurrentItems.Add("DEFAUT ITEMS")
-        ArrayCurrentItems.Add(0)
-        ArrayCurrentItems.Add(0)
-        ArrayCurrentItems.Add(0)
-        ArrayCurrentItems.Add(20) 'vat
-        ArrayCurrentItems.Add(0)
         'ALL par défaut
         CheckedListBoxTypeCharge.SetItemChecked(0, True)
         Global_Type_Charge = CheckedListBoxTypeCharge.Items(0)
@@ -136,7 +97,6 @@ Public Class MainForm
             '//// GroupBox2.Controls.Remove(ListBox1)
         Catch ex As Exception
         End Try
-        MenuLevel = PictureBoxClicked
         Select Case PictureBoxClicked
             Case 0
                 paneMain.Visible = True
@@ -160,21 +120,14 @@ Public Class MainForm
         iindex = RadGridViewItems.Rows.Count
         If iindex > 0 Then
             'ListBoxItemsParent.Items.Clear()
-            Items_root = New ArrayList
-            Items_root_value = New ArrayList
-            Items_root_index = New ArrayList
+
             For i = 0 To iindex - 1
                 Items_Root_Name = RadGridViewItems.Rows(i).Cells(1).Value
                 If Items_Root_Name = "__ROOT" Then
-                    Items_root.Add(RadGridViewItems.Rows(i).Cells(4).Value)
                     ListBoxItemsParent.Items.Add(Items_Root_Name + " " + RadGridViewItems.Rows(i).Cells(4).Value + Str(i))
-                    Items_root_index.Add(i) ' ligne dans datagrid
                 End If
 
             Next
-        Else
-            Items_root = New ArrayList
-            Items_root.Add("")
         End If
 
     End Sub
@@ -214,7 +167,6 @@ Public Class MainForm
         DisplayProjectDetail()
         display_ProjectCathegory_Flash(Category, "Cathegory")
         display_ProjectName_Flash(ProjectName, "Project")
-        ArrayCurrentItems(const_Category) = Category
         calculTotalLine(RadGridViewItems.CurrentRow.Index)
         Me.Text = RadGridViewItems.CurrentRow.Cells(2).Value.ToString + " " + Str(RadGridViewItems.CurrentRow.Cells(1).Value)
 
@@ -391,7 +343,6 @@ Public Class MainForm
     End Function
     Private Sub init_Groupe()
         Dim i As Integer = 0
-        ArrayGroupe = New ArrayList
         Dim nombre_project As Integer = dtProject.Rows.Count - 1
         For i = 0 To nombre_project
             imageArrayLocation(i) = 5 + i * 67
