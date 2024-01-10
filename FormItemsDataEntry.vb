@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports MySql.Data.MySqlClient
-Imports Devart.Data
+﻿Imports MySql.Data.MySqlClient
 Imports System.ComponentModel
 Public Class FormItemsDataEntry
     Private Sub FormItemsDataEntry_Load(sender As Object, e As EventArgs) Handles MyBase.Load

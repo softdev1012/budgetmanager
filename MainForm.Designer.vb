@@ -64,20 +64,6 @@ Partial Class MainForm
 		Me.RadSpinEditorVATValue = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadTextBoxCurrency = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadDateTimePickerDate_Update = New Telerik.WinControls.UI.RadDateTimePicker()
-		Me.DataLayoutControlItem1 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem2 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem3 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem4 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem5 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem6 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem7 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem8 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem9 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem10 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem11 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem12 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem13 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem14 = New Telerik.WinControls.UI.DataLayoutControlItem()
 		Me.ButtonGridviewUpdate = New System.Windows.Forms.Button()
 		Me.ButtonGridviewDelete = New System.Windows.Forms.Button()
 		Me.ButtonGridviewNew = New System.Windows.Forms.Button()
@@ -133,15 +119,7 @@ Partial Class MainForm
 		Me.RadDateTimePickerDateModify = New Telerik.WinControls.UI.RadDateTimePicker()
 		Me.RadTextBoxProjectMainFormStatus = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBoxProjectMainFormPathName = New Telerik.WinControls.UI.RadTextBox()
-		Me.DataLayoutControlItem15 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem16 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem17 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem18 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem19 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem21 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem22 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem23 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.DataLayoutControlItem20 = New Telerik.WinControls.UI.DataLayoutControlItem()
+		Me.RadTextBoxProjectMainFormPathName = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadGridViewPaiement = New Telerik.WinControls.UI.RadGridView()
 		Me.GroupBoxMenuVertical = New System.Windows.Forms.Panel()
 		CType(Me.radPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -747,160 +725,6 @@ Partial Class MainForm
 		Me.RadDateTimePickerDate_Update.TabStop = False
 		Me.RadDateTimePickerDate_Update.Text = "6/10/2019"
 		Me.RadDateTimePickerDate_Update.Value = New Date(2019, 6, 10, 18, 47, 50, 77)
-		'
-		'DataLayoutControlItem1
-		'
-		Me.DataLayoutControlItem1.AssociatedControl = Me.RadSpinEditorIndexKey
-		Me.DataLayoutControlItem1.Bounds = New System.Drawing.Rectangle(0, 0, 252, 26)
-		Me.DataLayoutControlItem1.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem1.Name = "DataLayoutControlItem1"
-		Me.DataLayoutControlItem1.Text = "INDEX"
-		Me.DataLayoutControlItem1.TextFixedSize = 128
-		Me.DataLayoutControlItem1.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem1.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem2
-		'
-		Me.DataLayoutControlItem2.AssociatedControl = Me.RadSpinEditorItemIndex
-		Me.DataLayoutControlItem2.Bounds = New System.Drawing.Rectangle(0, 26, 252, 26)
-		Me.DataLayoutControlItem2.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem2.Name = "DataLayoutControlItem2"
-		Me.DataLayoutControlItem2.Text = "ITEMS_INDEX"
-		Me.DataLayoutControlItem2.TextFixedSize = 128
-		Me.DataLayoutControlItem2.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem2.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem3
-		'
-		Me.DataLayoutControlItem3.AssociatedControl = Me.RadSpinEditorProjectIndex
-		Me.DataLayoutControlItem3.Bounds = New System.Drawing.Rectangle(0, 52, 252, 26)
-		Me.DataLayoutControlItem3.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem3.Name = "DataLayoutControlItem3"
-		Me.DataLayoutControlItem3.Text = "ITEMS_PROJECT_INDEX"
-		Me.DataLayoutControlItem3.TextFixedSize = 128
-		Me.DataLayoutControlItem3.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem3.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem4
-		'
-		Me.DataLayoutControlItem4.AssociatedControl = Me.RadTextBoxItemsCode
-		Me.DataLayoutControlItem4.Bounds = New System.Drawing.Rectangle(0, 78, 252, 26)
-		Me.DataLayoutControlItem4.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem4.Name = "DataLayoutControlItem4"
-		Me.DataLayoutControlItem4.Text = "ITEMS_CODE"
-		Me.DataLayoutControlItem4.TextFixedSize = 128
-		Me.DataLayoutControlItem4.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem4.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem5
-		'
-		Me.DataLayoutControlItem5.AssociatedControl = Me.RadTextBoxItemName
-		Me.DataLayoutControlItem5.Bounds = New System.Drawing.Rectangle(0, 104, 252, 26)
-		Me.DataLayoutControlItem5.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem5.Name = "DataLayoutControlItem5"
-		Me.DataLayoutControlItem5.Text = "ITEMS_NAME"
-		Me.DataLayoutControlItem5.TextFixedSize = 128
-		Me.DataLayoutControlItem5.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem5.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem6
-		'
-		Me.DataLayoutControlItem6.AssociatedControl = Me.RadTextBoxParent_Items
-		Me.DataLayoutControlItem6.Bounds = New System.Drawing.Rectangle(0, 130, 252, 26)
-		Me.DataLayoutControlItem6.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem6.Name = "DataLayoutControlItem6"
-		Me.DataLayoutControlItem6.Text = "ITEMS_PARENT"
-		Me.DataLayoutControlItem6.TextFixedSize = 128
-		Me.DataLayoutControlItem6.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem6.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem7
-		'
-		Me.DataLayoutControlItem7.AssociatedControl = Me.RadSpinEditorQuantity
-		Me.DataLayoutControlItem7.Bounds = New System.Drawing.Rectangle(0, 156, 252, 26)
-		Me.DataLayoutControlItem7.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem7.Name = "DataLayoutControlItem7"
-		Me.DataLayoutControlItem7.Text = "ITEMS_QUANTITY"
-		Me.DataLayoutControlItem7.TextFixedSize = 128
-		Me.DataLayoutControlItem7.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem7.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem8
-		'
-		Me.DataLayoutControlItem8.AssociatedControl = Me.RadSpinEditorUnitQuantity
-		Me.DataLayoutControlItem8.Bounds = New System.Drawing.Rectangle(0, 182, 252, 26)
-		Me.DataLayoutControlItem8.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem8.Name = "DataLayoutControlItem8"
-		Me.DataLayoutControlItem8.Text = "ITEMS_UNIT"
-		Me.DataLayoutControlItem8.TextFixedSize = 128
-		Me.DataLayoutControlItem8.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem8.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem9
-		'
-		Me.DataLayoutControlItem9.AssociatedControl = Me.RadSpinEditorUnitPrice
-		Me.DataLayoutControlItem9.Bounds = New System.Drawing.Rectangle(0, 208, 252, 26)
-		Me.DataLayoutControlItem9.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem9.Name = "DataLayoutControlItem9"
-		Me.DataLayoutControlItem9.Text = "ITEMS_UNIT_PRICE"
-		Me.DataLayoutControlItem9.TextFixedSize = 128
-		Me.DataLayoutControlItem9.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem9.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem10
-		'
-		Me.DataLayoutControlItem10.AssociatedControl = Me.RadSpinEditorTotalPrice
-		Me.DataLayoutControlItem10.Bounds = New System.Drawing.Rectangle(0, 234, 252, 26)
-		Me.DataLayoutControlItem10.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem10.Name = "DataLayoutControlItem10"
-		Me.DataLayoutControlItem10.Text = "ITEMS_TOTAL_PRICE"
-		Me.DataLayoutControlItem10.TextFixedSize = 128
-		Me.DataLayoutControlItem10.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem10.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem11
-		'
-		Me.DataLayoutControlItem11.AssociatedControl = Me.RadSpinEditorVATPorucent
-		Me.DataLayoutControlItem11.Bounds = New System.Drawing.Rectangle(0, 260, 252, 26)
-		Me.DataLayoutControlItem11.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem11.Name = "DataLayoutControlItem11"
-		Me.DataLayoutControlItem11.Text = "ITEMS_TAXE"
-		Me.DataLayoutControlItem11.TextFixedSize = 128
-		Me.DataLayoutControlItem11.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem11.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem12
-		'
-		Me.DataLayoutControlItem12.AssociatedControl = Me.RadSpinEditorVATValue
-		Me.DataLayoutControlItem12.Bounds = New System.Drawing.Rectangle(0, 286, 252, 26)
-		Me.DataLayoutControlItem12.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem12.Name = "DataLayoutControlItem12"
-		Me.DataLayoutControlItem12.Text = "ITEMS_TAXE_VALUE"
-		Me.DataLayoutControlItem12.TextFixedSize = 128
-		Me.DataLayoutControlItem12.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem12.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem13
-		'
-		Me.DataLayoutControlItem13.AssociatedControl = Me.RadTextBoxCurrency
-		Me.DataLayoutControlItem13.Bounds = New System.Drawing.Rectangle(0, 312, 252, 26)
-		Me.DataLayoutControlItem13.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem13.Name = "DataLayoutControlItem13"
-		Me.DataLayoutControlItem13.Text = "ITEMS_CURRENCY"
-		Me.DataLayoutControlItem13.TextFixedSize = 128
-		Me.DataLayoutControlItem13.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem13.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem14
-		'
-		Me.DataLayoutControlItem14.AssociatedControl = Me.RadDateTimePickerDate_Update
-		Me.DataLayoutControlItem14.Bounds = New System.Drawing.Rectangle(0, 338, 252, 50)
-		Me.DataLayoutControlItem14.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem14.Name = "DataLayoutControlItem14"
-		Me.DataLayoutControlItem14.Text = "ITEMS_LAST_EDIT_DATE"
-		Me.DataLayoutControlItem14.TextFixedSize = 128
-		Me.DataLayoutControlItem14.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem14.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
 		'
 		'ButtonGridviewUpdate
 		'
@@ -1626,108 +1450,6 @@ Partial Class MainForm
 		Me.RadTextBoxProjectMainFormPathName.Size = New System.Drawing.Size(352, 20)
 		Me.RadTextBoxProjectMainFormPathName.TabIndex = 65
 		'
-		'DataLayoutControlItem15
-		'
-		Me.DataLayoutControlItem15.AssociatedControl = Me.RadSpinEditor1
-		Me.DataLayoutControlItem15.Bounds = New System.Drawing.Rectangle(0, 0, 476, 26)
-		Me.DataLayoutControlItem15.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem15.Name = "DataLayoutControlItem15"
-		Me.DataLayoutControlItem15.Text = "INDEX"
-		Me.DataLayoutControlItem15.TextFixedSize = 153
-		Me.DataLayoutControlItem15.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem15.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem16
-		'
-		Me.DataLayoutControlItem16.AssociatedControl = Me.RadSpinEditorProjectIndex2
-		Me.DataLayoutControlItem16.Bounds = New System.Drawing.Rectangle(0, 26, 476, 26)
-		Me.DataLayoutControlItem16.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem16.Name = "DataLayoutControlItem16"
-		Me.DataLayoutControlItem16.Text = "PROJECT_INDEX"
-		Me.DataLayoutControlItem16.TextFixedSize = 153
-		Me.DataLayoutControlItem16.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem16.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem17
-		'
-		Me.DataLayoutControlItem17.AssociatedControl = Me.RadTextBox1
-		Me.DataLayoutControlItem17.Bounds = New System.Drawing.Rectangle(0, 52, 476, 26)
-		Me.DataLayoutControlItem17.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem17.Name = "DataLayoutControlItem17"
-		Me.DataLayoutControlItem17.Text = "PROJECT_CODE"
-		Me.DataLayoutControlItem17.TextFixedSize = 153
-		Me.DataLayoutControlItem17.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem17.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem18
-		'
-		Me.DataLayoutControlItem18.AssociatedControl = Me.RadTextBox2
-		Me.DataLayoutControlItem18.Bounds = New System.Drawing.Rectangle(0, 78, 476, 26)
-		Me.DataLayoutControlItem18.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem18.Name = "DataLayoutControlItem18"
-		Me.DataLayoutControlItem18.Text = "PROJECT_NAME"
-		Me.DataLayoutControlItem18.TextFixedSize = 153
-		Me.DataLayoutControlItem18.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem18.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem19
-		'
-		Me.DataLayoutControlItem19.AssociatedControl = Me.RadDateTimePickerDateCreat
-		Me.DataLayoutControlItem19.Bounds = New System.Drawing.Rectangle(0, 104, 476, 26)
-		Me.DataLayoutControlItem19.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem19.Name = "DataLayoutControlItem19"
-		Me.DataLayoutControlItem19.Text = "PROJECT_CREAT_DATE"
-		Me.DataLayoutControlItem19.TextFixedSize = 153
-		Me.DataLayoutControlItem19.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem19.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem21
-		'
-		Me.DataLayoutControlItem21.AssociatedControl = Me.RadDateTimePickerDateModify
-		Me.DataLayoutControlItem21.Bounds = New System.Drawing.Rectangle(0, 130, 476, 26)
-		Me.DataLayoutControlItem21.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem21.Name = "DataLayoutControlItem21"
-		Me.DataLayoutControlItem21.Text = "PROJECT_MODIFY_DATE"
-		Me.DataLayoutControlItem21.TextFixedSize = 153
-		Me.DataLayoutControlItem21.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem21.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem22
-		'
-		Me.DataLayoutControlItem22.AssociatedControl = Me.RadTextBoxProjectMainFormStatus
-		Me.DataLayoutControlItem22.Bounds = New System.Drawing.Rectangle(0, 156, 476, 26)
-		Me.DataLayoutControlItem22.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem22.Name = "DataLayoutControlItem22"
-		Me.DataLayoutControlItem22.Text = "PROJECT_STATUS"
-		Me.DataLayoutControlItem22.TextFixedSize = 153
-		Me.DataLayoutControlItem22.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem22.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem23
-		'
-		Me.DataLayoutControlItem23.AssociatedControl = Me.RadTextBoxProjectMainFormPathName
-		Me.DataLayoutControlItem23.Bounds = New System.Drawing.Rectangle(0, 182, 476, 34)
-		Me.DataLayoutControlItem23.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem23.Name = "DataLayoutControlItem23"
-		Me.DataLayoutControlItem23.Text = "PROJECT_DATA_PATHNAME"
-		Me.DataLayoutControlItem23.TextFixedSize = 153
-		Me.DataLayoutControlItem23.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem23.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		'
-		'DataLayoutControlItem20
-		'
-		Me.DataLayoutControlItem20.AssociatedControl = Nothing
-		Me.DataLayoutControlItem20.Bounds = New System.Drawing.Rectangle(0, 130, 459, 26)
-		Me.DataLayoutControlItem20.ControlVerticalAlignment = Telerik.WinControls.UI.RadVerticalAlignment.Center
-		Me.DataLayoutControlItem20.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-		Me.DataLayoutControlItem20.Name = "DataLayoutControlItem20"
-		Me.DataLayoutControlItem20.Text = "ITEMS_PARENT"
-		Me.DataLayoutControlItem20.TextFixedSize = 128
-		Me.DataLayoutControlItem20.TextProportionalSize = 0.25!
-		Me.DataLayoutControlItem20.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-		Me.DataLayoutControlItem20.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
-		Me.DataLayoutControlItem20.UseCompatibleTextRendering = False
-		'
 		'RadGridViewPaiement
 		'
 		Me.RadGridViewPaiement.Location = New System.Drawing.Point(253, 922)
@@ -1911,27 +1633,12 @@ Partial Class MainForm
 	Friend WithEvents RadSpinEditorVATValue As RadSpinEditor
 	Friend WithEvents RadTextBoxCurrency As RadTextBox
 	Friend WithEvents RadDateTimePickerDate_Update As RadDateTimePicker
-	Friend WithEvents DataLayoutControlItem1 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem2 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem3 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem4 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem5 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem6 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem7 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem8 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem9 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem10 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem11 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem12 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem13 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem14 As DataLayoutControlItem
 	Friend WithEvents ButtonGridviewUpdate As Button
 	Friend WithEvents ButtonGridviewDelete As Button
 	Friend WithEvents ButtonGridviewNew As Button
 	Friend WithEvents GroupBoxItemMainForm As GroupBox
 	Friend WithEvents RadGridViewProjectName As RadGridView
 	Friend WithEvents RadGridViewItems As RadGridView
-	Friend WithEvents DataLayoutControlItem20 As DataLayoutControlItem
 	Friend WithEvents RadSpinEditor1 As RadSpinEditor
 	Friend WithEvents RadSpinEditorProjectIndex2 As RadSpinEditor
 	Friend WithEvents RadTextBox1 As RadTextBox
@@ -1940,14 +1647,6 @@ Partial Class MainForm
 	Friend WithEvents RadDateTimePickerDateModify As RadDateTimePicker
 	Friend WithEvents RadTextBoxProjectMainFormStatus As RadTextBox
 	Friend WithEvents RadTextBoxProjectMainFormPathName As RadTextBox
-	Friend WithEvents DataLayoutControlItem15 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem16 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem17 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem18 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem19 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem21 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem22 As DataLayoutControlItem
-	Friend WithEvents DataLayoutControlItem23 As DataLayoutControlItem
 	Friend WithEvents RadButtonGroupCancel As RadButton
 	Friend WithEvents RadButtonGroupage As RadButton
 	Friend WithEvents RadButtonGroupageRefhesh As RadButton

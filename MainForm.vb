@@ -1,23 +1,5 @@
-﻿Imports System.Collections.Generic
-Imports System.IO
-Imports System.Threading
-Imports System.ComponentModel
-Imports System.Drawing
-Imports System.Linq
-Imports System.Windows.Forms
-Imports Telerik.WinControls
-Imports Telerik.WinControls.UI
-Imports System.Data.SqlClient
-Imports Microsoft.VisualBasic
+﻿Imports System.ComponentModel
 Imports MySql.Data.MySqlClient
-Imports Devart.Data
-Imports Mysqlx.XDevAPI.Relational
-Imports System.Data.OleDb
-Imports Devart
-Imports Mysqlx
-Imports MindFusion.Charting.WinForms
-Imports System.Runtime.InteropServices
-
 Public Class MainForm
     Public ProjectIndexGlobal As Integer = 0
     Public Global_Type_Charge As String = "ALL"
