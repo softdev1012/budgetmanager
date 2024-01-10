@@ -1,33 +1,33 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MainForm
-    Inherits System.Windows.Forms.Form
+	Inherits System.Windows.Forms.Form
 
-    'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()>
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
-            End If
-        Finally
-            MyBase.Dispose(disposing)
-        End Try
-    End Sub
+	'Form remplace la méthode Dispose pour nettoyer la liste des composants.
+	<System.Diagnostics.DebuggerNonUserCode()>
+	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+		Try
+			If disposing AndAlso components IsNot Nothing Then
+				components.Dispose()
+			End If
+		Finally
+			MyBase.Dispose(disposing)
+		End Try
+	End Sub
 
-    'Requise par le Concepteur Windows Form
-    Private components As System.ComponentModel.IContainer
+	'Requise par le Concepteur Windows Form
+	Private components As System.ComponentModel.IContainer
 
-    'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
-    'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
-    'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()>
-    Private Sub InitializeComponent()
-		Dim ListViewDetailColumn1 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
-		Dim ListViewDetailColumn2 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
-		Dim ListViewDetailColumn3 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
-		Dim ListViewDetailColumn4 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
-		Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+	'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
+	'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
+	'Ne la modifiez pas à l'aide de l'éditeur de code.
+	<System.Diagnostics.DebuggerStepThrough()>
+	Private Sub InitializeComponent()
+		Dim ListViewDetailColumn5 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
+		Dim ListViewDetailColumn6 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
+		Dim ListViewDetailColumn7 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
+		Dim ListViewDetailColumn8 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
+		Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
 		Me.RadPanelTodaysAppointments = New Telerik.WinControls.UI.RadPanel()
 		Me.RadLabelMTPaye = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelAllTotalOfItems = New Telerik.WinControls.UI.RadLabel()
@@ -39,11 +39,9 @@ Partial Class MainForm
 		Me.RadStatusStrip2 = New Telerik.WinControls.UI.RadStatusStrip()
 		Me.RadLabelElementMessage = New Telerik.WinControls.UI.RadLabelElement()
 		Me.RadPanelHaut = New Telerik.WinControls.UI.RadPanel()
-		Me.RadLabelDayEnd = New Telerik.WinControls.UI.RadLabel()
-		Me.RadLabelDaySart = New Telerik.WinControls.UI.RadLabel()
+		Me.RadDateTimePickerMonth = New Telerik.WinControls.UI.RadDateTimePicker()
 		Me.RadLabelGlobalCathegory = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelProjectNameGlobal = New Telerik.WinControls.UI.RadLabel()
-		Me.RadLabelCentreNameGlobal = New Telerik.WinControls.UI.RadLabel()
 		Me.ButtonGridviewUpdate = New System.Windows.Forms.Button()
 		Me.ButtonGridviewDelete = New System.Windows.Forms.Button()
 		Me.ButtonGridviewNew = New System.Windows.Forms.Button()
@@ -101,11 +99,9 @@ Partial Class MainForm
 		CType(Me.RadStatusStrip2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadPanelHaut, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.RadPanelHaut.SuspendLayout()
-		CType(Me.RadLabelDayEnd, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadLabelDaySart, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadDateTimePickerMonth, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelGlobalCathegory, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelProjectNameGlobal, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadLabelCentreNameGlobal, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewClassItemsListe.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,7 +160,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadPanelTodaysAppointments.RootElement.ControlBounds = New System.Drawing.Rectangle(320, 405, 200, 100)
+		Me.RadPanelTodaysAppointments.RootElement.ControlBounds = New System.Drawing.Rectangle(266, 561, 200, 100)
 		Me.RadPanelTodaysAppointments.Size = New System.Drawing.Size(300, 276)
 		Me.RadPanelTodaysAppointments.TabIndex = 9
 		Me.RadPanelTodaysAppointments.ThemeName = "MedicalAppTheme"
@@ -180,9 +176,9 @@ Partial Class MainForm
 		'
 		'
 		Me.RadLabelMTPaye.RootElement.ControlBounds = New System.Drawing.Rectangle(17, 152, 100, 18)
-		Me.RadLabelMTPaye.Size = New System.Drawing.Size(53, 38)
+		Me.RadLabelMTPaye.Size = New System.Drawing.Size(35, 38)
 		Me.RadLabelMTPaye.TabIndex = 2
-		Me.RadLabelMTPaye.Text = "25"
+		Me.RadLabelMTPaye.Text = "0"
 		Me.RadLabelMTPaye.UseCompatibleTextRendering = False
 		'
 		'RadLabelAllTotalOfItems
@@ -225,9 +221,9 @@ Partial Class MainForm
 		'
 		'
 		Me.RadLabelTotalEstimation.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 68, 100, 18)
-		Me.RadLabelTotalEstimation.Size = New System.Drawing.Size(80, 67)
+		Me.RadLabelTotalEstimation.Size = New System.Drawing.Size(55, 67)
 		Me.RadLabelTotalEstimation.TabIndex = 1
-		Me.RadLabelTotalEstimation.Text = "25"
+		Me.RadLabelTotalEstimation.Text = "0"
 		Me.RadLabelTotalEstimation.UseCompatibleTextRendering = False
 		'
 		'RadLabelCurrentItems
@@ -252,18 +248,18 @@ Partial Class MainForm
 		Me.RadListeiewProjectName.AllowRemove = False
 		Me.RadListeiewProjectName.AutoScroll = True
 		Me.RadListeiewProjectName.BackColor = System.Drawing.SystemColors.ControlLightLight
-		ListViewDetailColumn1.HeaderText = "Name"
-		ListViewDetailColumn2.HeaderText = "Age"
-		ListViewDetailColumn3.HeaderText = "Gender"
-		ListViewDetailColumn4.HeaderText = "EncounterTime"
-		Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn1, ListViewDetailColumn2, ListViewDetailColumn3, ListViewDetailColumn4})
+		ListViewDetailColumn5.HeaderText = "Name"
+		ListViewDetailColumn6.HeaderText = "Age"
+		ListViewDetailColumn7.HeaderText = "Gender"
+		ListViewDetailColumn8.HeaderText = "EncounterTime"
+		Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn5, ListViewDetailColumn6, ListViewDetailColumn7, ListViewDetailColumn8})
 		Me.RadListeiewProjectName.ItemSize = New System.Drawing.Size(200, 95)
 		Me.RadListeiewProjectName.Location = New System.Drawing.Point(8, 561)
 		Me.RadListeiewProjectName.Name = "RadListeiewProjectName"
 		'
 		'
 		'
-		Me.RadListeiewProjectName.RootElement.ControlBounds = New System.Drawing.Rectangle(35, 405, 120, 95)
+		Me.RadListeiewProjectName.RootElement.ControlBounds = New System.Drawing.Rectangle(8, 561, 120, 95)
 		Me.RadListeiewProjectName.SelectLastAddedItem = False
 		Me.RadListeiewProjectName.Size = New System.Drawing.Size(250, 276)
 		Me.RadListeiewProjectName.TabIndex = 10
@@ -272,6 +268,7 @@ Partial Class MainForm
 		'
 		'ListBoxItemsParent
 		'
+		Me.ListBoxItemsParent.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.ListBoxItemsParent.FormattingEnabled = True
 		Me.ListBoxItemsParent.Location = New System.Drawing.Point(1265, 586)
 		Me.ListBoxItemsParent.Name = "ListBoxItemsParent"
@@ -302,12 +299,10 @@ Partial Class MainForm
 		'
 		'RadPanelHaut
 		'
-		Me.RadPanelHaut.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(200, Byte), Integer))
-		Me.RadPanelHaut.Controls.Add(Me.RadLabelDayEnd)
-		Me.RadPanelHaut.Controls.Add(Me.RadLabelDaySart)
+		Me.RadPanelHaut.BackColor = System.Drawing.Color.Gray
+		Me.RadPanelHaut.Controls.Add(Me.RadDateTimePickerMonth)
 		Me.RadPanelHaut.Controls.Add(Me.RadLabelGlobalCathegory)
 		Me.RadPanelHaut.Controls.Add(Me.RadLabelProjectNameGlobal)
-		Me.RadPanelHaut.Controls.Add(Me.RadLabelCentreNameGlobal)
 		Me.RadPanelHaut.Location = New System.Drawing.Point(0, 0)
 		Me.RadPanelHaut.Name = "RadPanelHaut"
 		'
@@ -317,37 +312,19 @@ Partial Class MainForm
 		Me.RadPanelHaut.Size = New System.Drawing.Size(1554, 35)
 		Me.RadPanelHaut.TabIndex = 46
 		'
-		'RadLabelDayEnd
+		'RadDateTimePickerMonth
 		'
-		Me.RadLabelDayEnd.AutoSize = False
-		Me.RadLabelDayEnd.BackColor = System.Drawing.Color.Transparent
-		Me.RadLabelDayEnd.ForeColor = System.Drawing.Color.White
-		Me.RadLabelDayEnd.ImageAlignment = System.Drawing.ContentAlignment.TopLeft
-		Me.RadLabelDayEnd.Location = New System.Drawing.Point(1320, 5)
-		Me.RadLabelDayEnd.Name = "RadLabelDayEnd"
-		'
-		'
-		'
-		Me.RadLabelDayEnd.RootElement.ControlBounds = New System.Drawing.Rectangle(1320, 5, 100, 18)
-		Me.RadLabelDayEnd.Size = New System.Drawing.Size(200, 25)
-		Me.RadLabelDayEnd.TabIndex = 47
-		Me.RadLabelDayEnd.Text = "RadLabel35"
-		'
-		'RadLabelDaySart
-		'
-		Me.RadLabelDaySart.AutoSize = False
-		Me.RadLabelDaySart.BackColor = System.Drawing.Color.Transparent
-		Me.RadLabelDaySart.ForeColor = System.Drawing.Color.White
-		Me.RadLabelDaySart.ImageAlignment = System.Drawing.ContentAlignment.TopLeft
-		Me.RadLabelDaySart.Location = New System.Drawing.Point(1100, 5)
-		Me.RadLabelDaySart.Name = "RadLabelDaySart"
-		'
-		'
-		'
-		Me.RadLabelDaySart.RootElement.ControlBounds = New System.Drawing.Rectangle(1100, 5, 100, 18)
-		Me.RadLabelDaySart.Size = New System.Drawing.Size(200, 25)
-		Me.RadLabelDaySart.TabIndex = 46
-		Me.RadLabelDaySart.Text = "RadLabel35"
+		Me.RadDateTimePickerMonth.CalendarSize = New System.Drawing.Size(290, 320)
+		Me.RadDateTimePickerMonth.CustomFormat = "yyyy-MM"
+		Me.RadDateTimePickerMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+		Me.RadDateTimePickerMonth.Location = New System.Drawing.Point(534, 5)
+		Me.RadDateTimePickerMonth.Name = "RadDateTimePickerMonth"
+		Me.RadDateTimePickerMonth.NullDate = New Date(2024, 1, 18, 0, 0, 0, 0)
+		Me.RadDateTimePickerMonth.Size = New System.Drawing.Size(164, 24)
+		Me.RadDateTimePickerMonth.TabIndex = 46
+		Me.RadDateTimePickerMonth.TabStop = False
+		Me.RadDateTimePickerMonth.Text = "2024-01"
+		Me.RadDateTimePickerMonth.Value = New Date(2024, 1, 10, 11, 13, 48, 329)
 		'
 		'RadLabelGlobalCathegory
 		'
@@ -355,12 +332,12 @@ Partial Class MainForm
 		Me.RadLabelGlobalCathegory.BackColor = System.Drawing.Color.Transparent
 		Me.RadLabelGlobalCathegory.ForeColor = System.Drawing.Color.White
 		Me.RadLabelGlobalCathegory.ImageAlignment = System.Drawing.ContentAlignment.TopLeft
-		Me.RadLabelGlobalCathegory.Location = New System.Drawing.Point(520, 5)
+		Me.RadLabelGlobalCathegory.Location = New System.Drawing.Point(270, 5)
 		Me.RadLabelGlobalCathegory.Name = "RadLabelGlobalCathegory"
 		'
 		'
 		'
-		Me.RadLabelGlobalCathegory.RootElement.ControlBounds = New System.Drawing.Rectangle(520, 5, 100, 18)
+		Me.RadLabelGlobalCathegory.RootElement.ControlBounds = New System.Drawing.Rectangle(270, 5, 100, 18)
 		Me.RadLabelGlobalCathegory.Size = New System.Drawing.Size(240, 25)
 		Me.RadLabelGlobalCathegory.TabIndex = 45
 		Me.RadLabelGlobalCathegory.Text = "RadLabelGlobalCathegory"
@@ -370,30 +347,15 @@ Partial Class MainForm
 		Me.RadLabelProjectNameGlobal.AutoSize = False
 		Me.RadLabelProjectNameGlobal.BackColor = System.Drawing.Color.Transparent
 		Me.RadLabelProjectNameGlobal.ForeColor = System.Drawing.Color.White
-		Me.RadLabelProjectNameGlobal.Location = New System.Drawing.Point(270, 5)
+		Me.RadLabelProjectNameGlobal.Location = New System.Drawing.Point(20, 5)
 		Me.RadLabelProjectNameGlobal.Name = "RadLabelProjectNameGlobal"
 		'
 		'
 		'
-		Me.RadLabelProjectNameGlobal.RootElement.ControlBounds = New System.Drawing.Rectangle(270, 5, 100, 18)
+		Me.RadLabelProjectNameGlobal.RootElement.ControlBounds = New System.Drawing.Rectangle(20, 5, 100, 18)
 		Me.RadLabelProjectNameGlobal.Size = New System.Drawing.Size(240, 25)
 		Me.RadLabelProjectNameGlobal.TabIndex = 44
 		Me.RadLabelProjectNameGlobal.Text = "RadLabelAudioNameGlobal"
-		'
-		'RadLabelCentreNameGlobal
-		'
-		Me.RadLabelCentreNameGlobal.AutoSize = False
-		Me.RadLabelCentreNameGlobal.BackColor = System.Drawing.Color.Transparent
-		Me.RadLabelCentreNameGlobal.ForeColor = System.Drawing.Color.White
-		Me.RadLabelCentreNameGlobal.Location = New System.Drawing.Point(20, 5)
-		Me.RadLabelCentreNameGlobal.Name = "RadLabelCentreNameGlobal"
-		'
-		'
-		'
-		Me.RadLabelCentreNameGlobal.RootElement.ControlBounds = New System.Drawing.Rectangle(20, 5, 100, 18)
-		Me.RadLabelCentreNameGlobal.Size = New System.Drawing.Size(240, 25)
-		Me.RadLabelCentreNameGlobal.TabIndex = 43
-		Me.RadLabelCentreNameGlobal.Text = "RadLabelNomDuCentre"
 		'
 		'ButtonGridviewUpdate
 		'
@@ -464,7 +426,7 @@ Partial Class MainForm
 		Me.RadGridViewClassItemsListe.MasterTemplate.AllowRowResize = False
 		Me.RadGridViewClassItemsListe.MasterTemplate.EnableGrouping = False
 		Me.RadGridViewClassItemsListe.MasterTemplate.ShowRowHeaderColumn = False
-		Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition1
+		Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition3
 		Me.RadGridViewClassItemsListe.Name = "RadGridViewClassItemsListe"
 		Me.RadGridViewClassItemsListe.ShowItemToolTips = False
 		Me.RadGridViewClassItemsListe.ShowNoDataText = False
@@ -481,7 +443,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadButtonItemsLevelOne.RootElement.ControlBounds = New System.Drawing.Rectangle(793, 495, 110, 24)
+		Me.RadButtonItemsLevelOne.RootElement.ControlBounds = New System.Drawing.Rectangle(712, 558, 110, 24)
 		Me.RadButtonItemsLevelOne.Size = New System.Drawing.Size(90, 38)
 		Me.RadButtonItemsLevelOne.TabIndex = 61
 		Me.RadButtonItemsLevelOne.Text = "1 Level  "
@@ -497,7 +459,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadButtonGroupageRefhesh.RootElement.ControlBounds = New System.Drawing.Rectangle(895, 495, 110, 24)
+		Me.RadButtonGroupageRefhesh.RootElement.ControlBounds = New System.Drawing.Rectangle(814, 558, 110, 24)
 		Me.RadButtonGroupageRefhesh.Size = New System.Drawing.Size(90, 38)
 		Me.RadButtonGroupageRefhesh.TabIndex = 60
 		Me.RadButtonGroupageRefhesh.Text = "2 Level   "
@@ -513,7 +475,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadButtonGroupCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(1099, 495, 110, 24)
+		Me.RadButtonGroupCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(1018, 558, 110, 24)
 		Me.RadButtonGroupCancel.Size = New System.Drawing.Size(90, 38)
 		Me.RadButtonGroupCancel.TabIndex = 60
 		Me.RadButtonGroupCancel.Text = "Détail  "
@@ -529,7 +491,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadButtonGroupage.RootElement.ControlBounds = New System.Drawing.Rectangle(997, 495, 110, 24)
+		Me.RadButtonGroupage.RootElement.ControlBounds = New System.Drawing.Rectangle(916, 558, 110, 24)
 		Me.RadButtonGroupage.Size = New System.Drawing.Size(90, 38)
 		Me.RadButtonGroupage.TabIndex = 59
 		Me.RadButtonGroupage.Text = "Groupage "
@@ -549,17 +511,18 @@ Partial Class MainForm
 		Me.RadGridViewItems.MasterTemplate.AllowSearchRow = True
 		Me.RadGridViewItems.MasterTemplate.AutoExpandGroups = True
 		Me.RadGridViewItems.MasterTemplate.EnableAlternatingRowColor = True
-		Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition2
+		Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition4
 		Me.RadGridViewItems.Name = "RadGridViewItems"
 		'
 		'
 		'
 		Me.RadGridViewItems.RootElement.ControlBounds = New System.Drawing.Rectangle(3, 64, 240, 150)
-		Me.RadGridViewItems.Size = New System.Drawing.Size(584, 301)
+		Me.RadGridViewItems.Size = New System.Drawing.Size(1256, 485)
 		Me.RadGridViewItems.TabIndex = 6
 		'
 		'GroupBox1
 		'
+		Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.GroupBox1.Controls.Add(Me.RadLabel13)
 		Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_PAYE_QUI)
 		Me.GroupBox1.Controls.Add(Me.RadLabel14)
@@ -1001,11 +964,10 @@ Partial Class MainForm
 		CType(Me.RadStatusStrip2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadPanelHaut, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.RadPanelHaut.ResumeLayout(False)
-		CType(Me.RadLabelDayEnd, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadLabelDaySart, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.RadPanelHaut.PerformLayout()
+		CType(Me.RadDateTimePickerMonth, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelGlobalCathegory, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelProjectNameGlobal, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadLabelCentreNameGlobal, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewClassItemsListe.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1065,11 +1027,8 @@ Partial Class MainForm
 	Friend WithEvents RadStatusStrip2 As RadStatusStrip
 	Friend WithEvents RadLabelElementMessage As RadLabelElement
 	Friend WithEvents RadPanelHaut As RadPanel
-	Friend WithEvents RadLabelDayEnd As RadLabel
-	Friend WithEvents RadLabelDaySart As RadLabel
 	Friend WithEvents RadLabelGlobalCathegory As RadLabel
 	Friend WithEvents RadLabelProjectNameGlobal As RadLabel
-	Friend WithEvents RadLabelCentreNameGlobal As RadLabel
 	Friend WithEvents ButtonGridviewUpdate As Button
 	Friend WithEvents ButtonGridviewDelete As Button
 	Friend WithEvents ButtonGridviewNew As Button
@@ -1117,4 +1076,5 @@ Partial Class MainForm
 	Friend WithEvents CheckedListBoxTypeCharge As CheckedListBox
 	Friend WithEvents GroupBoxMenuVertical As Panel
 	Friend WithEvents paneMain As Panel
+	Friend WithEvents RadDateTimePickerMonth As RadDateTimePicker
 End Class

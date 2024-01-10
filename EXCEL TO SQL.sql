@@ -1,2 +1,0 @@
-﻿INSERT INTO pandabudget.items(`INDEX`, items_INDEX, items_projet_INDEX, items_code, items_name, items_parent,items_quantity, items_unit, items_price_total, items_taxe, items_taxe_value, items_currency, items_last_edit_date, items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff) VALUES
-(97,1,1,'ACHATSS','Achats stockés Matières prem','_ROOT',1,1014.99,1014.99,20,202.998,'EURO','2023-03-06','2023-03-06','N',0,'','N')

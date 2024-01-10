@@ -23,7 +23,6 @@ Public Class MainForm
     Dim ArrayItemsCODE(10) As Label
     Dim ArrayItemsName(10) As Label
     Dim imageArrayLocation = {5, 77, 139, 175, 220, 265, 310, 355, 400, 445, 510, 700}
-    Dim imageArrayMainMenuLocation = {40, 90, 140, 190, 240, 290, 340, 390, 440, 740} 'ecart 45
     Dim ImgLogoItems = New Image() {
                         My.Resources.bussy_100,
                         My.Resources.Construction_100,
@@ -34,33 +33,19 @@ Public Class MainForm
                         My.Resources.ESTIMATOR_100,
                         My.Resources.ESTIMATOR_100,
                         My.Resources.ESTIMATOR_100,
-                                           My.Resources.ESTIMATOR_100
+                        My.Resources.ESTIMATOR_100
                         }
-
-    Private NRow As Integer = 9
+    Private NRow As Integer = 2
     Dim PictureBoxArray(NRow) As PictureBox
+    Dim imageArrayMainMenuLocation = {40, 110, 760} 'ecart 45
     Dim ImgPoubelleEnter = New Image() {
                         My.Resources.home_White_100x100,
-                        My.Resources.architech_white_100x100,
-                        My.Resources.calendrier_White_100x100,
-                        My.Resources.User_White_100x100_inverse,
-                        My.Resources.invoice_white_100x100,
-                        My.Resources.Event_White_100x100,
                         My.Resources.settings_icon_128_white,
-                        My.Resources.Bell_White_100x100,
-                        My.Resources.Help_Center_White_100x100,
                         My.Resources.close_White_100x100
                         }
     Dim ImgPoubelleLeave = New Image() {
                         My.Resources.home_Gray_Clair_100x100,
-                        My.Resources.architech_gray_100x100,
-                        My.Resources.calendrier_Gray_clair_100x100,
-                        My.Resources.User_Gray_Claire_100x100_inverse,
-                        My.Resources.invoice_gray_clair_100x100,
-                        My.Resources.Event_Gray_Claire_100x100,
                         My.Resources.settings_icon_128_Gray_Clair,
-                        My.Resources.Bell_Gray_Claire_100x100,
-                        My.Resources.Help_Center_Gray_Clair_100x100,
                         My.Resources.close_Gray_Clair_100x100
                         }
     Private BackColorGray = Color.FromArgb(46, 64, 62)
@@ -87,24 +72,16 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_closing(sender As Object, e As EventArgs) Handles MyBase.Closing
-        '9999 Dim i As Integer = Items_root.Count
         calcul_Datagridview_Items()
     End Sub
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: cette ligne de code charge les données dans la table 'TAKEOFFDataSet3.ITEMS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-        'Me.ITEMSTableAdapter1.Fill(Me.TAKEOFFDataSet3.ITEMS)
-        'TODO: cette ligne de code charge les données dans la table 'TAKEOFFDataSet5.PROJECT'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-
-        'TODO: cette ligne de code charge les données dans la table 'TAKEOFFDataSetProjectName.PROJECT'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-        'Me.PROJECTTableAdapter.Fill(Me.TAKEOFFDataSetProjectName.PROJECT)
-        'TODO: cette ligne de code charge les données dans la table 'TAKEOFDataSet.ITEMS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-        '@@@@@TOTOTO  Me.ITEMSTableAdapter.Fill(Me.TAKEOFDataSet.ITEMS)
-        'AddHandler RadGridViewItems.CellClick, AddressOf RadGridViewItems_CommandCellClick
         AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf RadGridViewItems_GroupSummaryEvaluate
         'AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf radGridView1_GroupSummaryEvaluate
+        RadDateTimePickerMonth.DateTimePickerElement.Calendar.HeaderNavigationMode = HeaderNavigationMode.Zoom
+        RadDateTimePickerMonth.DateTimePickerElement.Calendar.ZoomLevel = ZoomLevel.Months
+        AddHandler Me.RadDateTimePickerMonth.DateTimePickerElement.Calendar.ZoomChanging, AddressOf Calendar_ZoomChanging
 
         CenterForm(Me)
-        'FillProjectList_to_listview_old()
         init_main_menu()
         fill_Project_Array()
         init_Groupe()
@@ -171,14 +148,9 @@ Public Class MainForm
             Case 0
                 paneMain.Visible = True
             Case 1
-                paneMain.Visible = False
-            Case 2
                 FormItemsDataEntry.Show()
                 Me.Hide()
-            'Case 4
-            '    FormListView.Show()
-            '    Me.Hide()
-            Case 9
+            Case Else
                 c_fini()
         End Select
 
@@ -1415,5 +1387,13 @@ Public Class MainForm
                 CheckedListBoxTypeCharge.SetItemChecked(i, False)
             End If
         Next
+    End Sub
+    Private Sub Calendar_ZoomChanging(sender As Object, e As CalendarZoomChangingEventArgs)
+        If Me.RadDateTimePickerMonth.DateTimePickerElement.Calendar.ZoomLevel = ZoomLevel.Years AndAlso e.Direction = DrillDirection.Up Then
+            e.Cancel = True
+        End If
+        If Me.RadDateTimePickerMonth.DateTimePickerElement.Calendar.ZoomLevel = ZoomLevel.Months AndAlso e.Direction = DrillDirection.Down Then
+            e.Cancel = True
+        End If
     End Sub
 End Class
