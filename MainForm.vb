@@ -3,7 +3,6 @@ Imports MySql.Data.MySqlClient
 Public Class MainForm
     Public ProjectIndexGlobal As Integer = 0
     Public Global_Type_Charge As String = "ALL"
-    Public next_index As Integer = 9999999
     Public Items_root As ArrayList
     Public Items_root_value As ArrayList
     Public Items_root_index As ArrayList
@@ -70,10 +69,6 @@ Public Class MainForm
 
         End If
     End Sub
-
-    Private Sub MainForm_closing(sender As Object, e As EventArgs) Handles MyBase.Closing
-        calcul_Datagridview_Items()
-    End Sub
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf RadGridViewItems_GroupSummaryEvaluate
         'AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf radGridView1_GroupSummaryEvaluate
@@ -87,7 +82,6 @@ Public Class MainForm
         init_Groupe()
         FillItems_root()
 
-        'calcul_Datagridview_Items()
         ArrayCurrentItems = New ArrayList
         ArrayCurrentItems.Add(0)  'const_Project_index
         ArrayCurrentItems.Add("__ROOT")
@@ -125,7 +119,6 @@ Public Class MainForm
         Next
     End Sub
     Public Sub PictureBoxClickHandler(ByVal sender As Object, ByVal e As System.EventArgs)
-        'MsgBox("I am Picture #" & CType(sender, Button).Text)
         Dim picb As PictureBox = CType(sender, PictureBox)
         Dim indexPictureBox = Val(picb.Name)
         sender.image = ImgPoubelleEnter(indexPictureBox)
@@ -185,81 +178,12 @@ Public Class MainForm
         End If
 
     End Sub
-    Private Sub calcul_Datagridview_Items()
-        Dim Items_Root_Name As String = ""
-        Dim iindex As Integer = 0
-        Dim Total_ligne As Double = 0
-        Dim total_projet As Double = 0
-        Dim montant_tva As Double
-        Dim total_tva As Double = 0
-        iindex = RadGridViewItems.Rows.Count
-        Dim taux_tva As Double
-        Dim jj, kk, i As Integer
-
-
-        kk = 0
-        Items_root_value = New ArrayList
-        If iindex > 0 Then
-            Total_ligne = 0
-            ListBoxItemsParent.Items.Clear()
-            ' liste des _ROOT
-            For Each Items_Element In Items_root
-                ListBoxItemsParent.Items.Add(Items_Element)
-
-                For i = 0 To iindex - 1
-                    Items_Root_Name = RadGridViewItems.Rows(i).Cells(5).Value
-                    If Items_Root_Name <> "__ROOT" Then
-                        If Items_Element = Items_Root_Name Then
-                            Try
-                                Total_ligne = RadGridViewItems.Rows(i).Cells(6).Value * RadGridViewItems.Rows(i).Cells(7).Value * RadGridViewItems.Rows(i).Cells(8).Value
-                                RadGridViewItems.Rows(i).Cells(9).Value = Total_ligne
-                                total_projet += Total_ligne
-                                taux_tva = Format(RadGridViewItems.Rows(i).Cells(10).Value / 100, "0.00")
-                                montant_tva = Total_ligne * taux_tva
-                                RadGridViewItems.Rows(i).Cells(11).Value = montant_tva
-                                total_tva += montant_tva
-                            Catch ex As Exception
-                            End Try
-                        End If
-                    End If
-                Next
-
-                jj = Items_root_index(kk)
-                If jj < iindex And jj >= 0 Then
-                    RadGridViewItems.Rows(jj).Cells(9).Value = total_projet
-                    RadGridViewItems.Rows(jj).Cells(11).Value = total_tva
-                    Try
-                        '@@@@@TOTOTO  Me.ITEMSTableAdapter.Update(Me.TAKEOFDataSet.ITEMS)
-                    Catch ex As Exception
-                        RadLabelElementMessage.Text = ex.Message
-                    End Try
-                    total_projet = 0
-                    total_tva = 0
-                End If
-                kk += 1
-            Next
-
-        End If
-    End Sub
     Private Sub display_ProjectCathegory_Flash(Name As String, titre As String)
         Try
             RadLabelGlobalCathegory.Text = "<html><p>" + titre + " : <b><span style=""font-size: medium"">" + Name + "</b><html>"
-            Application.DoEvents()
-            System.Threading.Thread.Sleep(100)
-            RadLabelGlobalCathegory.ForeColor = Color.Gray
-            Application.DoEvents()
-            System.Threading.Thread.Sleep(100)
-            RadLabelGlobalCathegory.ForeColor = Color.White
-            'display_flash(Brand_Name)
         Catch ex As Exception
             Me.Text = ex.Message
         End Try
-        Try
-            'display_DataEntry_Centre_from_arrayValue()
-        Catch ex As Exception
-            Me.Text = ex.Message
-        End Try
-
     End Sub
 
     Private Sub RadGridViewItems_CommandCellClick(sender As Object, e As GridViewCellEventArgs) Handles RadGridViewItems.CellClick
@@ -281,8 +205,6 @@ Public Class MainForm
                 End If
                 iindex = RadGridViewItems.CurrentRow.Cells(1).Value
             End If
-
-            'display_DataEntry_Centre_from_arrayValue()
         Catch ex As Exception
             Me.Text = ex.Message
         End Try
@@ -322,12 +244,8 @@ Public Class MainForm
         RadTextBoxITEMS_PayeQui.Text = RadGridViewItems.CurrentRow.Cells(14).Value.ToString
         RadTextBoxITEMS_MT_PAIEMENT.Text = RadGridViewItems.CurrentRow.Cells(15).Value.ToString
         RadTextBoxITEMS_PAYE_QUI.Text = RadGridViewItems.CurrentRow.Cells(16).Value.ToString
-
-
-
     End Sub
     Private Sub calculTotalLine(ByVal iindex As Integer)
-
         Dim ClassItemsListe = New List(Of ClassItemsListe)
         Dim RowsCount As Integer = 0
         Dim lastRow As GridViewRowInfo = RadGridViewItems.Rows(RadGridViewItems.Rows.Count - 1)
@@ -471,100 +389,6 @@ Public Class MainForm
         End If
         Return cpt
     End Function
-
-
-    Private Sub RadListeiewProjectNameClick(sender As Object, e As EventArgs) Handles RadListeiewProjectName.SelectedIndexChanged
-        'ItemMouseClick 
-        Dim iindex As Integer
-        iindex = RadListeiewProjectName.SelectedIndex
-        Dim temp
-        temp = RadListeiewProjectName.Items(0).Value
-        '@@@@@TOTOTO  Me.ITEMSTableAdapter.PorjectOne(Me.TAKEOFDataSet.ITEMS, iindex)
-
-        'calcul_Datagridview_Items()
-    End Sub
-    Private Sub radListViewNextPatients_ItemMouseClick(sender As Object, e As EventArgs) Handles RadListeiewProjectName.ItemMouseClick
-        'ItemMouseClick 
-        Dim iindex As Integer
-        iindex = RadListeiewProjectName.SelectedIndex
-        Dim temp
-        temp = RadListeiewProjectName.Items(0).Value
-        '@@@@@TOTOTO  Me.ITEMSTableAdapter.PorjectOne(Me.TAKEOFDataSet.ITEMS, iindex)
-
-        'calcul_Datagridview_Items()
-    End Sub
-
-    Private Sub RadListView2_SelectedItemChanged(sender As Object, e As EventArgs)
-        'Me.ITEMSTableAdapter.PorjectOne(Me.TAKEOFDataSet.ITEMS, 1)
-    End Sub
-    Private Sub radListViewNextPatients_VisualItemCreating(ByVal sender As Object, ByVal e As ListViewVisualItemCreatingEventArgs) Handles RadListeiewProjectName.VisualItemCreating
-        e.VisualItem = New PatientsListViewVisualItem()
-    End Sub
-    Private Sub radListViewNextPatients_VisualItemFormatting(ByVal sender As Object, ByVal e As ListViewVisualItemEventArgs) Handles RadListeiewProjectName.VisualItemFormatting
-        Exit Sub   '///////////////
-        'TryCast(e.VisualItem, PatientsListViewVisualItem).TopRightElement.Text = (CDate(e.VisualItem.Data("Time"))).ToString("HH:mm")
-        Dim itemIndex As Integer = Me.RadListeiewProjectName.Items.IndexOf(e.VisualItem.Data)
-        Dim padding As Padding
-        If itemIndex = 0 Then
-            Dim fullName As String = e.VisualItem.Data("Name").ToString()
-            If fullName.Length > 25 Then
-                Dim names As String() = fullName.Split(New Char() {" "c})
-                fullName = names(0) & "<br>  " & names(1)
-            End If
-            e.VisualItem.Text = "<html>" & "<span style=""color:#006DC0;font-size:24pt;font-family:Segoe UI Light;"">  " & fullName & "</span>" & "<br>" & "<span style=""color:#4F4C4C;font-size:13pt;font-family:Segoe UI;"">    " & e.VisualItem.Data("Age") & " yo | " & e.VisualItem.Data("Gender") & "</span>" & "</html>"
-
-            e.VisualItem.BorderTopColor = Color.Transparent
-            padding = New Padding(2, 1, 2, 9)
-        Else
-            If itemIndex = 1 Then
-                padding = New Padding(2, 10, 2, 10)
-            Else
-                padding = New Padding(2, 10, 2, 1)
-                e.VisualItem.BorderBottomColor = Color.Transparent
-            End If
-
-            e.VisualItem.Font = New Font("Segoe UI Light", 16.0F)
-            e.VisualItem.ForeColor = Color.FromArgb(0, 109, 192)
-            e.VisualItem.Text = "   " & e.VisualItem.Data("Name").ToString()
-        End If
-
-        e.VisualItem.Padding = padding
-        e.VisualItem.TextAlignment = ContentAlignment.TopLeft
-    End Sub
-
-    Public Class PatientsListViewVisualItem
-        Inherits SimpleListViewVisualItem
-        Private topRightElement_Renamed As LightVisualElement
-
-        Public ReadOnly Property TopRightElement() As LightVisualElement
-            Get
-                Return Me.topRightElement_Renamed
-            End Get
-        End Property
-
-        Protected Overrides ReadOnly Property ThemeEffectiveType() As Type
-            Get
-                Return GetType(SimpleListViewVisualItem)
-            End Get
-        End Property
-
-        Protected Overrides Sub CreateChildElements()
-            MyBase.CreateChildElements()
-
-            Me.topRightElement_Renamed = New LightVisualElement()
-            Me.topRightElement_Renamed.StretchHorizontally = False
-            Me.topRightElement_Renamed.StretchVertically = False
-            Me.topRightElement_Renamed.DrawFill = True
-            Me.topRightElement_Renamed.NumberOfColors = 1
-            Me.topRightElement_Renamed.BackColor = Color.FromArgb(27, 4, 69)
-            Me.topRightElement_Renamed.ForeColor = Color.White
-            Me.topRightElement_Renamed.Font = New Font("Segoe UI Semibold", 11.0F)
-            Me.topRightElement_Renamed.Alignment = ContentAlignment.TopRight
-            Me.topRightElement_Renamed.Padding = New Padding(2)
-
-            Me.Children.Add(Me.topRightElement_Renamed)
-        End Sub
-    End Class
     Private Sub init_Groupe()
         Dim i As Integer = 0
         ArrayGroupe = New ArrayList
@@ -709,7 +533,6 @@ Public Class MainForm
 
             FillItems_root()
             calculTotalLine(0) 'affiche le total
-            'calcul_Datagridview_Items()
         End If
     End Sub
     Private Sub MenuPrincipalClickHandler_name(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -764,18 +587,6 @@ Public Class MainForm
     Private Sub display_ProjectName_Flash(Name As String, titre As String)
         Try
             RadLabelProjectNameGlobal.Text = "<html><p>" + titre + " : <b><span style=""font-size: medium"">" + Name + "</b><html>"
-            Application.DoEvents()
-            System.Threading.Thread.Sleep(300)
-            RadLabelProjectNameGlobal.ForeColor = Color.Gray
-            Application.DoEvents()
-            System.Threading.Thread.Sleep(300)
-            RadLabelProjectNameGlobal.ForeColor = Color.White
-            'display_flash(Brand_Name)
-        Catch ex As Exception
-            Me.Text = ex.Message
-        End Try
-        Try
-            'display_DataEntry_Centre_from_arrayValue()
         Catch ex As Exception
             Me.Text = ex.Message
         End Try
@@ -900,23 +711,7 @@ Public Class MainForm
             connection.Close()
             FindItemsSql(ProjectIndexGlobal)
         End If
-        Exit Sub
-        UpdateGridInfo(Me.RadGridViewItems.CurrentRow, irow)
-
-        Try
-            '@@@@@TOTOTO  Me.ITEMSTableAdapter.Update(Me.TAKEOFDataSet.ITEMS)
-
-        Catch ex As Exception
-        End Try
     End Sub
-    Private Function ConvertDateMysql(ByVal DateOrigine As Date) As String
-        Dim ConvertedDate As String '= "#10/15/2022#"
-        Dim dyear = DateOrigine.ToString("yyyy")
-        Dim dmonth = DateOrigine.ToString("MM")
-        Dim dday = DateOrigine.ToString("dd")
-        ConvertedDate = "#" + dmonth + "/" + dday + "/" + dyear + "#"
-        Return ConvertedDate
-    End Function
 
     Private Function ConvertDateMysql4(ByVal DateOrigine As Date) As String
         Dim ConvertedDate As String '= '2022/11/30'
@@ -926,40 +721,6 @@ Public Class MainForm
         ConvertedDate = dyear + "-" + dmonth + "-" + dday
         Return ConvertedDate
     End Function
-    Private Sub UpdateGridInfo(ByVal currentRow As GridViewRowInfo, ByRef iindex As Integer)
-        Dim mysql As String
-        Dim basename As String = "ITEMS"
-        mysql = "Update ITEMS SET items_INDEX=" + RadTextBox_ITEMS_INDEX.Text
-        mysql += ", items_code= '" + RadTextBoxITEMS_CODE.Text
-        mysql += "', items_parent ='" + RadTextBoxITEMS_PARENT.Text
-        mysql += "', items_quantity= " + RadTextBoxITEMS_QUANTITY.Text
-        mysql += ", items_unit= " + RadTextBoxITEMS_UNIT.Text
-        mysql += ", items_price_total =" + RadTextBoxITEMS_TAXE_VALUE.Text
-        mysql += ", items_parent ='" + RadTextBoxITEMS_NAME.Text
-        mysql += "', items_taxe_value= " + RadTextBoxITEMS_TAXE_VALUE.Text
-        mysql += ", items_taxe= =" + RadTextBoxITEMS_TAXE_VALUE.Text
-        mysql += ", items_name= '" + RadTextBoxITEMS_NAME.Text + "' where items_INDEX = " + RadTextBox_ITEMS_INDEX.Text
-        RadLabelElementMessage.Text = mysql
-    End Sub
-    Private Sub Items_Creat_Root(ByVal currentRow As GridViewRowInfo, ByVal irow As Integer)
-        Exit Sub
-        Dim i As Integer = 0
-        Dim ArrayList As ArrayList
-        ArrayList = New ArrayList
-        Dim numcolumn As Integer = RadGridViewItems.Columns.Count
-
-        For i = 0 To numcolumn - 1
-            ArrayList.Add(currentRow.Cells(i).Value)
-        Next
-        next_index += 1
-        ArrayList(0) = next_index
-        ArrayList(1) = FindLastItemCount() + 2
-        'ArrayList(4) = ArrayList(5)
-        'ArrayList(3) = ArrayList(5)
-        ArrayList(2) = "__ROOT"
-        ArrayCurrentItems.Add(ArrayList(1))
-        RadGridViewItems.Rows.Add(ArrayList.ToArray)
-    End Sub
     Private Function FindLastItemCount()
 
         Dim i As Integer = 0
@@ -993,33 +754,6 @@ Public Class MainForm
         'nombre = ds.Tables(local_tableName).Rows.Count
         Return iindex
     End Function
-    Private Function FindLastpathCount()
-
-        Dim i As Integer = 0
-        Dim local_tableName As String
-        local_tableName = "FILES_PATH"
-        Dim resultat As String = ""
-        Dim iindex As Integer
-        Dim ds As New DataSet
-        Dim sql_tout_afficher As String
-        sql_tout_afficher = "SELECT * FROM " + local_tableName + " ORDER BY FILES_PATH_INDEX"
-        Dim con As New OleDb.OleDbConnection
-        Dim nombre As Long
-        con.ConnectionString = GlobalProvider
-        Dim cmd As OleDb.OleDbCommand
-        cmd = New OleDb.OleDbCommand(sql_tout_afficher, con)
-        cmd.Connection.Open()
-        Dim da As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter With {
-            .SelectCommand = cmd
-        }
-        da.Fill(ds, local_tableName)
-        nombre = ds.Tables(local_tableName).Rows.Count - 1
-        If nombre > 0 Then
-            iindex = ds.Tables(local_tableName).Rows(nombre).Item("FILES_PATH_INDEX")
-        End If
-        'nombre = ds.Tables(local_tableName).Rows.Count
-        Return iindex
-    End Function
     Private Sub ButtonGridviewDelete_Click(sender As Object, e As EventArgs) Handles ButtonGridviewDelete.Click
         Dim iindex As Integer = Val(RadTextBox_INDEX.Text)
         If iindex < 1 Then
@@ -1041,47 +775,15 @@ Public Class MainForm
             connection.Close()
             FindItemsSql(ProjectIndexGlobal)
         End If
-        Exit Sub
-
-        UpdateGridInfo(Me.RadGridViewItems.CurrentRow, iindex)
-
-        Try
-            '@@@@@TOTOTO  Me.ITEMSTableAdapter.DeleteQuery(iindex)
-            Me.RadGridViewItems.CurrentRow.Delete()
-            'UpdateGridInfo(Me.RadGridViewItems.CurrentRow, irow)
-        Catch ex As Exception
-        End Try
-    End Sub
-    Private Sub insert_Items()
-        Dim i = 0
-        i = i
-        'RadTextBox_INDEX.Text = ""
-        RadTextBox_ITEMS_INDEX.Text = Str(FindLastItemCount())
-        RadTextBoxITEMS_CODE.Text = "" 'Str(FindLastItemCount())
-        RadTextBoxITEMS_NAME.Text = ""
-        RadTextBoxITEMS_PARENT.Text = "_ROOT"
-        RadTextBoxITEMS_QUANTITY.Text = "1"
-        RadTextBoxITEMS_UNIT.Text = "0"
-        RadTextBoxITEMS_TAXE.Text = "20%"
-        RadTextBoxITEMS_TAXE_VALUE.Text = "0"
-        RadTextBoxITEMS_CURRENCY.Text = "EURO"
-        RadTextBoxITEMS_LAST_EDIT_DATE.Text = Today.ToString
-        RadTextBox_MTTVA.Text = ""
-        RadTextBoxITEMS_DatePaiement.Text = Today.ToString
-        RadTextBoxITEMS_PayeQui.Text = "N"
-        RadTextBoxITEMS_MT_PAIEMENT.Text = ""
-        RadTextBoxITEMS_PAYE_QUI.Text = "CIC"
     End Sub
     Private Sub ButtonGridviewNew_Click(sender As Object, e As EventArgs) Handles ButtonGridviewNew.Click
         '        RadDataLayout1 = New RadDataLayout
-        'insert_Items()
         InsertItemToDataBase(0)
         FindItemsSql(ProjectIndexGlobal)
         Exit Sub
         Dim iindex As Integer = 0
         RadGridViewItems.Rows.AddNew()
         iindex = FindLastItemCount() + 1
-        next_index += next_index
     End Sub
 
     Private Sub InsertItemToDataBase(ByVal Items_Index As Integer)
@@ -1144,102 +846,9 @@ Public Class MainForm
         End If
 
     End Sub
-
-
-    Private Sub ButtonGridviewNewProjectMainForm_Click(sender As Object, e As EventArgs)
-        Dim iindex As Integer = 0
-        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        'RadTextBoxItemsCode.Text = "Code Name" 'ArrayCurrentItems(const_Category)
-        'RadTextBoxParent_Items.Text = ArrayCurrentItems(const_Category)
-        'RadSpinEditorVATPorucent.Value = ArrayCurrentItems(const_VAT_Porucent)
-        iindex = FindLastProjectCount() + 1
-    End Sub
-
-    Private Sub RadTextBox2999_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub ButtonGridviewDeleteProjectMainForm_Click(sender As Object, e As EventArgs)
-        Dim iindex As Integer = -1
-
-        Try
-            '@@@@@TOTOTO  Me.PROJECTTableAdapter.DeleteQuery(iindex)
-            'UpdateGridInfo(Me.RadGridViewItems.CurrentRow, irow)
-        Catch ex As Exception
-        End Try
-    End Sub
-    Private Sub UpdateGridInfoProject(ByVal currentRow As GridViewRowInfo, ByRef iindex As Integer)
-
-        If currentRow Is Nothing Then
-            Return
-        End If
-        'currentRow.Index
-        If IsDBNull(currentRow.Cells(1).Value) Then
-            iindex = FindLastProjectCount() + 1
-            currentRow.Cells(1).Value = iindex
-        Else
-            iindex = currentRow.Cells(1).Value
-        End If
-
-        RadLabelElementMessage.Text = ""
-        Dim newRowInfo As GridViewNewRowInfo = TryCast(currentRow, GridViewNewRowInfo)
-        If newRowInfo IsNot Nothing Then
-            currentRow.InvalidateRow()
-        Else
-        End If
-    End Sub
-    Private Function FindLastProjectCount()
-
-        Dim i As Integer = 0
-        Dim local_tableName As String
-        local_tableName = "PROJECT"
-        Dim resultat As String = ""
-        Dim iindex As Integer
-        Dim ds As New DataSet
-        Dim sql_tout_afficher As String
-        sql_tout_afficher = "SELECT * FROM " + local_tableName + " ORDER BY PROJECT_INDEX "
-        Dim con As New OleDb.OleDbConnection
-        Dim nombre As Long
-        con.ConnectionString = GlobalProvider
-        Dim cmd As OleDb.OleDbCommand
-        cmd = New OleDb.OleDbCommand(sql_tout_afficher, con)
-        cmd.Connection.Open()
-        Dim da As OleDb.OleDbDataAdapter = New OleDb.OleDbDataAdapter With {
-            .SelectCommand = cmd
-        }
-        da.Fill(ds, local_tableName)
-        nombre = ds.Tables(local_tableName).Rows.Count - 1
-        If nombre > 0 Then
-            iindex = ds.Tables(local_tableName).Rows(nombre).Item("PROJECT_INDEX")
-        End If
-        'nombre = ds.Tables(local_tableName).Rows.Count
-        Return iindex
-    End Function
-
     Private Sub RadButtonGroupage_Click(sender As Object, e As EventArgs) Handles RadButtonGroupage.Click
         RadGridViewItems.GroupDescriptors.Expression = "ITEMS_PARENT;ITEMS_CODE"
         RadGridViewItems.MasterTemplate.CollapseAllGroups()
-    End Sub
-
-    Private Function GetQuarter([date] As DateTime) As String
-        If [date].Month >= 0 AndAlso [date].Month <= 3 Then
-            Return "Q1"
-        ElseIf [date].Month >= 4 AndAlso [date].Month <= 6 Then
-            Return "Q2"
-        ElseIf [date].Month >= 7 AndAlso [date].Month <= 9 Then
-            Return "Q3"
-        Else
-            Return "Q4"
-        End If
-    End Function
-    Private Sub radGridView1_GroupSummaryEvaluate(sender As Object, e As GroupSummaryEvaluationEventArgs)
-        If e.Value Is Nothing Then
-            e.FormatString = e.Group.Key.ToString()
-            RadLabelElementMessage.Text = e.FormatString + " " + Now.ToLongTimeString
-        End If
-        RadLabelElementMessage.Text = RadLabelElementMessage.Text + "/" + e.Value
     End Sub
     Private Sub RadGridViewItems_GroupSummaryEvaluate(ByVal sender As Object, ByVal e As GroupSummaryEvaluationEventArgs)
 
@@ -1283,75 +892,8 @@ Public Class MainForm
         'https://docs.telerik.com/devtools/winforms/controls/gridview/grouping/custom-grouping
     End Sub
 
-
-    Private Sub RadButton1_Click_2(sender As Object, e As EventArgs) Handles RadButtonGroupCancel.Click
-        RadGridViewItems.GroupDescriptors.Expression = ""
-    End Sub
-    Private Sub FindItemByCode(ByVal ItemCode As String, ByRef Items_Parent_Aarray As ArrayList)
-        Dim ItemCount As Integer = 0
-        Dim temp As String
-        Dim findit As Boolean = False
-        If IsNothing(ItemCode) Then
-            Exit Sub
-
-        End If
-        ListBoxItemsParent.Items.Clear()
-
-        If ItemCode > "" Then
-            Items_Parent_Aarray = New ArrayList
-            '@@@@@TOTOTO  Me.ITEMSTableAdapter1.FillByByCode(Me.TAKEOFFDataSet3.ITEMS, "%" + ItemCode + "%")
-
-            'Me.ITEMSTableAdapter.FindItemByCode(Me.TAKEOFDataSet.ITEMS, ItemCode)
-            'ItemCount = Me.TAKEOFFDataSet3.ITEMS.Count
-            'If ItemCount > 0 Then
-            '    For i = 0 To ItemCount - 1
-            '        findit = False
-            '        temp = Me.TAKEOFFDataSet3.Tables(0).Rows(i).Item("ITEMS_PARENT")
-            '        For Each Elements As String In Items_Parent_Aarray
-            '            If Elements = temp Then
-            '                findit = True
-            '                Exit For
-            '            End If
-            '        Next
-            '        If findit = False Then
-            '            Items_Parent_Aarray.Add(temp)
-            '            ListBoxItemsParent.Items.Add(temp)
-            '        End If
-            '    Next i
-            'End If
-        End If
-    End Sub
-
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxItemsParent.Click
-
-    End Sub
-
-    Private Sub ListBoxItemsParent_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxItemsParent.Click
-        Dim iindex As Integer = 0
-        iindex = ListBoxItemsParent.SelectedIndex
-        If iindex >= 0 Then
-            Dim temp As String = ""
-            temp = ListBoxItemsParent.Items(iindex)
-        End If
-    End Sub
-
-    Private Sub RadListViewNextPatients_SelectedItemChanged(sender As Object, e As EventArgs) Handles RadListeiewProjectName.SelectedItemChanged
-        Dim iindex As Integer
-        iindex = RadListeiewProjectName.SelectedIndex
-        Dim temp
-        temp = RadListeiewProjectName.Items(0).Value
-        '@@@@@TOTOTO  Me.ITEMSTableAdapter.PorjectOne(Me.TAKEOFDataSet.ITEMS, iindex)
-        iindex = iindex
-        'calcul_Datagridview_Items()
-    End Sub
-
     Private Sub RadButtonGroupageRefhesh_Click(sender As Object, e As EventArgs) Handles RadButtonGroupageRefhesh.Click
         RadGridViewItems.GroupDescriptors.Expression = "ITEMS_PARENT;ITEMS_CODE"
-        RadGridViewItems.MasterTemplate.ExpandAll()
-    End Sub
-
-    Private Sub RadButton1_Click_3(sender As Object, e As EventArgs) Handles RadButtonItemsLevelOne.Click
-        RadGridViewItems.GroupDescriptors.Expression = "ITEMS_PARENT"
         RadGridViewItems.MasterTemplate.ExpandAll()
     End Sub
 
