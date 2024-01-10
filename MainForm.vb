@@ -7,17 +7,10 @@ Public Class MainForm
     Dim ArrayPictureLogo(10) As PictureBox
     Dim ArrayItemsCODE(10) As Label
     Dim ArrayItemsName(10) As Label
-    Dim imageArrayLocation = {5, 77, 139, 175, 220, 265, 310, 355, 400, 445, 510, 700}
     Dim ImgLogoItems = New Image() {
                         My.Resources.bussy_100,
                         My.Resources.Construction_100,
                         My.Resources.veranda_100,
-                        My.Resources.ESTIMATOR_100,
-                        My.Resources.ESTIMATOR_100,
-                        My.Resources.ESTIMATOR_100,
-                        My.Resources.ESTIMATOR_100,
-                        My.Resources.ESTIMATOR_100,
-                        My.Resources.ESTIMATOR_100,
                         My.Resources.ESTIMATOR_100
                         }
     Private NRow As Integer = 2
@@ -36,10 +29,10 @@ Public Class MainForm
     Private BackColorGray = Color.FromArgb(46, 64, 62)
     Dim IndexClicked As Integer = 0
 
-    Dim dtProject As DataTable
-    Private Sub fill_Project_Array()
-        FindProjectListe()
-    End Sub
+    Private dtProject As DataTable = New DataTable()
+    Private dtItems As DataTable = New DataTable()
+
+
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'DateTimePicker Formatation...
@@ -51,10 +44,9 @@ Public Class MainForm
 
         AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf RadGridViewItems_GroupSummaryEvaluate
 
-
         CenterForm(Me)
         init_main_menu()
-        fill_Project_Array()
+        GetProjectFromDB()
         init_Groupe()
         FillItems_root()
         'ALL par défaut
@@ -63,11 +55,9 @@ Public Class MainForm
     End Sub
 
     Private Sub init_main_menu()
-
         For i = 0 To NRow
-
             PictureBoxArray(i) = New PictureBox
-            PictureBoxArray(i).Name = Str(i)  'numero pour identifié le picturebox
+            PictureBoxArray(i).Name = Str(i)
             PictureBoxArray(i).BackColor = BackColorGray
             PictureBoxArray(i).Image = ImgPoubelleLeave(i)
             PictureBoxArray(i).SizeMode = PictureBoxSizeMode.StretchImage
@@ -75,8 +65,6 @@ Public Class MainForm
             PictureBoxArray(i).Size = New Size(40, 40) '40,40
             PictureBoxArray(i).Visible = True
             PictureBoxArray(i).ContextMenuStrip = ContextMenuStrip
-            'PictureBoxArray(i).Controls.Add(GroupBox1)
-            'Me.Controls.Add(PictureBoxArray(i))
             GroupBoxMenuVertical.Controls.Add(PictureBoxArray(i))
 
             AddHandler PictureBoxArray(i).Click, AddressOf PictureBoxClickHandler
@@ -90,19 +78,7 @@ Public Class MainForm
         sender.image = ImgPoubelleEnter(indexPictureBox)
         IndexClicked = indexPictureBox
         RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(IndexClicked)
-        MenuClick(IndexClicked)
-
-    End Sub
-
-    Private Sub MenuClick(ByVal PictureBoxClicked As Integer)
-
-        Me.Controls.Remove(ListBoxItemsParent)
-        'ListBox1.Visible = False
-        Try
-            '//// GroupBox2.Controls.Remove(ListBox1)
-        Catch ex As Exception
-        End Try
-        Select Case PictureBoxClicked
+        Select Case IndexClicked
             Case 0
                 paneMain.Visible = True
             Case 1
@@ -111,7 +87,19 @@ Public Class MainForm
             Case Else
                 c_fini()
         End Select
+    End Sub
 
+    Private Sub PictureBoxMouseHoverHandler(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim picb As PictureBox = CType(sender, PictureBox)
+        Dim indexPictureBox = Val(picb.Name)
+        sender.image = ImgPoubelleEnter(indexPictureBox)
+        RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(IndexMenuPrincipalClicked)
+    End Sub
+    Private Sub PictureBoxMouseLeaveHandler(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim picb As PictureBox = CType(sender, PictureBox)
+        Dim indexPictureBox = Val(picb.Name)
+        sender.image = ImgPoubelleLeave(indexPictureBox)
+        RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(IndexClicked)
     End Sub
 
     Private Sub c_fini()
@@ -328,7 +316,6 @@ Public Class MainForm
         Dim cpt As Integer
         Dim basename As String = "project"
         mysql = "SELECT *  FROM " + basename + " WHERE  PROJECT_INDEX=" + Str(project_index) + " order by project_INDEX desc"
-        dtProject = New DataTable()
         Try
             Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
@@ -350,28 +337,31 @@ Public Class MainForm
         Dim i As Integer = 0
         Dim nombre_project As Integer = dtProject.Rows.Count - 1
         For i = 0 To nombre_project
-            imageArrayLocation(i) = 5 + i * 67
+            Dim y As Integer = 5 + i * 67
+            Dim imgIdx As Integer = i
+            If imgIdx > 3 Then
+                imgIdx = 3
+            End If
             ArrayPictureLogo(i) = New PictureBox
-            ArrayPictureLogo(i).Image = ImgLogoItems(i)
+            ArrayPictureLogo(i).Image = ImgLogoItems(imgIdx)
             ArrayPictureLogo(i).Name = Str(i)  'numero pour identifié le picturebox
             ArrayPictureLogo(i).SizeMode = PictureBoxSizeMode.StretchImage
-            ArrayPictureLogo(i).Location = New Point(5, imageArrayLocation(i))
+            ArrayPictureLogo(i).Location = New Point(5, y)
             ArrayPictureLogo(i).Size = New Size(65, 65)
 
             Me.RadListeiewProjectName.Controls.Add(ArrayPictureLogo(i)) 'RadPanelMenuItems
             AddHandler ArrayPictureLogo(i).Click, AddressOf MenuPrincipalClickHandler_picture
-            'AddHandler ArrayPictureLogo(i).MouseHover, AddressOf PictureBoxMouseHoverHandler
-            'AddHandler ArrayPictureLogo(i).MouseLeave, AddressOf PictureBoxMouseLeaveHandler
+
             '---------------------------------------
             ArrayItemsCODE(i) = New Label
             Me.ArrayItemsCODE(i).AutoSize = True
             Me.ArrayItemsCODE(i).Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.ArrayItemsCODE(i).ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(192, Byte), Integer))
-            Me.ArrayItemsCODE(i).Location = New System.Drawing.Point(70, imageArrayLocation(i) + 5)
+            Me.ArrayItemsCODE(i).Location = New System.Drawing.Point(70, y + 5)
             Me.ArrayItemsCODE(i).Name = Str(i)
             Me.ArrayItemsCODE(i).Size = New System.Drawing.Size(84, 30)
             Me.ArrayItemsCODE(i).TabIndex = 2
-            Me.ArrayItemsCODE(i).Text = "VERANDA"
+            ArrayItemsCODE(i).Text = dtProject.Rows(i).Item("PROJECT_INDEX").ToString
             Me.RadListeiewProjectName.Controls.Add(ArrayItemsCODE(i)) 'RadPanelMenuItems
             AddHandler ArrayItemsCODE(i).Click, AddressOf MenuPrincipalClickHandler_code
             '---------------------------------------
@@ -379,24 +369,14 @@ Public Class MainForm
             Me.ArrayItemsName(i).AutoSize = True
             Me.ArrayItemsName(i).Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
             Me.ArrayItemsName(i).ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(192, Byte), Integer))
-            Me.ArrayItemsName(i).Location = New System.Drawing.Point(72, imageArrayLocation(i) + 38)
+            Me.ArrayItemsName(i).Location = New System.Drawing.Point(72, y + 38)
             Me.ArrayItemsName(i).Name = Str(i)
             Me.ArrayItemsName(i).Size = New System.Drawing.Size(60, 25)
             Me.ArrayItemsName(i).TabIndex = 1
-            Me.ArrayItemsName(i).Text = "VERANDA OF MR. FEDERIC HOLLAND"
+            ArrayItemsName(i).Text = dtProject.Rows(i).Item("PROJECT_NAME").ToString
             Me.RadListeiewProjectName.Controls.Add(ArrayItemsName(i)) 'RadPanelMenuItems
             AddHandler ArrayItemsName(i).Click, AddressOf MenuPrincipalClickHandler_name
         Next i
-        If 1 = 2 Then
-            Me.ArrayItemsCODE(0).Text = "TENNIS COURT"
-            Me.ArrayItemsName(0).Text = "TENNIS COURT OF MANATHAN"
-            Me.ArrayItemsCODE(1).Text = "VERANDA"
-            Me.ArrayItemsName(1).Text = "VERANDA OF MR. FEDERIC HOLLAND"
-            Me.ArrayItemsCODE(2).Text = "ESTIMATOR"
-            Me.ArrayItemsName(2).Text = "Estimator Construction Software for Takeoff"
-        End If
-        '
-        FillProjectList_to_groupBox()
     End Sub
     Private Sub FindItemsSql(ByVal idx As Integer)
         Dim mysql As String
@@ -527,20 +507,6 @@ Public Class MainForm
         'FindItemsSql(IndexMenuPrincipalClicked)
         FindItemsSql(ProjectIndexGlobal)
     End Sub
-    Private Sub PictureBoxMouseHoverHandler(ByVal sender As Object, ByVal e As System.EventArgs)
-        Dim picb As PictureBox = CType(sender, PictureBox)
-        Dim indexPictureBox = Val(picb.Name)
-
-        sender.image = ImgPoubelleEnter(indexPictureBox)
-        RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(IndexMenuPrincipalClicked)
-    End Sub
-    Private Sub PictureBoxMouseLeaveHandler(ByVal sender As Object, ByVal e As System.EventArgs)
-        Dim picb As PictureBox = CType(sender, PictureBox)
-        Dim indexPictureBox = Val(picb.Name)
-
-        sender.image = ImgPoubelleLeave(indexPictureBox)
-        RadLabelElementMessage.Text = "Picture " + picb.Name + CType(sender, PictureBox).Text + " " + Str(IndexClicked)
-    End Sub
 
     Private Sub display_ProjectName_Flash(Name As String, titre As String)
         Try
@@ -550,65 +516,6 @@ Public Class MainForm
         End Try
     End Sub
 
-
-
-    Private Sub FillProjectList_to_groupBox()
-        Dim cpt As Integer = 0
-        Dim local_tableName As String
-        local_tableName = "PROJECT"
-        Dim ds As New DataSet
-        Dim mysql As String
-        mysql = "SELECT * FROM " + local_tableName + " ORDER BY PROJECT_CODE"
-        Dim nombre As Long
-        Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
-        Dim cmd As New MySqlCommand(mysql, connection)
-        Dim iindex As Integer
-        Try
-            connection.Open()
-            Dim reader As MySqlDataReader
-            reader = cmd.ExecuteReader()
-            dtProject.Load(reader)
-            cpt = dtProject.Rows.Count
-            connection.Close()
-        Catch ex As Exception
-            RadLabelElementMessage.Text = ex.Message
-        End Try
-        'cmd = New OleDb.OleDbCommand(mysql, con)
-        cmd.Connection.Open()
-        nombre = dtProject.Rows.Count
-        Dim ProjectName As String
-        If nombre > 0 Then
-            For i = 0 To nombre - 1
-                'iindex = ds.Tables(local_tableName).Rows(i).Item("PROJECT_INDEX")
-                iindex = dtProject.Rows(i).Item("PROJECT_INDEX")
-                ProjectName = dtProject.Rows(i).Item("PROJECT_NAME").ToString
-                'resultat = ds.Tables(local_tableName).Rows(i).Item("PROJECT_CODE")
-                ArrayItemsCODE(i).Text = Str(iindex)
-                ArrayItemsName(i).Text = ProjectName
-                If 1 = 2 Then
-                    Select Case i
-                        Case 0
-                            ArrayItemsCODE(i).Text = "1"
-                            ArrayItemsName(i).Text = "PANDA1"
-                        Case 1
-                            ArrayItemsCODE(i).Text = "2"
-                            ArrayItemsName(i).Text = "PANDA2"
-                        Case 2
-                            ArrayItemsCODE(i).Text = "3"
-                            ArrayItemsName(i).Text = "PANDA3"
-                        Case 3
-                            ArrayItemsCODE(i).Text = "4"
-                            ArrayItemsName(i).Text = "PANDA4"
-                        Case 4
-                            ArrayItemsCODE(i).Text = "5"
-                            ArrayItemsName(i).Text = "PANDA5"
-                    End Select
-                End If
-                'ArrayItemsCODE(i).Text = resultat
-                'ArrayItemsName(i).Text = ds.Tables(local_tableName).Rows(i).Item("PROJECT_NAME")
-            Next i
-        End If
-    End Sub
 
     Private Sub ButtonGridviewUpdate_Click(sender As Object, e As EventArgs) Handles ButtonGridviewUpdate.Click
         Dim irow As Integer = -1
@@ -846,13 +753,10 @@ Public Class MainForm
         RadGridViewItems.MasterTemplate.ExpandAll()
     End Sub
 
-    Private Function FindProjectListe() As Integer
+    Private Function GetProjectFromDB() As Integer
         Dim mysql As String
         Dim cpt As Integer
-        Dim basename As String = "project"
-        mysql = "SELECT *  FROM " + basename + " order by project_INDEX desc"
-        dtProject = New DataTable()
-
+        mysql = "SELECT *  FROM project Order by project_INDEX desc"
         Try
             Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
             Dim cmd As New MySqlCommand(mysql, connection)
