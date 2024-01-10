@@ -100,7 +100,7 @@ Public Class FormItemsDataEntry
         UpdateProjectDB(idx, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, RadTextBoxProjectStatus.Text)
         FindProjectListe()
         Try
-            Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProject)
+            '@@@@@TOTOTO  Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProject)
         Catch ex As Exception
         End Try
     End Sub
@@ -119,7 +119,7 @@ Public Class FormItemsDataEntry
         DeleteProjectDB(idx)
         FindProjectListe()
         Try
-            Me.PROJECTTableAdapter.DeleteQuery(idx)
+            '@@@@@TOTOTO  Me.PROJECTTableAdapter.DeleteQuery(idx)
             'Me.RadGridViewProjectName.CurrentRow.Delete()
         Catch ex As Exception
         End Try
@@ -131,8 +131,8 @@ Public Class FormItemsDataEntry
         AddProjectDB(iindex, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, RadTextBoxProjectStatus.Text)
         FindProjectListe()
         Try
-            Me.PROJECTTableAdapter.Insert(iindex, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, Date.Now(), Date.Now(), RadTextBoxProjectStatus.Text, "")
-            Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProject)
+            '@@@@@TOTOTO  Me.PROJECTTableAdapter.Insert(iindex, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, Date.Now(), Date.Now(), RadTextBoxProjectStatus.Text, "")
+            '@@@@@TOTOTO  Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProject)
         Catch ex As Exception
         End Try
     End Sub
