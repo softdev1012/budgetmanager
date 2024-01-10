@@ -47,7 +47,6 @@ Partial Class MainForm
 		Me.ButtonGridviewUpdate = New System.Windows.Forms.Button()
 		Me.ButtonGridviewDelete = New System.Windows.Forms.Button()
 		Me.ButtonGridviewNew = New System.Windows.Forms.Button()
-		Me.GroupBoxItemMainForm = New System.Windows.Forms.GroupBox()
 		Me.CheckedListBoxTypeCharge = New System.Windows.Forms.CheckedListBox()
 		Me.RadCheckBoxFF = New Telerik.WinControls.UI.RadCheckBox()
 		Me.RadGridViewClassItemsListe = New Telerik.WinControls.UI.RadGridView()
@@ -90,6 +89,7 @@ Partial Class MainForm
 		Me.RadTextBox_ITEMS_INDEX = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBox_INDEX = New Telerik.WinControls.UI.RadTextBox()
 		Me.GroupBoxMenuVertical = New System.Windows.Forms.Panel()
+		Me.paneMain = New System.Windows.Forms.Panel()
 		CType(Me.RadPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.RadPanelTodaysAppointments.SuspendLayout()
 		CType(Me.RadLabelMTPaye, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,7 +106,6 @@ Partial Class MainForm
 		CType(Me.RadLabelGlobalCathegory, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelProjectNameGlobal, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelCentreNameGlobal, System.ComponentModel.ISupportInitialize).BeginInit()
-		Me.GroupBoxItemMainForm.SuspendLayout()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewClassItemsListe.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,6 +148,7 @@ Partial Class MainForm
 		CType(Me.RadTextBoxITEMS_CODE, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.paneMain.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'RadPanelTodaysAppointments
@@ -159,12 +159,12 @@ Partial Class MainForm
 		Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelLastAppointmentToday)
 		Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelTotalEstimation)
 		Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelCurrentItems)
-		Me.RadPanelTodaysAppointments.Location = New System.Drawing.Point(260, 530)
+		Me.RadPanelTodaysAppointments.Location = New System.Drawing.Point(266, 561)
 		Me.RadPanelTodaysAppointments.Name = "RadPanelTodaysAppointments"
 		'
 		'
 		'
-		Me.RadPanelTodaysAppointments.RootElement.ControlBounds = New System.Drawing.Rectangle(260, 530, 200, 100)
+		Me.RadPanelTodaysAppointments.RootElement.ControlBounds = New System.Drawing.Rectangle(320, 405, 200, 100)
 		Me.RadPanelTodaysAppointments.Size = New System.Drawing.Size(300, 276)
 		Me.RadPanelTodaysAppointments.TabIndex = 9
 		Me.RadPanelTodaysAppointments.ThemeName = "MedicalAppTheme"
@@ -258,12 +258,12 @@ Partial Class MainForm
 		ListViewDetailColumn4.HeaderText = "EncounterTime"
 		Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn1, ListViewDetailColumn2, ListViewDetailColumn3, ListViewDetailColumn4})
 		Me.RadListeiewProjectName.ItemSize = New System.Drawing.Size(200, 95)
-		Me.RadListeiewProjectName.Location = New System.Drawing.Point(5, 530)
+		Me.RadListeiewProjectName.Location = New System.Drawing.Point(8, 561)
 		Me.RadListeiewProjectName.Name = "RadListeiewProjectName"
 		'
 		'
 		'
-		Me.RadListeiewProjectName.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 530, 120, 95)
+		Me.RadListeiewProjectName.RootElement.ControlBounds = New System.Drawing.Rectangle(35, 405, 120, 95)
 		Me.RadListeiewProjectName.SelectLastAddedItem = False
 		Me.RadListeiewProjectName.Size = New System.Drawing.Size(250, 276)
 		Me.RadListeiewProjectName.TabIndex = 10
@@ -273,7 +273,7 @@ Partial Class MainForm
 		'ListBoxItemsParent
 		'
 		Me.ListBoxItemsParent.FormattingEnabled = True
-		Me.ListBoxItemsParent.Location = New System.Drawing.Point(1265, 567)
+		Me.ListBoxItemsParent.Location = New System.Drawing.Point(1265, 586)
 		Me.ListBoxItemsParent.Name = "ListBoxItemsParent"
 		Me.ListBoxItemsParent.Size = New System.Drawing.Size(270, 238)
 		Me.ListBoxItemsParent.TabIndex = 12
@@ -314,7 +314,7 @@ Partial Class MainForm
 		'
 		'
 		Me.RadPanelHaut.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 200, 100)
-		Me.RadPanelHaut.Size = New System.Drawing.Size(1620, 35)
+		Me.RadPanelHaut.Size = New System.Drawing.Size(1554, 35)
 		Me.RadPanelHaut.TabIndex = 46
 		'
 		'RadLabelDayEnd
@@ -425,33 +425,12 @@ Partial Class MainForm
 		Me.ButtonGridviewNew.Text = "Add"
 		Me.ButtonGridviewNew.UseVisualStyleBackColor = True
 		'
-		'GroupBoxItemMainForm
-		'
-		Me.GroupBoxItemMainForm.Controls.Add(Me.CheckedListBoxTypeCharge)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.RadCheckBoxFF)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.RadGridViewClassItemsListe)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.RadButtonItemsLevelOne)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.RadButtonGroupageRefhesh)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.RadButtonGroupCancel)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.RadButtonGroupage)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.ListBoxItemsParent)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.RadListeiewProjectName)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.RadPanelTodaysAppointments)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.RadGridViewItems)
-		Me.GroupBoxItemMainForm.Controls.Add(Me.GroupBox1)
-		Me.GroupBoxItemMainForm.ForeColor = System.Drawing.SystemColors.ButtonShadow
-		Me.GroupBoxItemMainForm.Location = New System.Drawing.Point(65, 35)
-		Me.GroupBoxItemMainForm.Name = "GroupBoxItemMainForm"
-		Me.GroupBoxItemMainForm.Size = New System.Drawing.Size(1560, 820)
-		Me.GroupBoxItemMainForm.TabIndex = 53
-		Me.GroupBoxItemMainForm.TabStop = False
-		'
 		'CheckedListBoxTypeCharge
 		'
 		Me.CheckedListBoxTypeCharge.CheckOnClick = True
 		Me.CheckedListBoxTypeCharge.FormattingEnabled = True
 		Me.CheckedListBoxTypeCharge.Items.AddRange(New Object() {"Tous", "Hors achats", "Hors salaires", "Achats", "Salaires", "Petites charges", "Loyer et autres", "Taxes et impots", "Frais bancaires"})
-		Me.CheckedListBoxTypeCharge.Location = New System.Drawing.Point(566, 574)
+		Me.CheckedListBoxTypeCharge.Location = New System.Drawing.Point(571, 634)
 		Me.CheckedListBoxTypeCharge.Name = "CheckedListBoxTypeCharge"
 		Me.CheckedListBoxTypeCharge.Size = New System.Drawing.Size(130, 139)
 		Me.CheckedListBoxTypeCharge.TabIndex = 65
@@ -459,7 +438,7 @@ Partial Class MainForm
 		'RadCheckBoxFF
 		'
 		Me.RadCheckBoxFF.CheckState = System.Windows.Forms.CheckState.Checked
-		Me.RadCheckBoxFF.Location = New System.Drawing.Point(598, 550)
+		Me.RadCheckBoxFF.Location = New System.Drawing.Point(603, 610)
 		Me.RadCheckBoxFF.Name = "RadCheckBoxFF"
 		Me.RadCheckBoxFF.Size = New System.Drawing.Size(61, 18)
 		Me.RadCheckBoxFF.TabIndex = 64
@@ -468,7 +447,7 @@ Partial Class MainForm
 		'
 		'RadGridViewClassItemsListe
 		'
-		Me.RadGridViewClassItemsListe.Location = New System.Drawing.Point(700, 574)
+		Me.RadGridViewClassItemsListe.Location = New System.Drawing.Point(707, 602)
 		'
 		'
 		'
@@ -496,13 +475,13 @@ Partial Class MainForm
 		'
 		Me.RadButtonItemsLevelOne.BackColor = System.Drawing.SystemColors.ControlLightLight
 		Me.RadButtonItemsLevelOne.Image = Global.PrevisionFlex.My.Resources.Resources.update_ronde_gray_30x302
-		Me.RadButtonItemsLevelOne.Location = New System.Drawing.Point(705, 530)
+		Me.RadButtonItemsLevelOne.Location = New System.Drawing.Point(712, 558)
 		Me.RadButtonItemsLevelOne.Margin = New System.Windows.Forms.Padding(6)
 		Me.RadButtonItemsLevelOne.Name = "RadButtonItemsLevelOne"
 		'
 		'
 		'
-		Me.RadButtonItemsLevelOne.RootElement.ControlBounds = New System.Drawing.Rectangle(705, 530, 110, 24)
+		Me.RadButtonItemsLevelOne.RootElement.ControlBounds = New System.Drawing.Rectangle(793, 495, 110, 24)
 		Me.RadButtonItemsLevelOne.Size = New System.Drawing.Size(90, 38)
 		Me.RadButtonItemsLevelOne.TabIndex = 61
 		Me.RadButtonItemsLevelOne.Text = "1 Level  "
@@ -512,13 +491,13 @@ Partial Class MainForm
 		'
 		Me.RadButtonGroupageRefhesh.BackColor = System.Drawing.SystemColors.ControlLightLight
 		Me.RadButtonGroupageRefhesh.Image = Global.PrevisionFlex.My.Resources.Resources.update_ronde_gray_30x302
-		Me.RadButtonGroupageRefhesh.Location = New System.Drawing.Point(807, 530)
+		Me.RadButtonGroupageRefhesh.Location = New System.Drawing.Point(814, 558)
 		Me.RadButtonGroupageRefhesh.Margin = New System.Windows.Forms.Padding(6)
 		Me.RadButtonGroupageRefhesh.Name = "RadButtonGroupageRefhesh"
 		'
 		'
 		'
-		Me.RadButtonGroupageRefhesh.RootElement.ControlBounds = New System.Drawing.Rectangle(807, 530, 110, 24)
+		Me.RadButtonGroupageRefhesh.RootElement.ControlBounds = New System.Drawing.Rectangle(895, 495, 110, 24)
 		Me.RadButtonGroupageRefhesh.Size = New System.Drawing.Size(90, 38)
 		Me.RadButtonGroupageRefhesh.TabIndex = 60
 		Me.RadButtonGroupageRefhesh.Text = "2 Level   "
@@ -528,13 +507,13 @@ Partial Class MainForm
 		'
 		Me.RadButtonGroupCancel.BackColor = System.Drawing.SystemColors.ControlLightLight
 		Me.RadButtonGroupCancel.Image = Global.PrevisionFlex.My.Resources.Resources.treeview_detail_25
-		Me.RadButtonGroupCancel.Location = New System.Drawing.Point(1011, 530)
+		Me.RadButtonGroupCancel.Location = New System.Drawing.Point(1018, 558)
 		Me.RadButtonGroupCancel.Margin = New System.Windows.Forms.Padding(6)
 		Me.RadButtonGroupCancel.Name = "RadButtonGroupCancel"
 		'
 		'
 		'
-		Me.RadButtonGroupCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(1011, 530, 110, 24)
+		Me.RadButtonGroupCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(1099, 495, 110, 24)
 		Me.RadButtonGroupCancel.Size = New System.Drawing.Size(90, 38)
 		Me.RadButtonGroupCancel.TabIndex = 60
 		Me.RadButtonGroupCancel.Text = "Détail  "
@@ -544,13 +523,13 @@ Partial Class MainForm
 		'
 		Me.RadButtonGroupage.BackColor = System.Drawing.SystemColors.ControlLightLight
 		Me.RadButtonGroupage.Image = Global.PrevisionFlex.My.Resources.Resources.treeview_sans_detail_25
-		Me.RadButtonGroupage.Location = New System.Drawing.Point(909, 530)
+		Me.RadButtonGroupage.Location = New System.Drawing.Point(916, 558)
 		Me.RadButtonGroupage.Margin = New System.Windows.Forms.Padding(6)
 		Me.RadButtonGroupage.Name = "RadButtonGroupage"
 		'
 		'
 		'
-		Me.RadButtonGroupage.RootElement.ControlBounds = New System.Drawing.Rectangle(909, 530, 110, 24)
+		Me.RadButtonGroupage.RootElement.ControlBounds = New System.Drawing.Rectangle(997, 495, 110, 24)
 		Me.RadButtonGroupage.Size = New System.Drawing.Size(90, 38)
 		Me.RadButtonGroupage.TabIndex = 59
 		Me.RadButtonGroupage.Text = "Groupage "
@@ -560,7 +539,7 @@ Partial Class MainForm
 		'
 		Me.RadGridViewItems.AutoScroll = True
 		Me.RadGridViewItems.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadGridViewItems.Location = New System.Drawing.Point(5, 5)
+		Me.RadGridViewItems.Location = New System.Drawing.Point(3, 64)
 		'
 		'
 		'
@@ -575,8 +554,8 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadGridViewItems.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 5, 240, 150)
-		Me.RadGridViewItems.Size = New System.Drawing.Size(1250, 510)
+		Me.RadGridViewItems.RootElement.ControlBounds = New System.Drawing.Rectangle(3, 64, 240, 150)
+		Me.RadGridViewItems.Size = New System.Drawing.Size(584, 301)
 		Me.RadGridViewItems.TabIndex = 6
 		'
 		'GroupBox1
@@ -616,7 +595,7 @@ Partial Class MainForm
 		Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_CODE)
 		Me.GroupBox1.Controls.Add(Me.RadTextBox_ITEMS_INDEX)
 		Me.GroupBox1.Controls.Add(Me.RadTextBox_INDEX)
-		Me.GroupBox1.Location = New System.Drawing.Point(1262, 5)
+		Me.GroupBox1.Location = New System.Drawing.Point(1265, 64)
 		Me.GroupBox1.Name = "GroupBox1"
 		Me.GroupBox1.Size = New System.Drawing.Size(277, 506)
 		Me.GroupBox1.TabIndex = 62
@@ -972,19 +951,38 @@ Partial Class MainForm
 		'GroupBoxMenuVertical
 		'
 		Me.GroupBoxMenuVertical.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(62, Byte), Integer))
-		Me.GroupBoxMenuVertical.Location = New System.Drawing.Point(0, 35)
+		Me.GroupBoxMenuVertical.Location = New System.Drawing.Point(0, 0)
 		Me.GroupBoxMenuVertical.Name = "GroupBoxMenuVertical"
-		Me.GroupBoxMenuVertical.Size = New System.Drawing.Size(60, 817)
+		Me.GroupBoxMenuVertical.Size = New System.Drawing.Size(60, 852)
 		Me.GroupBoxMenuVertical.TabIndex = 65
+		'
+		'paneMain
+		'
+		Me.paneMain.Controls.Add(Me.GroupBox1)
+		Me.paneMain.Controls.Add(Me.ListBoxItemsParent)
+		Me.paneMain.Controls.Add(Me.RadGridViewClassItemsListe)
+		Me.paneMain.Controls.Add(Me.CheckedListBoxTypeCharge)
+		Me.paneMain.Controls.Add(Me.RadButtonItemsLevelOne)
+		Me.paneMain.Controls.Add(Me.RadButtonGroupageRefhesh)
+		Me.paneMain.Controls.Add(Me.RadPanelHaut)
+		Me.paneMain.Controls.Add(Me.RadButtonGroupCancel)
+		Me.paneMain.Controls.Add(Me.RadCheckBoxFF)
+		Me.paneMain.Controls.Add(Me.RadButtonGroupage)
+		Me.paneMain.Controls.Add(Me.RadGridViewItems)
+		Me.paneMain.Controls.Add(Me.RadListeiewProjectName)
+		Me.paneMain.Controls.Add(Me.RadPanelTodaysAppointments)
+		Me.paneMain.Location = New System.Drawing.Point(60, 0)
+		Me.paneMain.Name = "paneMain"
+		Me.paneMain.Size = New System.Drawing.Size(1554, 852)
+		Me.paneMain.TabIndex = 66
 		'
 		'MainForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(1614, 881)
+		Me.Controls.Add(Me.paneMain)
 		Me.Controls.Add(Me.GroupBoxMenuVertical)
-		Me.Controls.Add(Me.GroupBoxItemMainForm)
-		Me.Controls.Add(Me.RadPanelHaut)
 		Me.Controls.Add(Me.RadStatusStrip2)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = False
@@ -1008,8 +1006,6 @@ Partial Class MainForm
 		CType(Me.RadLabelGlobalCathegory, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelProjectNameGlobal, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelCentreNameGlobal, System.ComponentModel.ISupportInitialize).EndInit()
-		Me.GroupBoxItemMainForm.ResumeLayout(False)
-		Me.GroupBoxItemMainForm.PerformLayout()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewClassItemsListe.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1053,6 +1049,8 @@ Partial Class MainForm
 		CType(Me.RadTextBoxITEMS_CODE, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.paneMain.ResumeLayout(False)
+		Me.paneMain.PerformLayout()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -1075,7 +1073,6 @@ Partial Class MainForm
 	Friend WithEvents ButtonGridviewUpdate As Button
 	Friend WithEvents ButtonGridviewDelete As Button
 	Friend WithEvents ButtonGridviewNew As Button
-	Friend WithEvents GroupBoxItemMainForm As GroupBox
 	Friend WithEvents RadGridViewItems As RadGridView
 	Friend WithEvents RadButtonGroupCancel As RadButton
 	Friend WithEvents RadButtonGroupage As RadButton
@@ -1119,4 +1116,5 @@ Partial Class MainForm
 	Friend WithEvents RadCheckBoxFF As RadCheckBox
 	Friend WithEvents CheckedListBoxTypeCharge As CheckedListBox
 	Friend WithEvents GroupBoxMenuVertical As Panel
+	Friend WithEvents paneMain As Panel
 End Class

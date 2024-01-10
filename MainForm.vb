@@ -146,16 +146,6 @@ Public Class MainForm
             AddHandler PictureBoxArray(i).MouseHover, AddressOf PictureBoxMouseHoverHandler
             AddHandler PictureBoxArray(i).MouseLeave, AddressOf PictureBoxMouseLeaveHandler
         Next
-        Dim sz As String
-        sz = Me.Width - 30 - GroupBoxMenuVertical.Width
-        Me.GroupBoxItemMainForm.Size = New System.Drawing.Size(sz, 800)
-        Me.GroupBoxItemMainForm.Left = 70
-        Me.GroupBoxItemMainForm.Top = 45
-        'Me.GroupBoxPlojectMainForm.Size = New System.Drawing.Size(1750, 800)
-        'Me.GroupBoxPlojectMainForm.Left = 70
-        'Me.GroupBoxPlojectMainForm.Top = 45
-        '
-        'list déroulant 
     End Sub
     Public Sub PictureBoxClickHandler(ByVal sender As Object, ByVal e As System.EventArgs)
         'MsgBox("I am Picture #" & CType(sender, Button).Text)
@@ -179,9 +169,9 @@ Public Class MainForm
         MenuLevel = PictureBoxClicked
         Select Case PictureBoxClicked
             Case 0
-                GroupBoxItemMainForm.Visible = True
+                paneMain.Visible = True
             Case 1
-                GroupBoxItemMainForm.Visible = False
+                paneMain.Visible = False
             Case 2
                 FormItemsDataEntry.Show()
                 Me.Hide()
