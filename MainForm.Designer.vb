@@ -22,55 +22,15 @@ Partial Class MainForm
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-		Me.components = New System.ComponentModel.Container()
 		Dim ListViewDetailColumn1 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
 		Dim ListViewDetailColumn2 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
 		Dim ListViewDetailColumn3 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
 		Dim ListViewDetailColumn4 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
-		Dim TableViewDefinition11 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim GridViewDecimalColumn41 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn42 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn43 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewDecimalColumn44 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn45 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn46 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn47 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn48 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn49 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewTextBoxColumn28 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewDateTimeColumn9 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-		Dim TableViewDefinition12 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim GridViewDecimalColumn50 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn51 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn52 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewTextBoxColumn29 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn30 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn31 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewDecimalColumn53 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn54 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn55 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn56 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn57 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn58 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewTextBoxColumn32 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewDateTimeColumn10 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-		Dim TableViewDefinition13 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim GridViewDecimalColumn59 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewDecimalColumn60 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-		Dim GridViewTextBoxColumn33 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn34 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewDateTimeColumn11 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-		Dim GridViewDateTimeColumn12 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
-		Dim GridViewTextBoxColumn35 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim GridViewTextBoxColumn36 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-		Dim TableViewDefinition14 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim TableViewDefinition15 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Me.ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.TAKEOFDataSet = New PrevisionFlex.TAKEOFDataSet()
-		Me.ITEMSTableAdapter = New PrevisionFlex.TAKEOFDataSetTableAdapters.ITEMSTableAdapter()
+		Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
 		Me.radPanelTodaysAppointments = New Telerik.WinControls.UI.RadPanel()
 		Me.RadLabelMTPaye = New Telerik.WinControls.UI.RadLabel()
 		Me.radLabelAllTotalOfItems = New Telerik.WinControls.UI.RadLabel()
@@ -121,9 +81,6 @@ Partial Class MainForm
 		Me.ButtonGridviewUpdate = New System.Windows.Forms.Button()
 		Me.ButtonGridviewDelete = New System.Windows.Forms.Button()
 		Me.ButtonGridviewNew = New System.Windows.Forms.Button()
-		Me.PROJECTBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.TAKEOFFDataSetProjectName = New PrevisionFlex.TAKEOFFDataSetProjectName()
-		Me.PROJECTTableAdapter = New PrevisionFlex.TAKEOFFDataSetProjectNameTableAdapters.PROJECTTableAdapter()
 		Me.GroupBoxItemMainForm = New System.Windows.Forms.GroupBox()
 		Me.CheckedListBoxTypeCharge = New System.Windows.Forms.CheckedListBox()
 		Me.RadCheckBoxFF = New Telerik.WinControls.UI.RadCheckBox()
@@ -133,8 +90,6 @@ Partial Class MainForm
 		Me.RadButtonGroupCancel = New Telerik.WinControls.UI.RadButton()
 		Me.RadButtonGroupage = New Telerik.WinControls.UI.RadButton()
 		Me.RadGridViewItems = New Telerik.WinControls.UI.RadGridView()
-		Me.ITEMSBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-		Me.TAKEOFFDataSet3 = New PrevisionFlex.TAKEOFFDataSet3()
 		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
 		Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
 		Me.RadTextBoxITEMS_PAYE_QUI = New Telerik.WinControls.UI.RadTextBox()
@@ -187,13 +142,8 @@ Partial Class MainForm
 		Me.DataLayoutControlItem22 = New Telerik.WinControls.UI.DataLayoutControlItem()
 		Me.DataLayoutControlItem23 = New Telerik.WinControls.UI.DataLayoutControlItem()
 		Me.DataLayoutControlItem20 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.TAKEOFFDataSet4 = New PrevisionFlex.TAKEOFFDataSet4()
-		Me.TAKEOFFDataSet4BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.ITEMSTableAdapter1 = New PrevisionFlex.TAKEOFFDataSet3TableAdapters.ITEMSTableAdapter()
 		Me.RadGridViewPaiement = New Telerik.WinControls.UI.RadGridView()
 		Me.GroupBoxMenuVertical = New System.Windows.Forms.Panel()
-		CType(Me.ITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TAKEOFDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.radPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.radPanelTodaysAppointments.SuspendLayout()
 		CType(Me.RadLabelMTPaye, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -227,8 +177,6 @@ Partial Class MainForm
 		CType(Me.RadSpinEditorVATValue, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadDateTimePickerDate_Update, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.PROJECTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TAKEOFFDataSetProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBoxItemMainForm.SuspendLayout()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -239,8 +187,6 @@ Partial Class MainForm
 		CType(Me.RadButtonGroupage, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewItems, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewItems.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.ITEMSBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TAKEOFFDataSet3, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBox1.SuspendLayout()
 		CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxITEMS_PAYE_QUI, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -286,25 +232,9 @@ Partial Class MainForm
 		CType(Me.RadDateTimePickerDateModify, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxProjectMainFormStatus, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxProjectMainFormPathName, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TAKEOFFDataSet4, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TAKEOFFDataSet4BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewPaiement, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewPaiement.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
-		'
-		'ITEMSBindingSource
-		'
-		Me.ITEMSBindingSource.DataMember = "ITEMS"
-		Me.ITEMSBindingSource.DataSource = Me.TAKEOFDataSet
-		'
-		'TAKEOFDataSet
-		'
-		Me.TAKEOFDataSet.DataSetName = "TAKEOFDataSet"
-		Me.TAKEOFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-		'
-		'ITEMSTableAdapter
-		'
-		Me.ITEMSTableAdapter.ClearBeforeFill = True
 		'
 		'radPanelTodaysAppointments
 		'
@@ -598,7 +528,6 @@ Partial Class MainForm
 		'RadSpinEditorIndexKey
 		'
 		Me.RadSpinEditorIndexKey.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorIndexKey.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ITEMSBindingSource, "INDEX", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditorIndexKey.Location = New System.Drawing.Point(64, 3)
 		Me.RadSpinEditorIndexKey.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
 		Me.RadSpinEditorIndexKey.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
@@ -616,7 +545,6 @@ Partial Class MainForm
 		'RadSpinEditorItemIndex
 		'
 		Me.RadSpinEditorItemIndex.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorItemIndex.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ITEMSBindingSource, "ITEMS_INDEX", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditorItemIndex.Location = New System.Drawing.Point(64, 3)
 		Me.RadSpinEditorItemIndex.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
 		Me.RadSpinEditorItemIndex.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
@@ -634,7 +562,6 @@ Partial Class MainForm
 		'RadSpinEditorProjectIndex
 		'
 		Me.RadSpinEditorProjectIndex.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorProjectIndex.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ITEMSBindingSource, "ITEMS_PROJECT_INDEX", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditorProjectIndex.Location = New System.Drawing.Point(64, 3)
 		Me.RadSpinEditorProjectIndex.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
 		Me.RadSpinEditorProjectIndex.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
@@ -651,7 +578,6 @@ Partial Class MainForm
 		'RadTextBoxItemsCode
 		'
 		Me.RadTextBoxItemsCode.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxItemsCode.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ITEMSBindingSource, "ITEMS_CODE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadTextBoxItemsCode.Location = New System.Drawing.Point(64, 3)
 		Me.RadTextBoxItemsCode.Name = "RadTextBoxItemsCode"
 		'
@@ -665,7 +591,6 @@ Partial Class MainForm
 		'RadTextBoxItemName
 		'
 		Me.RadTextBoxItemName.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxItemName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ITEMSBindingSource, "ITEMS_NAME", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadTextBoxItemName.Location = New System.Drawing.Point(64, 3)
 		Me.RadTextBoxItemName.Name = "RadTextBoxItemName"
 		'
@@ -679,7 +604,6 @@ Partial Class MainForm
 		'RadTextBoxParent_Items
 		'
 		Me.RadTextBoxParent_Items.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxParent_Items.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ITEMSBindingSource, "ITEMS_PARENT", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadTextBoxParent_Items.Location = New System.Drawing.Point(64, 3)
 		Me.RadTextBoxParent_Items.Name = "RadTextBoxParent_Items"
 		'
@@ -693,7 +617,6 @@ Partial Class MainForm
 		'RadSpinEditorQuantity
 		'
 		Me.RadSpinEditorQuantity.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorQuantity.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ITEMSBindingSource, "ITEMS_QUANTITY", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditorQuantity.DecimalPlaces = 2
 		Me.RadSpinEditorQuantity.Location = New System.Drawing.Point(64, 3)
 		Me.RadSpinEditorQuantity.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
@@ -711,7 +634,6 @@ Partial Class MainForm
 		'RadSpinEditorUnitQuantity
 		'
 		Me.RadSpinEditorUnitQuantity.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorUnitQuantity.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ITEMSBindingSource, "ITEMS_UNIT", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditorUnitQuantity.DecimalPlaces = 2
 		Me.RadSpinEditorUnitQuantity.Location = New System.Drawing.Point(64, 3)
 		Me.RadSpinEditorUnitQuantity.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
@@ -729,7 +651,6 @@ Partial Class MainForm
 		'RadSpinEditorUnitPrice
 		'
 		Me.RadSpinEditorUnitPrice.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorUnitPrice.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ITEMSBindingSource, "ITEMS_UNIT_PRICE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditorUnitPrice.DecimalPlaces = 2
 		Me.RadSpinEditorUnitPrice.Location = New System.Drawing.Point(64, 3)
 		Me.RadSpinEditorUnitPrice.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
@@ -747,7 +668,6 @@ Partial Class MainForm
 		'RadSpinEditorTotalPrice
 		'
 		Me.RadSpinEditorTotalPrice.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorTotalPrice.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ITEMSBindingSource, "ITEMS_TOTAL_PRICE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditorTotalPrice.DecimalPlaces = 2
 		Me.RadSpinEditorTotalPrice.Location = New System.Drawing.Point(64, 3)
 		Me.RadSpinEditorTotalPrice.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
@@ -766,7 +686,6 @@ Partial Class MainForm
 		'RadSpinEditorVATPorucent
 		'
 		Me.RadSpinEditorVATPorucent.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorVATPorucent.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ITEMSBindingSource, "ITEMS_TAXE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditorVATPorucent.DecimalPlaces = 2
 		Me.RadSpinEditorVATPorucent.Location = New System.Drawing.Point(64, 3)
 		Me.RadSpinEditorVATPorucent.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
@@ -784,7 +703,6 @@ Partial Class MainForm
 		'RadSpinEditorVATValue
 		'
 		Me.RadSpinEditorVATValue.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorVATValue.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ITEMSBindingSource, "ITEMS_TAXE_VALUE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditorVATValue.DecimalPlaces = 2
 		Me.RadSpinEditorVATValue.Location = New System.Drawing.Point(64, 3)
 		Me.RadSpinEditorVATValue.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
@@ -803,7 +721,6 @@ Partial Class MainForm
 		'RadTextBoxCurrency
 		'
 		Me.RadTextBoxCurrency.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxCurrency.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ITEMSBindingSource, "ITEMS_CURRENCY", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadTextBoxCurrency.Location = New System.Drawing.Point(64, 3)
 		Me.RadTextBoxCurrency.Name = "RadTextBoxCurrency"
 		'
@@ -817,7 +734,6 @@ Partial Class MainForm
 		'RadDateTimePickerDate_Update
 		'
 		Me.RadDateTimePickerDate_Update.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadDateTimePickerDate_Update.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ITEMSBindingSource, "ITEMS_LAST_EDIT_DATE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadDateTimePickerDate_Update.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
 		Me.RadDateTimePickerDate_Update.Location = New System.Drawing.Point(64, 15)
 		Me.RadDateTimePickerDate_Update.Name = "RadDateTimePickerDate_Update"
@@ -1016,20 +932,6 @@ Partial Class MainForm
 		Me.ButtonGridviewNew.Text = "Add"
 		Me.ButtonGridviewNew.UseVisualStyleBackColor = True
 		'
-		'PROJECTBindingSource
-		'
-		Me.PROJECTBindingSource.DataMember = "PROJECT"
-		Me.PROJECTBindingSource.DataSource = Me.TAKEOFFDataSetProjectName
-		'
-		'TAKEOFFDataSetProjectName
-		'
-		Me.TAKEOFFDataSetProjectName.DataSetName = "TAKEOFFDataSetProjectName"
-		Me.TAKEOFFDataSetProjectName.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-		'
-		'PROJECTTableAdapter
-		'
-		Me.PROJECTTableAdapter.ClearBeforeFill = True
-		'
 		'GroupBoxItemMainForm
 		'
 		Me.GroupBoxItemMainForm.Controls.Add(Me.CheckedListBoxTypeCharge)
@@ -1050,6 +952,7 @@ Partial Class MainForm
 		Me.GroupBoxItemMainForm.Size = New System.Drawing.Size(1560, 820)
 		Me.GroupBoxItemMainForm.TabIndex = 53
 		Me.GroupBoxItemMainForm.TabStop = False
+		'
 		'CheckedListBoxTypeCharge
 		'
 		Me.CheckedListBoxTypeCharge.CheckOnClick = True
@@ -1089,12 +992,13 @@ Partial Class MainForm
 		Me.RadGridViewClassItemsListe.MasterTemplate.AllowRowResize = False
 		Me.RadGridViewClassItemsListe.MasterTemplate.EnableGrouping = False
 		Me.RadGridViewClassItemsListe.MasterTemplate.ShowRowHeaderColumn = False
-		Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition11
+		Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition1
 		Me.RadGridViewClassItemsListe.Name = "RadGridViewClassItemsListe"
 		Me.RadGridViewClassItemsListe.ShowItemToolTips = False
 		Me.RadGridViewClassItemsListe.ShowNoDataText = False
 		Me.RadGridViewClassItemsListe.Size = New System.Drawing.Size(555, 232)
 		Me.RadGridViewClassItemsListe.TabIndex = 63
+		'
 		'RadButtonItemsLevelOne
 		'
 		Me.RadButtonItemsLevelOne.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -1172,75 +1076,8 @@ Partial Class MainForm
 		Me.RadGridViewItems.MasterTemplate.AllowEditRow = False
 		Me.RadGridViewItems.MasterTemplate.AllowSearchRow = True
 		Me.RadGridViewItems.MasterTemplate.AutoExpandGroups = True
-		GridViewDecimalColumn41.DataType = GetType(Integer)
-		GridViewDecimalColumn41.FieldName = "INDEX"
-		GridViewDecimalColumn41.HeaderText = "INDEX"
-		GridViewDecimalColumn41.IsAutoGenerated = True
-		GridViewDecimalColumn41.Name = "INDEX"
-		GridViewDecimalColumn42.DataType = GetType(Integer)
-		GridViewDecimalColumn42.FieldName = "ITEMS_INDEX"
-		GridViewDecimalColumn42.HeaderText = "ITEMS_INDEX"
-		GridViewDecimalColumn42.IsAutoGenerated = True
-		GridViewDecimalColumn42.Name = "ITEMS_INDEX"
-		GridViewDecimalColumn43.DataType = GetType(Integer)
-		GridViewDecimalColumn43.FieldName = "ITEMS_PROJECT_INDEX"
-		GridViewDecimalColumn43.HeaderText = "ITEMS_PROJECT_INDEX"
-		GridViewDecimalColumn43.IsAutoGenerated = True
-		GridViewDecimalColumn43.Name = "ITEMS_PROJECT_INDEX"
-		GridViewTextBoxColumn25.FieldName = "ITEMS_CODE"
-		GridViewTextBoxColumn25.HeaderText = "ITEMS_CODE"
-		GridViewTextBoxColumn25.IsAutoGenerated = True
-		GridViewTextBoxColumn25.Name = "ITEMS_CODE"
-		GridViewTextBoxColumn26.FieldName = "ITEMS_NAME"
-		GridViewTextBoxColumn26.HeaderText = "ITEMS_NAME"
-		GridViewTextBoxColumn26.IsAutoGenerated = True
-		GridViewTextBoxColumn26.Name = "ITEMS_NAME"
-		GridViewTextBoxColumn27.FieldName = "ITEMS_PARENT"
-		GridViewTextBoxColumn27.HeaderText = "ITEMS_PARENT"
-		GridViewTextBoxColumn27.IsAutoGenerated = True
-		GridViewTextBoxColumn27.Name = "ITEMS_PARENT"
-		GridViewDecimalColumn44.DataType = GetType(Single)
-		GridViewDecimalColumn44.FieldName = "ITEMS_QUANTITY"
-		GridViewDecimalColumn44.HeaderText = "ITEMS_QUANTITY"
-		GridViewDecimalColumn44.IsAutoGenerated = True
-		GridViewDecimalColumn44.Name = "ITEMS_QUANTITY"
-		GridViewDecimalColumn45.DataType = GetType(Single)
-		GridViewDecimalColumn45.FieldName = "ITEMS_UNIT"
-		GridViewDecimalColumn45.HeaderText = "ITEMS_UNIT"
-		GridViewDecimalColumn45.IsAutoGenerated = True
-		GridViewDecimalColumn45.Name = "ITEMS_UNIT"
-		GridViewDecimalColumn46.DataType = GetType(Single)
-		GridViewDecimalColumn46.FieldName = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn46.HeaderText = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn46.IsAutoGenerated = True
-		GridViewDecimalColumn46.Name = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn47.DataType = GetType(Single)
-		GridViewDecimalColumn47.FieldName = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn47.HeaderText = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn47.IsAutoGenerated = True
-		GridViewDecimalColumn47.Name = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn48.DataType = GetType(Single)
-		GridViewDecimalColumn48.FieldName = "ITEMS_TAXE"
-		GridViewDecimalColumn48.HeaderText = "ITEMS_TAXE"
-		GridViewDecimalColumn48.IsAutoGenerated = True
-		GridViewDecimalColumn48.Name = "ITEMS_TAXE"
-		GridViewDecimalColumn49.DataType = GetType(Single)
-		GridViewDecimalColumn49.FieldName = "ITEMS_TAXE_VALUE"
-		GridViewDecimalColumn49.HeaderText = "ITEMS_TAXE_VALUE"
-		GridViewDecimalColumn49.IsAutoGenerated = True
-		GridViewDecimalColumn49.Name = "ITEMS_TAXE_VALUE"
-		GridViewTextBoxColumn28.FieldName = "ITEMS_CURRENCY"
-		GridViewTextBoxColumn28.HeaderText = "ITEMS_CURRENCY"
-		GridViewTextBoxColumn28.IsAutoGenerated = True
-		GridViewTextBoxColumn28.Name = "ITEMS_CURRENCY"
-		GridViewDateTimeColumn9.FieldName = "ITEMS_LAST_EDIT_DATE"
-		GridViewDateTimeColumn9.HeaderText = "ITEMS_LAST_EDIT_DATE"
-		GridViewDateTimeColumn9.IsAutoGenerated = True
-		GridViewDateTimeColumn9.Name = "ITEMS_LAST_EDIT_DATE"
-		Me.RadGridViewItems.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn41, GridViewDecimalColumn42, GridViewDecimalColumn43, GridViewTextBoxColumn25, GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewDecimalColumn44, GridViewDecimalColumn45, GridViewDecimalColumn46, GridViewDecimalColumn47, GridViewDecimalColumn48, GridViewDecimalColumn49, GridViewTextBoxColumn28, GridViewDateTimeColumn9})
-		Me.RadGridViewItems.MasterTemplate.DataSource = Me.ITEMSBindingSource1
 		Me.RadGridViewItems.MasterTemplate.EnableAlternatingRowColor = True
-		Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition12
+		Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition2
 		Me.RadGridViewItems.Name = "RadGridViewItems"
 		'
 		'
@@ -1248,16 +1085,6 @@ Partial Class MainForm
 		Me.RadGridViewItems.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 5, 240, 150)
 		Me.RadGridViewItems.Size = New System.Drawing.Size(1250, 510)
 		Me.RadGridViewItems.TabIndex = 6
-		'
-		'ITEMSBindingSource1
-		'
-		Me.ITEMSBindingSource1.DataMember = "ITEMS"
-		Me.ITEMSBindingSource1.DataSource = Me.TAKEOFFDataSet3
-		'
-		'TAKEOFFDataSet3
-		'
-		Me.TAKEOFFDataSet3.DataSetName = "TAKEOFFDataSet3"
-		Me.TAKEOFFDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 		'
 		'GroupBox1
 		'
@@ -1656,74 +1483,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		GridViewDecimalColumn50.DataType = GetType(Integer)
-		GridViewDecimalColumn50.FieldName = "INDEX"
-		GridViewDecimalColumn50.HeaderText = "INDEX"
-		GridViewDecimalColumn50.IsAutoGenerated = True
-		GridViewDecimalColumn50.Name = "INDEX"
-		GridViewDecimalColumn51.DataType = GetType(Integer)
-		GridViewDecimalColumn51.FieldName = "ITEMS_INDEX"
-		GridViewDecimalColumn51.HeaderText = "ITEMS_INDEX"
-		GridViewDecimalColumn51.IsAutoGenerated = True
-		GridViewDecimalColumn51.Name = "ITEMS_INDEX"
-		GridViewDecimalColumn52.DataType = GetType(Integer)
-		GridViewDecimalColumn52.FieldName = "ITEMS_PROJECT_INDEX"
-		GridViewDecimalColumn52.HeaderText = "ITEMS_PROJECT_INDEX"
-		GridViewDecimalColumn52.IsAutoGenerated = True
-		GridViewDecimalColumn52.Name = "ITEMS_PROJECT_INDEX"
-		GridViewTextBoxColumn29.FieldName = "ITEMS_CODE"
-		GridViewTextBoxColumn29.HeaderText = "ITEMS_CODE"
-		GridViewTextBoxColumn29.IsAutoGenerated = True
-		GridViewTextBoxColumn29.Name = "ITEMS_CODE"
-		GridViewTextBoxColumn30.FieldName = "ITEMS_NAME"
-		GridViewTextBoxColumn30.HeaderText = "ITEMS_NAME"
-		GridViewTextBoxColumn30.IsAutoGenerated = True
-		GridViewTextBoxColumn30.Name = "ITEMS_NAME"
-		GridViewTextBoxColumn31.FieldName = "ITEMS_PARENT"
-		GridViewTextBoxColumn31.HeaderText = "ITEMS_PARENT"
-		GridViewTextBoxColumn31.IsAutoGenerated = True
-		GridViewTextBoxColumn31.Name = "ITEMS_PARENT"
-		GridViewDecimalColumn53.DataType = GetType(Single)
-		GridViewDecimalColumn53.FieldName = "ITEMS_QUANTITY"
-		GridViewDecimalColumn53.HeaderText = "ITEMS_QUANTITY"
-		GridViewDecimalColumn53.IsAutoGenerated = True
-		GridViewDecimalColumn53.Name = "ITEMS_QUANTITY"
-		GridViewDecimalColumn54.DataType = GetType(Single)
-		GridViewDecimalColumn54.FieldName = "ITEMS_UNIT"
-		GridViewDecimalColumn54.HeaderText = "ITEMS_UNIT"
-		GridViewDecimalColumn54.IsAutoGenerated = True
-		GridViewDecimalColumn54.Name = "ITEMS_UNIT"
-		GridViewDecimalColumn55.DataType = GetType(Single)
-		GridViewDecimalColumn55.FieldName = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn55.HeaderText = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn55.IsAutoGenerated = True
-		GridViewDecimalColumn55.Name = "ITEMS_UNIT_PRICE"
-		GridViewDecimalColumn56.DataType = GetType(Single)
-		GridViewDecimalColumn56.FieldName = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn56.HeaderText = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn56.IsAutoGenerated = True
-		GridViewDecimalColumn56.Name = "ITEMS_TOTAL_PRICE"
-		GridViewDecimalColumn57.DataType = GetType(Single)
-		GridViewDecimalColumn57.FieldName = "ITEMS_TAXE"
-		GridViewDecimalColumn57.HeaderText = "ITEMS_TAXE"
-		GridViewDecimalColumn57.IsAutoGenerated = True
-		GridViewDecimalColumn57.Name = "ITEMS_TAXE"
-		GridViewDecimalColumn58.DataType = GetType(Single)
-		GridViewDecimalColumn58.FieldName = "ITEMS_TAXE_VALUE"
-		GridViewDecimalColumn58.HeaderText = "ITEMS_TAXE_VALUE"
-		GridViewDecimalColumn58.IsAutoGenerated = True
-		GridViewDecimalColumn58.Name = "ITEMS_TAXE_VALUE"
-		GridViewTextBoxColumn32.FieldName = "ITEMS_CURRENCY"
-		GridViewTextBoxColumn32.HeaderText = "ITEMS_CURRENCY"
-		GridViewTextBoxColumn32.IsAutoGenerated = True
-		GridViewTextBoxColumn32.Name = "ITEMS_CURRENCY"
-		GridViewDateTimeColumn10.FieldName = "ITEMS_LAST_EDIT_DATE"
-		GridViewDateTimeColumn10.HeaderText = "ITEMS_LAST_EDIT_DATE"
-		GridViewDateTimeColumn10.IsAutoGenerated = True
-		GridViewDateTimeColumn10.Name = "ITEMS_LAST_EDIT_DATE"
-		Me.RadGridView2.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn50, GridViewDecimalColumn51, GridViewDecimalColumn52, GridViewTextBoxColumn29, GridViewTextBoxColumn30, GridViewTextBoxColumn31, GridViewDecimalColumn53, GridViewDecimalColumn54, GridViewDecimalColumn55, GridViewDecimalColumn56, GridViewDecimalColumn57, GridViewDecimalColumn58, GridViewTextBoxColumn32, GridViewDateTimeColumn10})
-		Me.RadGridView2.MasterTemplate.DataSource = Me.ITEMSBindingSource1
-		Me.RadGridView2.MasterTemplate.ViewDefinition = TableViewDefinition13
+		Me.RadGridView2.MasterTemplate.ViewDefinition = TableViewDefinition3
 		Me.RadGridView2.Name = "RadGridView2"
 		'
 		'
@@ -1740,43 +1500,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		GridViewDecimalColumn59.DataType = GetType(Integer)
-		GridViewDecimalColumn59.FieldName = "INDEX"
-		GridViewDecimalColumn59.HeaderText = "INDEX"
-		GridViewDecimalColumn59.IsAutoGenerated = True
-		GridViewDecimalColumn59.Name = "INDEX"
-		GridViewDecimalColumn60.DataType = GetType(Integer)
-		GridViewDecimalColumn60.FieldName = "PROJECT_INDEX"
-		GridViewDecimalColumn60.HeaderText = "PROJECT_INDEX"
-		GridViewDecimalColumn60.IsAutoGenerated = True
-		GridViewDecimalColumn60.Name = "PROJECT_INDEX"
-		GridViewTextBoxColumn33.FieldName = "PROJECT_CODE"
-		GridViewTextBoxColumn33.HeaderText = "PROJECT_CODE"
-		GridViewTextBoxColumn33.IsAutoGenerated = True
-		GridViewTextBoxColumn33.Name = "PROJECT_CODE"
-		GridViewTextBoxColumn34.FieldName = "PROJECT_NAME"
-		GridViewTextBoxColumn34.HeaderText = "PROJECT_NAME"
-		GridViewTextBoxColumn34.IsAutoGenerated = True
-		GridViewTextBoxColumn34.Name = "PROJECT_NAME"
-		GridViewDateTimeColumn11.FieldName = "PROJECT_CREAT_DATE"
-		GridViewDateTimeColumn11.HeaderText = "PROJECT_CREAT_DATE"
-		GridViewDateTimeColumn11.IsAutoGenerated = True
-		GridViewDateTimeColumn11.Name = "PROJECT_CREAT_DATE"
-		GridViewDateTimeColumn12.FieldName = "PROJECT_MODIFY_DATE"
-		GridViewDateTimeColumn12.HeaderText = "PROJECT_MODIFY_DATE"
-		GridViewDateTimeColumn12.IsAutoGenerated = True
-		GridViewDateTimeColumn12.Name = "PROJECT_MODIFY_DATE"
-		GridViewTextBoxColumn35.FieldName = "PROJECT_STATUS"
-		GridViewTextBoxColumn35.HeaderText = "PROJECT_STATUS"
-		GridViewTextBoxColumn35.IsAutoGenerated = True
-		GridViewTextBoxColumn35.Name = "PROJECT_STATUS"
-		GridViewTextBoxColumn36.FieldName = "PROJECT_DATA_PATHNAME"
-		GridViewTextBoxColumn36.HeaderText = "PROJECT_DATA_PATHNAME"
-		GridViewTextBoxColumn36.IsAutoGenerated = True
-		GridViewTextBoxColumn36.Name = "PROJECT_DATA_PATHNAME"
-		Me.RadGridViewProjectName.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewDecimalColumn59, GridViewDecimalColumn60, GridViewTextBoxColumn33, GridViewTextBoxColumn34, GridViewDateTimeColumn11, GridViewDateTimeColumn12, GridViewTextBoxColumn35, GridViewTextBoxColumn36})
-		Me.RadGridViewProjectName.MasterTemplate.DataSource = Me.PROJECTBindingSource
-		Me.RadGridViewProjectName.MasterTemplate.ViewDefinition = TableViewDefinition14
+		Me.RadGridViewProjectName.MasterTemplate.ViewDefinition = TableViewDefinition4
 		Me.RadGridViewProjectName.Name = "RadGridViewProjectName"
 		'
 		'
@@ -1789,7 +1513,6 @@ Partial Class MainForm
 		'RadSpinEditor1
 		'
 		Me.RadSpinEditor1.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditor1.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PROJECTBindingSource, "INDEX", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditor1.Location = New System.Drawing.Point(120, 3)
 		Me.RadSpinEditor1.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
 		Me.RadSpinEditor1.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
@@ -1806,7 +1529,6 @@ Partial Class MainForm
 		'RadSpinEditorProjectIndex2
 		'
 		Me.RadSpinEditorProjectIndex2.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadSpinEditorProjectIndex2.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PROJECTBindingSource, "PROJECT_INDEX", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadSpinEditorProjectIndex2.Location = New System.Drawing.Point(120, 3)
 		Me.RadSpinEditorProjectIndex2.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
 		Me.RadSpinEditorProjectIndex2.Minimum = New Decimal(New Integer() {-2147483648, 0, 0, -2147483648})
@@ -1823,7 +1545,6 @@ Partial Class MainForm
 		'RadTextBox1
 		'
 		Me.RadTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_CODE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadTextBox1.Location = New System.Drawing.Point(120, 3)
 		Me.RadTextBox1.Name = "RadTextBox1"
 		'
@@ -1837,7 +1558,6 @@ Partial Class MainForm
 		'RadTextBox2
 		'
 		Me.RadTextBox2.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_NAME", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadTextBox2.Location = New System.Drawing.Point(120, 3)
 		Me.RadTextBox2.Name = "RadTextBox2"
 		'
@@ -1851,7 +1571,6 @@ Partial Class MainForm
 		'RadDateTimePickerDateCreat
 		'
 		Me.RadDateTimePickerDateCreat.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadDateTimePickerDateCreat.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PROJECTBindingSource, "PROJECT_CREAT_DATE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadDateTimePickerDateCreat.Location = New System.Drawing.Point(120, 3)
 		Me.RadDateTimePickerDateCreat.Name = "RadDateTimePickerDateCreat"
 		'
@@ -1868,7 +1587,6 @@ Partial Class MainForm
 		'RadDateTimePickerDateModify
 		'
 		Me.RadDateTimePickerDateModify.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadDateTimePickerDateModify.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.PROJECTBindingSource, "PROJECT_MODIFY_DATE", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadDateTimePickerDateModify.Location = New System.Drawing.Point(120, 3)
 		Me.RadDateTimePickerDateModify.Name = "RadDateTimePickerDateModify"
 		'
@@ -1885,7 +1603,6 @@ Partial Class MainForm
 		'RadTextBoxProjectMainFormStatus
 		'
 		Me.RadTextBoxProjectMainFormStatus.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxProjectMainFormStatus.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_STATUS", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadTextBoxProjectMainFormStatus.Location = New System.Drawing.Point(120, 3)
 		Me.RadTextBoxProjectMainFormStatus.Name = "RadTextBoxProjectMainFormStatus"
 		'
@@ -1899,7 +1616,6 @@ Partial Class MainForm
 		'RadTextBoxProjectMainFormPathName
 		'
 		Me.RadTextBoxProjectMainFormPathName.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxProjectMainFormPathName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PROJECTBindingSource, "PROJECT_DATA_PATHNAME", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
 		Me.RadTextBoxProjectMainFormPathName.Location = New System.Drawing.Point(120, 7)
 		Me.RadTextBoxProjectMainFormPathName.Name = "RadTextBoxProjectMainFormPathName"
 		'
@@ -2012,20 +1728,6 @@ Partial Class MainForm
 		Me.DataLayoutControlItem20.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
 		Me.DataLayoutControlItem20.UseCompatibleTextRendering = False
 		'
-		'TAKEOFFDataSet4
-		'
-		Me.TAKEOFFDataSet4.DataSetName = "TAKEOFFDataSet4"
-		Me.TAKEOFFDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-		'
-		'TAKEOFFDataSet4BindingSource
-		'
-		Me.TAKEOFFDataSet4BindingSource.DataSource = Me.TAKEOFFDataSet4
-		Me.TAKEOFFDataSet4BindingSource.Position = 0
-		'
-		'ITEMSTableAdapter1
-		'
-		Me.ITEMSTableAdapter1.ClearBeforeFill = True
-		'
 		'RadGridViewPaiement
 		'
 		Me.RadGridViewPaiement.Location = New System.Drawing.Point(253, 922)
@@ -2045,7 +1747,7 @@ Partial Class MainForm
 		Me.RadGridViewPaiement.MasterTemplate.AllowRowResize = False
 		Me.RadGridViewPaiement.MasterTemplate.EnableGrouping = False
 		Me.RadGridViewPaiement.MasterTemplate.ShowRowHeaderColumn = False
-		Me.RadGridViewPaiement.MasterTemplate.ViewDefinition = TableViewDefinition15
+		Me.RadGridViewPaiement.MasterTemplate.ViewDefinition = TableViewDefinition5
 		Me.RadGridViewPaiement.Name = "RadGridViewPaiement"
 		Me.RadGridViewPaiement.ShowItemToolTips = False
 		Me.RadGridViewPaiement.ShowNoDataText = False
@@ -2078,8 +1780,6 @@ Partial Class MainForm
 		Me.MinimizeBox = False
 		Me.Name = "MainForm"
 		Me.Text = "PrevisionFlex software 1.0"
-		CType(Me.ITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TAKEOFDataSet, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.radPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.radPanelTodaysAppointments.ResumeLayout(False)
 		Me.radPanelTodaysAppointments.PerformLayout()
@@ -2115,8 +1815,6 @@ Partial Class MainForm
 		CType(Me.RadSpinEditorVATValue, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxCurrency, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadDateTimePickerDate_Update, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.PROJECTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TAKEOFFDataSetProjectName, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBoxItemMainForm.ResumeLayout(False)
 		Me.GroupBoxItemMainForm.PerformLayout()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2128,8 +1826,6 @@ Partial Class MainForm
 		CType(Me.RadButtonGroupage, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewItems.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewItems, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.ITEMSBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TAKEOFFDataSet3, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBox1.ResumeLayout(False)
 		Me.GroupBox1.PerformLayout()
 		CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2176,70 +1872,62 @@ Partial Class MainForm
 		CType(Me.RadDateTimePickerDateModify, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxProjectMainFormStatus, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxProjectMainFormPathName, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TAKEOFFDataSet4, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TAKEOFFDataSet4BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewPaiement.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewPaiement, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
 	End Sub
-	Friend WithEvents TAKEOFDataSet As TAKEOFDataSet
-    Friend WithEvents ITEMSBindingSource As BindingSource
-    Friend WithEvents ITEMSTableAdapter As TAKEOFDataSetTableAdapters.ITEMSTableAdapter
-    Private WithEvents radPanelTodaysAppointments As Telerik.WinControls.UI.RadPanel
-    Private WithEvents radLabelAllTotalOfItems As Telerik.WinControls.UI.RadLabel
-    Private WithEvents radLabelLastAppointmentToday As Telerik.WinControls.UI.RadLabel
-    Private WithEvents RadLabelTotalEstimation As Telerik.WinControls.UI.RadLabel
-    Private WithEvents radLabelCurrentItems As Telerik.WinControls.UI.RadLabel
-    Private WithEvents RadListeiewProjectName As Telerik.WinControls.UI.RadListView
-    Friend WithEvents ListBoxItemsParent As ListBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents RadStatusStrip2 As RadStatusStrip
-    Friend WithEvents RadLabelElementMessage As RadLabelElement
-    Friend WithEvents RadPanelHaut As RadPanel
-    Friend WithEvents RadDateTimePickerDateEnd As RadDateTimePicker
-    Friend WithEvents RadDateTimePickerDayStard As RadDateTimePicker
-    Friend WithEvents RadLabelDayEnd As RadLabel
-    Friend WithEvents RadLabelDaySart As RadLabel
-    Friend WithEvents RadLabelGlobalCathegory As RadLabel
-    Friend WithEvents RadLabelProjectNameGlobal As RadLabel
-    Friend WithEvents RadLabelCentreNameGlobal As RadLabel
-    'Friend WithEvents RadDataLayoutItemMainForm As RadDataLayout
-    Friend WithEvents RadSpinEditorIndexKey As RadSpinEditor
-    Friend WithEvents RadSpinEditorItemIndex As RadSpinEditor
-    Friend WithEvents RadSpinEditorProjectIndex As RadSpinEditor
-    Friend WithEvents RadTextBoxItemsCode As RadTextBox
-    Friend WithEvents RadTextBoxItemName As RadTextBox
-    Friend WithEvents RadTextBoxParent_Items As RadTextBox
-    Friend WithEvents RadSpinEditorQuantity As RadSpinEditor
-    Friend WithEvents RadSpinEditorUnitQuantity As RadSpinEditor
-    Friend WithEvents RadSpinEditorUnitPrice As RadSpinEditor
-    Friend WithEvents RadSpinEditorTotalPrice As RadSpinEditor
-    Friend WithEvents RadSpinEditorVATPorucent As RadSpinEditor
-    Friend WithEvents RadSpinEditorVATValue As RadSpinEditor
-    Friend WithEvents RadTextBoxCurrency As RadTextBox
-    Friend WithEvents RadDateTimePickerDate_Update As RadDateTimePicker
-    Friend WithEvents DataLayoutControlItem1 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem2 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem3 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem4 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem5 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem6 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem7 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem8 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem9 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem10 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem11 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem12 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem13 As DataLayoutControlItem
-    Friend WithEvents DataLayoutControlItem14 As DataLayoutControlItem
-    Friend WithEvents ButtonGridviewUpdate As Button
-    Friend WithEvents ButtonGridviewDelete As Button
-    Friend WithEvents ButtonGridviewNew As Button
-    Friend WithEvents TAKEOFFDataSetProjectName As TAKEOFFDataSetProjectName
-    Friend WithEvents PROJECTBindingSource As BindingSource
-    Friend WithEvents PROJECTTableAdapter As TAKEOFFDataSetProjectNameTableAdapters.PROJECTTableAdapter
+	Private WithEvents radPanelTodaysAppointments As Telerik.WinControls.UI.RadPanel
+	Private WithEvents radLabelAllTotalOfItems As Telerik.WinControls.UI.RadLabel
+	Private WithEvents radLabelLastAppointmentToday As Telerik.WinControls.UI.RadLabel
+	Private WithEvents RadLabelTotalEstimation As Telerik.WinControls.UI.RadLabel
+	Private WithEvents radLabelCurrentItems As Telerik.WinControls.UI.RadLabel
+	Private WithEvents RadListeiewProjectName As Telerik.WinControls.UI.RadListView
+	Friend WithEvents ListBoxItemsParent As ListBox
+	Friend WithEvents PictureBox1 As PictureBox
+	Friend WithEvents RadStatusStrip2 As RadStatusStrip
+	Friend WithEvents RadLabelElementMessage As RadLabelElement
+	Friend WithEvents RadPanelHaut As RadPanel
+	Friend WithEvents RadDateTimePickerDateEnd As RadDateTimePicker
+	Friend WithEvents RadDateTimePickerDayStard As RadDateTimePicker
+	Friend WithEvents RadLabelDayEnd As RadLabel
+	Friend WithEvents RadLabelDaySart As RadLabel
+	Friend WithEvents RadLabelGlobalCathegory As RadLabel
+	Friend WithEvents RadLabelProjectNameGlobal As RadLabel
+	Friend WithEvents RadLabelCentreNameGlobal As RadLabel
+	'Friend WithEvents RadDataLayoutItemMainForm As RadDataLayout
+	Friend WithEvents RadSpinEditorIndexKey As RadSpinEditor
+	Friend WithEvents RadSpinEditorItemIndex As RadSpinEditor
+	Friend WithEvents RadSpinEditorProjectIndex As RadSpinEditor
+	Friend WithEvents RadTextBoxItemsCode As RadTextBox
+	Friend WithEvents RadTextBoxItemName As RadTextBox
+	Friend WithEvents RadTextBoxParent_Items As RadTextBox
+	Friend WithEvents RadSpinEditorQuantity As RadSpinEditor
+	Friend WithEvents RadSpinEditorUnitQuantity As RadSpinEditor
+	Friend WithEvents RadSpinEditorUnitPrice As RadSpinEditor
+	Friend WithEvents RadSpinEditorTotalPrice As RadSpinEditor
+	Friend WithEvents RadSpinEditorVATPorucent As RadSpinEditor
+	Friend WithEvents RadSpinEditorVATValue As RadSpinEditor
+	Friend WithEvents RadTextBoxCurrency As RadTextBox
+	Friend WithEvents RadDateTimePickerDate_Update As RadDateTimePicker
+	Friend WithEvents DataLayoutControlItem1 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem2 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem3 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem4 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem5 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem6 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem7 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem8 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem9 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem10 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem11 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem12 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem13 As DataLayoutControlItem
+	Friend WithEvents DataLayoutControlItem14 As DataLayoutControlItem
+	Friend WithEvents ButtonGridviewUpdate As Button
+	Friend WithEvents ButtonGridviewDelete As Button
+	Friend WithEvents ButtonGridviewNew As Button
 	Friend WithEvents GroupBoxItemMainForm As GroupBox
 	Friend WithEvents RadGridViewProjectName As RadGridView
 	Friend WithEvents RadGridViewItems As RadGridView
@@ -2264,11 +1952,6 @@ Partial Class MainForm
 	Friend WithEvents RadButtonGroupage As RadButton
 	Friend WithEvents RadButtonGroupageRefhesh As RadButton
 	Friend WithEvents RadGridView2 As RadGridView
-	Friend WithEvents TAKEOFFDataSet4BindingSource As BindingSource
-	Friend WithEvents TAKEOFFDataSet4 As TAKEOFFDataSet4
-	Friend WithEvents TAKEOFFDataSet3 As TAKEOFFDataSet3
-	Friend WithEvents ITEMSBindingSource1 As BindingSource
-	Friend WithEvents ITEMSTableAdapter1 As TAKEOFFDataSet3TableAdapters.ITEMSTableAdapter
 	Friend WithEvents RadButtonItemsLevelOne As RadButton
 	Friend WithEvents GroupBox1 As GroupBox
 	Friend WithEvents RadTextBox_INDEX As RadTextBox

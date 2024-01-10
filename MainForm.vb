@@ -119,7 +119,7 @@ Public Class MainForm
         'TODO: cette ligne de code charge les données dans la table 'TAKEOFFDataSetProjectName.PROJECT'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         'Me.PROJECTTableAdapter.Fill(Me.TAKEOFFDataSetProjectName.PROJECT)
         'TODO: cette ligne de code charge les données dans la table 'TAKEOFDataSet.ITEMS'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-        Me.ITEMSTableAdapter.Fill(Me.TAKEOFDataSet.ITEMS)
+        '@@@@@TOTOTO  Me.ITEMSTableAdapter.Fill(Me.TAKEOFDataSet.ITEMS)
         'AddHandler RadGridViewItems.CellClick, AddressOf RadGridViewItems_CommandCellClick
         AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf RadGridViewItems_GroupSummaryEvaluate
         'AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf radGridView1_GroupSummaryEvaluate
@@ -290,7 +290,7 @@ Public Class MainForm
                     RadGridViewItems.Rows(jj).Cells(9).Value = total_projet
                     RadGridViewItems.Rows(jj).Cells(11).Value = total_tva
                     Try
-                        Me.ITEMSTableAdapter.Update(Me.TAKEOFDataSet.ITEMS)
+                        '@@@@@TOTOTO  Me.ITEMSTableAdapter.Update(Me.TAKEOFDataSet.ITEMS)
                     Catch ex As Exception
                         RadLabelElementMessage.Text = ex.Message
                     End Try
@@ -539,7 +539,7 @@ Public Class MainForm
         iindex = RadListeiewProjectName.SelectedIndex
         Dim temp
         temp = RadListeiewProjectName.Items(0).Value
-        Me.ITEMSTableAdapter.PorjectOne(Me.TAKEOFDataSet.ITEMS, iindex)
+        '@@@@@TOTOTO  Me.ITEMSTableAdapter.PorjectOne(Me.TAKEOFDataSet.ITEMS, iindex)
 
         'calcul_Datagridview_Items()
     End Sub
@@ -549,7 +549,7 @@ Public Class MainForm
         iindex = RadListeiewProjectName.SelectedIndex
         Dim temp
         temp = RadListeiewProjectName.Items(0).Value
-        Me.ITEMSTableAdapter.PorjectOne(Me.TAKEOFDataSet.ITEMS, iindex)
+        '@@@@@TOTOTO  Me.ITEMSTableAdapter.PorjectOne(Me.TAKEOFDataSet.ITEMS, iindex)
 
         'calcul_Datagridview_Items()
     End Sub
@@ -964,7 +964,7 @@ Public Class MainForm
         UpdateGridInfo(Me.RadGridViewItems.CurrentRow, irow)
 
         Try
-            Me.ITEMSTableAdapter.Update(Me.TAKEOFDataSet.ITEMS)
+            '@@@@@TOTOTO  Me.ITEMSTableAdapter.Update(Me.TAKEOFDataSet.ITEMS)
 
         Catch ex As Exception
         End Try
@@ -1055,16 +1055,16 @@ Public Class MainForm
 
         Dim parent_exist As String = ArrayCurrentItems(const_Category)
 
-        If IsNothing(Me.ITEMSTableAdapter.ParentExistQuerry(ArrayCurrentItems(const_Category))) Then
-            parent_exist = ""
+        '@@@@@TOTOTO   If IsNothing(Me.ITEMSTableAdapter.ParentExistQuerry(ArrayCurrentItems(const_Category))) Then
+        parent_exist = ""
             '9999 Items_Creat_Root(currentRow, iindex)
             Try
-                Me.ITEMSTableAdapter.Update(Me.TAKEOFDataSet.ITEMS)
+                '@@@@@TOTOTO  Me.ITEMSTableAdapter.Update(Me.TAKEOFDataSet.ITEMS)
                 calcul_Datagridview_Items()
             Catch ex As Exception
                 RadLabelElementMessage.Text = "Erreur de mise à jour"
             End Try
-        End If
+        '@@@@@TOTOTO  End If
         'parent_exist = ds.Tables("ITEMS").Rows.Count
         parent_exist = parent_exist
     End Sub
@@ -1173,7 +1173,7 @@ Public Class MainForm
         UpdateGridInfo(Me.RadGridViewItems.CurrentRow, iindex)
 
         Try
-            Me.ITEMSTableAdapter.DeleteQuery(iindex)
+            '@@@@@TOTOTO  Me.ITEMSTableAdapter.DeleteQuery(iindex)
             Me.RadGridViewItems.CurrentRow.Delete()
             'UpdateGridInfo(Me.RadGridViewItems.CurrentRow, irow)
         Catch ex As Exception
@@ -1303,7 +1303,7 @@ Public Class MainForm
         UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, iindex)
 
         Try
-            Me.PROJECTTableAdapter.DeleteQuery(iindex)
+            '@@@@@TOTOTO  Me.PROJECTTableAdapter.DeleteQuery(iindex)
             Me.RadGridViewProjectName.CurrentRow.Delete()
             'UpdateGridInfo(Me.RadGridViewItems.CurrentRow, irow)
         Catch ex As Exception
@@ -1315,7 +1315,7 @@ Public Class MainForm
         UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
 
         Try
-            Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProjectName.PROJECT)
+            '@@@@@TOTOTO  Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProjectName.PROJECT)
         Catch ex As Exception
         End Try
     End Sub
@@ -1375,7 +1375,7 @@ Public Class MainForm
         UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
 
         Try
-            Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProjectName.PROJECT)
+            '@@@@@TOTOTO  Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProjectName.PROJECT)
         Catch ex As Exception
         End Try
         '        Me.PROJECTTableAdapter.Fill(Me.TAKEOFFDataSetProjectName.PROJECT)
@@ -1399,7 +1399,7 @@ Public Class MainForm
         UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, iindex)
 
         Try
-            Me.PROJECTTableAdapter.DeleteQuery(iindex)
+            '@@@@@TOTOTO  Me.PROJECTTableAdapter.DeleteQuery(iindex)
             Me.RadGridViewProjectName.CurrentRow.Delete()
         Catch ex As Exception
         End Try
@@ -1499,26 +1499,26 @@ Public Class MainForm
 
         If ItemCode > "" Then
             Items_Parent_Aarray = New ArrayList
-            Me.ITEMSTableAdapter1.FillByByCode(Me.TAKEOFFDataSet3.ITEMS, "%" + ItemCode + "%")
+            '@@@@@TOTOTO  Me.ITEMSTableAdapter1.FillByByCode(Me.TAKEOFFDataSet3.ITEMS, "%" + ItemCode + "%")
 
             'Me.ITEMSTableAdapter.FindItemByCode(Me.TAKEOFDataSet.ITEMS, ItemCode)
-            ItemCount = Me.TAKEOFFDataSet3.ITEMS.Count
-            If ItemCount > 0 Then
-                For i = 0 To ItemCount - 1
-                    findit = False
-                    temp = Me.TAKEOFFDataSet3.Tables(0).Rows(i).Item("ITEMS_PARENT")
-                    For Each Elements As String In Items_Parent_Aarray
-                        If Elements = temp Then
-                            findit = True
-                            Exit For
-                        End If
-                    Next
-                    If findit = False Then
-                        Items_Parent_Aarray.Add(temp)
-                        ListBoxItemsParent.Items.Add(temp)
-                    End If
-                Next i
-            End If
+            'ItemCount = Me.TAKEOFFDataSet3.ITEMS.Count
+            'If ItemCount > 0 Then
+            '    For i = 0 To ItemCount - 1
+            '        findit = False
+            '        temp = Me.TAKEOFFDataSet3.Tables(0).Rows(i).Item("ITEMS_PARENT")
+            '        For Each Elements As String In Items_Parent_Aarray
+            '            If Elements = temp Then
+            '                findit = True
+            '                Exit For
+            '            End If
+            '        Next
+            '        If findit = False Then
+            '            Items_Parent_Aarray.Add(temp)
+            '            ListBoxItemsParent.Items.Add(temp)
+            '        End If
+            '    Next i
+            'End If
         End If
     End Sub
 
@@ -1545,7 +1545,7 @@ Public Class MainForm
         iindex = RadListeiewProjectName.SelectedIndex
         Dim temp
         temp = RadListeiewProjectName.Items(0).Value
-        Me.ITEMSTableAdapter.PorjectOne(Me.TAKEOFDataSet.ITEMS, iindex)
+        '@@@@@TOTOTO  Me.ITEMSTableAdapter.PorjectOne(Me.TAKEOFDataSet.ITEMS, iindex)
         iindex = iindex
         'calcul_Datagridview_Items()
     End Sub
