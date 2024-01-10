@@ -625,10 +625,6 @@ Public Class MainForm
             Me.Children.Add(Me.topRightElement_Renamed)
         End Sub
     End Class
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        FormListView.Show()
-    End Sub
     Private Sub init_Groupe()
         Dim i As Integer = 0
         ArrayGroupe = New ArrayList
