@@ -44,10 +44,6 @@ Partial Class MainForm
 		Me.RadLabelGlobalCathegory = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelProjectNameGlobal = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelCentreNameGlobal = New Telerik.WinControls.UI.RadLabel()
-		Me.RadTextBoxItemsCode = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadTextBoxItemName = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadTextBoxParent_Items = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadTextBoxCurrency = New Telerik.WinControls.UI.RadTextBox()
 		Me.ButtonGridviewUpdate = New System.Windows.Forms.Button()
 		Me.ButtonGridviewDelete = New System.Windows.Forms.Button()
 		Me.ButtonGridviewNew = New System.Windows.Forms.Button()
@@ -93,8 +89,6 @@ Partial Class MainForm
 		Me.RadTextBoxITEMS_CODE = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBox_ITEMS_INDEX = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBox_INDEX = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadTextBoxProjectMainFormStatus = New Telerik.WinControls.UI.RadTextBox()
-		Me.RadTextBoxProjectMainFormPathName = New Telerik.WinControls.UI.RadTextBox()
 		Me.GroupBoxMenuVertical = New System.Windows.Forms.Panel()
 		CType(Me.RadPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.RadPanelTodaysAppointments.SuspendLayout()
@@ -112,10 +106,6 @@ Partial Class MainForm
 		CType(Me.RadLabelGlobalCathegory, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelProjectNameGlobal, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelCentreNameGlobal, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxItemsCode, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxItemName, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxParent_Items, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBoxItemMainForm.SuspendLayout()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -159,8 +149,6 @@ Partial Class MainForm
 		CType(Me.RadTextBoxITEMS_CODE, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBox_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxProjectMainFormStatus, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxProjectMainFormPathName, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'RadPanelTodaysAppointments
@@ -406,58 +394,6 @@ Partial Class MainForm
 		Me.RadLabelCentreNameGlobal.Size = New System.Drawing.Size(240, 25)
 		Me.RadLabelCentreNameGlobal.TabIndex = 43
 		Me.RadLabelCentreNameGlobal.Text = "RadLabelNomDuCentre"
-		'
-		'RadTextBoxItemsCode
-		'
-		Me.RadTextBoxItemsCode.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxItemsCode.Location = New System.Drawing.Point(64, 3)
-		Me.RadTextBoxItemsCode.Name = "RadTextBoxItemsCode"
-		'
-		'
-		'
-		Me.RadTextBoxItemsCode.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadTextBoxItemsCode.RootElement.StretchVertically = True
-		Me.RadTextBoxItemsCode.Size = New System.Drawing.Size(184, 20)
-		Me.RadTextBoxItemsCode.TabIndex = 51
-		'
-		'RadTextBoxItemName
-		'
-		Me.RadTextBoxItemName.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxItemName.Location = New System.Drawing.Point(64, 3)
-		Me.RadTextBoxItemName.Name = "RadTextBoxItemName"
-		'
-		'
-		'
-		Me.RadTextBoxItemName.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadTextBoxItemName.RootElement.StretchVertically = True
-		Me.RadTextBoxItemName.Size = New System.Drawing.Size(184, 20)
-		Me.RadTextBoxItemName.TabIndex = 52
-		'
-		'RadTextBoxParent_Items
-		'
-		Me.RadTextBoxParent_Items.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxParent_Items.Location = New System.Drawing.Point(64, 3)
-		Me.RadTextBoxParent_Items.Name = "RadTextBoxParent_Items"
-		'
-		'
-		'
-		Me.RadTextBoxParent_Items.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadTextBoxParent_Items.RootElement.StretchVertically = True
-		Me.RadTextBoxParent_Items.Size = New System.Drawing.Size(184, 20)
-		Me.RadTextBoxParent_Items.TabIndex = 53
-		'
-		'RadTextBoxCurrency
-		'
-		Me.RadTextBoxCurrency.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxCurrency.Location = New System.Drawing.Point(64, 3)
-		Me.RadTextBoxCurrency.Name = "RadTextBoxCurrency"
-		'
-		'
-		'
-		Me.RadTextBoxCurrency.RootElement.ControlBounds = New System.Drawing.Rectangle(64, 3, 100, 20)
-		Me.RadTextBoxCurrency.RootElement.StretchVertically = True
-		Me.RadTextBoxCurrency.Size = New System.Drawing.Size(184, 20)
-		Me.RadTextBoxCurrency.TabIndex = 60
 		'
 		'ButtonGridviewUpdate
 		'
@@ -1033,32 +969,6 @@ Partial Class MainForm
 		Me.RadTextBox_INDEX.TabIndex = 0
 		Me.RadTextBox_INDEX.Text = "0"
 		'
-		'RadTextBoxProjectMainFormStatus
-		'
-		Me.RadTextBoxProjectMainFormStatus.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxProjectMainFormStatus.Location = New System.Drawing.Point(120, 3)
-		Me.RadTextBoxProjectMainFormStatus.Name = "RadTextBoxProjectMainFormStatus"
-		'
-		'
-		'
-		Me.RadTextBoxProjectMainFormStatus.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 3, 100, 20)
-		Me.RadTextBoxProjectMainFormStatus.RootElement.StretchVertically = True
-		Me.RadTextBoxProjectMainFormStatus.Size = New System.Drawing.Size(352, 20)
-		Me.RadTextBoxProjectMainFormStatus.TabIndex = 64
-		'
-		'RadTextBoxProjectMainFormPathName
-		'
-		Me.RadTextBoxProjectMainFormPathName.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadTextBoxProjectMainFormPathName.Location = New System.Drawing.Point(120, 7)
-		Me.RadTextBoxProjectMainFormPathName.Name = "RadTextBoxProjectMainFormPathName"
-		'
-		'
-		'
-		Me.RadTextBoxProjectMainFormPathName.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 7, 100, 20)
-		Me.RadTextBoxProjectMainFormPathName.RootElement.StretchVertically = True
-		Me.RadTextBoxProjectMainFormPathName.Size = New System.Drawing.Size(352, 20)
-		Me.RadTextBoxProjectMainFormPathName.TabIndex = 65
-		'
 		'GroupBoxMenuVertical
 		'
 		Me.GroupBoxMenuVertical.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(62, Byte), Integer))
@@ -1098,10 +1008,6 @@ Partial Class MainForm
 		CType(Me.RadLabelGlobalCathegory, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelProjectNameGlobal, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelCentreNameGlobal, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxItemsCode, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxItemName, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxParent_Items, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxCurrency, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBoxItemMainForm.ResumeLayout(False)
 		Me.GroupBoxItemMainForm.PerformLayout()
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1147,8 +1053,6 @@ Partial Class MainForm
 		CType(Me.RadTextBoxITEMS_CODE, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBox_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxProjectMainFormStatus, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxProjectMainFormPathName, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -1168,18 +1072,11 @@ Partial Class MainForm
 	Friend WithEvents RadLabelGlobalCathegory As RadLabel
 	Friend WithEvents RadLabelProjectNameGlobal As RadLabel
 	Friend WithEvents RadLabelCentreNameGlobal As RadLabel
-	'Friend WithEvents RadDataLayoutItemMainForm As RadDataLayout
-	Friend WithEvents RadTextBoxItemsCode As RadTextBox
-	Friend WithEvents RadTextBoxItemName As RadTextBox
-	Friend WithEvents RadTextBoxParent_Items As RadTextBox
-	Friend WithEvents RadTextBoxCurrency As RadTextBox
 	Friend WithEvents ButtonGridviewUpdate As Button
 	Friend WithEvents ButtonGridviewDelete As Button
 	Friend WithEvents ButtonGridviewNew As Button
 	Friend WithEvents GroupBoxItemMainForm As GroupBox
 	Friend WithEvents RadGridViewItems As RadGridView
-	Friend WithEvents RadTextBoxProjectMainFormStatus As RadTextBox
-	Friend WithEvents RadTextBoxProjectMainFormPathName As RadTextBox
 	Friend WithEvents RadButtonGroupCancel As RadButton
 	Friend WithEvents RadButtonGroupage As RadButton
 	Friend WithEvents RadButtonGroupageRefhesh As RadButton

@@ -156,8 +156,6 @@ Public Class MainForm
         'Me.GroupBoxPlojectMainForm.Top = 45
         '
         'list déroulant 
-
-        AddHandler Me.RadTextBoxParent_Items.KeyDown, AddressOf RadTextBoxParent_Items_keypress
     End Sub
     Public Sub PictureBoxClickHandler(ByVal sender As Object, ByVal e As System.EventArgs)
         'MsgBox("I am Picture #" & CType(sender, Button).Text)
@@ -1120,8 +1118,6 @@ Public Class MainForm
         Exit Sub
         Dim iindex As Integer = 0
         RadGridViewItems.Rows.AddNew()
-        RadTextBoxItemsCode.Text = "Code Name" 'ArrayCurrentItems(const_Category)
-        RadTextBoxParent_Items.Text = ArrayCurrentItems(const_Category)
         iindex = FindLastItemCount() + 1
         next_index += next_index
     End Sub
@@ -1193,8 +1189,6 @@ Public Class MainForm
         '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
         '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
         '@@@@@TOTO RadDateTimePickerDateCreat.Value = Today.ToShortDateString
-        RadTextBoxProjectMainFormStatus.Text = "IN PROGRESS"
-        RadTextBoxProjectMainFormPathName.Text = "C:\TAKEOFF\DATA"
         'RadTextBoxItemsCode.Text = "Code Name" 'ArrayCurrentItems(const_Category)
         'RadTextBoxParent_Items.Text = ArrayCurrentItems(const_Category)
         'RadSpinEditorVATPorucent.Value = ArrayCurrentItems(const_VAT_Porucent)
@@ -1331,19 +1325,6 @@ Public Class MainForm
     Private Sub RadButton1_Click_2(sender As Object, e As EventArgs) Handles RadButtonGroupCancel.Click
         RadGridViewItems.GroupDescriptors.Expression = ""
     End Sub
-    Private Sub RadTextBoxParent_Items_leave(sender As Object, e As EventArgs) Handles RadTextBoxParent_Items.Leave
-        Dim Items_Parent_Aarray As ArrayList
-        Items_Parent_Aarray = New ArrayList
-        RadLabelElementMessage.Text = "leave"
-        RadTextBoxParent_Items.Text = UCase(RadTextBoxParent_Items.Text)
-        FindItemByCode(RadTextBoxParent_Items.Text, Items_Parent_Aarray)
-    End Sub
-    Private Sub RadTextBoxParent_Items_keypress(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles RadTextBoxParent_Items.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            RadLabelElementMessage.Text = "enter"
-            SendKeys.Send("{TAB}")
-        End If
-    End Sub
     Private Sub FindItemByCode(ByVal ItemCode As String, ByRef Items_Parent_Aarray As ArrayList)
         Dim ItemCount As Integer = 0
         Dim temp As String
@@ -1379,10 +1360,6 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub RadTextBoxParent_Items_TextChanged(sender As Object, e As EventArgs) Handles RadTextBoxParent_Items.TextChanged
-
-    End Sub
-
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxItemsParent.Click
 
     End Sub
@@ -1393,7 +1370,6 @@ Public Class MainForm
         If iindex >= 0 Then
             Dim temp As String = ""
             temp = ListBoxItemsParent.Items(iindex)
-            RadTextBoxParent_Items.Text = temp
         End If
     End Sub
 
