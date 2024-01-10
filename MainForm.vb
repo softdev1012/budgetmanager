@@ -223,28 +223,6 @@ Public Class MainForm
                           .AQui = Trim(RadGridViewItems.Rows(i).Cells(colPayeQui).Value.ToString),
                           .FF = Trim(RadGridViewItems.Rows(i).Cells(ColFF).Value.ToString)
                    })
-
-                    'RadTextBox_INDEX.Text = RadGridViewItems.CurrentRow.Cells(0).Value.ToString
-                    'RadTextBox_ITEMS_INDEX.Text = RadGridViewItems.CurrentRow.Cells(1).Value.ToString
-                    'RadTextBoxITEMS_CODE.Text = RadGridViewItems.CurrentRow.Cells(2).Value.ToString
-                    'RadTextBoxITEMS_NAME.Text = RadGridViewItems.CurrentRow.Cells(3).Value.ToString
-                    'RadTextBoxITEMS_PARENT.Text = RadGridViewItems.CurrentRow.Cells(4).Value.ToString
-                    'RadTextBoxITEMS_QUANTITY.Text = RadGridViewItems.CurrentRow.Cells(5).Value.ToString
-                    'RadTextBoxITEMS_UNIT.Text = RadGridViewItems.CurrentRow.Cells(6).Value.ToString
-                    'RadTextBoxITEMS_TAXE.Text = RadGridViewItems.CurrentRow.Cells(7).Value.ToString
-                    'RadTextBoxITEMS_TAXE_VALUE.Text = RadGridViewItems.CurrentRow.Cells(8).Value.ToString
-                    'RadTextBoxITEMS_CURRENCY.Text = RadGridViewItems.CurrentRow.Cells(9).Value.ToString
-                    'RadTextBoxITEMS_LAST_EDIT_DATE.Text = Microsoft.VisualBasic.Left(RadGridViewItems.CurrentRow.Cells(10).Value.ToString, 10)
-                    'RadTextBox_MTTVA.Text = RadGridViewItems.CurrentRow.Cells(12).Value.ToString
-                    'RadTextBoxITEMS_DatePaiement.Text = RadGridViewItems.CurrentRow.Cells(13).Value.ToString
-                    'RadTextBoxITEMS_PayeQui.Text = RadGridViewItems.CurrentRow.Cells(14).Value.ToString
-                    'RadTextBoxITEMS_MT_PAIEMENT.Text = RadGridViewItems.CurrentRow.Cells(15).Value.ToString
-                    'RadTextBoxITEMS_PAYE_QUI.Text = RadGridViewItems.CurrentRow.Cells(16).Value.ToString
-
-
-
-                    '//// End If
-
                     AlltotalItems += Val(RadGridViewItems.Rows(i).Cells(colTotal).Value.ToString)
                     Alltotal += Val(RadGridViewItems.Rows(i).Cells(colTotal).Value.ToString)
                 Else
@@ -284,7 +262,6 @@ Public Class MainForm
 
         Dim i As Integer
         Dim cnt As Integer = dtProject.Rows.Count
-
         For i = 0 To cnt - 1
             If Val(dtProject.Rows(i).Item("PrOJECT_INDEX")) = project_index Then
                 Return dtProject.Rows(i).Item("PrOJECT_NAME")
@@ -567,17 +544,12 @@ Public Class MainForm
         '        RadDataLayout1 = New RadDataLayout
         InsertItemToDataBase(0)
         GetItemsFromDB(ProjectIndexGlobal)
-        Exit Sub
-        Dim iindex As Integer = 0
-        RadGridViewItems.Rows.AddNew()
-        iindex = FindLastItemCount() + 1
     End Sub
 
     Private Sub InsertItemToDataBase(ByVal Items_Index As Integer)
 
         Dim mysql As String
-        Dim basename As String = "cic"
-        RadTextBox_ITEMS_INDEX.Text = Str(FindLastItemCount())
+        RadTextBox_ITEMS_INDEX.Text = Str(FindLastItemCount() + 1)
         Dim Date1, Date2 As String
         Date1 = ConvertDateMysql4(RadTextBoxITEMS_LAST_EDIT_DATE.Text)
         Date2 = ConvertDateMysql4(RadTextBoxITEMS_DatePaiement.Text)
