@@ -54,6 +54,10 @@ Public Class MainForm
 		RadDropDownITEMS_PayeQui.DropDownStyle = RadDropDownStyle.DropDownList
 		RadDropDownITEMS_PayeQui.SelectedIndex = 1
 
+		RadDropDownITEMS_FF.DropDownListElement.TextBox.TextAlign = HorizontalAlignment.Right
+		RadDropDownITEMS_FF.DropDownStyle = RadDropDownStyle.DropDownList
+		RadDropDownITEMS_FF.SelectedIndex = 1
+
 		RadcmbTypeCharge.DropDownStyle = RadDropDownStyle.DropDownList
 
 
@@ -74,8 +78,9 @@ Public Class MainForm
 		End If
 
 		If dtProject.Rows.Count > 0 Then
-			GetItemsFromDB(Val(dtProject.Rows(0).Item("PrOJECT_INDEX")))
-			display_ProjectName_Flash(FindProjectName(Val(dtProject.Rows(0).Item("PrOJECT_INDEX"))), "Project")
+			ProjectIndexGlobal = Val(dtProject.Rows(0).Item("PrOJECT_INDEX"))
+			GetItemsFromDB(ProjectIndexGlobal)
+			display_ProjectName_Flash(FindProjectName(ProjectIndexGlobal), "Project")
 		End If
 		RadcmbTypeCharge.SelectedIndex = 0
 		Global_Type_Charge = UCase(RadcmbTypeCharge.Items(0).Value)
@@ -294,6 +299,7 @@ Public Class MainForm
 		RadDropDownITEMS_PayeQui.Text = RadGridViewItems.CurrentRow.Cells(14).Value.ToString
 		RadSpinEditorITEMS_MT_PAIEMENT.Value = RadGridViewItems.CurrentRow.Cells(15).Value
 		RadTextBoxITEMS_PAYE_QUI.Text = RadGridViewItems.CurrentRow.Cells(16).Value.ToString
+		RadDropDownITEMS_FF.Text = RadGridViewItems.CurrentRow.Cells(17).Value.ToString
 	End Sub
 	Private Sub calculTotalLine(ByVal iindex As Integer)
 		Dim ClassItemsListe = New List(Of ClassItemsListe)
@@ -574,8 +580,11 @@ Public Class MainForm
 			RadLabelElementMessage.Text = "Erreur, le code INDEX est erroné"
 			Exit Sub
 		End If
+		Dim result As DialogResult = MessageBox.Show("Are you sure to update item info?", "Update Item", MessageBoxButtons.YesNo)
+		If result = DialogResult.No Then
+			Exit Sub
+		End If
 
-		Dim DateFacture As String = ConvertDateMysql4(RadDateTimePickerITEMS_LAST_EDIT_DATE.Value)
 		Dim mysql = "Update items SET ITEMS_INDEX = " + RadSpinEditor_ITEMS_INDEX.Value.ToString
 		'      mysql += ", items_projet_INDEX = " + RadTextBox_ITEMS_INDEX.Text
 		mysql += ", ITEMS_CODE = '" + RadTextBoxITEMS_CODE.Text + "'"
@@ -586,7 +595,13 @@ Public Class MainForm
 		mysql += ", ITEMS_TAXE = " + RadSpinEditorITEMS_TAXE.Value.ToString
 		mysql += ", ITEMS_TAXE_VALUE = " + RadSpinEditorITEMS_TAXE_VALUE.Value.ToString
 		mysql += ", ITEMS_CURRENCY = '" + RadDropDownITEMS_CURRENCY.Text + "'"
-		mysql += ", ITEMS_LAST_EDIT_DATE = " + DateFacture
+		mysql += ", ITEMS_LAST_EDIT_DATE = '" + ConvertDateMysql4(RadDateTimePickerITEMS_LAST_EDIT_DATE.Value) + "'"
+		mysql += ", items_date_paiement = '" + ConvertDateMysql4(RadDateTimePickerITEMS_DatePaiement.Value) + "'"
+		mysql += ", items_paiement_ok = '" + RadDropDownITEMS_PayeQui.Text + "'"
+		mysql += ", items_mt_payé = " + RadSpinEditorITEMS_MT_PAIEMENT.Value.ToString
+		mysql += ", items_paye_qui = '" + RadTextBoxITEMS_PAYE_QUI.Text + "'"
+		mysql += ", items_ff = '" + RadDropDownITEMS_FF.Text + "'"
+
 		mysql += " Where `INDEX` = " + iindex.ToString
 
 		RadLabelElementMessage.Text = mysql
@@ -623,8 +638,10 @@ Public Class MainForm
 			Dim cmd As New MySqlCommand(mysql, connection)
 			connection.Open()
 			Dim reader As MySqlDataReader
+			Dim dt As New DataTable()
 			reader = cmd.ExecuteReader()
-			idx = Val(reader("ITEMS_INDEX"))
+			dt.Load(reader)
+			idx = Val(dt.Rows(0).Item("ITEMS_INDEX"))
 			connection.Close()
 		Catch ex As Exception
 			RadLabelElementMessage.Text = ex.Message
@@ -637,6 +654,12 @@ Public Class MainForm
 			RadLabelElementMessage.Text = "Erreur, le code INDEX est erroné"
 			Exit Sub
 		End If
+
+		Dim result As DialogResult = MessageBox.Show("Are you sure to delete item?", "Delete Item", MessageBoxButtons.YesNo)
+		If result = DialogResult.No Then
+			Exit Sub
+		End If
+
 		Dim mysql As String
 		Dim basename As String = "items"
 		mysql = "DELETE FROM " + basename + " where `INDEX` = " + RadSpinEditor_INDEX.Value.ToString
@@ -658,11 +681,19 @@ Public Class MainForm
 	End Sub
 	Private Sub ButtonGridviewNew_Click(sender As Object, e As EventArgs) Handles ButtonGridviewNew.Click
 		'        RadDataLayout1 = New RadDataLayout
-		InsertItemToDataBase(0)
+		Dim result As DialogResult = MessageBox.Show("Do you want to create invoice?", "Create Invoice", MessageBoxButtons.YesNo)
+		If result = DialogResult.Yes Then
+			createInvoice()
+		End If
+		InsertItemToDataBase()
 		GetItemsFromDB(ProjectIndexGlobal)
 	End Sub
 
-	Private Sub InsertItemToDataBase(ByVal Items_Index As Integer)
+	Private Sub createInvoice()
+
+	End Sub
+
+	Private Sub InsertItemToDataBase()
 
 		Dim mysql As String
 		RadSpinEditor_ITEMS_INDEX.Value = FindLastItemCount() + 1
@@ -683,10 +714,12 @@ Public Class MainForm
 		ValueString += Date2 + "','" 'RadTextBoxITEMS_DatePaiement.Text + "','"
 		ValueString += RadDropDownITEMS_PayeQui.Text + "','"
 		ValueString += RadTextBoxITEMS_PAYE_QUI.Text + "',"
-		ValueString += RadSpinEditorITEMS_MT_PAIEMENT.Value.ToString
+		ValueString += RadSpinEditorITEMS_MT_PAIEMENT.Value.ToString + ",'"
+		ValueString += RadDropDownITEMS_FF.Text + "','"
+		ValueString += DateTime.Now.ToString("yyyy-MM") + "'"
 
 		mysql = "insert into items (items_index,items_projet_INDEX,ITEMS_CODE,ITEMS_NAME,ITEMS_PARENT,ITEMS_QUANTITY,ITEMS_UNIT,ITEMS_TAXE,"
-		mysql += "ITEMS_TAXE_VALUE,ITEMS_CURRENCY,ITEMS_LAST_EDIT_DATE,items_date_paiement,items_paiement_ok,items_paye_qui,items_mt_payé) "
+		mysql += "ITEMS_TAXE_VALUE,ITEMS_CURRENCY,ITEMS_LAST_EDIT_DATE,items_date_paiement,items_paiement_ok,items_paye_qui,items_mt_payé,items_ff,`month`) "
 		mysql += "values( " + ValueString + ")"
 		'mysql += "values( 28,1,'VELO','VELOELECT','_ROOT',90,91,92,93,'EURO','1900-01-01','1900-02-02','N','JP',95)"
 
