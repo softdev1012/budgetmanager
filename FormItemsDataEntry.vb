@@ -74,58 +74,6 @@ Public Class FormItemsDataEntry
         currentRow.Cells(5).Value = RadTextBoxProjectStatus.Text
         RadLabelElementMessage.Text = ""
     End Sub
-
-    Private Sub ButtonGridviewUpdate_Click(sender As Object, e As EventArgs) Handles ButtonGridviewUpdateProjectMainForm.Click
-        Dim idx As Integer
-        'UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
-        If RadGridViewProjectName.CurrentRow Is Nothing Then
-            Return
-        End If
-        'currentRow.Index
-        If IsDBNull(RadGridViewProjectName.CurrentRow.Cells(1).Value) Then
-            Return
-        End If
-        idx = RadGridViewProjectName.CurrentRow.Cells(0).Value
-        UpdateProjectDB(idx, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, RadTextBoxProjectStatus.Text)
-        FindProjectListe()
-        Try
-            '@@@@@TOTOTO  Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProject)
-        Catch ex As Exception
-        End Try
-    End Sub
-
-    Private Sub ButtonGridviewDelete_Click(sender As Object, e As EventArgs) Handles ButtonGridviewDeleteProjectMainForm.Click
-        Dim idx As Integer
-        'UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
-        If RadGridViewProjectName.CurrentRow Is Nothing Then
-            Return
-        End If
-        'currentRow.Index
-        If IsDBNull(RadGridViewProjectName.CurrentRow.Cells(1).Value) Then
-            Return
-        End If
-        idx = RadGridViewProjectName.CurrentRow.Cells(0).Value
-        DeleteProjectDB(idx)
-        FindProjectListe()
-        Try
-            '@@@@@TOTOTO  Me.PROJECTTableAdapter.DeleteQuery(idx)
-            'Me.RadGridViewProjectName.CurrentRow.Delete()
-        Catch ex As Exception
-        End Try
-    End Sub
-
-
-    Private Sub ButtonGridviewNew_Click(sender As Object, e As EventArgs) Handles ButtonGridviewNewProjectMainForm.Click
-        Dim iindex As Integer = FindLastProjectCount() + 1
-        AddProjectDB(iindex, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, RadTextBoxProjectStatus.Text)
-        FindProjectListe()
-        Try
-            '@@@@@TOTOTO  Me.PROJECTTableAdapter.Insert(iindex, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, Date.Now(), Date.Now(), RadTextBoxProjectStatus.Text, "")
-            '@@@@@TOTOTO  Me.PROJECTTableAdapter.Update(Me.TAKEOFFDataSetProject)
-        Catch ex As Exception
-        End Try
-    End Sub
-
     Private Function FindProjectListe() As Integer
         Dim mysql As String
         Dim cpt As Integer
@@ -204,5 +152,41 @@ Public Class FormItemsDataEntry
         Catch ex As Exception
             RadLabelElementMessage.Text = ex.Message
         End Try
+    End Sub
+
+    Private Sub ButtonNewProject_Click(sender As Object, e As EventArgs) Handles ButtonNewProject.Click
+        Dim iindex As Integer = FindLastProjectCount() + 1
+        AddProjectDB(iindex, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, RadTextBoxProjectStatus.Text)
+        FindProjectListe()
+    End Sub
+
+    Private Sub ButtonUpdateProject_Click(sender As Object, e As EventArgs) Handles ButtonUpdateProject.Click
+        Dim idx As Integer
+        'UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
+        If RadGridViewProjectName.CurrentRow Is Nothing Then
+            Return
+        End If
+        'currentRow.Index
+        If IsDBNull(RadGridViewProjectName.CurrentRow.Cells(1).Value) Then
+            Return
+        End If
+        idx = RadGridViewProjectName.CurrentRow.Cells(0).Value
+        UpdateProjectDB(idx, RadTextBoxProjectCode.Text, RadTextBoxProjectName.Text, RadTextBoxProjectStatus.Text)
+        FindProjectListe()
+    End Sub
+
+    Private Sub ButtonDeleteProject_Click(sender As Object, e As EventArgs) Handles ButtonDeleteProject.Click
+        Dim idx As Integer
+        'UpdateGridInfoProject(Me.RadGridViewProjectName.CurrentRow, irow)
+        If RadGridViewProjectName.CurrentRow Is Nothing Then
+            Return
+        End If
+        'currentRow.Index
+        If IsDBNull(RadGridViewProjectName.CurrentRow.Cells(1).Value) Then
+            Return
+        End If
+        idx = RadGridViewProjectName.CurrentRow.Cells(0).Value
+        DeleteProjectDB(idx)
+        FindProjectListe()
     End Sub
 End Class

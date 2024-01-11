@@ -22,7 +22,6 @@ Partial Class FormItemsDataEntry
 	'Ne la modifiez pas à l'aide de l'éditeur de code.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
-		Me.components = New System.ComponentModel.Container()
 		Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
 		Me.RadGridViewProjectName = New Telerik.WinControls.UI.RadGridView()
 		Me.RadDataLayoutProjectNameMAinForm = New Telerik.WinControls.UI.RadDataLayout()
@@ -42,9 +41,9 @@ Partial Class FormItemsDataEntry
 		Me.DataLayoutControlItem6 = New Telerik.WinControls.UI.DataLayoutControlItem()
 		Me.DataLayoutControlItem7 = New Telerik.WinControls.UI.DataLayoutControlItem()
 		Me.DataLayoutControlItem8 = New Telerik.WinControls.UI.DataLayoutControlItem()
-		Me.ButtonGridviewNewProjectMainForm = New System.Windows.Forms.Button()
-		Me.ButtonGridviewDeleteProjectMainForm = New System.Windows.Forms.Button()
-		Me.ButtonGridviewUpdateProjectMainForm = New System.Windows.Forms.Button()
+		Me.ButtonNewProject = New System.Windows.Forms.Button()
+		Me.ButtonDeleteProject = New System.Windows.Forms.Button()
+		Me.ButtonUpdateProject = New System.Windows.Forms.Button()
 		Me.RadStatusStrip2 = New Telerik.WinControls.UI.RadStatusStrip()
 		Me.RadLabelElementMessage = New Telerik.WinControls.UI.RadLabelElement()
 		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,7 +101,7 @@ Partial Class FormItemsDataEntry
 		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Name = "LayoutControl"
 		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.Size = New System.Drawing.Size(350, 350)
 		Me.RadDataLayoutProjectNameMAinForm.LayoutControl.TabIndex = 0
-		Me.RadDataLayoutProjectNameMAinForm.Location = New System.Drawing.Point(740, 60)
+		Me.RadDataLayoutProjectNameMAinForm.Location = New System.Drawing.Point(742, 60)
 		Me.RadDataLayoutProjectNameMAinForm.Name = "RadDataLayoutProjectNameMAinForm"
 		Me.RadDataLayoutProjectNameMAinForm.Size = New System.Drawing.Size(350, 350)
 		Me.RadDataLayoutProjectNameMAinForm.TabIndex = 1
@@ -269,35 +268,35 @@ Partial Class FormItemsDataEntry
 		Me.DataLayoutControlItem8.TextProportionalSize = 0.25!
 		Me.DataLayoutControlItem8.TextSizeMode = Telerik.WinControls.UI.LayoutItemTextSizeMode.Fixed
 		'
-		'ButtonGridviewNewProjectMainForm
+		'ButtonNewProject
 		'
-		Me.ButtonGridviewNewProjectMainForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.ButtonGridviewNewProjectMainForm.Location = New System.Drawing.Point(795, 445)
-		Me.ButtonGridviewNewProjectMainForm.Name = "ButtonGridviewNewProjectMainForm"
-		Me.ButtonGridviewNewProjectMainForm.Size = New System.Drawing.Size(60, 29)
-		Me.ButtonGridviewNewProjectMainForm.TabIndex = 53
-		Me.ButtonGridviewNewProjectMainForm.Text = "Add"
-		Me.ButtonGridviewNewProjectMainForm.UseVisualStyleBackColor = True
+		Me.ButtonNewProject.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.ButtonNewProject.Location = New System.Drawing.Point(797, 445)
+		Me.ButtonNewProject.Name = "ButtonNewProject"
+		Me.ButtonNewProject.Size = New System.Drawing.Size(60, 29)
+		Me.ButtonNewProject.TabIndex = 53
+		Me.ButtonNewProject.Text = "Add"
+		Me.ButtonNewProject.UseVisualStyleBackColor = True
 		'
-		'ButtonGridviewDeleteProjectMainForm
+		'ButtonDeleteProject
 		'
-		Me.ButtonGridviewDeleteProjectMainForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.ButtonGridviewDeleteProjectMainForm.Location = New System.Drawing.Point(995, 445)
-		Me.ButtonGridviewDeleteProjectMainForm.Name = "ButtonGridviewDeleteProjectMainForm"
-		Me.ButtonGridviewDeleteProjectMainForm.Size = New System.Drawing.Size(60, 29)
-		Me.ButtonGridviewDeleteProjectMainForm.TabIndex = 52
-		Me.ButtonGridviewDeleteProjectMainForm.Text = "Delete"
-		Me.ButtonGridviewDeleteProjectMainForm.UseVisualStyleBackColor = True
+		Me.ButtonDeleteProject.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.ButtonDeleteProject.Location = New System.Drawing.Point(997, 445)
+		Me.ButtonDeleteProject.Name = "ButtonDeleteProject"
+		Me.ButtonDeleteProject.Size = New System.Drawing.Size(60, 29)
+		Me.ButtonDeleteProject.TabIndex = 52
+		Me.ButtonDeleteProject.Text = "Delete"
+		Me.ButtonDeleteProject.UseVisualStyleBackColor = True
 		'
-		'ButtonGridviewUpdateProjectMainForm
+		'ButtonUpdateProject
 		'
-		Me.ButtonGridviewUpdateProjectMainForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.ButtonGridviewUpdateProjectMainForm.Location = New System.Drawing.Point(895, 445)
-		Me.ButtonGridviewUpdateProjectMainForm.Name = "ButtonGridviewUpdateProjectMainForm"
-		Me.ButtonGridviewUpdateProjectMainForm.Size = New System.Drawing.Size(60, 29)
-		Me.ButtonGridviewUpdateProjectMainForm.TabIndex = 51
-		Me.ButtonGridviewUpdateProjectMainForm.Text = "Update"
-		Me.ButtonGridviewUpdateProjectMainForm.UseVisualStyleBackColor = True
+		Me.ButtonUpdateProject.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.ButtonUpdateProject.Location = New System.Drawing.Point(897, 445)
+		Me.ButtonUpdateProject.Name = "ButtonUpdateProject"
+		Me.ButtonUpdateProject.Size = New System.Drawing.Size(60, 29)
+		Me.ButtonUpdateProject.TabIndex = 51
+		Me.ButtonUpdateProject.Text = "Update"
+		Me.ButtonUpdateProject.UseVisualStyleBackColor = True
 		'
 		'RadStatusStrip2
 		'
@@ -322,9 +321,9 @@ Partial Class FormItemsDataEntry
 		Me.ClientSize = New System.Drawing.Size(1104, 561)
 		Me.Controls.Add(Me.RadDataLayoutProjectNameMAinForm)
 		Me.Controls.Add(Me.RadStatusStrip2)
-		Me.Controls.Add(Me.ButtonGridviewNewProjectMainForm)
-		Me.Controls.Add(Me.ButtonGridviewDeleteProjectMainForm)
-		Me.Controls.Add(Me.ButtonGridviewUpdateProjectMainForm)
+		Me.Controls.Add(Me.ButtonNewProject)
+		Me.Controls.Add(Me.ButtonDeleteProject)
+		Me.Controls.Add(Me.ButtonUpdateProject)
 		Me.Controls.Add(Me.RadGridViewProjectName)
 		Me.Name = "FormItemsDataEntry"
 		Me.Text = "PrevisionFlex software 1.0"
@@ -366,9 +365,9 @@ Partial Class FormItemsDataEntry
 	Friend WithEvents DataLayoutControlItem6 As DataLayoutControlItem
 	Friend WithEvents DataLayoutControlItem7 As DataLayoutControlItem
 	Friend WithEvents DataLayoutControlItem8 As DataLayoutControlItem
-	Friend WithEvents ButtonGridviewNewProjectMainForm As Button
-	Friend WithEvents ButtonGridviewDeleteProjectMainForm As Button
-	Friend WithEvents ButtonGridviewUpdateProjectMainForm As Button
+	Friend WithEvents ButtonNewProject As Button
+	Friend WithEvents ButtonDeleteProject As Button
+	Friend WithEvents ButtonUpdateProject As Button
 	Friend WithEvents RadStatusStrip2 As RadStatusStrip
 	Friend WithEvents RadLabelElementMessage As RadLabelElement
 End Class
