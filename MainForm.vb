@@ -186,11 +186,9 @@ Public Class MainForm
         RadSpinEditorITEMS_TAXE.Text = RadGridViewItems.CurrentRow.Cells(7).Value.ToString
         RadSpinEditorITEMS_TAXE_VALUE.Text = RadGridViewItems.CurrentRow.Cells(8).Value.ToString
         RadDropDownITEMS_CURRENCY.Text = RadGridViewItems.CurrentRow.Cells(9).Value.ToString
-        Dim tempDate As DateTime = Convert.ToDateTime(RadGridViewItems.CurrentRow.Cells(10).Value.ToString)
-        RadTextBoxITEMS_LAST_EDIT_DATE.Text = tempDate.ToString("MM/dd/yyyy")
+        RadDateTimePickerITEMS_LAST_EDIT_DATE.Value = Convert.ToDateTime(RadGridViewItems.CurrentRow.Cells(10).Value.ToString)
         RadSpinEditor_MTTVA.Text = RadGridViewItems.CurrentRow.Cells(12).Value.ToString
-        tempDate = Convert.ToDateTime(RadGridViewItems.CurrentRow.Cells(13).Value.ToString)
-        RadTextBoxITEMS_DatePaiement.Text = tempDate.ToString("MM/dd/yyyy")
+        RadDateTimePickerITEMS_DatePaiement.Value = Convert.ToDateTime(RadGridViewItems.CurrentRow.Cells(13).Value.ToString)
         RadDropDownITEMS_PayeQui.Text = RadGridViewItems.CurrentRow.Cells(14).Value.ToString
         RadSpinEditorITEMS_MT_PAIEMENT.Text = RadGridViewItems.CurrentRow.Cells(15).Value.ToString
         RadTextBoxITEMS_PAYE_QUI.Text = RadGridViewItems.CurrentRow.Cells(16).Value.ToString
@@ -239,7 +237,7 @@ Public Class MainForm
                     ClassItemsListe.Add(New ClassItemsListe() With {
                           .Numlig = i + 1,
                           .Index_Items = RadGridViewItems.Rows(i).Cells(3).Value.ToString,
-                          .Index_Date = ConvertDateMysql4(RadTextBoxITEMS_LAST_EDIT_DATE.Text),
+                          .Index_Date = ConvertDateMysql4(RadDateTimePickerITEMS_LAST_EDIT_DATE.Value),
                           .Montant = RadGridViewItems.Rows(i).Cells(colTotal).Value.ToString,
                           .PayeOuiNon = RadGridViewItems.Rows(i).Cells(colFlagPaye).Value.ToString,
                           .Mt_Paye = MTPaye,
@@ -474,12 +472,7 @@ Public Class MainForm
             Exit Sub
         End If
 
-        Dim DateFacture As String
-
-        Dim dyear = Mid(RadTextBoxITEMS_LAST_EDIT_DATE.Text, 7, 4)
-        Dim dmonth = Mid(RadTextBoxITEMS_LAST_EDIT_DATE.Text, 4, 2)
-        Dim dday = Mid(RadTextBoxITEMS_LAST_EDIT_DATE.Text, 1, 2)
-        DateFacture = "'" + dyear + "/" + dmonth + "/" + dday + "'"
+        Dim DateFacture As String = ConvertDateMysql4(RadDateTimePickerITEMS_LAST_EDIT_DATE.Value)
         Dim mot As String() = RadSpinEditorITEMS_TAXE.Text.Split(New Char() {"%"c})
         Dim TauxTVA = "0"
         If mot.Count > 0 Then
@@ -517,11 +510,11 @@ Public Class MainForm
     End Sub
 
     Private Function ConvertDateMysql4(ByVal DateOrigine As Date) As String
-        Dim ConvertedDate As String '= '2022/11/30'
-        Dim dyear = DateOrigine.ToString("yyyy")
-        Dim dmonth = DateOrigine.ToString("MM")
-        Dim dday = DateOrigine.ToString("dd")
-        ConvertedDate = dyear + "-" + dmonth + "-" + dday
+        Dim ConvertedDate = DateOrigine.ToString("yyyy-MM-dd")
+        'Dim dyear = DateOrigine.ToString("yyyy")
+        'Dim dmonth = DateOrigine.ToString("MM")
+        'Dim dday = DateOrigine.ToString("dd")
+        'ConvertedDate = dyear + "-" + dmonth + "-" + dday
         Return ConvertedDate
     End Function
     Private Function FindLastItemCount()
@@ -577,8 +570,8 @@ Public Class MainForm
         Dim mysql As String
         RadSpinEditor_ITEMS_INDEX.Text = Str(FindLastItemCount() + 1)
         Dim Date1, Date2 As String
-        Date1 = ConvertDateMysql4(RadTextBoxITEMS_LAST_EDIT_DATE.Text)
-        Date2 = ConvertDateMysql4(RadTextBoxITEMS_DatePaiement.Text)
+        Date1 = ConvertDateMysql4(RadDateTimePickerITEMS_LAST_EDIT_DATE.Value)
+        Date2 = ConvertDateMysql4(RadDateTimePickerITEMS_DatePaiement.Value)
         Dim ValueString As String
         ValueString = RadSpinEditor_ITEMS_INDEX.Text + "," + ProjectIndexGlobal.ToString + ",'"
         ValueString += RadTextBoxITEMS_CODE.Text + "','"

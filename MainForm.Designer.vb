@@ -77,7 +77,6 @@ Partial Class MainForm
 		Me.RadLabelPayeOuPas = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelDatePaiement = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabel12 = New Telerik.WinControls.UI.RadLabel()
-		Me.RadTextBoxITEMS_DatePaiement = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadLabel11 = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabel10 = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
@@ -89,7 +88,6 @@ Partial Class MainForm
 		Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
-		Me.RadTextBoxITEMS_LAST_EDIT_DATE = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBoxITEMS_PARENT = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBoxITEMS_NAME = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBoxITEMS_CODE = New Telerik.WinControls.UI.RadTextBox()
@@ -131,6 +129,8 @@ Partial Class MainForm
 		Me.RadSpinEditorITEMS_TAXE_VALUE = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadSpinEditor_INDEX = New Telerik.WinControls.UI.RadSpinEditor()
 		Me.RadSpinEditor_ITEMS_INDEX = New Telerik.WinControls.UI.RadSpinEditor()
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE = New Telerik.WinControls.UI.RadDateTimePicker()
+		Me.RadDateTimePickerITEMS_DatePaiement = New Telerik.WinControls.UI.RadDateTimePicker()
 		CType(Me.RadPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.RadPanelTodaysAppointments.SuspendLayout()
 		CType(Me.RadLabelMTPaye, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,7 +165,6 @@ Partial Class MainForm
 		CType(Me.RadLabelPayeOuPas, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabelDatePaiement, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -177,7 +176,6 @@ Partial Class MainForm
 		CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadTextBoxITEMS_LAST_EDIT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxITEMS_PARENT, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxITEMS_NAME, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxITEMS_CODE, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -217,6 +215,8 @@ Partial Class MainForm
 		CType(Me.RadSpinEditorITEMS_TAXE_VALUE, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadSpinEditor_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadSpinEditor_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadDateTimePickerITEMS_LAST_EDIT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadDateTimePickerITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'RadPanelTodaysAppointments
@@ -635,6 +635,8 @@ Partial Class MainForm
 		'GroupBox1
 		'
 		Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.GroupBox1.Controls.Add(Me.RadDateTimePickerITEMS_DatePaiement)
+		Me.GroupBox1.Controls.Add(Me.RadDateTimePickerITEMS_LAST_EDIT_DATE)
 		Me.GroupBox1.Controls.Add(Me.RadSpinEditor_ITEMS_INDEX)
 		Me.GroupBox1.Controls.Add(Me.RadSpinEditor_INDEX)
 		Me.GroupBox1.Controls.Add(Me.RadSpinEditorITEMS_TAXE_VALUE)
@@ -651,7 +653,6 @@ Partial Class MainForm
 		Me.GroupBox1.Controls.Add(Me.RadLabelPayeOuPas)
 		Me.GroupBox1.Controls.Add(Me.RadLabelDatePaiement)
 		Me.GroupBox1.Controls.Add(Me.RadLabel12)
-		Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_DatePaiement)
 		Me.GroupBox1.Controls.Add(Me.RadLabel11)
 		Me.GroupBox1.Controls.Add(Me.RadLabel10)
 		Me.GroupBox1.Controls.Add(Me.RadLabel9)
@@ -666,7 +667,6 @@ Partial Class MainForm
 		Me.GroupBox1.Controls.Add(Me.ButtonGridviewUpdate)
 		Me.GroupBox1.Controls.Add(Me.RadLabel2)
 		Me.GroupBox1.Controls.Add(Me.RadLabel1)
-		Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_LAST_EDIT_DATE)
 		Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_PARENT)
 		Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_NAME)
 		Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_CODE)
@@ -758,18 +758,6 @@ Partial Class MainForm
 		Me.RadLabel12.TabIndex = 53
 		Me.RadLabel12.Text = "Date  Facture :"
 		Me.RadLabel12.TextAlignment = System.Drawing.ContentAlignment.TopLeft
-		'
-		'RadTextBoxITEMS_DatePaiement
-		'
-		Me.RadTextBoxITEMS_DatePaiement.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.RadTextBoxITEMS_DatePaiement.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.RadTextBoxITEMS_DatePaiement.Location = New System.Drawing.Point(119, 346)
-		Me.RadTextBoxITEMS_DatePaiement.Name = "RadTextBoxITEMS_DatePaiement"
-		Me.RadTextBoxITEMS_DatePaiement.ShowClearButton = True
-		Me.RadTextBoxITEMS_DatePaiement.Size = New System.Drawing.Size(150, 27)
-		Me.RadTextBoxITEMS_DatePaiement.TabIndex = 54
-		Me.RadTextBoxITEMS_DatePaiement.Text = "01-01-2023"
-		Me.RadTextBoxITEMS_DatePaiement.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 		'
 		'RadLabel11
 		'
@@ -891,18 +879,6 @@ Partial Class MainForm
 		Me.RadLabel1.TabIndex = 51
 		Me.RadLabel1.Text = "Index :"
 		Me.RadLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft
-		'
-		'RadTextBoxITEMS_LAST_EDIT_DATE
-		'
-		Me.RadTextBoxITEMS_LAST_EDIT_DATE.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.RadTextBoxITEMS_LAST_EDIT_DATE.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.RadTextBoxITEMS_LAST_EDIT_DATE.Location = New System.Drawing.Point(119, 318)
-		Me.RadTextBoxITEMS_LAST_EDIT_DATE.Name = "RadTextBoxITEMS_LAST_EDIT_DATE"
-		Me.RadTextBoxITEMS_LAST_EDIT_DATE.ShowClearButton = True
-		Me.RadTextBoxITEMS_LAST_EDIT_DATE.Size = New System.Drawing.Size(150, 27)
-		Me.RadTextBoxITEMS_LAST_EDIT_DATE.TabIndex = 11
-		Me.RadTextBoxITEMS_LAST_EDIT_DATE.Text = "01-01-2023"
-		Me.RadTextBoxITEMS_LAST_EDIT_DATE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
 		'
 		'RadTextBoxITEMS_PARENT
 		'
@@ -1322,6 +1298,7 @@ Partial Class MainForm
 		Me.RadSpinEditor_INDEX.Font = New System.Drawing.Font("Segoe UI", 9.75!)
 		Me.RadSpinEditor_INDEX.Location = New System.Drawing.Point(119, 10)
 		Me.RadSpinEditor_INDEX.Name = "RadSpinEditor_INDEX"
+		Me.RadSpinEditor_INDEX.ReadOnly = True
 		Me.RadSpinEditor_INDEX.Size = New System.Drawing.Size(150, 27)
 		Me.RadSpinEditor_INDEX.TabIndex = 68
 		'
@@ -1331,8 +1308,39 @@ Partial Class MainForm
 		Me.RadSpinEditor_ITEMS_INDEX.Font = New System.Drawing.Font("Segoe UI", 9.75!)
 		Me.RadSpinEditor_ITEMS_INDEX.Location = New System.Drawing.Point(119, 38)
 		Me.RadSpinEditor_ITEMS_INDEX.Name = "RadSpinEditor_ITEMS_INDEX"
+		Me.RadSpinEditor_ITEMS_INDEX.ReadOnly = True
 		Me.RadSpinEditor_ITEMS_INDEX.Size = New System.Drawing.Size(150, 27)
 		Me.RadSpinEditor_ITEMS_INDEX.TabIndex = 69
+		'
+		'RadDateTimePickerITEMS_LAST_EDIT_DATE
+		'
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.AutoSize = False
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.CalendarSize = New System.Drawing.Size(290, 320)
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.CustomFormat = "yyyy-MM-dd"
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Location = New System.Drawing.Point(119, 318)
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Name = "RadDateTimePickerITEMS_LAST_EDIT_DATE"
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Size = New System.Drawing.Size(150, 27)
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.TabIndex = 70
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.TabStop = False
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Text = "2024-01-11"
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Value = New Date(2024, 1, 11, 0, 0, 0, 0)
+		'
+		'RadDateTimePickerITEMS_DatePaiement
+		'
+		Me.RadDateTimePickerITEMS_DatePaiement.AutoSize = False
+		Me.RadDateTimePickerITEMS_DatePaiement.CalendarSize = New System.Drawing.Size(290, 320)
+		Me.RadDateTimePickerITEMS_DatePaiement.CustomFormat = "yyyy-MM-dd"
+		Me.RadDateTimePickerITEMS_DatePaiement.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadDateTimePickerITEMS_DatePaiement.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+		Me.RadDateTimePickerITEMS_DatePaiement.Location = New System.Drawing.Point(119, 346)
+		Me.RadDateTimePickerITEMS_DatePaiement.Name = "RadDateTimePickerITEMS_DatePaiement"
+		Me.RadDateTimePickerITEMS_DatePaiement.Size = New System.Drawing.Size(150, 27)
+		Me.RadDateTimePickerITEMS_DatePaiement.TabIndex = 70
+		Me.RadDateTimePickerITEMS_DatePaiement.TabStop = False
+		Me.RadDateTimePickerITEMS_DatePaiement.Text = "2024-01-11"
+		Me.RadDateTimePickerITEMS_DatePaiement.Value = New Date(2024, 1, 11, 0, 0, 0, 0)
 		'
 		'MainForm
 		'
@@ -1385,7 +1393,6 @@ Partial Class MainForm
 		CType(Me.RadLabelPayeOuPas, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabelDatePaiement, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1397,7 +1404,6 @@ Partial Class MainForm
 		CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadTextBoxITEMS_LAST_EDIT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxITEMS_PARENT, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxITEMS_NAME, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxITEMS_CODE, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1438,6 +1444,8 @@ Partial Class MainForm
 		CType(Me.RadSpinEditorITEMS_TAXE_VALUE, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadSpinEditor_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadSpinEditor_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadDateTimePickerITEMS_LAST_EDIT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadDateTimePickerITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -1466,7 +1474,6 @@ Partial Class MainForm
 	Friend WithEvents RadTextBoxITEMS_PARENT As RadTextBox
 	Friend WithEvents RadTextBoxITEMS_NAME As RadTextBox
 	Friend WithEvents RadTextBoxITEMS_CODE As RadTextBox
-	Friend WithEvents RadTextBoxITEMS_LAST_EDIT_DATE As RadTextBox
 	Private WithEvents RadLabelMTPaye As RadLabel
 	Friend WithEvents RadLabel1 As RadLabel
 	Friend WithEvents RadLabel2 As RadLabel
@@ -1485,7 +1492,6 @@ Partial Class MainForm
 	Friend WithEvents RadLabel14 As RadLabel
 	Friend WithEvents RadLabelPayeOuPas As RadLabel
 	Friend WithEvents RadLabelDatePaiement As RadLabel
-	Friend WithEvents RadTextBoxITEMS_DatePaiement As RadTextBox
 	Friend WithEvents RadGridViewClassItemsListe As RadGridView
 	Friend WithEvents RadCheckBoxFF As RadCheckBox
 	Friend WithEvents GroupBoxMenuVertical As Panel
@@ -1531,4 +1537,6 @@ Partial Class MainForm
 	Friend WithEvents RadSpinEditorITEMS_TAXE_VALUE As RadSpinEditor
 	Friend WithEvents RadSpinEditor_INDEX As RadSpinEditor
 	Friend WithEvents RadSpinEditor_ITEMS_INDEX As RadSpinEditor
+	Friend WithEvents RadDateTimePickerITEMS_LAST_EDIT_DATE As RadDateTimePicker
+	Friend WithEvents RadDateTimePickerITEMS_DatePaiement As RadDateTimePicker
 End Class
