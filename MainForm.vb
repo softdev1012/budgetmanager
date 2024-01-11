@@ -69,6 +69,9 @@ Public Class MainForm
 		init_main_menu()
 		GetProjectFromDB()
 		InitProjectMenu()
+		If checkEarlyMonth() = False Then
+			copyToNextMonth()
+		End If
 
 		If dtProject.Rows.Count > 0 Then
 			GetItemsFromDB(Val(dtProject.Rows(0).Item("PrOJECT_INDEX")))
@@ -77,7 +80,93 @@ Public Class MainForm
 		RadcmbTypeCharge.SelectedIndex = 0
 		Global_Type_Charge = UCase(RadcmbTypeCharge.Items(0).Value)
 	End Sub
+	Private Function checkEarlyMonth()
+		Dim mysql As String
+		Dim curMonth As String = DateTime.Now.ToString("yyyy-MM")
+		mysql = "SELECT COUNT(*) as cnt FROM items WHERE `month` = '" & curMonth & "'"
+		Try
+			Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
+			Dim cmd As New MySqlCommand(mysql, connection)
+			connection.Open()
+			Dim reader As MySqlDataReader
+			reader = cmd.ExecuteReader()
+			Dim dt As DataTable = New DataTable()
+			dt.Load(reader)
+			If Val(dt.Rows(0).Item("cnt")) > 0 Then
+				Return True
+			End If
+			connection.Close()
+		Catch ex As Exception
+			RadLabelElementMessage.Text = ex.Message
+		End Try
+		Return False
+	End Function
+	Private Sub copyToNextMonth()
+		Dim mysql As String
+		Dim lastMonth As String = getLastDBMonth()
+		Dim curMonth As String = DateTime.Now.ToString("yyyy-MM")
+		mysql = "SELECT * FROM items WHERE `month` = '" & lastMonth & "'"
+		Dim dtable As New DataTable()
+		Dim cnt As Integer
+		Try
+			Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
+			Dim cmd As New MySqlCommand(mysql, connection)
+			connection.Open()
+			Dim reader As MySqlDataReader
+			reader = cmd.ExecuteReader()
+			dtable.Load(reader)
+			cnt = dtable.Rows.Count
+			mysql = "INSERT INTO items(items_INDEX, items_projet_INDEX, items_code, items_name, items_parent, items_quantity, items_unit, items_price_total, items_taxe, items_taxe_value, items_currency, items_last_edit_date, Items_date_paiement, items_paiement_ok, `items_mt_payé`, items_paye_qui, items_ff, `month`) VALUES "
+			For i = 0 To cnt - 1
+				If i > 0 Then
+					mysql += ","
+				End If
+				mysql += "('" & dtable.Rows(i).Item("items_INDEX") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_projet_INDEX") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_code") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_name") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_parent") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_quantity") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_unit") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_price_total") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_taxe") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_taxe_value") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_currency") & "',"
+				mysql += "'" & ConvertDateMysql4(dtable.Rows(i).Item("items_last_edit_date")) & "',"
+				mysql += "'" & ConvertDateMysql4(dtable.Rows(i).Item("Items_date_paiement")) & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_paiement_ok") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_mt_payé") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_paye_qui") & "',"
+				mysql += "'" & dtable.Rows(i).Item("items_ff") & "',"
+				mysql += "'" & curMonth & "')"
+			Next
+			cmd.CommandText = mysql
+			cmd.ExecuteReader()
+			connection.Close()
+		Catch ex As Exception
+			RadLabelElementMessage.Text = ex.Message
+		End Try
+	End Sub
 
+	Private Function getLastDBMonth()
+		Dim mysql As String
+		Dim rlt As String = "2022-01"
+		mysql = "SELECT MAX(`month`) AS last_month FROM items"
+		Try
+			Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
+			Dim cmd As New MySqlCommand(mysql, connection)
+			connection.Open()
+			Dim reader As MySqlDataReader
+			reader = cmd.ExecuteReader()
+			Dim dt As DataTable = New DataTable()
+			dt.Load(reader)
+			rlt = dt.Rows(0).Item("last_month")
+			connection.Close()
+		Catch ex As Exception
+			RadLabelElementMessage.Text = ex.Message
+		End Try
+		Return rlt
+	End Function
 	Private Sub init_main_menu()
 		For i = 0 To NRow
 			PictureBoxArray(i) = New PictureBox
@@ -368,10 +457,11 @@ Public Class MainForm
 		End Select
 		Dim FF As Boolean
 		FF = RadCheckBoxFF.Checked
+		Dim curMonth As String = RadDateTimePickerMonth.Text
 		If FF Then
-			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, items_price_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
+			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, items_price_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " AND `month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
 		Else
-			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, items_price_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " and items_ff = 'N' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
+			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, items_price_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " and items_ff = 'N' AND `month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
 		End If
 		Try
 			Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
