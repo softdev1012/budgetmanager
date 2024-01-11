@@ -22,26 +22,26 @@ Partial Class MainForm
 	'Ne la modifiez pas à l'aide de l'éditeur de code.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
-		Dim ListViewDetailColumn1 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
-		Dim ListViewDetailColumn2 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
-		Dim ListViewDetailColumn3 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
-		Dim ListViewDetailColumn4 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
-		Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-		Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim ListViewDetailColumn5 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
+		Dim ListViewDetailColumn6 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
+		Dim ListViewDetailColumn7 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
+		Dim ListViewDetailColumn8 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
 		Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim RadListDataItem17 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim RadListDataItem18 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim RadListDataItem19 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim RadListDataItem20 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim RadListDataItem21 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim RadListDataItem22 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim TableViewDefinition10 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim TableViewDefinition11 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
 		Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-		Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-		Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-		Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-		Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-		Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim TableViewDefinition12 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
 		Me.RadPanelTodaysAppointments = New Telerik.WinControls.UI.RadPanel()
 		Me.RadLabelMTPaye = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelAllTotalOfItems = New Telerik.WinControls.UI.RadLabel()
@@ -70,6 +70,17 @@ Partial Class MainForm
 		Me.RadButtonGroupage = New Telerik.WinControls.UI.RadButton()
 		Me.RadGridViewItems = New Telerik.WinControls.UI.RadGridView()
 		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+		Me.RadDateTimePickerITEMS_DatePaiement = New Telerik.WinControls.UI.RadDateTimePicker()
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE = New Telerik.WinControls.UI.RadDateTimePicker()
+		Me.RadSpinEditor_ITEMS_INDEX = New Telerik.WinControls.UI.RadSpinEditor()
+		Me.RadSpinEditor_INDEX = New Telerik.WinControls.UI.RadSpinEditor()
+		Me.RadSpinEditorITEMS_TAXE_VALUE = New Telerik.WinControls.UI.RadSpinEditor()
+		Me.RadSpinEditor_MTTVA = New Telerik.WinControls.UI.RadSpinEditor()
+		Me.RadSpinEditorITEMS_TAXE = New Telerik.WinControls.UI.RadSpinEditor()
+		Me.RadSpinEditorITEMS_UNIT = New Telerik.WinControls.UI.RadSpinEditor()
+		Me.RadSpinEditorITEMS_QUANTITY = New Telerik.WinControls.UI.RadSpinEditor()
+		Me.RadSpinEditorITEMS_MT_PAIEMENT = New Telerik.WinControls.UI.RadSpinEditor()
+		Me.RadDropDownITEMS_PayeQui = New Telerik.WinControls.UI.RadDropDownList()
 		Me.RadDropDownITEMS_CURRENCY = New Telerik.WinControls.UI.RadDropDownList()
 		Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
 		Me.RadTextBoxITEMS_PAYE_QUI = New Telerik.WinControls.UI.RadTextBox()
@@ -120,17 +131,7 @@ Partial Class MainForm
 		Me.RadTextBoxProjectStatus = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadTextBoxProjectDataPath = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadGridViewProjectName = New Telerik.WinControls.UI.RadGridView()
-		Me.RadDropDownITEMS_PayeQui = New Telerik.WinControls.UI.RadDropDownList()
-		Me.RadSpinEditorITEMS_MT_PAIEMENT = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorITEMS_QUANTITY = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorITEMS_UNIT = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorITEMS_TAXE = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditor_MTTVA = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditorITEMS_TAXE_VALUE = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditor_INDEX = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadSpinEditor_ITEMS_INDEX = New Telerik.WinControls.UI.RadSpinEditor()
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE = New Telerik.WinControls.UI.RadDateTimePicker()
-		Me.RadDateTimePickerITEMS_DatePaiement = New Telerik.WinControls.UI.RadDateTimePicker()
+		Me.RadProgressBarExport = New Telerik.WinControls.UI.RadProgressBar()
 		CType(Me.RadPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.RadPanelTodaysAppointments.SuspendLayout()
 		CType(Me.RadLabelMTPaye, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,6 +159,17 @@ Partial Class MainForm
 		CType(Me.RadGridViewItems, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewItems.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBox1.SuspendLayout()
+		CType(Me.RadDateTimePickerITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadDateTimePickerITEMS_LAST_EDIT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadSpinEditor_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadSpinEditor_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadSpinEditorITEMS_TAXE_VALUE, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadSpinEditor_MTTVA, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadSpinEditorITEMS_TAXE, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadSpinEditorITEMS_UNIT, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadSpinEditorITEMS_QUANTITY, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadSpinEditorITEMS_MT_PAIEMENT, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadDropDownITEMS_PayeQui, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadDropDownITEMS_CURRENCY, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadTextBoxITEMS_PAYE_QUI, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -206,17 +218,7 @@ Partial Class MainForm
 		CType(Me.RadTextBoxProjectDataPath, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadDropDownITEMS_PayeQui, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorITEMS_MT_PAIEMENT, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorITEMS_QUANTITY, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorITEMS_UNIT, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorITEMS_TAXE, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditor_MTTVA, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditorITEMS_TAXE_VALUE, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditor_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadSpinEditor_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadDateTimePickerITEMS_LAST_EDIT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadDateTimePickerITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadProgressBarExport, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'RadPanelTodaysAppointments
@@ -320,11 +322,11 @@ Partial Class MainForm
 		Me.RadListeiewProjectName.AllowRemove = False
 		Me.RadListeiewProjectName.AutoScroll = True
 		Me.RadListeiewProjectName.BackColor = System.Drawing.SystemColors.ControlLightLight
-		ListViewDetailColumn1.HeaderText = "Name"
-		ListViewDetailColumn2.HeaderText = "Age"
-		ListViewDetailColumn3.HeaderText = "Gender"
-		ListViewDetailColumn4.HeaderText = "EncounterTime"
-		Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn1, ListViewDetailColumn2, ListViewDetailColumn3, ListViewDetailColumn4})
+		ListViewDetailColumn5.HeaderText = "Name"
+		ListViewDetailColumn6.HeaderText = "Age"
+		ListViewDetailColumn7.HeaderText = "Gender"
+		ListViewDetailColumn8.HeaderText = "EncounterTime"
+		Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn5, ListViewDetailColumn6, ListViewDetailColumn7, ListViewDetailColumn8})
 		Me.RadListeiewProjectName.ItemSize = New System.Drawing.Size(200, 95)
 		Me.RadListeiewProjectName.Location = New System.Drawing.Point(5, 570)
 		Me.RadListeiewProjectName.Name = "RadListeiewProjectName"
@@ -390,6 +392,7 @@ Partial Class MainForm
 		'
 		'RadBtnExportExcel
 		'
+		Me.RadBtnExportExcel.Font = New System.Drawing.Font("Segoe UI", 9.75!)
 		Me.RadBtnExportExcel.Location = New System.Drawing.Point(1406, 5)
 		Me.RadBtnExportExcel.Name = "RadBtnExportExcel"
 		Me.RadBtnExportExcel.Size = New System.Drawing.Size(110, 24)
@@ -398,6 +401,7 @@ Partial Class MainForm
 		'
 		'RadBtnExportPDF
 		'
+		Me.RadBtnExportPDF.Font = New System.Drawing.Font("Segoe UI", 9.75!)
 		Me.RadBtnExportPDF.Location = New System.Drawing.Point(1269, 5)
 		Me.RadBtnExportPDF.Name = "RadBtnExportPDF"
 		Me.RadBtnExportPDF.Size = New System.Drawing.Size(110, 24)
@@ -407,38 +411,40 @@ Partial Class MainForm
 		'RadcmbTypeCharge
 		'
 		Me.RadcmbTypeCharge.DropDownAnimationEnabled = True
-		RadListDataItem1.Text = "Tous"
-		RadListDataItem2.Text = "Hors achats"
-		RadListDataItem3.Text = "Hors salaires"
-		RadListDataItem4.Text = "Achats"
-		RadListDataItem5.Text = "Salaires"
-		RadListDataItem6.Text = "Petites charges"
-		RadListDataItem7.Text = "Loyer et autres"
-		RadListDataItem8.Text = "Taxes et impots"
-		RadListDataItem9.Text = "Frais bancaires"
-		Me.RadcmbTypeCharge.Items.Add(RadListDataItem1)
-		Me.RadcmbTypeCharge.Items.Add(RadListDataItem2)
+		Me.RadcmbTypeCharge.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		RadListDataItem3.Text = "Tous"
+		RadListDataItem4.Text = "Hors achats"
+		RadListDataItem16.Text = "Hors salaires"
+		RadListDataItem17.Text = "Achats"
+		RadListDataItem18.Text = "Salaires"
+		RadListDataItem19.Text = "Petites charges"
+		RadListDataItem20.Text = "Loyer et autres"
+		RadListDataItem21.Text = "Taxes et impots"
+		RadListDataItem22.Text = "Frais bancaires"
 		Me.RadcmbTypeCharge.Items.Add(RadListDataItem3)
 		Me.RadcmbTypeCharge.Items.Add(RadListDataItem4)
-		Me.RadcmbTypeCharge.Items.Add(RadListDataItem5)
-		Me.RadcmbTypeCharge.Items.Add(RadListDataItem6)
-		Me.RadcmbTypeCharge.Items.Add(RadListDataItem7)
-		Me.RadcmbTypeCharge.Items.Add(RadListDataItem8)
-		Me.RadcmbTypeCharge.Items.Add(RadListDataItem9)
+		Me.RadcmbTypeCharge.Items.Add(RadListDataItem16)
+		Me.RadcmbTypeCharge.Items.Add(RadListDataItem17)
+		Me.RadcmbTypeCharge.Items.Add(RadListDataItem18)
+		Me.RadcmbTypeCharge.Items.Add(RadListDataItem19)
+		Me.RadcmbTypeCharge.Items.Add(RadListDataItem20)
+		Me.RadcmbTypeCharge.Items.Add(RadListDataItem21)
+		Me.RadcmbTypeCharge.Items.Add(RadListDataItem22)
 		Me.RadcmbTypeCharge.Location = New System.Drawing.Point(856, 5)
 		Me.RadcmbTypeCharge.Name = "RadcmbTypeCharge"
-		Me.RadcmbTypeCharge.Size = New System.Drawing.Size(136, 24)
+		Me.RadcmbTypeCharge.Size = New System.Drawing.Size(136, 27)
 		Me.RadcmbTypeCharge.TabIndex = 65
 		'
 		'RadDateTimePickerMonth
 		'
 		Me.RadDateTimePickerMonth.CalendarSize = New System.Drawing.Size(290, 320)
 		Me.RadDateTimePickerMonth.CustomFormat = "yyyy-MM"
+		Me.RadDateTimePickerMonth.Font = New System.Drawing.Font("Segoe UI", 9.75!)
 		Me.RadDateTimePickerMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom
 		Me.RadDateTimePickerMonth.Location = New System.Drawing.Point(534, 5)
 		Me.RadDateTimePickerMonth.Name = "RadDateTimePickerMonth"
 		Me.RadDateTimePickerMonth.NullDate = New Date(2024, 1, 18, 0, 0, 0, 0)
-		Me.RadDateTimePickerMonth.Size = New System.Drawing.Size(117, 24)
+		Me.RadDateTimePickerMonth.Size = New System.Drawing.Size(117, 27)
 		Me.RadDateTimePickerMonth.TabIndex = 46
 		Me.RadDateTimePickerMonth.TabStop = False
 		Me.RadDateTimePickerMonth.Text = "2024-01"
@@ -538,7 +544,7 @@ Partial Class MainForm
 		Me.RadGridViewClassItemsListe.MasterTemplate.AllowRowResize = False
 		Me.RadGridViewClassItemsListe.MasterTemplate.EnableGrouping = False
 		Me.RadGridViewClassItemsListe.MasterTemplate.ShowRowHeaderColumn = False
-		Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition1
+		Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition10
 		Me.RadGridViewClassItemsListe.Name = "RadGridViewClassItemsListe"
 		Me.RadGridViewClassItemsListe.ShowItemToolTips = False
 		Me.RadGridViewClassItemsListe.ShowNoDataText = False
@@ -623,7 +629,7 @@ Partial Class MainForm
 		Me.RadGridViewItems.MasterTemplate.AllowSearchRow = True
 		Me.RadGridViewItems.MasterTemplate.AutoExpandGroups = True
 		Me.RadGridViewItems.MasterTemplate.EnableAlternatingRowColor = True
-		Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition2
+		Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition11
 		Me.RadGridViewItems.Name = "RadGridViewItems"
 		'
 		'
@@ -676,18 +682,169 @@ Partial Class MainForm
 		Me.GroupBox1.TabIndex = 62
 		Me.GroupBox1.TabStop = False
 		'
+		'RadDateTimePickerITEMS_DatePaiement
+		'
+		Me.RadDateTimePickerITEMS_DatePaiement.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadDateTimePickerITEMS_DatePaiement.AutoSize = False
+		Me.RadDateTimePickerITEMS_DatePaiement.CalendarSize = New System.Drawing.Size(290, 320)
+		Me.RadDateTimePickerITEMS_DatePaiement.CustomFormat = "yyyy-MM-dd"
+		Me.RadDateTimePickerITEMS_DatePaiement.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadDateTimePickerITEMS_DatePaiement.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+		Me.RadDateTimePickerITEMS_DatePaiement.Location = New System.Drawing.Point(119, 346)
+		Me.RadDateTimePickerITEMS_DatePaiement.Name = "RadDateTimePickerITEMS_DatePaiement"
+		Me.RadDateTimePickerITEMS_DatePaiement.Size = New System.Drawing.Size(150, 27)
+		Me.RadDateTimePickerITEMS_DatePaiement.TabIndex = 70
+		Me.RadDateTimePickerITEMS_DatePaiement.TabStop = False
+		Me.RadDateTimePickerITEMS_DatePaiement.Text = "2024-01-11"
+		Me.RadDateTimePickerITEMS_DatePaiement.Value = New Date(2024, 1, 11, 0, 0, 0, 0)
+		'
+		'RadDateTimePickerITEMS_LAST_EDIT_DATE
+		'
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.AutoSize = False
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.CalendarSize = New System.Drawing.Size(290, 320)
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.CustomFormat = "yyyy-MM-dd"
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Location = New System.Drawing.Point(119, 318)
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Name = "RadDateTimePickerITEMS_LAST_EDIT_DATE"
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Size = New System.Drawing.Size(150, 27)
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.TabIndex = 70
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.TabStop = False
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Text = "2024-01-11"
+		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Value = New Date(2024, 1, 11, 0, 0, 0, 0)
+		'
+		'RadSpinEditor_ITEMS_INDEX
+		'
+		Me.RadSpinEditor_ITEMS_INDEX.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadSpinEditor_ITEMS_INDEX.AutoSize = False
+		Me.RadSpinEditor_ITEMS_INDEX.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadSpinEditor_ITEMS_INDEX.Location = New System.Drawing.Point(119, 38)
+		Me.RadSpinEditor_ITEMS_INDEX.Name = "RadSpinEditor_ITEMS_INDEX"
+		Me.RadSpinEditor_ITEMS_INDEX.ReadOnly = True
+		Me.RadSpinEditor_ITEMS_INDEX.Size = New System.Drawing.Size(150, 27)
+		Me.RadSpinEditor_ITEMS_INDEX.TabIndex = 69
+		'
+		'RadSpinEditor_INDEX
+		'
+		Me.RadSpinEditor_INDEX.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadSpinEditor_INDEX.AutoSize = False
+		Me.RadSpinEditor_INDEX.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadSpinEditor_INDEX.Location = New System.Drawing.Point(119, 10)
+		Me.RadSpinEditor_INDEX.Name = "RadSpinEditor_INDEX"
+		Me.RadSpinEditor_INDEX.ReadOnly = True
+		Me.RadSpinEditor_INDEX.Size = New System.Drawing.Size(150, 27)
+		Me.RadSpinEditor_INDEX.TabIndex = 68
+		'
+		'RadSpinEditorITEMS_TAXE_VALUE
+		'
+		Me.RadSpinEditorITEMS_TAXE_VALUE.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadSpinEditorITEMS_TAXE_VALUE.AutoSize = False
+		Me.RadSpinEditorITEMS_TAXE_VALUE.DecimalPlaces = 2
+		Me.RadSpinEditorITEMS_TAXE_VALUE.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadSpinEditorITEMS_TAXE_VALUE.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+		Me.RadSpinEditorITEMS_TAXE_VALUE.Location = New System.Drawing.Point(119, 262)
+		Me.RadSpinEditorITEMS_TAXE_VALUE.Name = "RadSpinEditorITEMS_TAXE_VALUE"
+		Me.RadSpinEditorITEMS_TAXE_VALUE.Size = New System.Drawing.Size(150, 27)
+		Me.RadSpinEditorITEMS_TAXE_VALUE.TabIndex = 67
+		Me.RadSpinEditorITEMS_TAXE_VALUE.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
+		'
+		'RadSpinEditor_MTTVA
+		'
+		Me.RadSpinEditor_MTTVA.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadSpinEditor_MTTVA.AutoSize = False
+		Me.RadSpinEditor_MTTVA.DecimalPlaces = 2
+		Me.RadSpinEditor_MTTVA.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadSpinEditor_MTTVA.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+		Me.RadSpinEditor_MTTVA.Location = New System.Drawing.Point(119, 234)
+		Me.RadSpinEditor_MTTVA.Name = "RadSpinEditor_MTTVA"
+		Me.RadSpinEditor_MTTVA.Size = New System.Drawing.Size(150, 27)
+		Me.RadSpinEditor_MTTVA.TabIndex = 67
+		Me.RadSpinEditor_MTTVA.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
+		'
+		'RadSpinEditorITEMS_TAXE
+		'
+		Me.RadSpinEditorITEMS_TAXE.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadSpinEditorITEMS_TAXE.AutoSize = False
+		Me.RadSpinEditorITEMS_TAXE.DecimalPlaces = 2
+		Me.RadSpinEditorITEMS_TAXE.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadSpinEditorITEMS_TAXE.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+		Me.RadSpinEditorITEMS_TAXE.Location = New System.Drawing.Point(119, 206)
+		Me.RadSpinEditorITEMS_TAXE.Name = "RadSpinEditorITEMS_TAXE"
+		Me.RadSpinEditorITEMS_TAXE.NullableValue = New Decimal(New Integer() {2000, 0, 0, 131072})
+		Me.RadSpinEditorITEMS_TAXE.Size = New System.Drawing.Size(150, 27)
+		Me.RadSpinEditorITEMS_TAXE.TabIndex = 66
+		Me.RadSpinEditorITEMS_TAXE.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
+		Me.RadSpinEditorITEMS_TAXE.Value = New Decimal(New Integer() {2000, 0, 0, 131072})
+		'
+		'RadSpinEditorITEMS_UNIT
+		'
+		Me.RadSpinEditorITEMS_UNIT.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadSpinEditorITEMS_UNIT.AutoSize = False
+		Me.RadSpinEditorITEMS_UNIT.DecimalPlaces = 2
+		Me.RadSpinEditorITEMS_UNIT.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadSpinEditorITEMS_UNIT.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+		Me.RadSpinEditorITEMS_UNIT.Location = New System.Drawing.Point(119, 179)
+		Me.RadSpinEditorITEMS_UNIT.Name = "RadSpinEditorITEMS_UNIT"
+		Me.RadSpinEditorITEMS_UNIT.Size = New System.Drawing.Size(150, 27)
+		Me.RadSpinEditorITEMS_UNIT.TabIndex = 65
+		Me.RadSpinEditorITEMS_UNIT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
+		'
+		'RadSpinEditorITEMS_QUANTITY
+		'
+		Me.RadSpinEditorITEMS_QUANTITY.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadSpinEditorITEMS_QUANTITY.AutoSize = False
+		Me.RadSpinEditorITEMS_QUANTITY.DecimalPlaces = 2
+		Me.RadSpinEditorITEMS_QUANTITY.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadSpinEditorITEMS_QUANTITY.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+		Me.RadSpinEditorITEMS_QUANTITY.Location = New System.Drawing.Point(119, 151)
+		Me.RadSpinEditorITEMS_QUANTITY.Name = "RadSpinEditorITEMS_QUANTITY"
+		Me.RadSpinEditorITEMS_QUANTITY.Size = New System.Drawing.Size(150, 27)
+		Me.RadSpinEditorITEMS_QUANTITY.TabIndex = 64
+		Me.RadSpinEditorITEMS_QUANTITY.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
+		'
+		'RadSpinEditorITEMS_MT_PAIEMENT
+		'
+		Me.RadSpinEditorITEMS_MT_PAIEMENT.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadSpinEditorITEMS_MT_PAIEMENT.AutoSize = False
+		Me.RadSpinEditorITEMS_MT_PAIEMENT.DecimalPlaces = 2
+		Me.RadSpinEditorITEMS_MT_PAIEMENT.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		Me.RadSpinEditorITEMS_MT_PAIEMENT.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+		Me.RadSpinEditorITEMS_MT_PAIEMENT.Location = New System.Drawing.Point(119, 402)
+		Me.RadSpinEditorITEMS_MT_PAIEMENT.Name = "RadSpinEditorITEMS_MT_PAIEMENT"
+		Me.RadSpinEditorITEMS_MT_PAIEMENT.Size = New System.Drawing.Size(150, 27)
+		Me.RadSpinEditorITEMS_MT_PAIEMENT.TabIndex = 63
+		Me.RadSpinEditorITEMS_MT_PAIEMENT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
+		'
+		'RadDropDownITEMS_PayeQui
+		'
+		Me.RadDropDownITEMS_PayeQui.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadDropDownITEMS_PayeQui.AutoSize = False
+		Me.RadDropDownITEMS_PayeQui.DropDownAnimationEnabled = True
+		Me.RadDropDownITEMS_PayeQui.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		RadListDataItem5.Text = "O"
+		RadListDataItem5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+		RadListDataItem6.Text = "N"
+		RadListDataItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+		Me.RadDropDownITEMS_PayeQui.Items.Add(RadListDataItem5)
+		Me.RadDropDownITEMS_PayeQui.Items.Add(RadListDataItem6)
+		Me.RadDropDownITEMS_PayeQui.Location = New System.Drawing.Point(119, 374)
+		Me.RadDropDownITEMS_PayeQui.Name = "RadDropDownITEMS_PayeQui"
+		Me.RadDropDownITEMS_PayeQui.Size = New System.Drawing.Size(150, 27)
+		Me.RadDropDownITEMS_PayeQui.TabIndex = 62
+		'
 		'RadDropDownITEMS_CURRENCY
 		'
 		Me.RadDropDownITEMS_CURRENCY.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.RadDropDownITEMS_CURRENCY.AutoSize = False
 		Me.RadDropDownITEMS_CURRENCY.DropDownAnimationEnabled = True
 		Me.RadDropDownITEMS_CURRENCY.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		RadListDataItem12.Text = "EURO"
-		RadListDataItem12.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		RadListDataItem13.Text = "$"
-		RadListDataItem13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		Me.RadDropDownITEMS_CURRENCY.Items.Add(RadListDataItem12)
-		Me.RadDropDownITEMS_CURRENCY.Items.Add(RadListDataItem13)
+		RadListDataItem7.Text = "EURO"
+		RadListDataItem7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+		RadListDataItem8.Text = "$"
+		RadListDataItem8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+		Me.RadDropDownITEMS_CURRENCY.Items.Add(RadListDataItem7)
+		Me.RadDropDownITEMS_CURRENCY.Items.Add(RadListDataItem8)
 		Me.RadDropDownITEMS_CURRENCY.Location = New System.Drawing.Point(119, 290)
 		Me.RadDropDownITEMS_CURRENCY.Name = "RadDropDownITEMS_CURRENCY"
 		Me.RadDropDownITEMS_CURRENCY.Size = New System.Drawing.Size(150, 27)
@@ -923,6 +1080,7 @@ Partial Class MainForm
 		'
 		'paneMain
 		'
+		Me.paneMain.Controls.Add(Me.RadProgressBarExport)
 		Me.paneMain.Controls.Add(Me.GroupBox1)
 		Me.paneMain.Controls.Add(Me.ListBoxItemsParent)
 		Me.paneMain.Controls.Add(Me.RadGridViewClassItemsListe)
@@ -1200,147 +1358,22 @@ Partial Class MainForm
 		Me.RadGridViewProjectName.MasterTemplate.AllowAddNewRow = False
 		Me.RadGridViewProjectName.MasterTemplate.AllowSearchRow = True
 		Me.RadGridViewProjectName.MasterTemplate.ShowRowHeaderColumn = False
-		Me.RadGridViewProjectName.MasterTemplate.ViewDefinition = TableViewDefinition3
+		Me.RadGridViewProjectName.MasterTemplate.ViewDefinition = TableViewDefinition12
 		Me.RadGridViewProjectName.Name = "RadGridViewProjectName"
 		Me.RadGridViewProjectName.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.None
 		Me.RadGridViewProjectName.Size = New System.Drawing.Size(879, 556)
 		Me.RadGridViewProjectName.TabIndex = 1
 		Me.RadGridViewProjectName.ThemeName = "ControlDefault"
 		'
-		'RadDropDownITEMS_PayeQui
+		'RadProgressBarExport
 		'
-		Me.RadDropDownITEMS_PayeQui.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.RadDropDownITEMS_PayeQui.AutoSize = False
-		Me.RadDropDownITEMS_PayeQui.DropDownAnimationEnabled = True
-		Me.RadDropDownITEMS_PayeQui.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		RadListDataItem10.Text = "O"
-		RadListDataItem10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		RadListDataItem11.Text = "N"
-		RadListDataItem11.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		Me.RadDropDownITEMS_PayeQui.Items.Add(RadListDataItem10)
-		Me.RadDropDownITEMS_PayeQui.Items.Add(RadListDataItem11)
-		Me.RadDropDownITEMS_PayeQui.Location = New System.Drawing.Point(119, 374)
-		Me.RadDropDownITEMS_PayeQui.Name = "RadDropDownITEMS_PayeQui"
-		Me.RadDropDownITEMS_PayeQui.Size = New System.Drawing.Size(150, 27)
-		Me.RadDropDownITEMS_PayeQui.TabIndex = 62
-		'
-		'RadSpinEditorITEMS_MT_PAIEMENT
-		'
-		Me.RadSpinEditorITEMS_MT_PAIEMENT.AutoSize = False
-		Me.RadSpinEditorITEMS_MT_PAIEMENT.DecimalPlaces = 2
-		Me.RadSpinEditorITEMS_MT_PAIEMENT.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		Me.RadSpinEditorITEMS_MT_PAIEMENT.Location = New System.Drawing.Point(119, 402)
-		Me.RadSpinEditorITEMS_MT_PAIEMENT.Name = "RadSpinEditorITEMS_MT_PAIEMENT"
-		Me.RadSpinEditorITEMS_MT_PAIEMENT.Size = New System.Drawing.Size(150, 27)
-		Me.RadSpinEditorITEMS_MT_PAIEMENT.TabIndex = 63
-		Me.RadSpinEditorITEMS_MT_PAIEMENT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
-		'
-		'RadSpinEditorITEMS_QUANTITY
-		'
-		Me.RadSpinEditorITEMS_QUANTITY.AutoSize = False
-		Me.RadSpinEditorITEMS_QUANTITY.DecimalPlaces = 2
-		Me.RadSpinEditorITEMS_QUANTITY.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		Me.RadSpinEditorITEMS_QUANTITY.Location = New System.Drawing.Point(119, 151)
-		Me.RadSpinEditorITEMS_QUANTITY.Name = "RadSpinEditorITEMS_QUANTITY"
-		Me.RadSpinEditorITEMS_QUANTITY.Size = New System.Drawing.Size(150, 27)
-		Me.RadSpinEditorITEMS_QUANTITY.TabIndex = 64
-		Me.RadSpinEditorITEMS_QUANTITY.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
-		'
-		'RadSpinEditorITEMS_UNIT
-		'
-		Me.RadSpinEditorITEMS_UNIT.AutoSize = False
-		Me.RadSpinEditorITEMS_UNIT.DecimalPlaces = 2
-		Me.RadSpinEditorITEMS_UNIT.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		Me.RadSpinEditorITEMS_UNIT.Location = New System.Drawing.Point(119, 179)
-		Me.RadSpinEditorITEMS_UNIT.Name = "RadSpinEditorITEMS_UNIT"
-		Me.RadSpinEditorITEMS_UNIT.Size = New System.Drawing.Size(150, 27)
-		Me.RadSpinEditorITEMS_UNIT.TabIndex = 65
-		Me.RadSpinEditorITEMS_UNIT.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
-		'
-		'RadSpinEditorITEMS_TAXE
-		'
-		Me.RadSpinEditorITEMS_TAXE.AutoSize = False
-		Me.RadSpinEditorITEMS_TAXE.DecimalPlaces = 2
-		Me.RadSpinEditorITEMS_TAXE.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		Me.RadSpinEditorITEMS_TAXE.Location = New System.Drawing.Point(119, 206)
-		Me.RadSpinEditorITEMS_TAXE.Name = "RadSpinEditorITEMS_TAXE"
-		Me.RadSpinEditorITEMS_TAXE.NullableValue = New Decimal(New Integer() {2000, 0, 0, 131072})
-		Me.RadSpinEditorITEMS_TAXE.Size = New System.Drawing.Size(150, 27)
-		Me.RadSpinEditorITEMS_TAXE.TabIndex = 66
-		Me.RadSpinEditorITEMS_TAXE.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
-		Me.RadSpinEditorITEMS_TAXE.Value = New Decimal(New Integer() {2000, 0, 0, 131072})
-		'
-		'RadSpinEditor_MTTVA
-		'
-		Me.RadSpinEditor_MTTVA.AutoSize = False
-		Me.RadSpinEditor_MTTVA.DecimalPlaces = 2
-		Me.RadSpinEditor_MTTVA.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		Me.RadSpinEditor_MTTVA.Location = New System.Drawing.Point(119, 234)
-		Me.RadSpinEditor_MTTVA.Name = "RadSpinEditor_MTTVA"
-		Me.RadSpinEditor_MTTVA.Size = New System.Drawing.Size(150, 27)
-		Me.RadSpinEditor_MTTVA.TabIndex = 67
-		Me.RadSpinEditor_MTTVA.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
-		'
-		'RadSpinEditorITEMS_TAXE_VALUE
-		'
-		Me.RadSpinEditorITEMS_TAXE_VALUE.AutoSize = False
-		Me.RadSpinEditorITEMS_TAXE_VALUE.DecimalPlaces = 2
-		Me.RadSpinEditorITEMS_TAXE_VALUE.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		Me.RadSpinEditorITEMS_TAXE_VALUE.Location = New System.Drawing.Point(119, 262)
-		Me.RadSpinEditorITEMS_TAXE_VALUE.Name = "RadSpinEditorITEMS_TAXE_VALUE"
-		Me.RadSpinEditorITEMS_TAXE_VALUE.Size = New System.Drawing.Size(150, 27)
-		Me.RadSpinEditorITEMS_TAXE_VALUE.TabIndex = 67
-		Me.RadSpinEditorITEMS_TAXE_VALUE.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
-		'
-		'RadSpinEditor_INDEX
-		'
-		Me.RadSpinEditor_INDEX.AutoSize = False
-		Me.RadSpinEditor_INDEX.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		Me.RadSpinEditor_INDEX.Location = New System.Drawing.Point(119, 10)
-		Me.RadSpinEditor_INDEX.Name = "RadSpinEditor_INDEX"
-		Me.RadSpinEditor_INDEX.ReadOnly = True
-		Me.RadSpinEditor_INDEX.Size = New System.Drawing.Size(150, 27)
-		Me.RadSpinEditor_INDEX.TabIndex = 68
-		'
-		'RadSpinEditor_ITEMS_INDEX
-		'
-		Me.RadSpinEditor_ITEMS_INDEX.AutoSize = False
-		Me.RadSpinEditor_ITEMS_INDEX.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		Me.RadSpinEditor_ITEMS_INDEX.Location = New System.Drawing.Point(119, 38)
-		Me.RadSpinEditor_ITEMS_INDEX.Name = "RadSpinEditor_ITEMS_INDEX"
-		Me.RadSpinEditor_ITEMS_INDEX.ReadOnly = True
-		Me.RadSpinEditor_ITEMS_INDEX.Size = New System.Drawing.Size(150, 27)
-		Me.RadSpinEditor_ITEMS_INDEX.TabIndex = 69
-		'
-		'RadDateTimePickerITEMS_LAST_EDIT_DATE
-		'
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.AutoSize = False
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.CalendarSize = New System.Drawing.Size(290, 320)
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.CustomFormat = "yyyy-MM-dd"
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Location = New System.Drawing.Point(119, 318)
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Name = "RadDateTimePickerITEMS_LAST_EDIT_DATE"
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Size = New System.Drawing.Size(150, 27)
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.TabIndex = 70
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.TabStop = False
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Text = "2024-01-11"
-		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE.Value = New Date(2024, 1, 11, 0, 0, 0, 0)
-		'
-		'RadDateTimePickerITEMS_DatePaiement
-		'
-		Me.RadDateTimePickerITEMS_DatePaiement.AutoSize = False
-		Me.RadDateTimePickerITEMS_DatePaiement.CalendarSize = New System.Drawing.Size(290, 320)
-		Me.RadDateTimePickerITEMS_DatePaiement.CustomFormat = "yyyy-MM-dd"
-		Me.RadDateTimePickerITEMS_DatePaiement.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		Me.RadDateTimePickerITEMS_DatePaiement.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-		Me.RadDateTimePickerITEMS_DatePaiement.Location = New System.Drawing.Point(119, 346)
-		Me.RadDateTimePickerITEMS_DatePaiement.Name = "RadDateTimePickerITEMS_DatePaiement"
-		Me.RadDateTimePickerITEMS_DatePaiement.Size = New System.Drawing.Size(150, 27)
-		Me.RadDateTimePickerITEMS_DatePaiement.TabIndex = 70
-		Me.RadDateTimePickerITEMS_DatePaiement.TabStop = False
-		Me.RadDateTimePickerITEMS_DatePaiement.Text = "2024-01-11"
-		Me.RadDateTimePickerITEMS_DatePaiement.Value = New Date(2024, 1, 11, 0, 0, 0, 0)
+		Me.RadProgressBarExport.Location = New System.Drawing.Point(1087, 571)
+		Me.RadProgressBarExport.Name = "RadProgressBarExport"
+		Me.RadProgressBarExport.ShowProgressIndicators = True
+		Me.RadProgressBarExport.Size = New System.Drawing.Size(130, 24)
+		Me.RadProgressBarExport.TabIndex = 64
+		Me.RadProgressBarExport.Text = "0 %"
+		Me.RadProgressBarExport.Visible = False
 		'
 		'MainForm
 		'
@@ -1386,6 +1419,17 @@ Partial Class MainForm
 		CType(Me.RadGridViewItems, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBox1.ResumeLayout(False)
 		Me.GroupBox1.PerformLayout()
+		CType(Me.RadDateTimePickerITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadDateTimePickerITEMS_LAST_EDIT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadSpinEditor_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadSpinEditor_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadSpinEditorITEMS_TAXE_VALUE, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadSpinEditor_MTTVA, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadSpinEditorITEMS_TAXE, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadSpinEditorITEMS_UNIT, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadSpinEditorITEMS_QUANTITY, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadSpinEditorITEMS_MT_PAIEMENT, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadDropDownITEMS_PayeQui, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadDropDownITEMS_CURRENCY, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadTextBoxITEMS_PAYE_QUI, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1435,17 +1479,7 @@ Partial Class MainForm
 		CType(Me.RadTextBoxProjectDataPath, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadDropDownITEMS_PayeQui, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorITEMS_MT_PAIEMENT, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorITEMS_QUANTITY, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorITEMS_UNIT, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorITEMS_TAXE, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditor_MTTVA, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditorITEMS_TAXE_VALUE, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditor_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadSpinEditor_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadDateTimePickerITEMS_LAST_EDIT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadDateTimePickerITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadProgressBarExport, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -1539,4 +1573,5 @@ Partial Class MainForm
 	Friend WithEvents RadSpinEditor_ITEMS_INDEX As RadSpinEditor
 	Friend WithEvents RadDateTimePickerITEMS_LAST_EDIT_DATE As RadDateTimePicker
 	Friend WithEvents RadDateTimePickerITEMS_DatePaiement As RadDateTimePicker
+	Friend WithEvents RadProgressBarExport As RadProgressBar
 End Class

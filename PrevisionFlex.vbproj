@@ -105,6 +105,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\TelerikCommon\v4.0_2019.1.115.40__5bb2a467cbec794e\TelerikCommon.dll</HintPath>
     </Reference>
+    <Reference Include="TelerikExport, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
