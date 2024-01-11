@@ -234,7 +234,7 @@ Public Class MainForm
 		End Try
 	End Sub
 
-	Private Sub RadGridViewItems_CommandCellClick(sender As Object, e As GridViewCellEventArgs) Handles RadGridViewItems.CellClick
+	Private Sub RadGridViewItems_SelectionChanged(sender As Object, e As EventArgs) Handles RadGridViewItems.SelectionChanged
 		ListBoxItemsParent.Items.Clear()
 		ListBoxItemsParent.Items.Add("Click")
 		Dim iindex As Integer = 0
@@ -265,6 +265,10 @@ Public Class MainForm
 		display_ProjectName_Flash(ProjectName, "Project")
 		calculTotalLine(RadGridViewItems.CurrentRow.Index)
 		RadLabelElementMessage.Text = RadGridViewItems.CurrentRow.Cells(2).Value.ToString + " " + Str(RadGridViewItems.CurrentRow.Cells(1).Value)
+	End Sub
+
+	Private Sub RadGridViewItems_CommandCellClick(sender As Object, e As GridViewCellEventArgs) Handles RadGridViewItems.CellClick
+
 
 	End Sub
 
@@ -274,21 +278,21 @@ Public Class MainForm
 		For i = 0 To col - 1
 			ListBoxItemsParent.Items.Add(RadGridViewItems.Columns(i).Name + " " + RadGridViewItems.CurrentRow.Cells(i).Value.ToString)
 		Next
-		RadSpinEditor_INDEX.Text = RadGridViewItems.CurrentRow.Cells(0).Value.ToString
-		RadSpinEditor_ITEMS_INDEX.Text = RadGridViewItems.CurrentRow.Cells(1).Value.ToString
+		RadSpinEditor_INDEX.Value = RadGridViewItems.CurrentRow.Cells(0).Value
+		RadSpinEditor_ITEMS_INDEX.Value = RadGridViewItems.CurrentRow.Cells(1).Value
 		RadTextBoxITEMS_CODE.Text = RadGridViewItems.CurrentRow.Cells(2).Value.ToString
 		RadTextBoxITEMS_NAME.Text = RadGridViewItems.CurrentRow.Cells(3).Value.ToString
 		RadTextBoxITEMS_PARENT.Text = RadGridViewItems.CurrentRow.Cells(4).Value.ToString
-		RadSpinEditorITEMS_QUANTITY.Text = RadGridViewItems.CurrentRow.Cells(5).Value.ToString
-		RadSpinEditorITEMS_UNIT.Text = RadGridViewItems.CurrentRow.Cells(6).Value.ToString
-		RadSpinEditorITEMS_TAXE.Text = RadGridViewItems.CurrentRow.Cells(7).Value.ToString
-		RadSpinEditorITEMS_TAXE_VALUE.Text = RadGridViewItems.CurrentRow.Cells(8).Value.ToString
+		RadSpinEditorITEMS_QUANTITY.Value = RadGridViewItems.CurrentRow.Cells(5).Value
+		RadSpinEditorITEMS_UNIT.Value = RadGridViewItems.CurrentRow.Cells(6).Value
+		RadSpinEditorITEMS_TAXE.Value = RadGridViewItems.CurrentRow.Cells(7).Value
+		RadSpinEditorITEMS_TAXE_VALUE.Value = RadGridViewItems.CurrentRow.Cells(8).Value
 		RadDropDownITEMS_CURRENCY.Text = RadGridViewItems.CurrentRow.Cells(9).Value.ToString
 		RadDateTimePickerITEMS_LAST_EDIT_DATE.Value = Convert.ToDateTime(RadGridViewItems.CurrentRow.Cells(10).Value.ToString)
-		RadSpinEditor_MTTVA.Text = RadGridViewItems.CurrentRow.Cells(12).Value.ToString
+		RadSpinEditor_MTTVA.Value = RadGridViewItems.CurrentRow.Cells(12).Value
 		RadDateTimePickerITEMS_DatePaiement.Value = Convert.ToDateTime(RadGridViewItems.CurrentRow.Cells(13).Value.ToString)
 		RadDropDownITEMS_PayeQui.Text = RadGridViewItems.CurrentRow.Cells(14).Value.ToString
-		RadSpinEditorITEMS_MT_PAIEMENT.Text = RadGridViewItems.CurrentRow.Cells(15).Value.ToString
+		RadSpinEditorITEMS_MT_PAIEMENT.Value = RadGridViewItems.CurrentRow.Cells(15).Value
 		RadTextBoxITEMS_PAYE_QUI.Text = RadGridViewItems.CurrentRow.Cells(16).Value.ToString
 	End Sub
 	Private Sub calculTotalLine(ByVal iindex As Integer)
@@ -565,28 +569,22 @@ Public Class MainForm
 
 	Private Sub ButtonGridviewUpdate_Click(sender As Object, e As EventArgs) Handles ButtonGridviewUpdate.Click
 		Dim irow As Integer = -1
-		Dim iindex As Integer = Val(RadSpinEditor_INDEX.Text)
+		Dim iindex As Integer = RadSpinEditor_INDEX.Value
 		If iindex < 1 Then
 			RadLabelElementMessage.Text = "Erreur, le code INDEX est erroné"
 			Exit Sub
 		End If
 
 		Dim DateFacture As String = ConvertDateMysql4(RadDateTimePickerITEMS_LAST_EDIT_DATE.Value)
-		Dim mot As String() = RadSpinEditorITEMS_TAXE.Text.Split(New Char() {"%"c})
-		Dim TauxTVA = "0"
-		If mot.Count > 0 Then
-			TauxTVA = mot(0).ToString
-		End If
-
-		Dim mysql = "Update items SET ITEMS_INDEX = " + RadSpinEditor_ITEMS_INDEX.Text
+		Dim mysql = "Update items SET ITEMS_INDEX = " + RadSpinEditor_ITEMS_INDEX.Value.ToString
 		'      mysql += ", items_projet_INDEX = " + RadTextBox_ITEMS_INDEX.Text
 		mysql += ", ITEMS_CODE = '" + RadTextBoxITEMS_CODE.Text + "'"
 		mysql += ", ITEMS_NAME = '" + RadTextBoxITEMS_NAME.Text + "'"
 		mysql += ", ITEMS_PARENT = '" + RadTextBoxITEMS_PARENT.Text + "'"
-		mysql += ", ITEMS_QUANTITY = " + RadSpinEditorITEMS_QUANTITY.Text
-		mysql += ", ITEMS_UNIT = " + RadSpinEditorITEMS_UNIT.Text
-		mysql += ", ITEMS_TAXE = " + mot(0).ToString
-		mysql += ", ITEMS_TAXE_VALUE = " + RadSpinEditorITEMS_TAXE_VALUE.Text
+		mysql += ", ITEMS_QUANTITY = " + RadSpinEditorITEMS_QUANTITY.Value.ToString
+		mysql += ", ITEMS_UNIT = " + RadSpinEditorITEMS_UNIT.Value.ToString
+		mysql += ", ITEMS_TAXE = " + RadSpinEditorITEMS_TAXE.Value.ToString
+		mysql += ", ITEMS_TAXE_VALUE = " + RadSpinEditorITEMS_TAXE_VALUE.Value.ToString
 		mysql += ", ITEMS_CURRENCY = '" + RadDropDownITEMS_CURRENCY.Text + "'"
 		mysql += ", ITEMS_LAST_EDIT_DATE = " + DateFacture
 		mysql += " Where `INDEX` = " + iindex.ToString
@@ -634,14 +632,14 @@ Public Class MainForm
 		Return idx
 	End Function
 	Private Sub ButtonGridviewDelete_Click(sender As Object, e As EventArgs) Handles ButtonGridviewDelete.Click
-		Dim iindex As Integer = Val(RadSpinEditor_INDEX.Text)
+		Dim iindex As Integer = RadSpinEditor_INDEX.Value
 		If iindex < 1 Then
 			RadLabelElementMessage.Text = "Erreur, le code INDEX est erroné"
 			Exit Sub
 		End If
 		Dim mysql As String
 		Dim basename As String = "items"
-		mysql = "DELETE FROM " + basename + " where `INDEX` = " + RadSpinEditor_INDEX.Text
+		mysql = "DELETE FROM " + basename + " where `INDEX` = " + RadSpinEditor_INDEX.Value.ToString
 		RadLabelElementMessage.Text = mysql
 
 		Try
@@ -667,25 +665,25 @@ Public Class MainForm
 	Private Sub InsertItemToDataBase(ByVal Items_Index As Integer)
 
 		Dim mysql As String
-		RadSpinEditor_ITEMS_INDEX.Text = Str(FindLastItemCount() + 1)
+		RadSpinEditor_ITEMS_INDEX.Value = FindLastItemCount() + 1
 		Dim Date1, Date2 As String
 		Date1 = ConvertDateMysql4(RadDateTimePickerITEMS_LAST_EDIT_DATE.Value)
 		Date2 = ConvertDateMysql4(RadDateTimePickerITEMS_DatePaiement.Value)
 		Dim ValueString As String
-		ValueString = RadSpinEditor_ITEMS_INDEX.Text + "," + ProjectIndexGlobal.ToString + ",'"
+		ValueString = RadSpinEditor_ITEMS_INDEX.Value.ToString + "," + ProjectIndexGlobal.ToString + ",'"
 		ValueString += RadTextBoxITEMS_CODE.Text + "','"
 		ValueString += RadTextBoxITEMS_NAME.Text + "','"
 		ValueString += RadTextBoxITEMS_PARENT.Text + "',"
-		ValueString += RadSpinEditorITEMS_QUANTITY.Text + ","
-		ValueString += RadSpinEditorITEMS_UNIT.Text + ","
-		ValueString += RadSpinEditorITEMS_TAXE.Text + ","
-		ValueString += RadSpinEditorITEMS_TAXE_VALUE.Text + ",'"
+		ValueString += RadSpinEditorITEMS_QUANTITY.Value.ToString + ","
+		ValueString += RadSpinEditorITEMS_UNIT.Value.ToString + ","
+		ValueString += RadSpinEditorITEMS_TAXE.Value.ToString + ","
+		ValueString += RadSpinEditorITEMS_TAXE_VALUE.Value.ToString + ",'"
 		ValueString += RadDropDownITEMS_CURRENCY.Text + "','"
 		ValueString += Date1 + "','" 'RadTextBoxITEMS_LAST_EDIT_DATE.Text + "','"
 		ValueString += Date2 + "','" 'RadTextBoxITEMS_DatePaiement.Text + "','"
 		ValueString += RadDropDownITEMS_PayeQui.Text + "','"
 		ValueString += RadTextBoxITEMS_PAYE_QUI.Text + "',"
-		ValueString += RadSpinEditorITEMS_MT_PAIEMENT.Text
+		ValueString += RadSpinEditorITEMS_MT_PAIEMENT.Value.ToString
 
 		mysql = "insert into items (items_index,items_projet_INDEX,ITEMS_CODE,ITEMS_NAME,ITEMS_PARENT,ITEMS_QUANTITY,ITEMS_UNIT,ITEMS_TAXE,"
 		mysql += "ITEMS_TAXE_VALUE,ITEMS_CURRENCY,ITEMS_LAST_EDIT_DATE,items_date_paiement,items_paiement_ok,items_paye_qui,items_mt_payé) "
