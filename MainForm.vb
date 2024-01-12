@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 Imports Telerik.WinControls.Export
 Public Class MainForm
 	Public ProjectIndexGlobal As Integer = 0
-	Public Global_Type_Charge As String = "ALL"
+	Public Global_Type_Charge As String = "TOUS"
 	Dim ArrayPictureLogo(10) As PictureBox
 	Dim ArrayItemsCODE(10) As Label
 	Dim ArrayItemsName(10) As Label
@@ -449,7 +449,8 @@ Public Class MainForm
 		Dim basename As String = "ITEMS"
 		Dim Critaire As String = ""
 		Select Case Global_Type_Charge
-			Case "ALL"
+			Case "TOUS"
+				Critaire = ""
 			Case "HORS ACHATS"
 				Critaire = " and items_code != 'ACHATS' "
 			Case "HORS SALAIRES"
@@ -824,6 +825,7 @@ Public Class MainForm
 
 	Private Sub RadcmbTypeCharge_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles RadcmbTypeCharge.SelectedIndexChanged
 		Global_Type_Charge = UCase(RadcmbTypeCharge.SelectedItem.Text)
+		GetItemsFromDB(ProjectIndexGlobal)
 	End Sub
 	Private Sub RadBtnExportExcel_Click(sender As Object, e As EventArgs) Handles RadBtnExportExcel.Click
 		Dim spreadExporter As GridViewSpreadExport = New GridViewSpreadExport(RadGridViewItems)
