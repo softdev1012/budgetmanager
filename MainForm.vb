@@ -827,6 +827,12 @@ Public Class MainForm
 		Global_Type_Charge = UCase(RadcmbTypeCharge.SelectedItem.Text)
 		GetItemsFromDB(ProjectIndexGlobal)
 	End Sub
+
+	Private Sub RadCheckBoxFF_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles RadCheckBoxFF.ToggleStateChanged
+		If ProjectIndexGlobal > 0 Then
+			GetItemsFromDB(ProjectIndexGlobal)
+		End If
+	End Sub
 	Private Sub RadBtnExportExcel_Click(sender As Object, e As EventArgs) Handles RadBtnExportExcel.Click
 		Dim spreadExporter As GridViewSpreadExport = New GridViewSpreadExport(RadGridViewItems)
 		spreadExporter.ExportChildRowsGrouped = True

@@ -37,13 +37,13 @@ Partial Class MainForm
 		Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
 		Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+		Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+		Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Dim RadListDataItem14 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Dim RadListDataItem15 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-		Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-		Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
 		Me.RadPanelTodaysAppointments = New Telerik.WinControls.UI.RadPanel()
 		Me.RadLabelMTPaye = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelAllTotalOfItems = New Telerik.WinControls.UI.RadLabel()
@@ -72,6 +72,8 @@ Partial Class MainForm
 		Me.RadButtonGroupage = New Telerik.WinControls.UI.RadButton()
 		Me.RadGridViewItems = New Telerik.WinControls.UI.RadGridView()
 		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+		Me.RadLabel28 = New Telerik.WinControls.UI.RadLabel()
+		Me.RadDropDownITEMS_FF = New Telerik.WinControls.UI.RadDropDownList()
 		Me.RadDateTimePickerITEMS_DatePaiement = New Telerik.WinControls.UI.RadDateTimePicker()
 		Me.RadDateTimePickerITEMS_LAST_EDIT_DATE = New Telerik.WinControls.UI.RadDateTimePicker()
 		Me.RadSpinEditor_ITEMS_INDEX = New Telerik.WinControls.UI.RadSpinEditor()
@@ -135,8 +137,6 @@ Partial Class MainForm
 		Me.RadTextBoxProjectDataPath = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadGridViewProjectName = New Telerik.WinControls.UI.RadGridView()
 		Me.Office2019GrayTheme1 = New Telerik.WinControls.Themes.Office2019GrayTheme()
-		Me.RadDropDownITEMS_FF = New Telerik.WinControls.UI.RadDropDownList()
-		Me.RadLabel28 = New Telerik.WinControls.UI.RadLabel()
 		CType(Me.RadPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.RadPanelTodaysAppointments.SuspendLayout()
 		CType(Me.RadLabelMTPaye, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,6 +164,8 @@ Partial Class MainForm
 		CType(Me.RadGridViewItems, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewItems.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBox1.SuspendLayout()
+		CType(Me.RadLabel28, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadDropDownITEMS_FF, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadDateTimePickerITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadDateTimePickerITEMS_LAST_EDIT_DATE, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadSpinEditor_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -224,8 +226,6 @@ Partial Class MainForm
 		CType(Me.RadTextBoxProjectDataPath, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadDropDownITEMS_FF, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadLabel28, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'RadPanelTodaysAppointments
@@ -699,6 +699,35 @@ Partial Class MainForm
 		Me.GroupBox1.Size = New System.Drawing.Size(277, 540)
 		Me.GroupBox1.TabIndex = 62
 		Me.GroupBox1.TabStop = False
+		'
+		'RadLabel28
+		'
+		Me.RadLabel28.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.RadLabel28.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
+		Me.RadLabel28.Location = New System.Drawing.Point(57, 459)
+		Me.RadLabel28.Name = "RadLabel28"
+		Me.RadLabel28.Size = New System.Drawing.Size(58, 21)
+		Me.RadLabel28.TabIndex = 62
+		Me.RadLabel28.Text = "inclu FF :"
+		Me.RadLabel28.TextAlignment = System.Drawing.ContentAlignment.TopLeft
+		'
+		'RadDropDownITEMS_FF
+		'
+		Me.RadDropDownITEMS_FF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RadDropDownITEMS_FF.AutoSize = False
+		Me.RadDropDownITEMS_FF.DropDownAnimationEnabled = True
+		Me.RadDropDownITEMS_FF.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+		RadListDataItem10.Text = "O"
+		RadListDataItem10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+		RadListDataItem11.Text = "N"
+		RadListDataItem11.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+		Me.RadDropDownITEMS_FF.Items.Add(RadListDataItem10)
+		Me.RadDropDownITEMS_FF.Items.Add(RadListDataItem11)
+		Me.RadDropDownITEMS_FF.Location = New System.Drawing.Point(119, 456)
+		Me.RadDropDownITEMS_FF.Name = "RadDropDownITEMS_FF"
+		Me.RadDropDownITEMS_FF.Size = New System.Drawing.Size(150, 27)
+		Me.RadDropDownITEMS_FF.TabIndex = 71
+		Me.RadDropDownITEMS_FF.ThemeName = "Office2019Gray"
 		'
 		'RadDateTimePickerITEMS_DatePaiement
 		'
@@ -1418,35 +1447,6 @@ Partial Class MainForm
 		Me.RadGridViewProjectName.TabIndex = 1
 		Me.RadGridViewProjectName.ThemeName = "Office2019Gray"
 		'
-		'RadDropDownITEMS_FF
-		'
-		Me.RadDropDownITEMS_FF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.RadDropDownITEMS_FF.AutoSize = False
-		Me.RadDropDownITEMS_FF.DropDownAnimationEnabled = True
-		Me.RadDropDownITEMS_FF.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-		RadListDataItem10.Text = "O"
-		RadListDataItem10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		RadListDataItem11.Text = "N"
-		RadListDataItem11.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		Me.RadDropDownITEMS_FF.Items.Add(RadListDataItem10)
-		Me.RadDropDownITEMS_FF.Items.Add(RadListDataItem11)
-		Me.RadDropDownITEMS_FF.Location = New System.Drawing.Point(119, 456)
-		Me.RadDropDownITEMS_FF.Name = "RadDropDownITEMS_FF"
-		Me.RadDropDownITEMS_FF.Size = New System.Drawing.Size(150, 27)
-		Me.RadDropDownITEMS_FF.TabIndex = 71
-		Me.RadDropDownITEMS_FF.ThemeName = "Office2019Gray"
-		'
-		'RadLabel28
-		'
-		Me.RadLabel28.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.RadLabel28.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-		Me.RadLabel28.Location = New System.Drawing.Point(57, 459)
-		Me.RadLabel28.Name = "RadLabel28"
-		Me.RadLabel28.Size = New System.Drawing.Size(58, 21)
-		Me.RadLabel28.TabIndex = 62
-		Me.RadLabel28.Text = "inclu FF :"
-		Me.RadLabel28.TextAlignment = System.Drawing.ContentAlignment.TopLeft
-		'
 		'MainForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1491,6 +1491,8 @@ Partial Class MainForm
 		CType(Me.RadGridViewItems, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBox1.ResumeLayout(False)
 		Me.GroupBox1.PerformLayout()
+		CType(Me.RadLabel28, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadDropDownITEMS_FF, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadDateTimePickerITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadDateTimePickerITEMS_LAST_EDIT_DATE, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadSpinEditor_ITEMS_INDEX, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1552,8 +1554,6 @@ Partial Class MainForm
 		CType(Me.RadTextBoxProjectDataPath, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadDropDownITEMS_FF, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadLabel28, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
