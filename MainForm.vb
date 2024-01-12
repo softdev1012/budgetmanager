@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports MySql.Data.MySqlClient
 Imports Telerik.WinControls.Export
+Imports System.Drawing.Printing
 Public Class MainForm
 	Public ProjectIndexGlobal As Integer = 0
 	Public Global_Type_Charge As String = "TOUS"
@@ -28,8 +29,16 @@ Public Class MainForm
 						}
 	Private BackColorGray = Color.FromArgb(46, 64, 62)
 	Dim IndexClicked As Integer = 0
-
 	Private dtProject As DataTable = New DataTable()
+	Private prtDoc As PrintDocument
+
+	Private leftMargin As Integer
+	Private rightMargin As Integer
+	Private topMargin As Integer
+	Private bottomMargin As Integer
+	Private invoiceWidth As Integer
+	Private invoiceHeight As Integer
+
 
 	Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -62,6 +71,9 @@ Public Class MainForm
 
 
 		AddHandler RadGridViewItems.GroupSummaryEvaluate, AddressOf RadGridViewItems_GroupSummaryEvaluate
+
+		prtDoc = New PrintDocument
+		AddHandler prtDoc.PrintPage, AddressOf prtDoc_PrintPage
 
 		paneMain.Location = New Point(60, 0)
 		paneMain.Visible = True
@@ -464,7 +476,9 @@ Public Class MainForm
 			Case "LOYER ET AUTRES"
 				Critaire = " and items_code = 'LOYERS' "
 			Case "TAXES ET IMPOTS"
+				Critaire = " and items_code = 'TAXE-IMPOTS' "
 			Case "FRAIS BANCAIRES"
+				Critaire = " and items_code = 'BANQUES' "
 		End Select
 		Dim FF As Boolean
 		FF = RadCheckBoxFF.Checked
@@ -745,36 +759,21 @@ Public Class MainForm
 			RadLabelElementMessage.Text = "Groupe vide"
 			Exit Sub
 		End If
-		'ListBox1.Items.Clear()
-
 		Dim temp
-
-		'temp = e.Group.GroupRow.Index
 		Try
 			temp = e.Group.Key(0).ToString
-			'temp = e.Group.Item(e.Group.GroupRow.Index).ToString
 			ListBoxItemsParent.Items.Add(temp + Now.ToLongTimeString)
 		Catch ex As Exception
 			RadLabelElementMessage.Text = "erreur" + ex.Message
 			Exit Sub
 		End Try
 
-		'If e.SummaryItem.Name = "ITEMS_PARENT" Then
-
-		Dim TotalGroup As Integer = 0
+		Dim TotalGroup As Double = 0.0
 		For Each row As GridViewRowInfo In e.Group
-			'If row.Cells("ITEMS_PARENT").Value.ToString() = "GARDEN" Then
-			'If row.Cells("ITEMS_PARENT").Value.ToString() = "GARDEN" Then 'items_price_total
 			TotalGroup += row.Cells("items_price_total").Value
-			'                End If
-			ListBoxItemsParent.Items.Add([String].Format("{0} a {1} Items, valeur : {2} ", e.Value, ItemsCount, Format(TotalGroup, "0€")))
+			ListBoxItemsParent.Items.Add([String].Format("{0} a {1} Items, valeur : {2} ", e.Value, ItemsCount, Format(TotalGroup, "0.00€")))
 		Next
-		e.FormatString = [String].Format("{0} a {1} Items, valeur : {2} ", e.Value, ItemsCount, Format(TotalGroup, "0€"))
-		'e.Group(0).IsExpanded = True
-		'Me.RadGridViewItems.Groups(0).Expand()
-		'Else
-		'RadLabelElementMessage.Text = "No Parent " + e.FormatString + Str(ItemsCount) + "Summ : " + e.SummaryItem.Name
-		'End If
+		e.FormatString = [String].Format("{0} a {1} Items, valeur : {2} ", e.Value, ItemsCount, Format(TotalGroup, "0.00€"))
 		RadLabelElementMessage.Text = e.FormatString + Str(ItemsCount) + "Summ : " + e.SummaryItem.Name
 		'https://docs.telerik.com/devtools/winforms/controls/gridview/grouping/custom-grouping
 	End Sub
@@ -828,6 +827,12 @@ Public Class MainForm
 		GetItemsFromDB(ProjectIndexGlobal)
 	End Sub
 
+	Private Sub RadDateTimePickerMonth_ValueChanged(sender As Object, e As EventArgs) Handles RadDateTimePickerMonth.ValueChanged
+		If ProjectIndexGlobal > 0 Then
+			GetItemsFromDB(ProjectIndexGlobal)
+		End If
+	End Sub
+
 	Private Sub RadCheckBoxFF_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles RadCheckBoxFF.ToggleStateChanged
 		If ProjectIndexGlobal > 0 Then
 			GetItemsFromDB(ProjectIndexGlobal)
@@ -875,6 +880,195 @@ Public Class MainForm
 		RadMessageBox.Show("Data Exported Successfully!")
 	End Sub
 
+
+	Private Sub prtDoc_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs)
+		leftMargin = Convert.ToInt32(e.MarginBounds.Left)
+		rightMargin = Convert.ToInt32(e.MarginBounds.Right)
+		topMargin = Convert.ToInt32(e.MarginBounds.Top)
+		bottomMargin = Convert.ToInt32(e.MarginBounds.Bottom)
+		invoiceWidth = Convert.ToInt32(e.MarginBounds.Width)
+		invoiceHeight = Convert.ToInt32(e.MarginBounds.Height)
+
+		'SetInvoiceHead(e.Graphics)
+		'SetOrderData(e.Graphics)
+		'SetInvoiceData(e.Graphics)
+	End Sub
+
+	Private Sub ReadInvoiceData()
+
+	End Sub
+
+	'Private Sub SetInvoiceHead(ByVal g As Graphics)
+	'	ReadInvoiceHead()
+
+	'	CurrentY = topMargin
+	'	CurrentX = leftMargin
+	'	Dim ImageHeight As Integer = 0
+
+	'	' Draw Invoice image:
+	'	If (System.IO.File.Exists(InvImage)) Then
+	'		Dim oInvImage As Bitmap = New Bitmap(InvImage)
+	'		' Set Image Left to center Image:
+	'		Dim xImage As Integer = CurrentX + (invoiceWidth - oInvImage.Width) / 2
+	'		ImageHeight = oInvImage.Height ' Get Image Height
+	'		g.DrawImage(oInvImage, xImage, CurrentY)
+	'	End If
+
+	'	InvTitleHeight = Convert.ToInt32(InvTitleFont.GetHeight(g))
+	'	InvSubTitleHeight = Convert.ToInt32(InvSubTitleFont.GetHeight(g))
+	'	' Get Titles Length:
+	'	Dim lenInvTitle As Integer = Convert.ToInt32(g.MeasureString(InvTitle, InvTitleFont).Width)
+	'	Dim lenInvSubTitle1 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle1, InvSubTitleFont).Width)
+	'	Dim lenInvSubTitle2 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle2, InvSubTitleFont).Width)
+	'	Dim lenInvSubTitle3 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle3, InvSubTitleFont).Width)
+	'	' Set Titles Left:
+	'	Dim xInvTitle As Integer = CurrentX + (invoiceWidth - lenInvTitle) / 2
+	'	Dim xInvSubTitle1 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle1) / 2
+	'	Dim xInvSubTitle2 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle2) / 2
+	'	Dim xInvSubTitle3 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle3) / 2
+
+	'	' Draw Invoice Head:
+	'	If (InvTitle <> "") Then
+	'		CurrentY = CurrentY + ImageHeight
+	'		g.DrawString(InvTitle, InvTitleFont, BlueBrush, xInvTitle, CurrentY)
+	'	End If
+	'	If (InvSubTitle1 <> "") Then
+	'		CurrentY = CurrentY + InvTitleHeight
+	'		g.DrawString(InvSubTitle1, InvSubTitleFont, BlueBrush, xInvSubTitle1, CurrentY)
+	'	End If
+	'	If (InvSubTitle2 <> "") Then
+	'		CurrentY = CurrentY + InvSubTitleHeight
+	'		g.DrawString(InvSubTitle2, InvSubTitleFont, BlueBrush, xInvSubTitle2, CurrentY)
+	'	End If
+	'	If (InvSubTitle3 <> "") Then
+	'		CurrentY = CurrentY + InvSubTitleHeight
+	'		g.DrawString(InvSubTitle3, InvSubTitleFont, BlueBrush, xInvSubTitle3, CurrentY)
+	'	End If
+
+	'	' Draw line:
+	'	CurrentY = CurrentY + InvSubTitleHeight + 8
+	'	g.DrawLine(New Pen(Brushes.Black, 2), CurrentX, CurrentY, rightMargin, CurrentY)
+	'End Sub
+
+	'Private Sub SetOrderData(ByVal g As Graphics)
+	'	' Set Company Name, City, Salesperson, Order ID and Order Date
+	'	Dim FieldValue As String = ""
+	'	InvoiceFontHeight = Convert.ToInt32(InvoiceFont.GetHeight(g))
+
+	'	' Set Company Name:
+	'	CurrentX = leftMargin
+	'	CurrentY = CurrentY + 8
+	'	FieldValue = "Company Name: " & CustomerName
+	'	g.DrawString(FieldValue, InvoiceFont, BlackBrush, CurrentX, CurrentY)
+	'	' Set City:
+	'	CurrentX = CurrentX + Convert.ToInt32(g.MeasureString(FieldValue, InvoiceFont).Width) + 16
+	'	FieldValue = "City: " & CustomerCity
+	'	g.DrawString(FieldValue, InvoiceFont, BlackBrush, CurrentX, CurrentY)
+	'	' Set Salesperson:
+	'	CurrentX = leftMargin
+	'	CurrentY = CurrentY + InvoiceFontHeight
+	'	FieldValue = "Salesperson: " & SellerName
+	'	g.DrawString(FieldValue, InvoiceFont, BlackBrush, CurrentX, CurrentY)
+	'	' Set Order ID:
+	'	CurrentX = leftMargin
+	'	CurrentY = CurrentY + InvoiceFontHeight
+	'	FieldValue = "Order ID: " & SaleID
+	'	g.DrawString(FieldValue, InvoiceFont, BlackBrush, CurrentX, CurrentY)
+	'	' Set Order Date:
+	'	CurrentX = CurrentX + Convert.ToInt32(g.MeasureString(FieldValue, InvoiceFont).Width) + 16
+	'	FieldValue = "Order Date: " & SaleDate
+	'	g.DrawString(FieldValue, InvoiceFont, BlackBrush, CurrentX, CurrentY)
+
+	'	' Draw line:
+	'	CurrentY = CurrentY + InvoiceFontHeight + 8
+	'	g.DrawLine(New Pen(Brushes.Black), leftMargin, CurrentY, rightMargin, CurrentY)
+	'End Sub
+
+	'Private Sub SetInvoiceData(ByVal g As Graphics, ByVal e As System.Drawing.Printing.PrintPageEventArgs)
+	'	' Set Invoice Table:
+	'	Dim FieldValue As String = ""
+	'	Dim CurrentRecord = 0
+	'	Dim RecordsPerPage = 20
+	'	Dim Amount As Decimal = 0
+	'	Dim StopReading As Boolean = False
+
+	'	InvoiceFontHeight = Convert.ToInt32(InvoiceFont.GetHeight(g))
+
+	'	' Set Table Head:
+	'	Dim xProductID As Integer = leftMargin
+	'	CurrentY = CurrentY + InvoiceFontHeight
+	'	g.DrawString("Product ID", InvoiceFont, BlueBrush, xProductID, CurrentY)
+
+	'	Dim xProductName As Integer = xProductID + Convert.ToInt32(g.MeasureString("Product ID", InvoiceFont).Width) + 4
+	'	g.DrawString("Product Name", InvoiceFont, BlueBrush, xProductName, CurrentY)
+
+	'	Dim xUnitPrice As Integer = xProductName + Convert.ToInt32(g.MeasureString("Product Name", InvoiceFont).Width) + 72
+	'	g.DrawString("Unit Price", InvoiceFont, BlueBrush, xUnitPrice, CurrentY)
+
+	'	Dim xQuantity As Integer = xUnitPrice + Convert.ToInt32(g.MeasureString("Unit Price", InvoiceFont).Width) + 4
+	'	g.DrawString("Quantity", InvoiceFont, BlueBrush, xQuantity, CurrentY)
+
+	'	Dim xDiscount As Integer = xQuantity + Convert.ToInt32(g.MeasureString("Quantity", InvoiceFont).Width) + 4
+	'	g.DrawString("Discount", InvoiceFont, BlueBrush, xDiscount, CurrentY)
+
+	'	AmountPosition = xDiscount + Convert.ToInt32(g.MeasureString("Discount", InvoiceFont).Width) + 4
+	'	g.DrawString("Extended Price", InvoiceFont, BlueBrush, AmountPosition, CurrentY)
+
+	'	' Set Invoice Table:
+	'	CurrentY = CurrentY + InvoiceFontHeight + 8
+
+	'	While (CurrentRecord < RecordsPerPage)
+	'		FieldValue = rdrInvoice("ProductID").ToString()
+	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xProductID, CurrentY)
+	'		FieldValue = rdrInvoice("ProductName").ToString()
+	'		' if Length of (Product Name) > 20, Draw 20 character only
+	'		If (FieldValue.Length > 20) Then
+	'			FieldValue = FieldValue.Remove(20, FieldValue.Length - 20)
+	'		End If
+	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xProductName, CurrentY)
+	'		FieldValue = String.Format("{0:0.00}", rdrInvoice("UnitPrice"))
+	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xUnitPrice, CurrentY)
+	'		FieldValue = rdrInvoice("Quantity").ToString()
+	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xQuantity, CurrentY)
+	'		FieldValue = String.Format("{0:0.00%}", rdrInvoice("Discount"))
+	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xDiscount, CurrentY)
+
+	'		Amount = Convert.ToDecimal(rdrInvoice("ExtendedPrice"))
+	'		' Format Extended Price and Align to Right:
+	'		FieldValue = String.Format("{0:0.00}", Amount)
+	'		Dim xAmount As Integer = AmountPosition + Convert.ToInt32(g.MeasureString("Extended Price", InvoiceFont).Width)
+	'		xAmount = xAmount - Convert.ToInt32(g.MeasureString(FieldValue, InvoiceFont).Width)
+	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xAmount, CurrentY)
+	'		CurrentY = CurrentY + InvoiceFontHeight
+
+	'		If (Not rdrInvoice.Read()) Then
+	'			StopReading = True
+	'			Exit While
+	'		End If
+
+	'		CurrentRecord += 1
+	'	End While
+
+	'	If (CurrentRecord < RecordsPerPage) Then
+	'		e.HasMorePages = False
+	'	Else
+	'		e.HasMorePages = True
+	'	End If
+
+	'	If (StopReading) Then
+	'		rdrInvoice.Close()
+	'		cnn.Close()
+	'		SetInvoiceTotal(g)
+	'	End If
+
+	'	g.Dispose()
+	'End Sub
+
+
+
+	Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+		prtDoc.Print()
+	End Sub
 
 
 
