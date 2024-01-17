@@ -40,6 +40,11 @@ Public Class MainForm
 	Private invoiceHeight As Integer
 	Private CurX As Integer
 	Private CurY As Integer
+	Private InvFontHeaderNormal As New Font("Segoe UI", 10, FontStyle.Regular)
+	Private InvFontHeaderBold As New Font("Segoe UI", 10, FontStyle.Bold)
+	Private InvFontTextNormal As New Font("Segoe UI", 8.25, FontStyle.Regular)
+	Private InvFontTextBold As New Font("Segoe UI", 8.25, FontStyle.Bold)
+	Private InvFontTextItalic As New Font("Segoe UI", 8.25, FontStyle.Italic)
 
 
 	Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -884,177 +889,143 @@ Public Class MainForm
 		End If
 	End Sub
 	Private Sub prtDoc_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs)
-		leftMargin = Convert.ToInt32(e.MarginBounds.Left)
-		rightMargin = Convert.ToInt32(e.MarginBounds.Right)
+		leftMargin = 50
+		rightMargin = Convert.ToInt32(e.MarginBounds.Right) + 50
 		topMargin = Convert.ToInt32(e.MarginBounds.Top)
 		bottomMargin = Convert.ToInt32(e.MarginBounds.Bottom)
-		invoiceWidth = Convert.ToInt32(e.MarginBounds.Width)
+		invoiceWidth = Convert.ToInt32(e.MarginBounds.Width) + 100
 		invoiceHeight = Convert.ToInt32(e.MarginBounds.Height)
-
 		SetInvoiceHead(e.Graphics)
-		'SetOrderData(e.Graphics)
-		'SetInvoiceData(e.Graphics)
+		SetOrderData(e.Graphics)
 	End Sub
 
 	Private Sub SetInvoiceHead(ByVal g As Graphics)
-		CurX = topMargin
-		CurY = leftMargin
-		Dim ImageHeight As Integer = 0
-
+		CurX = leftMargin
+		CurY = topMargin
 		' Draw Invoice image:
 		Dim xImage As Integer = CurX + (invoiceWidth - My.Resources.Invoice_Header.Width) / 2
-		ImageHeight = My.Resources.Invoice_Header.Height ' Get Image Height
 		g.DrawImage(My.Resources.Invoice_Header, xImage, CurY)
-
-		'InvTitleHeight = Convert.ToInt32(InvTitleFont.GetHeight(g))
-		'InvSubTitleHeight = Convert.ToInt32(InvSubTitleFont.GetHeight(g))
-		'' Get Titles Length:
-		'Dim lenInvTitle As Integer = Convert.ToInt32(g.MeasureString(InvTitle, InvTitleFont).Width)
-		'Dim lenInvSubTitle1 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle1, InvSubTitleFont).Width)
-		'Dim lenInvSubTitle2 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle2, InvSubTitleFont).Width)
-		'Dim lenInvSubTitle3 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle3, InvSubTitleFont).Width)
-		'' Set Titles Left:
-		'Dim xInvTitle As Integer = CurrentX + (invoiceWidth - lenInvTitle) / 2
-		'Dim xInvSubTitle1 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle1) / 2
-		'Dim xInvSubTitle2 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle2) / 2
-		'Dim xInvSubTitle3 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle3) / 2
-
-		'' Draw Invoice Head:
-		'If (InvTitle <> "") Then
-		'	CurrentY = CurrentY + ImageHeight
-		'	g.DrawString(InvTitle, InvTitleFont, BlueBrush, xInvTitle, CurrentY)
-		'End If
-		'If (InvSubTitle1 <> "") Then
-		'	CurrentY = CurrentY + InvTitleHeight
-		'	g.DrawString(InvSubTitle1, InvSubTitleFont, BlueBrush, xInvSubTitle1, CurrentY)
-		'End If
-		'If (InvSubTitle2 <> "") Then
-		'	CurrentY = CurrentY + InvSubTitleHeight
-		'	g.DrawString(InvSubTitle2, InvSubTitleFont, BlueBrush, xInvSubTitle2, CurrentY)
-		'End If
-		'If (InvSubTitle3 <> "") Then
-		'	CurrentY = CurrentY + InvSubTitleHeight
-		'	g.DrawString(InvSubTitle3, InvSubTitleFont, BlueBrush, xInvSubTitle3, CurrentY)
-		'End If
-
-		'' Draw line:
-		'CurrentY = CurrentY + InvSubTitleHeight + 8
-		'g.DrawLine(New Pen(Brushes.Black, 2), CurrentX, CurrentY, rightMargin, CurrentY)
+		CurY += My.Resources.Invoice_Header.Height + 40
 	End Sub
 
-	'Private Sub SetOrderData(ByVal g As Graphics)
-	'	' Set Company Name, City, Salesperson, Order ID and Order Date
-	'	Dim FieldValue As String = ""
-	'	InvoiceFontHeight = Convert.ToInt32(InvoiceFont.GetHeight(g))
+	Private Sub SetOrderData(ByVal g As Graphics)
 
-	'	' Set Company Name:
-	'	CurrentX = leftMargin
-	'	CurrentY = CurrentY + 8
-	'	FieldValue = "Company Name: " & CustomerName
-	'	g.DrawString(FieldValue, InvoiceFont, BlackBrush, CurrentX, CurrentY)
-	'	' Set City:
-	'	CurrentX = CurrentX + Convert.ToInt32(g.MeasureString(FieldValue, InvoiceFont).Width) + 16
-	'	FieldValue = "City: " & CustomerCity
-	'	g.DrawString(FieldValue, InvoiceFont, BlackBrush, CurrentX, CurrentY)
-	'	' Set Salesperson:
-	'	CurrentX = leftMargin
-	'	CurrentY = CurrentY + InvoiceFontHeight
-	'	FieldValue = "Salesperson: " & SellerName
-	'	g.DrawString(FieldValue, InvoiceFont, BlackBrush, CurrentX, CurrentY)
-	'	' Set Order ID:
-	'	CurrentX = leftMargin
-	'	CurrentY = CurrentY + InvoiceFontHeight
-	'	FieldValue = "Order ID: " & SaleID
-	'	g.DrawString(FieldValue, InvoiceFont, BlackBrush, CurrentX, CurrentY)
-	'	' Set Order Date:
-	'	CurrentX = CurrentX + Convert.ToInt32(g.MeasureString(FieldValue, InvoiceFont).Width) + 16
-	'	FieldValue = "Order Date: " & SaleDate
-	'	g.DrawString(FieldValue, InvoiceFont, BlackBrush, CurrentX, CurrentY)
+		Dim payDate = RadDateTimePickerITEMS_DatePaiement.Text
+		Dim itemID = RadSpinEditor_ITEMS_INDEX.Value
+		Dim num = RadSpinEditorITEMS_QUANTITY.Value
+		Dim unit = RadSpinEditorITEMS_UNIT.Value
+		Dim tax = RadSpinEditorITEMS_TAXE.Value
+		Dim total = RadSpinEditor_MTTVA.Value
+		Dim mttotal = RadSpinEditorITEMS_TAXE_VALUE.Value
 
-	'	' Draw line:
-	'	CurrentY = CurrentY + InvoiceFontHeight + 8
-	'	g.DrawLine(New Pen(Brushes.Black), leftMargin, CurrentY, rightMargin, CurrentY)
-	'End Sub
 
-	'Private Sub SetInvoiceData(ByVal g As Graphics, ByVal e As System.Drawing.Printing.PrintPageEventArgs)
-	'	' Set Invoice Table:
-	'	Dim FieldValue As String = ""
-	'	Dim CurrentRecord = 0
-	'	Dim RecordsPerPage = 20
-	'	Dim Amount As Decimal = 0
-	'	Dim StopReading As Boolean = False
 
-	'	InvoiceFontHeight = Convert.ToInt32(InvoiceFont.GetHeight(g))
+		g.FillRectangle(Brushes.LightGray, New Rectangle(New Point(CurX, CurY), New Size(400, 30)))
+		g.DrawRectangle(New Pen(Brushes.Black, 1), New Rectangle(New Point(CurX, CurY), New Size(400, 150)))
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX, CurY + 30, CurX + 400, CurY + 30)
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX + 230, CurY, CurX + 230, CurY + 30)
 
-	'	' Set Table Head:
-	'	Dim xProductID As Integer = leftMargin
-	'	CurrentY = CurrentY + InvoiceFontHeight
-	'	g.DrawString("Product ID", InvoiceFont, BlueBrush, xProductID, CurrentY)
+		CurX += 10
+		CurY += 6
 
-	'	Dim xProductName As Integer = xProductID + Convert.ToInt32(g.MeasureString("Product ID", InvoiceFont).Width) + 4
-	'	g.DrawString("Product Name", InvoiceFont, BlueBrush, xProductName, CurrentY)
+		g.DrawString("FACTURE N°", InvFontHeaderNormal, Brushes.Black, CurX, CurY)
+		g.DrawString("FA23-4631", InvFontHeaderBold, Brushes.Black, CurX + 100, CurY)
+		g.DrawString("Date :", InvFontHeaderNormal, Brushes.Black, CurX + 240, CurY)
+		g.DrawString(payDate, InvFontHeaderBold, Brushes.Black, CurX + 285, CurY)
 
-	'	Dim xUnitPrice As Integer = xProductName + Convert.ToInt32(g.MeasureString("Product Name", InvoiceFont).Width) + 72
-	'	g.DrawString("Unit Price", InvoiceFont, BlueBrush, xUnitPrice, CurrentY)
+		CurY += 30
+		g.DrawString("Kapeco Oise", InvFontTextBold, Brushes.Black, CurX, CurY)
+		CurY += 14
+		g.DrawString("16 allée des cottages, 60500 chantilly", InvFontTextBold, Brushes.Black, CurX, CurY)
+		CurY += 14
+		g.DrawString("Tél. : +33 (0)6 60 44 65 95 / E-mail : franck@kapeco.com", InvFontTextBold, Brushes.Black, CurX, CurY)
+		CurY += 20
+		g.DrawString("SIRET : ....................804 991 180 00014", InvFontTextNormal, Brushes.Black, CurX, CurY)
+		CurY += 14
+		g.DrawString("Police d’assurance : ...GAN Assurance IARD A16954 141.614.933", InvFontTextNormal, Brushes.Black, CurX, CurY)
+		CurY += 14
+		g.DrawString("Code APE :................7120B", InvFontTextNormal, Brushes.Black, CurX, CurY)
+		CurY += 14
+		g.DrawString("Capital social : 1000 euros - N°TVA : FR 54 804991180", InvFontTextNormal, Brushes.Black, CurX, CurY)
+		CurY += 30
+		g.DrawString("Facture correspondant au dossier :", InvFontTextItalic, Brushes.Black, CurX + 20, CurY)
+		CurX -= 10
+		CurY += 25
+		g.FillRectangle(Brushes.LightGray, New Rectangle(New Point(CurX, CurY), New Size(rightMargin - CurX, 30)))
+		g.DrawRectangle(New Pen(Brushes.Black, 1), New Rectangle(New Point(CurX, CurY), New Size(rightMargin - CurX, 70)))
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX, CurY + 30, rightMargin, CurY + 30)
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX + 200, CurY, CurX + 200, CurY + 70)
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX + 350, CurY, CurX + 350, CurY + 70)
 
-	'	Dim xQuantity As Integer = xUnitPrice + Convert.ToInt32(g.MeasureString("Unit Price", InvoiceFont).Width) + 4
-	'	g.DrawString("Quantity", InvoiceFont, BlueBrush, xQuantity, CurrentY)
+		CurX += 10
+		CurY += 6
+		g.DrawString("Référence", InvFontHeaderBold, Brushes.Black, CurX, CurY)
+		g.DrawString("Effectuée le", InvFontHeaderBold, Brushes.Black, CurX + 200, CurY)
+		g.DrawString("Immeuble bâti visité", InvFontHeaderBold, Brushes.Black, CurX + 350, CurY)
 
-	'	Dim xDiscount As Integer = xQuantity + Convert.ToInt32(g.MeasureString("Quantity", InvoiceFont).Width) + 4
-	'	g.DrawString("Discount", InvoiceFont, BlueBrush, xDiscount, CurrentY)
+		CurY += 35
 
-	'	AmountPosition = xDiscount + Convert.ToInt32(g.MeasureString("Discount", InvoiceFont).Width) + 4
-	'	g.DrawString("Extended Price", InvoiceFont, BlueBrush, AmountPosition, CurrentY)
+		g.DrawString("23/IMO/54544", InvFontTextItalic, Brushes.Black, CurX, CurY)
+		g.DrawString(payDate, InvFontTextItalic, Brushes.Black, CurX + 200, CurY)
 
-	'	' Set Invoice Table:
-	'	CurrentY = CurrentY + InvoiceFontHeight + 8
+		CurY -= 8
+		g.DrawString("Panda Optic", InvFontTextItalic, Brushes.Black, CurX + 350, CurY)
+		CurY += 14
+		g.DrawString("2 route de Paris 77340 PONTAULT-COMBAULT", InvFontTextItalic, Brushes.Black, CurX + 350, CurY)
 
-	'	While (CurrentRecord < RecordsPerPage)
-	'		FieldValue = rdrInvoice("ProductID").ToString()
-	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xProductID, CurrentY)
-	'		FieldValue = rdrInvoice("ProductName").ToString()
-	'		' if Length of (Product Name) > 20, Draw 20 character only
-	'		If (FieldValue.Length > 20) Then
-	'			FieldValue = FieldValue.Remove(20, FieldValue.Length - 20)
-	'		End If
-	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xProductName, CurrentY)
-	'		FieldValue = String.Format("{0:0.00}", rdrInvoice("UnitPrice"))
-	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xUnitPrice, CurrentY)
-	'		FieldValue = rdrInvoice("Quantity").ToString()
-	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xQuantity, CurrentY)
-	'		FieldValue = String.Format("{0:0.00%}", rdrInvoice("Discount"))
-	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xDiscount, CurrentY)
+		CurY += 30
+		g.DrawString("Prestations réalisées : Métrage (Loi Carrez), Diag. Handicapé", InvFontTextItalic, Brushes.Black, CurX + 20, CurY)
 
-	'		Amount = Convert.ToDecimal(rdrInvoice("ExtendedPrice"))
-	'		' Format Extended Price and Align to Right:
-	'		FieldValue = String.Format("{0:0.00}", Amount)
-	'		Dim xAmount As Integer = AmountPosition + Convert.ToInt32(g.MeasureString("Extended Price", InvoiceFont).Width)
-	'		xAmount = xAmount - Convert.ToInt32(g.MeasureString(FieldValue, InvoiceFont).Width)
-	'		g.DrawString(FieldValue, InvoiceFont, BlackBrush, xAmount, CurrentY)
-	'		CurrentY = CurrentY + InvoiceFontHeight
+		CurX -= 10
+		CurY += 25
+		g.FillRectangle(Brushes.LightGray, New Rectangle(New Point(CurX, CurY), New Size(rightMargin - CurX, 30)))
+		g.DrawRectangle(New Pen(Brushes.Black, 1), New Rectangle(New Point(CurX, CurY), New Size(rightMargin - CurX, 60)))
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX, CurY + 30, rightMargin, CurY + 30)
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX + 90, CurY, CurX + 90, CurY + 60)
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX + 400, CurY, CurX + 400, CurY + 60)
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX + 470, CurY, CurX + 470, CurY + 60)
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX + 530, CurY, CurX + 530, CurY + 60)
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX + 590, CurY, CurX + 590, CurY + 60)
+		g.DrawLine(New Pen(Brushes.Black, 1), CurX + 670, CurY, CurX + 670, CurY + 60)
 
-	'		If (Not rdrInvoice.Read()) Then
-	'			StopReading = True
-	'			Exit While
-	'		End If
+		CurX += 10
+		CurY += 6
+		g.DrawString("Référence", InvFontHeaderBold, Brushes.Black, CurX, CurY)
+		g.DrawString("Désignation", InvFontHeaderBold, Brushes.Black, CurX + 90, CurY)
+		g.DrawString("PU € HT", InvFontHeaderBold, Brushes.Black, CurX + 398, CurY)
+		g.DrawString("Quant.", InvFontHeaderBold, Brushes.Black, CurX + 528, CurY)
+		CurY -= 8
+		g.DrawString("Taux", InvFontHeaderBold, Brushes.Black, CurX + 473, CurY)
+		g.DrawString("Montant", InvFontHeaderBold, Brushes.Black, CurX + 590, CurY)
+		g.DrawString("Montant", InvFontHeaderBold, Brushes.Black, CurX + 670, CurY)
+		CurY += 14
+		g.DrawString("TVA", InvFontHeaderBold, Brushes.Black, CurX + 476, CurY)
+		g.DrawString("€ HT", InvFontHeaderBold, Brushes.Black, CurX + 598, CurY)
+		g.DrawString("€ TTC", InvFontHeaderBold, Brushes.Black, CurX + 678, CurY)
 
-	'		CurrentRecord += 1
-	'	End While
+		CurY += 24
+		g.DrawString(itemID.ToString, InvFontTextNormal, Brushes.Black, CurX, CurY)
+		g.DrawString("Pack Diagnostic d'accessibilité handicapés + Ad'ap", InvFontTextNormal, Brushes.Black, CurX + 90, CurY)
+		g.DrawString(unit.ToString, InvFontTextNormal, Brushes.Black, CurX + 400, CurY)
+		g.DrawString(tax.ToString, InvFontTextNormal, Brushes.Black, CurX + 470, CurY)
+		g.DrawString(num.ToString, InvFontTextNormal, Brushes.Black, CurX + 530, CurY)
+		g.DrawString(total.ToString, InvFontTextNormal, Brushes.Black, CurX + 590, CurY)
+		g.DrawString(mttotal.ToString, InvFontTextNormal, Brushes.Black, CurX + 670, CurY)
 
-	'	If (CurrentRecord < RecordsPerPage) Then
-	'		e.HasMorePages = False
-	'	Else
-	'		e.HasMorePages = True
-	'	End If
-
-	'	If (StopReading) Then
-	'		rdrInvoice.Close()
-	'		cnn.Close()
-	'		SetInvoiceTotal(g)
-	'	End If
-
-	'	g.Dispose()
-	'End Sub
+		CurY += 50
+		CurX += 20
+		g.DrawString("Pour les professionnels : Pénalités de retard (taux annuel) : 9.00% - Une indemnité forfaitaire de 40€ pour frais de", InvFontTextNormal, Brushes.Black, CurX, CurY)
+		CurY += 16
+		g.DrawString("recouvrement sera appliquée en cas de retard de paiement conformément aux articles L441-3 et L441-6 du code de", InvFontTextNormal, Brushes.Black, CurX, CurY)
+		CurY += 16
+		g.DrawString("commerce - Pas d'escompte pour paiement anticipé – Date d’échéance : 13/12/2023", InvFontTextNormal, Brushes.Black, CurX, CurY)
+		CurY += 16
+		g.DrawString("Pour les consommateurs : Vous avez la possibilité de recourir à un médiateur de la consommation dans les conditions", InvFontTextNormal, Brushes.Black, CurX, CurY)
+		CurY += 16
+		g.DrawString("prévues au titre 1er du livre VI du Code de la consommation et dont les coordonnées sont disponibles dans nos conditions", InvFontTextNormal, Brushes.Black, CurX, CurY)
+		CurY += 16
+		g.DrawString("générales de vente jointes avec cette facture.", InvFontTextNormal, Brushes.Black, CurX, CurY)
+	End Sub
 
 
 
