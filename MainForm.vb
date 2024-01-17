@@ -38,6 +38,8 @@ Public Class MainForm
 	Private bottomMargin As Integer
 	Private invoiceWidth As Integer
 	Private invoiceHeight As Integer
+	Private CurX As Integer
+	Private CurY As Integer
 
 
 	Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -587,8 +589,7 @@ Public Class MainForm
 		End Try
 	End Sub
 
-
-	Private Sub ButtonGridviewUpdate_Click(sender As Object, e As EventArgs) Handles ButtonGridviewUpdate.Click
+	Private Sub RadButtonItemUpdate_Click(sender As Object, e As EventArgs) Handles RadButtonItemUpdate.Click
 		Dim irow As Integer = -1
 		Dim iindex As Integer = RadSpinEditor_INDEX.Value
 		If iindex < 1 Then
@@ -635,7 +636,6 @@ Public Class MainForm
 			RadLabelElementMessage.Text = ex.Message
 		End Try
 	End Sub
-
 	Private Function ConvertDateMysql4(ByVal DateOrigine As Date) As String
 		Dim ConvertedDate = DateOrigine.ToString("yyyy-MM-dd")
 		'Dim dyear = DateOrigine.ToString("yyyy")
@@ -663,7 +663,8 @@ Public Class MainForm
 		End Try
 		Return idx
 	End Function
-	Private Sub ButtonGridviewDelete_Click(sender As Object, e As EventArgs) Handles ButtonGridviewDelete.Click
+
+	Private Sub RadButtonItemDelete_Click(sender As Object, e As EventArgs) Handles RadButtonItemDelete.Click
 		Dim iindex As Integer = RadSpinEditor_INDEX.Value
 		If iindex < 1 Then
 			RadLabelElementMessage.Text = "Erreur, le code INDEX est erroné"
@@ -694,18 +695,14 @@ Public Class MainForm
 			RadLabelElementMessage.Text = ex.Message
 		End Try
 	End Sub
-	Private Sub ButtonGridviewNew_Click(sender As Object, e As EventArgs) Handles ButtonGridviewNew.Click
+
+	Private Sub RadButtonItemNew_Click(sender As Object, e As EventArgs) Handles RadButtonItemNew.Click
 		'        RadDataLayout1 = New RadDataLayout
-		Dim result As DialogResult = MessageBox.Show("Do you want to create invoice?", "Create Invoice", MessageBoxButtons.YesNo)
+		Dim result As DialogResult = MessageBox.Show("Are you sure to create new item?", "Create Item", MessageBoxButtons.YesNo)
 		If result = DialogResult.Yes Then
-			createInvoice()
+			InsertItemToDataBase()
+			GetItemsFromDB(ProjectIndexGlobal)
 		End If
-		InsertItemToDataBase()
-		GetItemsFromDB(ProjectIndexGlobal)
-	End Sub
-
-	Private Sub createInvoice()
-
 	End Sub
 
 	Private Sub InsertItemToDataBase()
@@ -880,7 +877,12 @@ Public Class MainForm
 		RadMessageBox.Show("Data Exported Successfully!")
 	End Sub
 
-
+	Private Sub RadButtonItemInvoice_Click(sender As Object, e As EventArgs) Handles RadButtonItemInvoice.Click
+		Dim result As DialogResult = MessageBox.Show("Are you sure to save invoice as pdf?", "Create Invoice", MessageBoxButtons.YesNo)
+		If result = DialogResult.Yes Then
+			prtDoc.Print()
+		End If
+	End Sub
 	Private Sub prtDoc_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs)
 		leftMargin = Convert.ToInt32(e.MarginBounds.Left)
 		rightMargin = Convert.ToInt32(e.MarginBounds.Right)
@@ -889,66 +891,56 @@ Public Class MainForm
 		invoiceWidth = Convert.ToInt32(e.MarginBounds.Width)
 		invoiceHeight = Convert.ToInt32(e.MarginBounds.Height)
 
-		'SetInvoiceHead(e.Graphics)
+		SetInvoiceHead(e.Graphics)
 		'SetOrderData(e.Graphics)
 		'SetInvoiceData(e.Graphics)
 	End Sub
 
-	Private Sub ReadInvoiceData()
+	Private Sub SetInvoiceHead(ByVal g As Graphics)
+		CurX = topMargin
+		CurY = leftMargin
+		Dim ImageHeight As Integer = 0
 
+		' Draw Invoice image:
+		Dim xImage As Integer = CurX + (invoiceWidth - My.Resources.Invoice_Header.Width) / 2
+		ImageHeight = My.Resources.Invoice_Header.Height ' Get Image Height
+		g.DrawImage(My.Resources.Invoice_Header, xImage, CurY)
+
+		'InvTitleHeight = Convert.ToInt32(InvTitleFont.GetHeight(g))
+		'InvSubTitleHeight = Convert.ToInt32(InvSubTitleFont.GetHeight(g))
+		'' Get Titles Length:
+		'Dim lenInvTitle As Integer = Convert.ToInt32(g.MeasureString(InvTitle, InvTitleFont).Width)
+		'Dim lenInvSubTitle1 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle1, InvSubTitleFont).Width)
+		'Dim lenInvSubTitle2 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle2, InvSubTitleFont).Width)
+		'Dim lenInvSubTitle3 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle3, InvSubTitleFont).Width)
+		'' Set Titles Left:
+		'Dim xInvTitle As Integer = CurrentX + (invoiceWidth - lenInvTitle) / 2
+		'Dim xInvSubTitle1 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle1) / 2
+		'Dim xInvSubTitle2 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle2) / 2
+		'Dim xInvSubTitle3 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle3) / 2
+
+		'' Draw Invoice Head:
+		'If (InvTitle <> "") Then
+		'	CurrentY = CurrentY + ImageHeight
+		'	g.DrawString(InvTitle, InvTitleFont, BlueBrush, xInvTitle, CurrentY)
+		'End If
+		'If (InvSubTitle1 <> "") Then
+		'	CurrentY = CurrentY + InvTitleHeight
+		'	g.DrawString(InvSubTitle1, InvSubTitleFont, BlueBrush, xInvSubTitle1, CurrentY)
+		'End If
+		'If (InvSubTitle2 <> "") Then
+		'	CurrentY = CurrentY + InvSubTitleHeight
+		'	g.DrawString(InvSubTitle2, InvSubTitleFont, BlueBrush, xInvSubTitle2, CurrentY)
+		'End If
+		'If (InvSubTitle3 <> "") Then
+		'	CurrentY = CurrentY + InvSubTitleHeight
+		'	g.DrawString(InvSubTitle3, InvSubTitleFont, BlueBrush, xInvSubTitle3, CurrentY)
+		'End If
+
+		'' Draw line:
+		'CurrentY = CurrentY + InvSubTitleHeight + 8
+		'g.DrawLine(New Pen(Brushes.Black, 2), CurrentX, CurrentY, rightMargin, CurrentY)
 	End Sub
-
-	'Private Sub SetInvoiceHead(ByVal g As Graphics)
-	'	ReadInvoiceHead()
-
-	'	CurrentY = topMargin
-	'	CurrentX = leftMargin
-	'	Dim ImageHeight As Integer = 0
-
-	'	' Draw Invoice image:
-	'	If (System.IO.File.Exists(InvImage)) Then
-	'		Dim oInvImage As Bitmap = New Bitmap(InvImage)
-	'		' Set Image Left to center Image:
-	'		Dim xImage As Integer = CurrentX + (invoiceWidth - oInvImage.Width) / 2
-	'		ImageHeight = oInvImage.Height ' Get Image Height
-	'		g.DrawImage(oInvImage, xImage, CurrentY)
-	'	End If
-
-	'	InvTitleHeight = Convert.ToInt32(InvTitleFont.GetHeight(g))
-	'	InvSubTitleHeight = Convert.ToInt32(InvSubTitleFont.GetHeight(g))
-	'	' Get Titles Length:
-	'	Dim lenInvTitle As Integer = Convert.ToInt32(g.MeasureString(InvTitle, InvTitleFont).Width)
-	'	Dim lenInvSubTitle1 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle1, InvSubTitleFont).Width)
-	'	Dim lenInvSubTitle2 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle2, InvSubTitleFont).Width)
-	'	Dim lenInvSubTitle3 As Integer = Convert.ToInt32(g.MeasureString(InvSubTitle3, InvSubTitleFont).Width)
-	'	' Set Titles Left:
-	'	Dim xInvTitle As Integer = CurrentX + (invoiceWidth - lenInvTitle) / 2
-	'	Dim xInvSubTitle1 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle1) / 2
-	'	Dim xInvSubTitle2 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle2) / 2
-	'	Dim xInvSubTitle3 As Integer = CurrentX + (invoiceWidth - lenInvSubTitle3) / 2
-
-	'	' Draw Invoice Head:
-	'	If (InvTitle <> "") Then
-	'		CurrentY = CurrentY + ImageHeight
-	'		g.DrawString(InvTitle, InvTitleFont, BlueBrush, xInvTitle, CurrentY)
-	'	End If
-	'	If (InvSubTitle1 <> "") Then
-	'		CurrentY = CurrentY + InvTitleHeight
-	'		g.DrawString(InvSubTitle1, InvSubTitleFont, BlueBrush, xInvSubTitle1, CurrentY)
-	'	End If
-	'	If (InvSubTitle2 <> "") Then
-	'		CurrentY = CurrentY + InvSubTitleHeight
-	'		g.DrawString(InvSubTitle2, InvSubTitleFont, BlueBrush, xInvSubTitle2, CurrentY)
-	'	End If
-	'	If (InvSubTitle3 <> "") Then
-	'		CurrentY = CurrentY + InvSubTitleHeight
-	'		g.DrawString(InvSubTitle3, InvSubTitleFont, BlueBrush, xInvSubTitle3, CurrentY)
-	'	End If
-
-	'	' Draw line:
-	'	CurrentY = CurrentY + InvSubTitleHeight + 8
-	'	g.DrawLine(New Pen(Brushes.Black, 2), CurrentX, CurrentY, rightMargin, CurrentY)
-	'End Sub
 
 	'Private Sub SetOrderData(ByVal g As Graphics)
 	'	' Set Company Name, City, Salesperson, Order ID and Order Date
@@ -1066,9 +1058,7 @@ Public Class MainForm
 
 
 
-	Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
-		prtDoc.Print()
-	End Sub
+
 
 
 

@@ -338,5 +338,8 @@
   <ItemGroup>
     <None Include="bussy-100.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Invoice_Header.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

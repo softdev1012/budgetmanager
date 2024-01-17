@@ -62,16 +62,12 @@ Partial Class MainForm
 		Me.RadLabelGlobalCathegory = New Telerik.WinControls.UI.RadLabel()
 		Me.RadLabelProjectNameGlobal = New Telerik.WinControls.UI.RadLabel()
 		Me.RadCheckBoxFF = New Telerik.WinControls.UI.RadCheckBox()
-		Me.ButtonGridviewUpdate = New System.Windows.Forms.Button()
-		Me.ButtonGridviewDelete = New System.Windows.Forms.Button()
-		Me.ButtonGridviewNew = New System.Windows.Forms.Button()
 		Me.RadGridViewClassItemsListe = New Telerik.WinControls.UI.RadGridView()
-		Me.RadButtonItemsLevelOne = New Telerik.WinControls.UI.RadButton()
-		Me.RadButtonGroupageRefhesh = New Telerik.WinControls.UI.RadButton()
-		Me.RadButtonGroupCancel = New Telerik.WinControls.UI.RadButton()
-		Me.RadButtonGroupage = New Telerik.WinControls.UI.RadButton()
 		Me.RadGridViewItems = New Telerik.WinControls.UI.RadGridView()
 		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+		Me.RadButtonItemDelete = New Telerik.WinControls.UI.RadButton()
+		Me.RadButtonItemUpdate = New Telerik.WinControls.UI.RadButton()
+		Me.RadButtonItemNew = New Telerik.WinControls.UI.RadButton()
 		Me.RadLabel28 = New Telerik.WinControls.UI.RadLabel()
 		Me.RadDropDownITEMS_FF = New Telerik.WinControls.UI.RadDropDownList()
 		Me.RadDateTimePickerITEMS_DatePaiement = New Telerik.WinControls.UI.RadDateTimePicker()
@@ -137,9 +133,13 @@ Partial Class MainForm
 		Me.RadTextBoxProjectDataPath = New Telerik.WinControls.UI.RadTextBox()
 		Me.RadGridViewProjectName = New Telerik.WinControls.UI.RadGridView()
 		Me.Office2019GrayTheme1 = New Telerik.WinControls.Themes.Office2019GrayTheme()
-		Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
 		Me.RadTaskbarButton1 = New Telerik.WinControls.UI.RadTaskbarButton()
 		Me.RadTaskbarButton2 = New Telerik.WinControls.UI.RadTaskbarButton()
+		Me.RadButtonItemInvoice = New Telerik.WinControls.UI.RadButton()
+		Me.RadButtonItemsLevelOne = New Telerik.WinControls.UI.RadButton()
+		Me.RadButtonGroupageRefhesh = New Telerik.WinControls.UI.RadButton()
+		Me.RadButtonGroupCancel = New Telerik.WinControls.UI.RadButton()
+		Me.RadButtonGroupage = New Telerik.WinControls.UI.RadButton()
 		CType(Me.RadPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.RadPanelTodaysAppointments.SuspendLayout()
 		CType(Me.RadLabelMTPaye, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -160,13 +160,12 @@ Partial Class MainForm
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewClassItemsListe.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadButtonItemsLevelOne, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadButtonGroupageRefhesh, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadButtonGroupCancel, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadButtonGroupage, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewItems, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewItems.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBox1.SuspendLayout()
+		CType(Me.RadButtonItemDelete, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadButtonItemUpdate, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadButtonItemNew, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadLabel28, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadDropDownITEMS_FF, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadDateTimePickerITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -229,7 +228,11 @@ Partial Class MainForm
 		CType(Me.RadTextBoxProjectDataPath, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadButtonItemInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadButtonItemsLevelOne, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadButtonGroupageRefhesh, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadButtonGroupCancel, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.RadButtonGroupage, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'RadPanelTodaysAppointments
@@ -245,7 +248,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadPanelTodaysAppointments.RootElement.ControlBounds = New System.Drawing.Rectangle(266, 570, 200, 100)
+		Me.RadPanelTodaysAppointments.RootElement.ControlBounds = New System.Drawing.Rectangle(266, 570, 300, 276)
 		Me.RadPanelTodaysAppointments.Size = New System.Drawing.Size(300, 276)
 		Me.RadPanelTodaysAppointments.TabIndex = 9
 		Me.RadPanelTodaysAppointments.ThemeName = "MedicalAppTheme"
@@ -260,7 +263,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadLabelMTPaye.RootElement.ControlBounds = New System.Drawing.Rectangle(17, 152, 100, 18)
+		Me.RadLabelMTPaye.RootElement.ControlBounds = New System.Drawing.Rectangle(17, 152, 35, 38)
 		Me.RadLabelMTPaye.Size = New System.Drawing.Size(35, 38)
 		Me.RadLabelMTPaye.TabIndex = 2
 		Me.RadLabelMTPaye.Text = "0"
@@ -276,7 +279,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadLabelAllTotalOfItems.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 203, 100, 18)
+		Me.RadLabelAllTotalOfItems.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 203, 56, 31)
 		Me.RadLabelAllTotalOfItems.Size = New System.Drawing.Size(56, 31)
 		Me.RadLabelAllTotalOfItems.TabIndex = 1
 		Me.RadLabelAllTotalOfItems.Text = "0.00€"
@@ -290,7 +293,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadLabelLastAppointmentToday.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 242, 100, 18)
+		Me.RadLabelLastAppointmentToday.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 242, 150, 26)
 		Me.RadLabelLastAppointmentToday.Size = New System.Drawing.Size(150, 26)
 		Me.RadLabelLastAppointmentToday.TabIndex = 1
 		Me.RadLabelLastAppointmentToday.Text = "last one at 5:00 PM"
@@ -305,7 +308,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadLabelTotalEstimation.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 68, 100, 18)
+		Me.RadLabelTotalEstimation.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 68, 55, 67)
 		Me.RadLabelTotalEstimation.Size = New System.Drawing.Size(55, 67)
 		Me.RadLabelTotalEstimation.TabIndex = 1
 		Me.RadLabelTotalEstimation.Text = "0"
@@ -321,7 +324,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadLabelCurrentItems.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 12, 100, 18)
+		Me.RadLabelCurrentItems.RootElement.ControlBounds = New System.Drawing.Rectangle(14, 12, 71, 30)
 		Me.RadLabelCurrentItems.Size = New System.Drawing.Size(71, 30)
 		Me.RadLabelCurrentItems.TabIndex = 0
 		Me.RadLabelCurrentItems.Text = "TODAY"
@@ -344,7 +347,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadListeiewProjectName.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 570, 120, 95)
+		Me.RadListeiewProjectName.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 570, 250, 276)
 		Me.RadListeiewProjectName.SelectLastAddedItem = False
 		Me.RadListeiewProjectName.Size = New System.Drawing.Size(250, 276)
 		Me.RadListeiewProjectName.TabIndex = 10
@@ -370,7 +373,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadStatusStrip2.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 851, 300, 24)
+		Me.RadStatusStrip2.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 851, 1614, 30)
 		Me.RadStatusStrip2.RootElement.StretchVertically = True
 		Me.RadStatusStrip2.Size = New System.Drawing.Size(1614, 30)
 		Me.RadStatusStrip2.TabIndex = 14
@@ -386,7 +389,6 @@ Partial Class MainForm
 		'RadPanelHaut
 		'
 		Me.RadPanelHaut.BackColor = System.Drawing.Color.Gray
-		Me.RadPanelHaut.Controls.Add(Me.RadButton1)
 		Me.RadPanelHaut.Controls.Add(Me.RadBtnExportExcel)
 		Me.RadPanelHaut.Controls.Add(Me.RadBtnExportPDF)
 		Me.RadPanelHaut.Controls.Add(Me.RadcmbTypeCharge)
@@ -399,7 +401,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadPanelHaut.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 200, 100)
+		Me.RadPanelHaut.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 1554, 35)
 		Me.RadPanelHaut.Size = New System.Drawing.Size(1554, 35)
 		Me.RadPanelHaut.TabIndex = 46
 		'
@@ -478,7 +480,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadLabelGlobalCathegory.RootElement.ControlBounds = New System.Drawing.Rectangle(270, 5, 100, 18)
+		Me.RadLabelGlobalCathegory.RootElement.ControlBounds = New System.Drawing.Rectangle(270, 5, 240, 25)
 		Me.RadLabelGlobalCathegory.Size = New System.Drawing.Size(240, 25)
 		Me.RadLabelGlobalCathegory.TabIndex = 45
 		Me.RadLabelGlobalCathegory.Text = "RadLabelGlobalCathegory"
@@ -493,7 +495,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadLabelProjectNameGlobal.RootElement.ControlBounds = New System.Drawing.Rectangle(20, 5, 100, 18)
+		Me.RadLabelProjectNameGlobal.RootElement.ControlBounds = New System.Drawing.Rectangle(20, 5, 240, 25)
 		Me.RadLabelProjectNameGlobal.Size = New System.Drawing.Size(240, 25)
 		Me.RadLabelProjectNameGlobal.TabIndex = 44
 		Me.RadLabelProjectNameGlobal.Text = "RadLabelAudioNameGlobal"
@@ -509,39 +511,6 @@ Partial Class MainForm
 		Me.RadCheckBoxFF.Text = "inclu FF"
 		Me.RadCheckBoxFF.ThemeName = "Office2019Gray"
 		Me.RadCheckBoxFF.ToggleState = Telerik.WinControls.Enumerations.ToggleState.[On]
-		'
-		'ButtonGridviewUpdate
-		'
-		Me.ButtonGridviewUpdate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-		Me.ButtonGridviewUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-		Me.ButtonGridviewUpdate.Location = New System.Drawing.Point(112, 501)
-		Me.ButtonGridviewUpdate.Name = "ButtonGridviewUpdate"
-		Me.ButtonGridviewUpdate.Size = New System.Drawing.Size(60, 29)
-		Me.ButtonGridviewUpdate.TabIndex = 48
-		Me.ButtonGridviewUpdate.Text = "Update"
-		Me.ButtonGridviewUpdate.UseVisualStyleBackColor = True
-		'
-		'ButtonGridviewDelete
-		'
-		Me.ButtonGridviewDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-		Me.ButtonGridviewDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-		Me.ButtonGridviewDelete.Location = New System.Drawing.Point(190, 501)
-		Me.ButtonGridviewDelete.Name = "ButtonGridviewDelete"
-		Me.ButtonGridviewDelete.Size = New System.Drawing.Size(60, 29)
-		Me.ButtonGridviewDelete.TabIndex = 49
-		Me.ButtonGridviewDelete.Text = "Delete"
-		Me.ButtonGridviewDelete.UseVisualStyleBackColor = True
-		'
-		'ButtonGridviewNew
-		'
-		Me.ButtonGridviewNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-		Me.ButtonGridviewNew.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-		Me.ButtonGridviewNew.Location = New System.Drawing.Point(35, 501)
-		Me.ButtonGridviewNew.Name = "ButtonGridviewNew"
-		Me.ButtonGridviewNew.Size = New System.Drawing.Size(60, 29)
-		Me.ButtonGridviewNew.TabIndex = 50
-		Me.ButtonGridviewNew.Text = "Add"
-		Me.ButtonGridviewNew.UseVisualStyleBackColor = True
 		'
 		'RadGridViewClassItemsListe
 		'
@@ -571,70 +540,6 @@ Partial Class MainForm
 		Me.RadGridViewClassItemsListe.TabIndex = 63
 		Me.RadGridViewClassItemsListe.ThemeName = "Office2019Gray"
 		'
-		'RadButtonItemsLevelOne
-		'
-		Me.RadButtonItemsLevelOne.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadButtonItemsLevelOne.Image = Global.PrevisionFlex.My.Resources.Resources.update_ronde_gray_30x302
-		Me.RadButtonItemsLevelOne.Location = New System.Drawing.Point(584, 567)
-		Me.RadButtonItemsLevelOne.Margin = New System.Windows.Forms.Padding(6)
-		Me.RadButtonItemsLevelOne.Name = "RadButtonItemsLevelOne"
-		'
-		'
-		'
-		Me.RadButtonItemsLevelOne.RootElement.ControlBounds = New System.Drawing.Rectangle(584, 567, 110, 24)
-		Me.RadButtonItemsLevelOne.Size = New System.Drawing.Size(90, 38)
-		Me.RadButtonItemsLevelOne.TabIndex = 61
-		Me.RadButtonItemsLevelOne.Text = "1 Level  "
-		Me.RadButtonItemsLevelOne.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		'
-		'RadButtonGroupageRefhesh
-		'
-		Me.RadButtonGroupageRefhesh.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadButtonGroupageRefhesh.Image = Global.PrevisionFlex.My.Resources.Resources.update_ronde_gray_30x302
-		Me.RadButtonGroupageRefhesh.Location = New System.Drawing.Point(686, 567)
-		Me.RadButtonGroupageRefhesh.Margin = New System.Windows.Forms.Padding(6)
-		Me.RadButtonGroupageRefhesh.Name = "RadButtonGroupageRefhesh"
-		'
-		'
-		'
-		Me.RadButtonGroupageRefhesh.RootElement.ControlBounds = New System.Drawing.Rectangle(686, 567, 110, 24)
-		Me.RadButtonGroupageRefhesh.Size = New System.Drawing.Size(90, 38)
-		Me.RadButtonGroupageRefhesh.TabIndex = 60
-		Me.RadButtonGroupageRefhesh.Text = "2 Level   "
-		Me.RadButtonGroupageRefhesh.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		'
-		'RadButtonGroupCancel
-		'
-		Me.RadButtonGroupCancel.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadButtonGroupCancel.Image = Global.PrevisionFlex.My.Resources.Resources.treeview_detail_25
-		Me.RadButtonGroupCancel.Location = New System.Drawing.Point(890, 567)
-		Me.RadButtonGroupCancel.Margin = New System.Windows.Forms.Padding(6)
-		Me.RadButtonGroupCancel.Name = "RadButtonGroupCancel"
-		'
-		'
-		'
-		Me.RadButtonGroupCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(890, 567, 110, 24)
-		Me.RadButtonGroupCancel.Size = New System.Drawing.Size(90, 38)
-		Me.RadButtonGroupCancel.TabIndex = 60
-		Me.RadButtonGroupCancel.Text = "Détail  "
-		Me.RadButtonGroupCancel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		'
-		'RadButtonGroupage
-		'
-		Me.RadButtonGroupage.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.RadButtonGroupage.Image = Global.PrevisionFlex.My.Resources.Resources.treeview_sans_detail_25
-		Me.RadButtonGroupage.Location = New System.Drawing.Point(788, 567)
-		Me.RadButtonGroupage.Margin = New System.Windows.Forms.Padding(6)
-		Me.RadButtonGroupage.Name = "RadButtonGroupage"
-		'
-		'
-		'
-		Me.RadButtonGroupage.RootElement.ControlBounds = New System.Drawing.Rectangle(788, 567, 110, 24)
-		Me.RadButtonGroupage.Size = New System.Drawing.Size(90, 38)
-		Me.RadButtonGroupage.TabIndex = 59
-		Me.RadButtonGroupage.Text = "Groupage "
-		Me.RadButtonGroupage.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-		'
 		'RadGridViewItems
 		'
 		Me.RadGridViewItems.AutoScroll = True
@@ -654,7 +559,7 @@ Partial Class MainForm
 		'
 		'
 		'
-		Me.RadGridViewItems.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 40, 240, 150)
+		Me.RadGridViewItems.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 40, 1256, 520)
 		Me.RadGridViewItems.Size = New System.Drawing.Size(1256, 520)
 		Me.RadGridViewItems.TabIndex = 6
 		Me.RadGridViewItems.ThemeName = "Office2019Gray"
@@ -662,6 +567,10 @@ Partial Class MainForm
 		'GroupBox1
 		'
 		Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.GroupBox1.Controls.Add(Me.RadButtonItemInvoice)
+		Me.GroupBox1.Controls.Add(Me.RadButtonItemDelete)
+		Me.GroupBox1.Controls.Add(Me.RadButtonItemUpdate)
+		Me.GroupBox1.Controls.Add(Me.RadButtonItemNew)
 		Me.GroupBox1.Controls.Add(Me.RadLabel28)
 		Me.GroupBox1.Controls.Add(Me.RadDropDownITEMS_FF)
 		Me.GroupBox1.Controls.Add(Me.RadDateTimePickerITEMS_DatePaiement)
@@ -690,10 +599,7 @@ Partial Class MainForm
 		Me.GroupBox1.Controls.Add(Me.RadLabel6)
 		Me.GroupBox1.Controls.Add(Me.RadLabel5)
 		Me.GroupBox1.Controls.Add(Me.RadLabel4)
-		Me.GroupBox1.Controls.Add(Me.ButtonGridviewDelete)
 		Me.GroupBox1.Controls.Add(Me.RadLabel3)
-		Me.GroupBox1.Controls.Add(Me.ButtonGridviewNew)
-		Me.GroupBox1.Controls.Add(Me.ButtonGridviewUpdate)
 		Me.GroupBox1.Controls.Add(Me.RadLabel2)
 		Me.GroupBox1.Controls.Add(Me.RadLabel1)
 		Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_PARENT)
@@ -704,6 +610,30 @@ Partial Class MainForm
 		Me.GroupBox1.Size = New System.Drawing.Size(277, 540)
 		Me.GroupBox1.TabIndex = 62
 		Me.GroupBox1.TabStop = False
+		'
+		'RadButtonItemDelete
+		'
+		Me.RadButtonItemDelete.Location = New System.Drawing.Point(142, 500)
+		Me.RadButtonItemDelete.Name = "RadButtonItemDelete"
+		Me.RadButtonItemDelete.Size = New System.Drawing.Size(60, 29)
+		Me.RadButtonItemDelete.TabIndex = 74
+		Me.RadButtonItemDelete.Text = "Delete"
+		'
+		'RadButtonItemUpdate
+		'
+		Me.RadButtonItemUpdate.Location = New System.Drawing.Point(75, 500)
+		Me.RadButtonItemUpdate.Name = "RadButtonItemUpdate"
+		Me.RadButtonItemUpdate.Size = New System.Drawing.Size(60, 29)
+		Me.RadButtonItemUpdate.TabIndex = 73
+		Me.RadButtonItemUpdate.Text = "Update"
+		'
+		'RadButtonItemNew
+		'
+		Me.RadButtonItemNew.Location = New System.Drawing.Point(8, 500)
+		Me.RadButtonItemNew.Name = "RadButtonItemNew"
+		Me.RadButtonItemNew.Size = New System.Drawing.Size(60, 29)
+		Me.RadButtonItemNew.TabIndex = 72
+		Me.RadButtonItemNew.Text = "Add"
 		'
 		'RadLabel28
 		'
@@ -1452,14 +1382,6 @@ Partial Class MainForm
 		Me.RadGridViewProjectName.TabIndex = 1
 		Me.RadGridViewProjectName.ThemeName = "Office2019Gray"
 		'
-		'RadButton1
-		'
-		Me.RadButton1.Location = New System.Drawing.Point(1107, 6)
-		Me.RadButton1.Name = "RadButton1"
-		Me.RadButton1.Size = New System.Drawing.Size(110, 24)
-		Me.RadButton1.TabIndex = 0
-		Me.RadButton1.Text = "RadButton1"
-		'
 		'RadTaskbarButton1
 		'
 		Me.RadTaskbarButton1.OwnerForm = Me
@@ -1467,6 +1389,78 @@ Partial Class MainForm
 		'RadTaskbarButton2
 		'
 		Me.RadTaskbarButton2.OwnerForm = Me
+		'
+		'RadButtonItemInvoice
+		'
+		Me.RadButtonItemInvoice.Location = New System.Drawing.Point(209, 500)
+		Me.RadButtonItemInvoice.Name = "RadButtonItemInvoice"
+		Me.RadButtonItemInvoice.Size = New System.Drawing.Size(60, 29)
+		Me.RadButtonItemInvoice.TabIndex = 75
+		Me.RadButtonItemInvoice.Text = "Invoice"
+		'
+		'RadButtonItemsLevelOne
+		'
+		Me.RadButtonItemsLevelOne.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.RadButtonItemsLevelOne.Image = Global.PrevisionFlex.My.Resources.Resources.update_ronde_gray_30x302
+		Me.RadButtonItemsLevelOne.Location = New System.Drawing.Point(584, 567)
+		Me.RadButtonItemsLevelOne.Margin = New System.Windows.Forms.Padding(6)
+		Me.RadButtonItemsLevelOne.Name = "RadButtonItemsLevelOne"
+		'
+		'
+		'
+		Me.RadButtonItemsLevelOne.RootElement.ControlBounds = New System.Drawing.Rectangle(584, 567, 110, 24)
+		Me.RadButtonItemsLevelOne.Size = New System.Drawing.Size(90, 38)
+		Me.RadButtonItemsLevelOne.TabIndex = 61
+		Me.RadButtonItemsLevelOne.Text = "1 Level  "
+		Me.RadButtonItemsLevelOne.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+		'
+		'RadButtonGroupageRefhesh
+		'
+		Me.RadButtonGroupageRefhesh.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.RadButtonGroupageRefhesh.Image = Global.PrevisionFlex.My.Resources.Resources.update_ronde_gray_30x302
+		Me.RadButtonGroupageRefhesh.Location = New System.Drawing.Point(686, 567)
+		Me.RadButtonGroupageRefhesh.Margin = New System.Windows.Forms.Padding(6)
+		Me.RadButtonGroupageRefhesh.Name = "RadButtonGroupageRefhesh"
+		'
+		'
+		'
+		Me.RadButtonGroupageRefhesh.RootElement.ControlBounds = New System.Drawing.Rectangle(686, 567, 110, 24)
+		Me.RadButtonGroupageRefhesh.Size = New System.Drawing.Size(90, 38)
+		Me.RadButtonGroupageRefhesh.TabIndex = 60
+		Me.RadButtonGroupageRefhesh.Text = "2 Level   "
+		Me.RadButtonGroupageRefhesh.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+		'
+		'RadButtonGroupCancel
+		'
+		Me.RadButtonGroupCancel.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.RadButtonGroupCancel.Image = Global.PrevisionFlex.My.Resources.Resources.treeview_detail_25
+		Me.RadButtonGroupCancel.Location = New System.Drawing.Point(890, 567)
+		Me.RadButtonGroupCancel.Margin = New System.Windows.Forms.Padding(6)
+		Me.RadButtonGroupCancel.Name = "RadButtonGroupCancel"
+		'
+		'
+		'
+		Me.RadButtonGroupCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(890, 567, 110, 24)
+		Me.RadButtonGroupCancel.Size = New System.Drawing.Size(90, 38)
+		Me.RadButtonGroupCancel.TabIndex = 60
+		Me.RadButtonGroupCancel.Text = "Détail  "
+		Me.RadButtonGroupCancel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+		'
+		'RadButtonGroupage
+		'
+		Me.RadButtonGroupage.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.RadButtonGroupage.Image = Global.PrevisionFlex.My.Resources.Resources.treeview_sans_detail_25
+		Me.RadButtonGroupage.Location = New System.Drawing.Point(788, 567)
+		Me.RadButtonGroupage.Margin = New System.Windows.Forms.Padding(6)
+		Me.RadButtonGroupage.Name = "RadButtonGroupage"
+		'
+		'
+		'
+		Me.RadButtonGroupage.RootElement.ControlBounds = New System.Drawing.Rectangle(788, 567, 110, 24)
+		Me.RadButtonGroupage.Size = New System.Drawing.Size(90, 38)
+		Me.RadButtonGroupage.TabIndex = 59
+		Me.RadButtonGroupage.Text = "Groupage "
+		Me.RadButtonGroupage.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
 		'
 		'MainForm
 		'
@@ -1504,14 +1498,13 @@ Partial Class MainForm
 		CType(Me.RadCheckBoxFF, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewClassItemsListe.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewClassItemsListe, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadButtonItemsLevelOne, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadButtonGroupageRefhesh, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadButtonGroupCancel, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadButtonGroupage, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewItems.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewItems, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBox1.ResumeLayout(False)
 		Me.GroupBox1.PerformLayout()
+		CType(Me.RadButtonItemDelete, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadButtonItemUpdate, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadButtonItemNew, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadLabel28, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadDropDownITEMS_FF, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadDateTimePickerITEMS_DatePaiement, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1575,7 +1568,11 @@ Partial Class MainForm
 		CType(Me.RadTextBoxProjectDataPath, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadButtonItemInvoice, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadButtonItemsLevelOne, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadButtonGroupageRefhesh, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadButtonGroupCancel, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.RadButtonGroupage, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -1592,9 +1589,6 @@ Partial Class MainForm
 	Friend WithEvents RadPanelHaut As RadPanel
 	Friend WithEvents RadLabelGlobalCathegory As RadLabel
 	Friend WithEvents RadLabelProjectNameGlobal As RadLabel
-	Friend WithEvents ButtonGridviewUpdate As Button
-	Friend WithEvents ButtonGridviewDelete As Button
-	Friend WithEvents ButtonGridviewNew As Button
 	Friend WithEvents RadGridViewItems As RadGridView
 	Friend WithEvents RadButtonGroupCancel As RadButton
 	Friend WithEvents RadButtonGroupage As RadButton
@@ -1673,7 +1667,10 @@ Partial Class MainForm
 	Friend WithEvents Office2019GrayTheme1 As Themes.Office2019GrayTheme
 	Friend WithEvents RadLabel28 As RadLabel
 	Friend WithEvents RadDropDownITEMS_FF As RadDropDownList
-	Friend WithEvents RadButton1 As RadButton
 	Friend WithEvents RadTaskbarButton1 As RadTaskbarButton
 	Friend WithEvents RadTaskbarButton2 As RadTaskbarButton
+	Friend WithEvents RadButtonItemNew As RadButton
+	Friend WithEvents RadButtonItemUpdate As RadButton
+	Friend WithEvents RadButtonItemDelete As RadButton
+	Friend WithEvents RadButtonItemInvoice As RadButton
 End Class
