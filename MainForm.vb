@@ -489,9 +489,9 @@ Public Class MainForm
 		FF = RadCheckBoxFF.Checked
 		Dim curMonth As String = RadDateTimePickerMonth.Text
 		If FF Then
-			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, items_price_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " AND `items_month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
+			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, FORMAT(items_quantity * items_unit * (items_taxe/100.0), 2) AS items_mt_tva, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, FORMAT(items_quantity * items_unit * (1.0 + items_taxe/100.0), 2) AS items_big_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " AND `items_month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
 		Else
-			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, items_price_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " and items_ff = 'N' AND `items_month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
+			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, FORMAT(items_quantity * items_unit * (items_taxe/100.0), 2) AS items_mt_tva, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, FORMAT(items_quantity * items_unit * (1.0 + items_taxe/100.0), 2) AS items_big_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " and items_ff = 'N' AND `items_month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
 		End If
 		Try
 			Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
@@ -547,7 +547,9 @@ Public Class MainForm
 			RadGridViewItems.Columns(4).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(5).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(7).TextAlignment = ContentAlignment.MiddleCenter
+			RadGridViewItems.Columns(8).TextAlignment = ContentAlignment.MiddleRight
 			RadGridViewItems.Columns(9).TextAlignment = ContentAlignment.MiddleCenter
+			RadGridViewItems.Columns(12).TextAlignment = ContentAlignment.MiddleRight
 			RadGridViewItems.Columns(13).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(14).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(16).TextAlignment = ContentAlignment.MiddleCenter
@@ -881,10 +883,7 @@ Public Class MainForm
 	End Sub
 
 	Private Sub RadButtonItemInvoice_Click(sender As Object, e As EventArgs) Handles RadButtonItemInvoice.Click
-		Dim result As DialogResult = MessageBox.Show("Are you sure to save invoice as pdf?", "Create Invoice", MessageBoxButtons.YesNo)
-		If result = DialogResult.Yes Then
-			prtDoc.Print()
-		End If
+		prtDoc.Print()
 	End Sub
 	Private Sub prtDoc_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs)
 		leftMargin = 50
