@@ -2,6 +2,7 @@
 Imports MySql.Data.MySqlClient
 Imports Telerik.WinControls.Export
 Imports System.Drawing.Printing
+Imports System.IO
 Public Class MainForm
 	Public ProjectIndexGlobal As Integer = 0
 	Public Global_Type_Charge As String = "TOUS"
@@ -16,7 +17,7 @@ Public Class MainForm
 						}
 	Private NRow As Integer = 2
 	Dim PictureBoxArray(NRow) As PictureBox
-	Dim imageArrayMainMenuLocation = {40, 110, 760} 'ecart 45
+	Dim imageArrayMainMenuLocation = {40, 110, 850} 'ecart 45
 	Dim ImgPoubelleEnter = New Image() {
 						My.Resources.home_White_100x100,
 						My.Resources.settings_icon_128_white,
@@ -90,6 +91,7 @@ Public Class MainForm
 		init_main_menu()
 		GetProjectFromDB()
 		InitProjectMenu()
+		paneInvoice.Hide()
 
 		If dtProject.Rows.Count > 0 Then
 			ProjectIndexGlobal = Val(dtProject.Rows(0).Item("PrOJECT_INDEX"))
@@ -216,13 +218,13 @@ Public Class MainForm
 				paneMain.Location = New Point(60, 0)
 				paneMain.Visible = True
 
-				paneSettings.Location = New Point(1700, 0)
+				paneSettings.Location = New Point(2000, 0)
 				paneSettings.Visible = False
 			Case 1
 				paneSettings.Location = New Point(60, 0)
 				paneSettings.Visible = True
 
-				paneMain.Location = New Point(1700, 0)
+				paneMain.Location = New Point(2000, 0)
 				paneMain.Visible = False
 				FindProjectListe()
 			Case Else
@@ -386,16 +388,17 @@ Public Class MainForm
 		End If
 		RadLabelAllTotalOfItems.Text = Format(Alltotal, "All total : 0.00 €")
 
-		RadGridViewClassItemsListe.Columns(0).Width = 75
-		RadGridViewClassItemsListe.Columns(1).Width = 130
-		RadGridViewClassItemsListe.Columns(2).Width = 75
-		RadGridViewClassItemsListe.Columns(3).Width = 75
-		RadGridViewClassItemsListe.Columns(4).Width = 75
-		RadGridViewClassItemsListe.Columns(5).Width = 75
+		RadGridViewClassItemsListe.Columns(0).Width = 80
+		RadGridViewClassItemsListe.Columns(1).Width = 220
+		RadGridViewClassItemsListe.Columns(2).Width = 110
+		RadGridViewClassItemsListe.Columns(3).Width = 80
+		RadGridViewClassItemsListe.Columns(4).Width = 80
+		RadGridViewClassItemsListe.Columns(5).Width = 80
 		RadGridViewClassItemsListe.Columns(6).Width = 120
-		RadGridViewClassItemsListe.Columns(7).Width = 75
+		RadGridViewClassItemsListe.Columns(7).Width = 80
 		RadGridViewClassItemsListe.Columns(0).TextAlignment = ContentAlignment.MiddleCenter
-		RadGridViewClassItemsListe.Columns(2).TextAlignment = ContentAlignment.MiddleRight
+		RadGridViewClassItemsListe.Columns(1).TextAlignment = ContentAlignment.MiddleLeft
+		RadGridViewClassItemsListe.Columns(2).TextAlignment = ContentAlignment.MiddleCenter
 		RadGridViewClassItemsListe.Columns(3).TextAlignment = ContentAlignment.MiddleRight
 		RadGridViewClassItemsListe.Columns(4).TextAlignment = ContentAlignment.MiddleCenter
 		RadGridViewClassItemsListe.Columns(5).TextAlignment = ContentAlignment.MiddleRight
@@ -509,14 +512,14 @@ Public Class MainForm
 			Dim col As Integer = RadGridViewItems.Columns.Count - 1
 			For i = 0 To col 'nombre collones
 				Select Case i
-					Case 13
-						RadGridViewItems.Columns(i).Width = 75
-					Case 6, 7, 8, 10, 12, 15
-						RadGridViewItems.Columns(i).Width = 70
+					Case 10, 13
+						RadGridViewItems.Columns(i).Width = 85
+					Case 6, 7, 8, 12, 15
+						RadGridViewItems.Columns(i).Width = 80
 					Case 2, 16
 						RadGridViewItems.Columns(i).Width = 100
 					Case 3
-						RadGridViewItems.Columns(i).Width = 160
+						RadGridViewItems.Columns(i).Width = 205
 					Case 0, 1, 4, 5, 9, 11, 14, 16, 17
 						RadGridViewItems.Columns(i).Width = 65
 				End Select
@@ -529,7 +532,7 @@ Public Class MainForm
 			RadGridViewItems.Columns(3).HeaderText = "Nom"
 			RadGridViewItems.Columns(4).HeaderText = "Parent"
 			RadGridViewItems.Columns(5).HeaderText = "Qté"
-			RadGridViewItems.Columns(6).HeaderText = "Quantité"
+			RadGridViewItems.Columns(6).HeaderText = "Unit Price"
 			RadGridViewItems.Columns(7).HeaderText = "Taux TVA"
 			RadGridViewItems.Columns(8).HeaderText = "Mt Total"
 			RadGridViewItems.Columns(9).HeaderText = "EURO/$"
@@ -546,9 +549,10 @@ Public Class MainForm
 			RadGridViewItems.Columns(1).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(4).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(5).TextAlignment = ContentAlignment.MiddleCenter
-			RadGridViewItems.Columns(7).TextAlignment = ContentAlignment.MiddleCenter
+			RadGridViewItems.Columns(7).TextAlignment = ContentAlignment.MiddleRight
 			RadGridViewItems.Columns(8).TextAlignment = ContentAlignment.MiddleRight
 			RadGridViewItems.Columns(9).TextAlignment = ContentAlignment.MiddleCenter
+			RadGridViewItems.Columns(10).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(12).TextAlignment = ContentAlignment.MiddleRight
 			RadGridViewItems.Columns(13).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(14).TextAlignment = ContentAlignment.MiddleCenter
@@ -850,7 +854,7 @@ Public Class MainForm
 		RadProgressBarExport.Location = New Point(paneMain.Width / 2 - 250, paneMain.Height / 2 - 15)
 		RadProgressBarExport.Visible = True
 		Dim filename As String = DateTime.Now.ToString("yyyyMMddhhmmss")
-		spreadExporter.RunExportAsync("..\..\save\items" & filename & ".xlsx", exportRenderer)
+		spreadExporter.RunExportAsync("save\items" & filename & ".xlsx", exportRenderer)
 	End Sub
 	Private Sub RadBtnExportPDF_Click(sender As Object, e As EventArgs) Handles RadBtnExportPDF.Click
 		Dim pdfExporter As GridViewPdfExport = New GridViewPdfExport(RadGridViewItems)
@@ -870,7 +874,7 @@ Public Class MainForm
 		RadProgressBarExport.Location = New Point(paneMain.Width / 2 - 250, paneMain.Height / 2 - 15)
 		RadProgressBarExport.Visible = True
 		Dim filename As String = DateTime.Now.ToString("yyyyMMddhhmmss")
-		pdfExporter.RunExportAsync("..\..\save\items" & filename, exportRenderer)
+		pdfExporter.RunExportAsync("save\items" & filename, exportRenderer)
 
 	End Sub
 	Private Sub exporter_AsyncExportProgressChanged(sender As Object, e As ProgressChangedEventArgs)
@@ -881,10 +885,79 @@ Public Class MainForm
 		RadProgressBarExport.Visible = False
 		RadMessageBox.Show("Data Exported Successfully!")
 	End Sub
+	Private Sub RadButtonItemUploadInvoice_Click(sender As Object, e As EventArgs) Handles RadButtonItemUploadInvoice.Click
+		Dim irow As Integer = -1
+		Dim iindex As Integer = RadGridViewItems.CurrentRow.Cells(0).Value
+		If iindex < 1 Then
+			RadLabelElementMessage.Text = "Erreur, le code INDEX est erroné"
+			Exit Sub
+		End If
+		If RadOpenFileDialog1.ShowDialog() = DialogResult.OK Then
+			Dim filepath As String = Application.StartupPath + "\Invoices\"
+			If Not Directory.Exists(filepath) Then
+				Directory.CreateDirectory(filepath)
+			End If
+			Dim filename As String = DateTime.Now.ToString("yyyyMMddhhmmss") + ".pdf"
+			My.Computer.FileSystem.CopyFile(RadOpenFileDialog1.FileName, filepath + filename, FileIO.UIOption.OnlyErrorDialogs, FileIO.UICancelOption.DoNothing)
 
-	Private Sub RadButtonItemInvoice_Click(sender As Object, e As EventArgs) Handles RadButtonItemInvoice.Click
-		prtDoc.Print()
+			Dim mysql = "Update items SET items_invoice = '" + filename + "' Where `INDEX` = " + iindex.ToString
+
+			RadLabelElementMessage.Text = mysql
+
+			Try
+				Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
+				Dim cmd As New MySqlCommand(mysql, connection)
+				connection.Open()
+				Dim reader As MySqlDataReader
+				reader = cmd.ExecuteReader()
+				connection.Close()
+				MessageBox.Show("Invoice pdf is stored successfully", "Store Invoice", MessageBoxButtons.OK)
+			Catch ex As Exception
+				RadLabelElementMessage.Text = ex.Message
+			End Try
+
+		End If
 	End Sub
+
+	Private Sub RadButtonInvoiceClose_Click(sender As Object, e As EventArgs) Handles RadButtonInvoiceClose.Click
+		paneInvoice.Hide()
+	End Sub
+
+	Private Sub RadButtonItemViewInvoice_Click(sender As Object, e As EventArgs) Handles RadButtonItemViewInvoice.Click
+		Dim irow As Integer = -1
+		Dim iindex As Integer = RadGridViewItems.CurrentRow.Cells(0).Value
+		If iindex < 1 Then
+			RadLabelElementMessage.Text = "Erreur, le code INDEX est erroné"
+			Exit Sub
+		End If
+		Dim mysql As String
+		mysql = "SELECT items_invoice FROM `items` WHERE items.`INDEX` = " + iindex.ToString
+		Dim filename As String = ""
+		Try
+			Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
+			Dim cmd As New MySqlCommand(mysql, connection)
+			connection.Open()
+			Dim reader As MySqlDataReader
+			reader = cmd.ExecuteReader()
+			Dim dt As DataTable = New DataTable()
+			dt.Load(reader)
+			filename = dt.Rows(0).Item("items_invoice")
+			connection.Close()
+		Catch ex As Exception
+			RadLabelElementMessage.Text = ex.Message
+		End Try
+		If filename = "" Then
+			MessageBox.Show("Invoice pdf is not stored yet.", "View Invoice", MessageBoxButtons.OK)
+			Exit Sub
+		End If
+		Dim filepath As String = Application.StartupPath + "\Invoices\"
+		If Not File.Exists(filepath + filename) Then
+			MessageBox.Show("File not exist.", "View Invoice", MessageBoxButtons.OK)
+		End If
+		WebBrowserInvoice.Navigate(New Uri(filepath + filename))
+		paneInvoice.Show()
+	End Sub
+
 	Private Sub prtDoc_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs)
 		leftMargin = 50
 		rightMargin = Convert.ToInt32(e.MarginBounds.Right) + 50

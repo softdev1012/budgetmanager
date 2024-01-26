@@ -22,28 +22,28 @@ Partial Class MainForm
 	'Ne la modifiez pas à l'aide de l'éditeur de code.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
-        Dim ListViewDetailColumn1 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
-        Dim ListViewDetailColumn2 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
-        Dim ListViewDetailColumn3 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
-        Dim ListViewDetailColumn4 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
+        Dim ListViewDetailColumn5 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Name")
+        Dim ListViewDetailColumn6 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "Age")
+        Dim ListViewDetailColumn7 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "Gender")
+        Dim ListViewDetailColumn8 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 3", "EncounterTime")
+        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem17 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem18 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem19 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem20 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem21 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem22 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem23 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem24 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem14 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem15 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition6 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.RadPanelTodaysAppointments = New Telerik.WinControls.UI.RadPanel()
         Me.RadLabelMTPaye = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabelAllTotalOfItems = New Telerik.WinControls.UI.RadLabel()
@@ -69,7 +69,8 @@ Partial Class MainForm
         Me.RadGridViewItems = New Telerik.WinControls.UI.RadGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadSpinEditorITEMS_BIG_TOTAL = New Telerik.WinControls.UI.RadSpinEditor()
-        Me.RadButtonItemInvoice = New Telerik.WinControls.UI.RadButton()
+        Me.RadButtonItemViewInvoice = New Telerik.WinControls.UI.RadButton()
+        Me.RadButtonItemUploadInvoice = New Telerik.WinControls.UI.RadButton()
         Me.RadLabel29 = New Telerik.WinControls.UI.RadLabel()
         Me.RadButtonItemDelete = New Telerik.WinControls.UI.RadButton()
         Me.RadButtonItemUpdate = New Telerik.WinControls.UI.RadButton()
@@ -143,8 +144,11 @@ Partial Class MainForm
         Me.RadTextBoxProjectDataPath = New Telerik.WinControls.UI.RadTextBox()
         Me.RadGridViewProjectName = New Telerik.WinControls.UI.RadGridView()
         Me.Office2019GrayTheme1 = New Telerik.WinControls.Themes.Office2019GrayTheme()
-        Me.RadTaskbarButton1 = New Telerik.WinControls.UI.RadTaskbarButton()
-        Me.RadTaskbarButton2 = New Telerik.WinControls.UI.RadTaskbarButton()
+        Me.RadOpenFileDialog1 = New Telerik.WinControls.UI.RadOpenFileDialog()
+        Me.paneInvoice = New System.Windows.Forms.Panel()
+        Me.paneInvoiceContent = New System.Windows.Forms.Panel()
+        Me.RadButtonInvoiceClose = New Telerik.WinControls.UI.RadButton()
+        Me.WebBrowserInvoice = New System.Windows.Forms.WebBrowser()
         CType(Me.RadPanelTodaysAppointments, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanelTodaysAppointments.SuspendLayout()
         CType(Me.RadLabelMTPaye, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -172,7 +176,8 @@ Partial Class MainForm
         CType(Me.RadGridViewItems.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.RadSpinEditorITEMS_BIG_TOTAL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadButtonItemInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadButtonItemViewInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadButtonItemUploadInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel29, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadButtonItemDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadButtonItemUpdate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -243,6 +248,9 @@ Partial Class MainForm
         CType(Me.RadTextBoxProjectDataPath, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.paneInvoice.SuspendLayout()
+        Me.paneInvoiceContent.SuspendLayout()
+        CType(Me.RadButtonInvoiceClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RadPanelTodaysAppointments
@@ -253,13 +261,13 @@ Partial Class MainForm
         Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelLastAppointmentToday)
         Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelTotalEstimation)
         Me.RadPanelTodaysAppointments.Controls.Add(Me.RadLabelCurrentItems)
-        Me.RadPanelTodaysAppointments.Location = New System.Drawing.Point(266, 570)
+        Me.RadPanelTodaysAppointments.Location = New System.Drawing.Point(331, 644)
         Me.RadPanelTodaysAppointments.Name = "RadPanelTodaysAppointments"
         '
         '
         '
-        Me.RadPanelTodaysAppointments.RootElement.ControlBounds = New System.Drawing.Rectangle(266, 570, 200, 100)
-        Me.RadPanelTodaysAppointments.Size = New System.Drawing.Size(300, 276)
+        Me.RadPanelTodaysAppointments.RootElement.ControlBounds = New System.Drawing.Rectangle(331, 644, 200, 100)
+        Me.RadPanelTodaysAppointments.Size = New System.Drawing.Size(316, 276)
         Me.RadPanelTodaysAppointments.TabIndex = 13
         Me.RadPanelTodaysAppointments.ThemeName = "MedicalAppTheme"
         '
@@ -346,20 +354,20 @@ Partial Class MainForm
         Me.RadListeiewProjectName.AllowRemove = False
         Me.RadListeiewProjectName.AutoScroll = True
         Me.RadListeiewProjectName.BackColor = System.Drawing.SystemColors.ControlLightLight
-        ListViewDetailColumn1.HeaderText = "Name"
-        ListViewDetailColumn2.HeaderText = "Age"
-        ListViewDetailColumn3.HeaderText = "Gender"
-        ListViewDetailColumn4.HeaderText = "EncounterTime"
-        Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn1, ListViewDetailColumn2, ListViewDetailColumn3, ListViewDetailColumn4})
+        ListViewDetailColumn5.HeaderText = "Name"
+        ListViewDetailColumn6.HeaderText = "Age"
+        ListViewDetailColumn7.HeaderText = "Gender"
+        ListViewDetailColumn8.HeaderText = "EncounterTime"
+        Me.RadListeiewProjectName.Columns.AddRange(New Telerik.WinControls.UI.ListViewDetailColumn() {ListViewDetailColumn5, ListViewDetailColumn6, ListViewDetailColumn7, ListViewDetailColumn8})
         Me.RadListeiewProjectName.ItemSize = New System.Drawing.Size(200, 95)
-        Me.RadListeiewProjectName.Location = New System.Drawing.Point(5, 570)
+        Me.RadListeiewProjectName.Location = New System.Drawing.Point(5, 644)
         Me.RadListeiewProjectName.Name = "RadListeiewProjectName"
         '
         '
         '
-        Me.RadListeiewProjectName.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 570, 120, 95)
+        Me.RadListeiewProjectName.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 644, 120, 95)
         Me.RadListeiewProjectName.SelectLastAddedItem = False
-        Me.RadListeiewProjectName.Size = New System.Drawing.Size(250, 276)
+        Me.RadListeiewProjectName.Size = New System.Drawing.Size(320, 276)
         Me.RadListeiewProjectName.TabIndex = 12
         Me.RadListeiewProjectName.ThemeName = "MedicalAppTheme"
         Me.RadListeiewProjectName.VerticalScrollState = Telerik.WinControls.UI.ScrollState.AlwaysHide
@@ -369,23 +377,23 @@ Partial Class MainForm
         Me.ListBoxItemsParent.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListBoxItemsParent.BackColor = System.Drawing.Color.Gainsboro
         Me.ListBoxItemsParent.FormattingEnabled = True
-        Me.ListBoxItemsParent.Location = New System.Drawing.Point(1268, 605)
+        Me.ListBoxItemsParent.Location = New System.Drawing.Point(1538, 657)
         Me.ListBoxItemsParent.Name = "ListBoxItemsParent"
-        Me.ListBoxItemsParent.Size = New System.Drawing.Size(277, 238)
+        Me.ListBoxItemsParent.Size = New System.Drawing.Size(277, 264)
         Me.ListBoxItemsParent.TabIndex = 24
         '
         'RadStatusStrip2
         '
         Me.RadStatusStrip2.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.RadStatusStrip2.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadLabelElementMessage})
-        Me.RadStatusStrip2.Location = New System.Drawing.Point(0, 851)
+        Me.RadStatusStrip2.Location = New System.Drawing.Point(0, 931)
         Me.RadStatusStrip2.Name = "RadStatusStrip2"
         '
         '
         '
-        Me.RadStatusStrip2.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 851, 300, 24)
+        Me.RadStatusStrip2.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 931, 300, 24)
         Me.RadStatusStrip2.RootElement.StretchVertically = True
-        Me.RadStatusStrip2.Size = New System.Drawing.Size(1614, 30)
+        Me.RadStatusStrip2.Size = New System.Drawing.Size(1884, 30)
         Me.RadStatusStrip2.TabIndex = 14
         '
         'RadLabelElementMessage
@@ -415,13 +423,14 @@ Partial Class MainForm
         '
         '
         Me.RadPanelHaut.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 200, 100)
-        Me.RadPanelHaut.Size = New System.Drawing.Size(1554, 35)
+        Me.RadPanelHaut.Size = New System.Drawing.Size(1824, 35)
         Me.RadPanelHaut.TabIndex = 46
         '
         'RadButtonCloneData
         '
+        Me.RadButtonCloneData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadButtonCloneData.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.RadButtonCloneData.Location = New System.Drawing.Point(1133, 5)
+        Me.RadButtonCloneData.Location = New System.Drawing.Point(1403, 5)
         Me.RadButtonCloneData.Name = "RadButtonCloneData"
         Me.RadButtonCloneData.Size = New System.Drawing.Size(110, 24)
         Me.RadButtonCloneData.TabIndex = 8
@@ -452,8 +461,9 @@ Partial Class MainForm
         '
         'RadBtnExportExcel
         '
+        Me.RadBtnExportExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadBtnExportExcel.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.RadBtnExportExcel.Location = New System.Drawing.Point(1406, 5)
+        Me.RadBtnExportExcel.Location = New System.Drawing.Point(1676, 5)
         Me.RadBtnExportExcel.Name = "RadBtnExportExcel"
         Me.RadBtnExportExcel.Size = New System.Drawing.Size(110, 24)
         Me.RadBtnExportExcel.TabIndex = 10
@@ -462,8 +472,9 @@ Partial Class MainForm
         '
         'RadBtnExportPDF
         '
+        Me.RadBtnExportPDF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadBtnExportPDF.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        Me.RadBtnExportPDF.Location = New System.Drawing.Point(1269, 5)
+        Me.RadBtnExportPDF.Location = New System.Drawing.Point(1539, 5)
         Me.RadBtnExportPDF.Name = "RadBtnExportPDF"
         Me.RadBtnExportPDF.Size = New System.Drawing.Size(110, 24)
         Me.RadBtnExportPDF.TabIndex = 9
@@ -474,24 +485,24 @@ Partial Class MainForm
         '
         Me.RadcmbTypeCharge.DropDownAnimationEnabled = True
         Me.RadcmbTypeCharge.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        RadListDataItem1.Text = "Tous"
-        RadListDataItem2.Text = "Hors achats"
-        RadListDataItem3.Text = "Hors salaires"
-        RadListDataItem4.Text = "Achats"
-        RadListDataItem5.Text = "Salaires"
-        RadListDataItem6.Text = "Petites charges"
-        RadListDataItem7.Text = "Loyer et autres"
-        RadListDataItem8.Text = "Taxes et impots"
-        RadListDataItem9.Text = "Frais bancaires"
-        Me.RadcmbTypeCharge.Items.Add(RadListDataItem1)
-        Me.RadcmbTypeCharge.Items.Add(RadListDataItem2)
-        Me.RadcmbTypeCharge.Items.Add(RadListDataItem3)
-        Me.RadcmbTypeCharge.Items.Add(RadListDataItem4)
-        Me.RadcmbTypeCharge.Items.Add(RadListDataItem5)
-        Me.RadcmbTypeCharge.Items.Add(RadListDataItem6)
-        Me.RadcmbTypeCharge.Items.Add(RadListDataItem7)
-        Me.RadcmbTypeCharge.Items.Add(RadListDataItem8)
-        Me.RadcmbTypeCharge.Items.Add(RadListDataItem9)
+        RadListDataItem16.Text = "Tous"
+        RadListDataItem17.Text = "Hors achats"
+        RadListDataItem18.Text = "Hors salaires"
+        RadListDataItem19.Text = "Achats"
+        RadListDataItem20.Text = "Salaires"
+        RadListDataItem21.Text = "Petites charges"
+        RadListDataItem22.Text = "Loyer et autres"
+        RadListDataItem23.Text = "Taxes et impots"
+        RadListDataItem24.Text = "Frais bancaires"
+        Me.RadcmbTypeCharge.Items.Add(RadListDataItem16)
+        Me.RadcmbTypeCharge.Items.Add(RadListDataItem17)
+        Me.RadcmbTypeCharge.Items.Add(RadListDataItem18)
+        Me.RadcmbTypeCharge.Items.Add(RadListDataItem19)
+        Me.RadcmbTypeCharge.Items.Add(RadListDataItem20)
+        Me.RadcmbTypeCharge.Items.Add(RadListDataItem21)
+        Me.RadcmbTypeCharge.Items.Add(RadListDataItem22)
+        Me.RadcmbTypeCharge.Items.Add(RadListDataItem23)
+        Me.RadcmbTypeCharge.Items.Add(RadListDataItem24)
         Me.RadcmbTypeCharge.Location = New System.Drawing.Point(864, 5)
         Me.RadcmbTypeCharge.Name = "RadcmbTypeCharge"
         Me.RadcmbTypeCharge.Size = New System.Drawing.Size(136, 24)
@@ -559,7 +570,7 @@ Partial Class MainForm
         '
         'RadGridViewClassItemsListe
         '
-        Me.RadGridViewClassItemsListe.Location = New System.Drawing.Point(579, 611)
+        Me.RadGridViewClassItemsListe.Location = New System.Drawing.Point(663, 685)
         '
         '
         '
@@ -577,11 +588,11 @@ Partial Class MainForm
         Me.RadGridViewClassItemsListe.MasterTemplate.EnableAlternatingRowColor = True
         Me.RadGridViewClassItemsListe.MasterTemplate.EnableGrouping = False
         Me.RadGridViewClassItemsListe.MasterTemplate.ShowRowHeaderColumn = False
-        Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.RadGridViewClassItemsListe.MasterTemplate.ViewDefinition = TableViewDefinition4
         Me.RadGridViewClassItemsListe.Name = "RadGridViewClassItemsListe"
         Me.RadGridViewClassItemsListe.ShowItemToolTips = False
         Me.RadGridViewClassItemsListe.ShowNoDataText = False
-        Me.RadGridViewClassItemsListe.Size = New System.Drawing.Size(680, 232)
+        Me.RadGridViewClassItemsListe.Size = New System.Drawing.Size(862, 232)
         Me.RadGridViewClassItemsListe.TabIndex = 23
         Me.RadGridViewClassItemsListe.ThemeName = "Office2019Gray"
         '
@@ -599,13 +610,13 @@ Partial Class MainForm
         Me.RadGridViewItems.MasterTemplate.AllowSearchRow = True
         Me.RadGridViewItems.MasterTemplate.AutoExpandGroups = True
         Me.RadGridViewItems.MasterTemplate.EnableAlternatingRowColor = True
-        Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.RadGridViewItems.MasterTemplate.ViewDefinition = TableViewDefinition5
         Me.RadGridViewItems.Name = "RadGridViewItems"
         '
         '
         '
         Me.RadGridViewItems.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 40, 240, 150)
-        Me.RadGridViewItems.Size = New System.Drawing.Size(1256, 520)
+        Me.RadGridViewItems.Size = New System.Drawing.Size(1520, 592)
         Me.RadGridViewItems.TabIndex = 11
         Me.RadGridViewItems.ThemeName = "Office2019Gray"
         '
@@ -613,7 +624,8 @@ Partial Class MainForm
         '
         Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.RadSpinEditorITEMS_BIG_TOTAL)
-        Me.GroupBox1.Controls.Add(Me.RadButtonItemInvoice)
+        Me.GroupBox1.Controls.Add(Me.RadButtonItemViewInvoice)
+        Me.GroupBox1.Controls.Add(Me.RadButtonItemUploadInvoice)
         Me.GroupBox1.Controls.Add(Me.RadLabel29)
         Me.GroupBox1.Controls.Add(Me.RadButtonItemDelete)
         Me.GroupBox1.Controls.Add(Me.RadButtonItemUpdate)
@@ -652,9 +664,9 @@ Partial Class MainForm
         Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_PARENT)
         Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_NAME)
         Me.GroupBox1.Controls.Add(Me.RadTextBoxITEMS_CODE)
-        Me.GroupBox1.Location = New System.Drawing.Point(1268, 36)
+        Me.GroupBox1.Location = New System.Drawing.Point(1538, 36)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(277, 550)
+        Me.GroupBox1.Size = New System.Drawing.Size(277, 596)
         Me.GroupBox1.TabIndex = 62
         Me.GroupBox1.TabStop = False
         '
@@ -674,14 +686,23 @@ Partial Class MainForm
         Me.RadSpinEditorITEMS_BIG_TOTAL.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
         Me.RadSpinEditorITEMS_BIG_TOTAL.ThemeName = "Office2019Gray"
         '
-        'RadButtonItemInvoice
+        'RadButtonItemViewInvoice
         '
-        Me.RadButtonItemInvoice.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadButtonItemInvoice.Location = New System.Drawing.Point(209, 510)
-        Me.RadButtonItemInvoice.Name = "RadButtonItemInvoice"
-        Me.RadButtonItemInvoice.Size = New System.Drawing.Size(60, 29)
-        Me.RadButtonItemInvoice.TabIndex = 46
-        Me.RadButtonItemInvoice.Text = "Invoice"
+        Me.RadButtonItemViewInvoice.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadButtonItemViewInvoice.Location = New System.Drawing.Point(148, 516)
+        Me.RadButtonItemViewInvoice.Name = "RadButtonItemViewInvoice"
+        Me.RadButtonItemViewInvoice.Size = New System.Drawing.Size(111, 29)
+        Me.RadButtonItemViewInvoice.TabIndex = 46
+        Me.RadButtonItemViewInvoice.Text = "View Invoice"
+        '
+        'RadButtonItemUploadInvoice
+        '
+        Me.RadButtonItemUploadInvoice.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadButtonItemUploadInvoice.Location = New System.Drawing.Point(15, 517)
+        Me.RadButtonItemUploadInvoice.Name = "RadButtonItemUploadInvoice"
+        Me.RadButtonItemUploadInvoice.Size = New System.Drawing.Size(111, 29)
+        Me.RadButtonItemUploadInvoice.TabIndex = 46
+        Me.RadButtonItemUploadInvoice.Text = "Upload Invoice"
         '
         'RadLabel29
         '
@@ -697,27 +718,27 @@ Partial Class MainForm
         'RadButtonItemDelete
         '
         Me.RadButtonItemDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadButtonItemDelete.Location = New System.Drawing.Point(142, 510)
+        Me.RadButtonItemDelete.Location = New System.Drawing.Point(189, 556)
         Me.RadButtonItemDelete.Name = "RadButtonItemDelete"
-        Me.RadButtonItemDelete.Size = New System.Drawing.Size(60, 29)
+        Me.RadButtonItemDelete.Size = New System.Drawing.Size(70, 29)
         Me.RadButtonItemDelete.TabIndex = 45
         Me.RadButtonItemDelete.Text = "Delete"
         '
         'RadButtonItemUpdate
         '
         Me.RadButtonItemUpdate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadButtonItemUpdate.Location = New System.Drawing.Point(75, 510)
+        Me.RadButtonItemUpdate.Location = New System.Drawing.Point(101, 556)
         Me.RadButtonItemUpdate.Name = "RadButtonItemUpdate"
-        Me.RadButtonItemUpdate.Size = New System.Drawing.Size(60, 29)
+        Me.RadButtonItemUpdate.Size = New System.Drawing.Size(70, 29)
         Me.RadButtonItemUpdate.TabIndex = 44
         Me.RadButtonItemUpdate.Text = "Update"
         '
         'RadButtonItemNew
         '
         Me.RadButtonItemNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadButtonItemNew.Location = New System.Drawing.Point(8, 510)
+        Me.RadButtonItemNew.Location = New System.Drawing.Point(15, 556)
         Me.RadButtonItemNew.Name = "RadButtonItemNew"
-        Me.RadButtonItemNew.Size = New System.Drawing.Size(60, 29)
+        Me.RadButtonItemNew.Size = New System.Drawing.Size(70, 29)
         Me.RadButtonItemNew.TabIndex = 43
         Me.RadButtonItemNew.Text = "Add"
         '
@@ -738,12 +759,12 @@ Partial Class MainForm
         Me.RadDropDownITEMS_FF.AutoSize = False
         Me.RadDropDownITEMS_FF.DropDownAnimationEnabled = True
         Me.RadDropDownITEMS_FF.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        RadListDataItem10.Text = "O"
-        RadListDataItem10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        RadListDataItem11.Text = "N"
-        RadListDataItem11.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.RadDropDownITEMS_FF.Items.Add(RadListDataItem10)
-        Me.RadDropDownITEMS_FF.Items.Add(RadListDataItem11)
+        RadListDataItem1.Text = "O"
+        RadListDataItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        RadListDataItem2.Text = "N"
+        RadListDataItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.RadDropDownITEMS_FF.Items.Add(RadListDataItem1)
+        Me.RadDropDownITEMS_FF.Items.Add(RadListDataItem2)
         Me.RadDropDownITEMS_FF.Location = New System.Drawing.Point(119, 474)
         Me.RadDropDownITEMS_FF.Name = "RadDropDownITEMS_FF"
         Me.RadDropDownITEMS_FF.Size = New System.Drawing.Size(150, 27)
@@ -907,12 +928,12 @@ Partial Class MainForm
         Me.RadDropDownITEMS_PayeQui.AutoSize = False
         Me.RadDropDownITEMS_PayeQui.DropDownAnimationEnabled = True
         Me.RadDropDownITEMS_PayeQui.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        RadListDataItem12.Text = "O"
-        RadListDataItem12.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        RadListDataItem13.Text = "N"
-        RadListDataItem13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.RadDropDownITEMS_PayeQui.Items.Add(RadListDataItem12)
-        Me.RadDropDownITEMS_PayeQui.Items.Add(RadListDataItem13)
+        RadListDataItem3.Text = "O"
+        RadListDataItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        RadListDataItem4.Text = "N"
+        RadListDataItem4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.RadDropDownITEMS_PayeQui.Items.Add(RadListDataItem3)
+        Me.RadDropDownITEMS_PayeQui.Items.Add(RadListDataItem4)
         Me.RadDropDownITEMS_PayeQui.Location = New System.Drawing.Point(119, 393)
         Me.RadDropDownITEMS_PayeQui.Name = "RadDropDownITEMS_PayeQui"
         Me.RadDropDownITEMS_PayeQui.Size = New System.Drawing.Size(150, 27)
@@ -925,12 +946,12 @@ Partial Class MainForm
         Me.RadDropDownITEMS_CURRENCY.AutoSize = False
         Me.RadDropDownITEMS_CURRENCY.DropDownAnimationEnabled = True
         Me.RadDropDownITEMS_CURRENCY.Font = New System.Drawing.Font("Segoe UI", 9.75!)
-        RadListDataItem14.Text = "EURO"
-        RadListDataItem14.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        RadListDataItem15.Text = "$"
-        RadListDataItem15.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.RadDropDownITEMS_CURRENCY.Items.Add(RadListDataItem14)
-        Me.RadDropDownITEMS_CURRENCY.Items.Add(RadListDataItem15)
+        RadListDataItem5.Text = "EURO"
+        RadListDataItem5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        RadListDataItem6.Text = "$"
+        RadListDataItem6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.RadDropDownITEMS_CURRENCY.Items.Add(RadListDataItem5)
+        Me.RadDropDownITEMS_CURRENCY.Items.Add(RadListDataItem6)
         Me.RadDropDownITEMS_CURRENCY.Location = New System.Drawing.Point(119, 309)
         Me.RadDropDownITEMS_CURRENCY.Name = "RadDropDownITEMS_CURRENCY"
         Me.RadDropDownITEMS_CURRENCY.Size = New System.Drawing.Size(150, 27)
@@ -1166,7 +1187,7 @@ Partial Class MainForm
         Me.GroupBoxMenuVertical.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(62, Byte), Integer))
         Me.GroupBoxMenuVertical.Location = New System.Drawing.Point(0, 0)
         Me.GroupBoxMenuVertical.Name = "GroupBoxMenuVertical"
-        Me.GroupBoxMenuVertical.Size = New System.Drawing.Size(60, 852)
+        Me.GroupBoxMenuVertical.Size = New System.Drawing.Size(60, 932)
         Me.GroupBoxMenuVertical.TabIndex = 65
         '
         'paneMain
@@ -1183,14 +1204,14 @@ Partial Class MainForm
         Me.paneMain.Controls.Add(Me.RadGridViewItems)
         Me.paneMain.Controls.Add(Me.RadListeiewProjectName)
         Me.paneMain.Controls.Add(Me.RadPanelTodaysAppointments)
-        Me.paneMain.Location = New System.Drawing.Point(60, 0)
+        Me.paneMain.Location = New System.Drawing.Point(60, 800)
         Me.paneMain.Name = "paneMain"
-        Me.paneMain.Size = New System.Drawing.Size(1554, 852)
+        Me.paneMain.Size = New System.Drawing.Size(1824, 932)
         Me.paneMain.TabIndex = 66
         '
         'RadProgressBarExport
         '
-        Me.RadProgressBarExport.Location = New System.Drawing.Point(1087, 571)
+        Me.RadProgressBarExport.Location = New System.Drawing.Point(1171, 645)
         Me.RadProgressBarExport.Name = "RadProgressBarExport"
         Me.RadProgressBarExport.ShowProgressIndicators = True
         Me.RadProgressBarExport.Size = New System.Drawing.Size(130, 24)
@@ -1203,13 +1224,13 @@ Partial Class MainForm
         '
         Me.RadButtonItemsLevelOne.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.RadButtonItemsLevelOne.Image = Global.PrevisionFlex.My.Resources.Resources.update_ronde_gray_30x302
-        Me.RadButtonItemsLevelOne.Location = New System.Drawing.Point(584, 567)
+        Me.RadButtonItemsLevelOne.Location = New System.Drawing.Point(668, 641)
         Me.RadButtonItemsLevelOne.Margin = New System.Windows.Forms.Padding(6)
         Me.RadButtonItemsLevelOne.Name = "RadButtonItemsLevelOne"
         '
         '
         '
-        Me.RadButtonItemsLevelOne.RootElement.ControlBounds = New System.Drawing.Rectangle(584, 567, 110, 24)
+        Me.RadButtonItemsLevelOne.RootElement.ControlBounds = New System.Drawing.Rectangle(668, 641, 110, 24)
         Me.RadButtonItemsLevelOne.Size = New System.Drawing.Size(90, 38)
         Me.RadButtonItemsLevelOne.TabIndex = 19
         Me.RadButtonItemsLevelOne.Text = "1 Level  "
@@ -1219,13 +1240,13 @@ Partial Class MainForm
         '
         Me.RadButtonGroupageRefhesh.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.RadButtonGroupageRefhesh.Image = Global.PrevisionFlex.My.Resources.Resources.update_ronde_gray_30x302
-        Me.RadButtonGroupageRefhesh.Location = New System.Drawing.Point(686, 567)
+        Me.RadButtonGroupageRefhesh.Location = New System.Drawing.Point(770, 641)
         Me.RadButtonGroupageRefhesh.Margin = New System.Windows.Forms.Padding(6)
         Me.RadButtonGroupageRefhesh.Name = "RadButtonGroupageRefhesh"
         '
         '
         '
-        Me.RadButtonGroupageRefhesh.RootElement.ControlBounds = New System.Drawing.Rectangle(686, 567, 110, 24)
+        Me.RadButtonGroupageRefhesh.RootElement.ControlBounds = New System.Drawing.Rectangle(770, 641, 110, 24)
         Me.RadButtonGroupageRefhesh.Size = New System.Drawing.Size(90, 38)
         Me.RadButtonGroupageRefhesh.TabIndex = 20
         Me.RadButtonGroupageRefhesh.Text = "2 Level   "
@@ -1235,13 +1256,13 @@ Partial Class MainForm
         '
         Me.RadButtonGroupCancel.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.RadButtonGroupCancel.Image = Global.PrevisionFlex.My.Resources.Resources.treeview_detail_25
-        Me.RadButtonGroupCancel.Location = New System.Drawing.Point(890, 567)
+        Me.RadButtonGroupCancel.Location = New System.Drawing.Point(974, 641)
         Me.RadButtonGroupCancel.Margin = New System.Windows.Forms.Padding(6)
         Me.RadButtonGroupCancel.Name = "RadButtonGroupCancel"
         '
         '
         '
-        Me.RadButtonGroupCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(890, 567, 110, 24)
+        Me.RadButtonGroupCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(974, 641, 110, 24)
         Me.RadButtonGroupCancel.Size = New System.Drawing.Size(90, 38)
         Me.RadButtonGroupCancel.TabIndex = 22
         Me.RadButtonGroupCancel.Text = "Détail  "
@@ -1251,13 +1272,13 @@ Partial Class MainForm
         '
         Me.RadButtonGroupage.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.RadButtonGroupage.Image = Global.PrevisionFlex.My.Resources.Resources.treeview_sans_detail_25
-        Me.RadButtonGroupage.Location = New System.Drawing.Point(788, 567)
+        Me.RadButtonGroupage.Location = New System.Drawing.Point(872, 641)
         Me.RadButtonGroupage.Margin = New System.Windows.Forms.Padding(6)
         Me.RadButtonGroupage.Name = "RadButtonGroupage"
         '
         '
         '
-        Me.RadButtonGroupage.RootElement.ControlBounds = New System.Drawing.Rectangle(788, 567, 110, 24)
+        Me.RadButtonGroupage.RootElement.ControlBounds = New System.Drawing.Rectangle(872, 641, 110, 24)
         Me.RadButtonGroupage.Size = New System.Drawing.Size(90, 38)
         Me.RadButtonGroupage.TabIndex = 21
         Me.RadButtonGroupage.Text = "Groupage "
@@ -1270,7 +1291,7 @@ Partial Class MainForm
         Me.paneSettings.Controls.Add(Me.ButtonUpdateProject)
         Me.paneSettings.Controls.Add(Me.RadGroupBox1)
         Me.paneSettings.Controls.Add(Me.RadGridViewProjectName)
-        Me.paneSettings.Location = New System.Drawing.Point(1700, 0)
+        Me.paneSettings.Location = New System.Drawing.Point(2000, 0)
         Me.paneSettings.Name = "paneSettings"
         Me.paneSettings.Size = New System.Drawing.Size(1545, 845)
         Me.paneSettings.TabIndex = 67
@@ -1525,26 +1546,60 @@ Partial Class MainForm
         Me.RadGridViewProjectName.MasterTemplate.AllowSearchRow = True
         Me.RadGridViewProjectName.MasterTemplate.EnableAlternatingRowColor = True
         Me.RadGridViewProjectName.MasterTemplate.ShowRowHeaderColumn = False
-        Me.RadGridViewProjectName.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.RadGridViewProjectName.MasterTemplate.ViewDefinition = TableViewDefinition6
         Me.RadGridViewProjectName.Name = "RadGridViewProjectName"
         Me.RadGridViewProjectName.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.None
         Me.RadGridViewProjectName.Size = New System.Drawing.Size(879, 556)
         Me.RadGridViewProjectName.TabIndex = 1
         Me.RadGridViewProjectName.ThemeName = "Office2019Gray"
         '
-        'RadTaskbarButton1
+        'RadOpenFileDialog1
         '
-        Me.RadTaskbarButton1.OwnerForm = Me
+        Me.RadOpenFileDialog1.DefaultExt = ""
+        Me.RadOpenFileDialog1.Filter = "pdf files (*.pdf)|*.pdf"
+        Me.RadOpenFileDialog1.InitialDirectory = "D:\\"
         '
-        'RadTaskbarButton2
+        'paneInvoice
         '
-        Me.RadTaskbarButton2.OwnerForm = Me
+        Me.paneInvoice.Controls.Add(Me.RadButtonInvoiceClose)
+        Me.paneInvoice.Controls.Add(Me.paneInvoiceContent)
+        Me.paneInvoice.Location = New System.Drawing.Point(980, 0)
+        Me.paneInvoice.Name = "paneInvoice"
+        Me.paneInvoice.Size = New System.Drawing.Size(900, 932)
+        Me.paneInvoice.TabIndex = 68
+        '
+        'paneInvoiceContent
+        '
+        Me.paneInvoiceContent.Controls.Add(Me.WebBrowserInvoice)
+        Me.paneInvoiceContent.Location = New System.Drawing.Point(0, 0)
+        Me.paneInvoiceContent.Name = "paneInvoiceContent"
+        Me.paneInvoiceContent.Size = New System.Drawing.Size(900, 880)
+        Me.paneInvoiceContent.TabIndex = 0
+        '
+        'RadButtonInvoiceClose
+        '
+        Me.RadButtonInvoiceClose.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.RadButtonInvoiceClose.Location = New System.Drawing.Point(419, 893)
+        Me.RadButtonInvoiceClose.Name = "RadButtonInvoiceClose"
+        Me.RadButtonInvoiceClose.Size = New System.Drawing.Size(110, 24)
+        Me.RadButtonInvoiceClose.TabIndex = 1
+        Me.RadButtonInvoiceClose.Text = "Close"
+        '
+        'WebBrowserInvoice
+        '
+        Me.WebBrowserInvoice.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowserInvoice.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowserInvoice.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowserInvoice.Name = "WebBrowserInvoice"
+        Me.WebBrowserInvoice.Size = New System.Drawing.Size(900, 880)
+        Me.WebBrowserInvoice.TabIndex = 0
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1614, 881)
+        Me.ClientSize = New System.Drawing.Size(1884, 961)
+        Me.Controls.Add(Me.paneInvoice)
         Me.Controls.Add(Me.paneSettings)
         Me.Controls.Add(Me.paneMain)
         Me.Controls.Add(Me.GroupBoxMenuVertical)
@@ -1584,7 +1639,8 @@ Partial Class MainForm
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.RadSpinEditorITEMS_BIG_TOTAL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadButtonItemInvoice, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadButtonItemViewInvoice, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadButtonItemUploadInvoice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel29, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadButtonItemDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadButtonItemUpdate, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1656,6 +1712,9 @@ Partial Class MainForm
         CType(Me.RadTextBoxProjectDataPath, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGridViewProjectName.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGridViewProjectName, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.paneInvoice.ResumeLayout(False)
+        Me.paneInvoiceContent.ResumeLayout(False)
+        CType(Me.RadButtonInvoiceClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1750,15 +1809,19 @@ Partial Class MainForm
 	Friend WithEvents Office2019GrayTheme1 As Themes.Office2019GrayTheme
 	Friend WithEvents RadLabel28 As RadLabel
 	Friend WithEvents RadDropDownITEMS_FF As RadDropDownList
-	Friend WithEvents RadTaskbarButton1 As RadTaskbarButton
-	Friend WithEvents RadTaskbarButton2 As RadTaskbarButton
-	Friend WithEvents RadButtonItemNew As RadButton
-	Friend WithEvents RadButtonItemUpdate As RadButton
+    Friend WithEvents RadButtonItemNew As RadButton
+    Friend WithEvents RadButtonItemUpdate As RadButton
 	Friend WithEvents RadButtonItemDelete As RadButton
-	Friend WithEvents RadButtonItemInvoice As RadButton
+	Friend WithEvents RadButtonItemUploadInvoice As RadButton
 	Friend WithEvents RadButtonPrevMonth As RadButton
     Friend WithEvents RadButtonNextMonth As RadButton
     Friend WithEvents RadButtonCloneData As RadButton
     Friend WithEvents RadSpinEditorITEMS_BIG_TOTAL As RadSpinEditor
     Friend WithEvents RadLabel29 As RadLabel
+    Friend WithEvents RadButtonItemViewInvoice As RadButton
+    Friend WithEvents RadOpenFileDialog1 As RadOpenFileDialog
+    Friend WithEvents paneInvoice As Panel
+    Friend WithEvents paneInvoiceContent As Panel
+    Friend WithEvents RadButtonInvoiceClose As RadButton
+    Friend WithEvents WebBrowserInvoice As WebBrowser
 End Class
