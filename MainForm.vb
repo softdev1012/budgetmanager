@@ -55,9 +55,7 @@ Public Class MainForm
 		RadDateTimePickerMonth.DateTimePickerElement.TextBoxElement.Enabled = False
 		RadDateTimePickerMonth.DateTimePickerElement.TextBoxElement.TextAlign = HorizontalAlignment.Center
 
-		RadDateTimePickerITEMS_DatePaiement.DateTimePickerElement.TextBoxElement.Enabled = False
 		RadDateTimePickerITEMS_DatePaiement.DateTimePickerElement.TextBoxElement.TextAlign = HorizontalAlignment.Right
-		RadDateTimePickerITEMS_LAST_EDIT_DATE.DateTimePickerElement.TextBoxElement.Enabled = False
 		RadDateTimePickerITEMS_LAST_EDIT_DATE.DateTimePickerElement.TextBoxElement.TextAlign = HorizontalAlignment.Right
 
 		AddHandler Me.RadDateTimePickerMonth.DateTimePickerElement.Calendar.ZoomChanging, AddressOf Calendar_ZoomChanging
@@ -92,13 +90,11 @@ Public Class MainForm
 		init_main_menu()
 		GetProjectFromDB()
 		InitProjectMenu()
-		If checkEarlyMonth() = False Then
-			copyToNextMonth()
-		End If
 
 		If dtProject.Rows.Count > 0 Then
 			ProjectIndexGlobal = Val(dtProject.Rows(0).Item("PrOJECT_INDEX"))
 			GetItemsFromDB(ProjectIndexGlobal)
+			RadSpinEditor_INDEX.Focus()
 			display_ProjectName_Flash(FindProjectName(ProjectIndexGlobal), "Project")
 		End If
 		RadcmbTypeCharge.SelectedIndex = 0
@@ -107,7 +103,7 @@ Public Class MainForm
 	Private Function checkEarlyMonth()
 		Dim mysql As String
 		Dim curMonth As String = DateTime.Now.ToString("yyyy-MM")
-		mysql = "SELECT COUNT(*) as cnt FROM items WHERE `month` = '" & curMonth & "'"
+		mysql = "SELECT COUNT(*) as cnt FROM items WHERE `items_month` = '" & curMonth & "'"
 		Try
 			Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
 			Dim cmd As New MySqlCommand(mysql, connection)
@@ -129,7 +125,7 @@ Public Class MainForm
 		Dim mysql As String
 		Dim lastMonth As String = getLastDBMonth()
 		Dim curMonth As String = DateTime.Now.ToString("yyyy-MM")
-		mysql = "SELECT * FROM items WHERE `month` = '" & lastMonth & "'"
+		mysql = "SELECT * FROM items WHERE `items_month` = '" & lastMonth & "'"
 		Dim dtable As New DataTable()
 		Dim cnt As Integer
 		Try
@@ -140,7 +136,7 @@ Public Class MainForm
 			reader = cmd.ExecuteReader()
 			dtable.Load(reader)
 			cnt = dtable.Rows.Count
-			mysql = "INSERT INTO items(items_INDEX, items_projet_INDEX, items_code, items_name, items_parent, items_quantity, items_unit, items_price_total, items_taxe, items_taxe_value, items_currency, items_last_edit_date, Items_date_paiement, items_paiement_ok, `items_mt_payé`, items_paye_qui, items_ff, `month`) VALUES "
+			mysql = "INSERT INTO items(items_INDEX, items_projet_INDEX, items_code, items_name, items_parent, items_quantity, items_unit, items_price_total, items_taxe, items_taxe_value, items_currency, items_last_edit_date, Items_date_paiement, items_paiement_ok, `items_mt_payé`, items_paye_qui, items_ff, `items_month`) VALUES "
 			For i = 0 To cnt - 1
 				If i > 0 Then
 					mysql += ","
@@ -175,7 +171,7 @@ Public Class MainForm
 	Private Function getLastDBMonth()
 		Dim mysql As String
 		Dim rlt As String = "2022-01"
-		mysql = "SELECT MAX(`month`) AS last_month FROM items"
+		mysql = "SELECT MAX(`items_month`) AS last_month FROM items"
 		Try
 			Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
 			Dim cmd As New MySqlCommand(mysql, connection)
@@ -319,6 +315,8 @@ Public Class MainForm
 		RadSpinEditorITEMS_MT_PAIEMENT.Value = RadGridViewItems.CurrentRow.Cells(15).Value
 		RadTextBoxITEMS_PAYE_QUI.Text = RadGridViewItems.CurrentRow.Cells(16).Value.ToString
 		RadDropDownITEMS_FF.Text = RadGridViewItems.CurrentRow.Cells(17).Value.ToString
+		RadSpinEditorITEMS_BIG_TOTAL.Value = RadSpinEditorITEMS_TAXE_VALUE.Value + RadSpinEditor_MTTVA.Value
+		RadSpinEditor_INDEX.Focus()
 	End Sub
 	Private Sub calculTotalLine(ByVal iindex As Integer)
 		Dim ClassItemsListe = New List(Of ClassItemsListe)
@@ -491,9 +489,9 @@ Public Class MainForm
 		FF = RadCheckBoxFF.Checked
 		Dim curMonth As String = RadDateTimePickerMonth.Text
 		If FF Then
-			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, items_price_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " AND `month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
+			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, items_price_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " AND `items_month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
 		Else
-			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, items_price_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " and items_ff = 'N' AND `month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
+			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, items_taxe_value, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, items_price_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " and items_ff = 'N' AND `items_month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
 		End If
 		Try
 			Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
@@ -736,7 +734,7 @@ Public Class MainForm
 		ValueString += DateTime.Now.ToString("yyyy-MM") + "'"
 
 		mysql = "insert into items (items_index,items_projet_INDEX,ITEMS_CODE,ITEMS_NAME,ITEMS_PARENT,ITEMS_QUANTITY,ITEMS_UNIT,ITEMS_TAXE,"
-		mysql += "ITEMS_TAXE_VALUE,ITEMS_CURRENCY,ITEMS_LAST_EDIT_DATE,items_date_paiement,items_paiement_ok,items_paye_qui,items_mt_payé,items_ff,`month`) "
+		mysql += "ITEMS_TAXE_VALUE,ITEMS_CURRENCY,ITEMS_LAST_EDIT_DATE,items_date_paiement,items_paiement_ok,items_paye_qui,items_mt_payé,items_ff,`items_month`) "
 		mysql += "values( " + ValueString + ")"
 		'mysql += "values( 28,1,'VELO','VELOELECT','_ROOT',90,91,92,93,'EURO','1900-01-01','1900-02-02','N','JP',95)"
 
@@ -1026,8 +1024,69 @@ Public Class MainForm
 		CurY += 16
 		g.DrawString("générales de vente jointes avec cette facture.", InvFontTextNormal, Brushes.Black, CurX, CurY)
 	End Sub
+	Private Sub RadButtonCloneData_Click(sender As Object, e As EventArgs) Handles RadButtonCloneData.Click
+		If checkEarlyMonth() = True Then
+			MessageBox.Show("Data is already cloned.", "Clone Data", MessageBoxButtons.OK)
+			Exit Sub
+		End If
+		Dim result As DialogResult = MessageBox.Show("Are you sure to clone data?", "Clone Data", MessageBoxButtons.YesNo)
+		If result = DialogResult.Yes Then
+			copyToNextMonth()
+		End If
+	End Sub
 
+	Private Function GetPrevMonth(ByVal cur As Date)
+		Dim mon As Integer = cur.Month
+		Dim year As Integer = cur.Year
+		mon = mon - 1
+		If mon < 1 Then
+			year = year - 1
+			mon = mon + 12
+		End If
+		Dim result As String
+		result = year.ToString("0000") & "-" & mon.ToString("00")
+		Return result
+	End Function
+	Private Function GetNextMonth(ByVal cur As Date)
+		Dim mon As Integer = cur.Month
+		Dim year As Integer = cur.Year
+		mon = mon + 1
+		If mon > 12 Then
+			year = year + 1
+			mon = mon - 12
+		End If
+		Dim result As String
+		result = year.ToString("0000") & "-" & mon.ToString("00")
+		Return result
+	End Function
+	Private Sub RadButtonPrevMonth_Click(sender As Object, e As EventArgs) Handles RadButtonPrevMonth.Click
+		Dim month As String = GetPrevMonth(RadDateTimePickerMonth.Value)
+		RadDateTimePickerMonth.Text = month
 
+	End Sub
+
+	Private Sub RadButtonNextMonth_Click(sender As Object, e As EventArgs) Handles RadButtonNextMonth.Click
+		Dim month As String = GetNextMonth(RadDateTimePickerMonth.Value)
+		RadDateTimePickerMonth.Text = month
+	End Sub
+
+	Private Sub RadSpinEditorITEMS_QUANTITY_ValueChanged(sender As Object, e As EventArgs) Handles RadSpinEditorITEMS_QUANTITY.ValueChanged
+		RadSpinEditor_MTTVA.Value = RadSpinEditorITEMS_QUANTITY.Value * RadSpinEditorITEMS_UNIT.Value
+		RadSpinEditorITEMS_TAXE_VALUE.Value = RadSpinEditor_MTTVA.Value * RadSpinEditorITEMS_TAXE.Value / 100.0
+		RadSpinEditorITEMS_BIG_TOTAL.Value = RadSpinEditorITEMS_TAXE_VALUE.Value + RadSpinEditor_MTTVA.Value
+	End Sub
+
+	Private Sub RadSpinEditorITEMS_UNIT_ValueChanged(sender As Object, e As EventArgs) Handles RadSpinEditorITEMS_UNIT.ValueChanged
+		RadSpinEditor_MTTVA.Value = RadSpinEditorITEMS_QUANTITY.Value * RadSpinEditorITEMS_UNIT.Value
+		RadSpinEditorITEMS_TAXE_VALUE.Value = RadSpinEditor_MTTVA.Value * RadSpinEditorITEMS_TAXE.Value / 100.0
+		RadSpinEditorITEMS_BIG_TOTAL.Value = RadSpinEditorITEMS_TAXE_VALUE.Value + RadSpinEditor_MTTVA.Value
+	End Sub
+
+	Private Sub RadSpinEditorITEMS_TAXE_ValueChanged(sender As Object, e As EventArgs) Handles RadSpinEditorITEMS_TAXE.ValueChanged
+		RadSpinEditor_MTTVA.Value = RadSpinEditorITEMS_QUANTITY.Value * RadSpinEditorITEMS_UNIT.Value
+		RadSpinEditorITEMS_TAXE_VALUE.Value = RadSpinEditor_MTTVA.Value * RadSpinEditorITEMS_TAXE.Value / 100.0
+		RadSpinEditorITEMS_BIG_TOTAL.Value = RadSpinEditorITEMS_TAXE_VALUE.Value + RadSpinEditor_MTTVA.Value
+	End Sub
 
 
 

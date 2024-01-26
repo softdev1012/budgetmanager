@@ -129,12 +129,6 @@
   <ItemGroup>
     <Compile Include="ClassItemsListe.vb" />
     <Compile Include="ClassProjectName.vb" />
-    <Compile Include="FormItemsDataEntry.Designer.vb">
-      <DependentUpon>FormItemsDataEntry.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormItemsDataEntry.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -161,9 +155,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormItemsDataEntry.resx">
-      <DependentUpon>FormItemsDataEntry.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
