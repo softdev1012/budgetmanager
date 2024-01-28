@@ -492,9 +492,9 @@ Public Class MainForm
 		FF = RadCheckBoxFF.Checked
 		Dim curMonth As String = RadDateTimePickerMonth.Text
 		If FF Then
-			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, FORMAT(items_quantity * items_unit * (items_taxe/100.0), 2, 'fr_FR') AS items_mt_tva, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, FORMAT(items_quantity * items_unit * (1.0 + items_taxe/100.0), 2, 'fr_FR') AS items_big_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " AND `items_month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
+			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, FORMAT(items_quantity * items_unit * (items_taxe/100.0), 2, 'fr_FR') AS items_mt_tva, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, FORMAT(items_quantity * items_unit * (1.0 + items_taxe/100.0), 2, 'fr_FR') AS items_big_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff, if(items_invoice = '', '', 'O') FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " AND `items_month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
 		Else
-			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, FORMAT(items_quantity * items_unit * (items_taxe/100.0), 2, 'fr_FR') AS items_mt_tva, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, FORMAT(items_quantity * items_unit * (1.0 + items_taxe/100.0), 2, 'fr_FR') AS items_big_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " and items_ff = 'N' AND `items_month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
+			mysql = "SELECT `INDEX`, `items_INDEX`, items_code, items_name, items_parent, items_quantity, items_unit, items_taxe, FORMAT(items_quantity * items_unit * (items_taxe/100.0), 2, 'fr_FR') AS items_mt_tva, items_currency, DATE_FORMAT(items_last_edit_date,'%Y-%m-%d') AS items_last_edit_date, items_projet_INDEX, FORMAT(items_quantity * items_unit * (1.0 + items_taxe/100.0), 2, 'fr_FR') AS items_big_total, DATE_FORMAT(items_date_paiement,'%Y-%m-%d') AS items_date_paiement, items_paiement_ok, items_mt_payé, items_paye_qui, items_ff, if(items_invoice = '', '', 'O') FROM " + basename + " where items_projet_INDEX = " + Str(idx) + " and items_ff = 'N' AND `items_month` = '" + curMonth + "' " + Critaire + " order by items_paiement_ok, items_projet_INDEX desc"
 		End If
 		Try
 			Dim connection As New MySqlConnection(GlobalProviderForLocalHost)
@@ -519,9 +519,11 @@ Public Class MainForm
 					Case 2, 16
 						RadGridViewItems.Columns(i).Width = 100
 					Case 3
-						RadGridViewItems.Columns(i).Width = 205
-					Case 0, 1, 4, 5, 9, 11, 14, 16, 17
+						RadGridViewItems.Columns(i).Width = 170
+					Case 0, 1, 4, 5, 9, 11, 14, 16
 						RadGridViewItems.Columns(i).Width = 65
+					Case 17, 18
+						RadGridViewItems.Columns(i).Width = 50
 				End Select
 				ListBoxItemsParent.Items.Add(Str(i) + " " + RadGridViewItems.Columns(i).Name)
 			Next i
@@ -544,6 +546,7 @@ Public Class MainForm
 			RadGridViewItems.Columns(15).HeaderText = "Mt. Payé"
 			RadGridViewItems.Columns(16).HeaderText = "Payer à"
 			RadGridViewItems.Columns(17).HeaderText = "FF"
+			RadGridViewItems.Columns(18).HeaderText = "Invoice"
 
 			RadGridViewItems.Columns(0).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(1).TextAlignment = ContentAlignment.MiddleCenter
@@ -558,7 +561,10 @@ Public Class MainForm
 			RadGridViewItems.Columns(14).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(16).TextAlignment = ContentAlignment.MiddleCenter
 			RadGridViewItems.Columns(17).TextAlignment = ContentAlignment.MiddleCenter
+			RadGridViewItems.Columns(18).TextAlignment = ContentAlignment.MiddleCenter
 
+			RadGridViewItems.Columns(8).FormatString = "{0:#####0.00}"
+			RadGridViewItems.Columns(12).FormatString = "{0:#####0.00}"
 			display_ProjectCathegory_Flash(RadGridViewItems.Rows(0).Cells(2).Value, "Cathegory")
 		Else
 			display_ProjectCathegory_Flash("", "Cathegory")
@@ -893,7 +899,7 @@ Public Class MainForm
 			Exit Sub
 		End If
 		If RadOpenFileDialog1.ShowDialog() = DialogResult.OK Then
-			Dim filepath As String = "C:\\MyDrive\001\Invoices\"
+			Dim filepath As String = "C:\MyDrive\001\Invoices\"
 			If Not Directory.Exists(filepath) Then
 				Directory.CreateDirectory(filepath)
 			End If
@@ -950,7 +956,7 @@ Public Class MainForm
 			MessageBox.Show("Invoice pdf is not stored yet.", "View Invoice", MessageBoxButtons.OK)
 			Exit Sub
 		End If
-		Dim filepath As String = "C:\\MyDrive\001\Invoices\"
+		Dim filepath As String = "C:\MyDrive\001\Invoices\"
 		If Not File.Exists(filepath + filename) Then
 			MessageBox.Show("File not exist.", "View Invoice", MessageBoxButtons.OK)
 		End If
