@@ -1559,7 +1559,7 @@ Partial Class MainForm
         '
         Me.RadOpenFileDialog1.DefaultExt = ""
         Me.RadOpenFileDialog1.Filter = "pdf files (*.pdf)|*.pdf"
-        Me.RadOpenFileDialog1.InitialDirectory = "D:\\"
+        Me.RadOpenFileDialog1.InitialDirectory = "C:\\"
         '
         'paneInvoice
         '
