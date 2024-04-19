@@ -10,5 +10,9 @@ VB.NET / MySQL / Telerik UI for desktop app.
 
 
 
+
+
+![capture](https://github.com/softdev1012/budgetmanager/blob/master/demo/capture.gif)
+
 <video src="https://github.com/softdev1012/budgetmanager/blob/master/demo/capture.webm"></video>
 
